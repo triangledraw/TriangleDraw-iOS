@@ -1,0 +1,4 @@
+${PODS_ROOT}/Target Support Files/Pods-BasePods-TriangleDrawMain/Pods-BasePods-TriangleDrawMain-frameworks.sh
+${BUILT_PRODUCTS_DIR}/SwiftyBeaver/SwiftyBeaver.framework
+${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework
+${BUILT_PRODUCTS_DIR}/RadiantForms/RadiantForms.framework

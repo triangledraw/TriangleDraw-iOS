@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="fastlane.lanes">
+    
+    
+    
+      
+      <testcase classname="fastlane.lanes" name="0: xcode_select" time="0.010359">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="1: capture_ios_screenshots" time="4.529323">
+        
+      </testcase>
+    
+  </testsuite>
+</testsuites>
