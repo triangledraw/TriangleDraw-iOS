@@ -21,8 +21,15 @@ lane :snapshot_canvas do
 	xcode_select("/Applications/Xcode-beta4.app")
 	
 	my_devices = [
+		# iPad 12.9" display
 		"iPad Pro (12.9-inch) (3rd generation)",
+		"iPad Pro (12.9-inch) (2nd generation)",
+		
+		# iPhone 6.5" display
 		"iPhone Xs Max",
+		
+		# iPhone 5.5" display
+		"iPhone 8 Plus",
 	]
 	capture_ios_screenshots(
 		devices: my_devices,
