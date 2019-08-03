@@ -1,0 +1,6 @@
+framework module RadiantForms {
+  umbrella header "RadiantForms-umbrella.h"
+
+  export *
+  module * { export * }
+}

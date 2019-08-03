@@ -1,0 +1,46 @@
+source 'https://github.com/CocoaPods/Specs.git'
+swift_version = "5.0"
+platform :ios, '11.3'
+use_frameworks!
+
+def my_pod_mbprogresshud
+	# https://github.com/jdg/MBProgressHUD/commits/master
+	pod 'MBProgressHUD', :git => 'https://github.com/jdg/MBProgressHUD.git', :commit => '202d8895c6eb10ead2e4b3c5837a68c95693d51f'
+end
+
+def my_pod_swiftybeaver
+	# https://github.com/SwiftyBeaver/SwiftyBeaver/commits/master
+	pod 'SwiftyBeaver', :git => 'https://github.com/SwiftyBeaver/SwiftyBeaver.git', :commit => 'f7aaaa3ee8056588b9cf5594475f0a3da0043370'
+end
+
+def my_pod_radiantforms
+	# https://github.com/radiantkit/radiantforms-ios/commits/develop
+	pod 'RadiantForms', :git => 'https://github.com/radiantkit/radiantforms-ios.git', :commit => 'b4634ff787ac11f222443a0fc97e97cec15e6e7c'
+end
+
+abstract_target 'BasePods' do
+	my_pod_swiftybeaver
+
+	target 'Tests' do
+	end
+
+	target 'TriangleDrawMain' do
+		my_pod_mbprogresshud
+		my_pod_radiantforms
+	end
+
+	target 'TriangleDrawThumbnail' do
+	end
+
+	target 'TriangleDrawLibrary' do
+	end
+end
+
+
+# workaround: https://github.com/CocoaPods/CocoaPods/issues/7606
+post_install do |installer|
+	installer.pods_project.build_configurations.each do |config|
+		config.build_settings.delete('CODE_SIGNING_ALLOWED')
+		config.build_settings.delete('CODE_SIGNING_REQUIRED')
+	end
+end

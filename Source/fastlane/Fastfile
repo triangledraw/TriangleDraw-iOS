@@ -1,0 +1,35 @@
+
+# Capture screenshots of the canvas
+#
+# Before running this, the "UITests" must manually added to the "tests".
+# This is far from optimal.
+#
+# This only works with Xcode11 or newer
+# The HexagonCanvas uses Metal. Xcode11beta4 or newer supports Metal in the simulator.
+#
+# Xcode10.x doesn't support Metal in the simulator, so it's not possible to capture screenshots of the canvas in that setup.
+#
+# Unfortunately Xcode11beta4 or newer doesn't have a working UIDocumentBrowserViewController. It doesn't show any thumbnails of the documents.
+# So it's not possible to use Xcode11 for capturing screenshots of the browser.
+#
+# What would be nice is an Xcode that have:
+# - Metal support
+# - UIDocuemntBrowserViewController
+# - Doesn't crash when running UITests.
+#
+lane :snapshot_canvas do
+	xcode_select("/Applications/Xcode-beta4.app")
+	
+	my_devices = [
+		"iPad Pro (12.9-inch) (3rd generation)",
+		"iPhone Xs Max",
+	]
+	capture_ios_screenshots(
+		devices: my_devices,
+		ios_version: '13.0',
+		skip_open_summary: true,
+		clean: false,
+		stop_after_first_error: true,
+		concurrent_simulators: false
+	)
+end

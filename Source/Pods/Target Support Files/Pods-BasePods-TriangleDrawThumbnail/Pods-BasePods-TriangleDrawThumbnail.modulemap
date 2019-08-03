@@ -1,0 +1,6 @@
+framework module Pods_BasePods_TriangleDrawThumbnail {
+  umbrella header "Pods-BasePods-TriangleDrawThumbnail-umbrella.h"
+
+  export *
+  module * { export * }
+}
