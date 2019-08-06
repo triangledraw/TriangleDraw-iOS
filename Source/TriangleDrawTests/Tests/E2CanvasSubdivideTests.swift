@@ -10,11 +10,17 @@ class E2CanvasSubdivideTests: XCTestCase {
 
 		let canvasActual: E2Canvas = E2Canvas.createBigCanvas()
 
-		let midx: Int = Int(canvas.width) / 2 - 1
-		let midy: Int = Int(canvas.height) / 2 - 1
+		let midx: Int = 90
+		let midy: Int = 52
 		for y in 0..<Int(canvas.height) {
 			for x in 0..<Int(canvas.width) {
-				let sourcePoint = E2CanvasPoint(x: (x - midx) / 3 + midx, y: (y - midy) / 3 + midy)
+				let x0 = Float(x - midx) - 0.5
+				let x1 = Int(floor(x0 / 3))
+				let x2 = x1 + midx
+				let y0 = Float(y - midy) + 0.5
+				let y1 = Int(floor(y0 / 3))
+				let y2 = y1 + midy
+				let sourcePoint = E2CanvasPoint(x: x2, y: y2)
 				let value: UInt8 = canvas.getPixel(sourcePoint)
 				let destPoint = E2CanvasPoint(x: x, y: y)
 				canvasActual.setPixel(destPoint, value: value)
