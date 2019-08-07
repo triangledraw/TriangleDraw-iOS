@@ -2,30 +2,88 @@
 import XCTest
 @testable import TriangleDrawLibrary
 
-class E2CanvasSubdivideTests: XCTestCase {
+extension E2Canvas {
+	func subdivide(n: UInt) -> E2Canvas {
+		let canvas: E2Canvas = E2Canvas.createBigCanvas()
 
-    func test0() {
-		let canvas: E2Canvas = loadCanvas("test_subdivide0_in.pbm")
-		let canvasExpected: E2Canvas = loadCanvas("test_subdivide0_out3.pbm")
+		let w: Int = Int(self.cellsPerRow)
+		let h: Int = Int(self.cellsPerColumn)
 
-		let canvasActual: E2Canvas = E2Canvas.createBigCanvas()
+		guard w == canvas.cellsPerRow && h == canvas.cellsPerColumn else {
+			fatalError("Expected same canvas sizes")
+		}
 
-		let midx: Int = 90
-		let midy: Int = 52
-		for y in 0..<Int(canvas.height) {
-			for x in 0..<Int(canvas.width) {
-				let x0 = Float(x - midx) - 0.5
-				let x1 = Int(floor(x0 / 3))
-				let x2 = x1 + midx
-				let y0 = Float(y - midy) + 0.5
-				let y1 = Int(floor(y0 / 3))
-				let y2 = y1 + midy
-				let sourcePoint = E2CanvasPoint(x: x2, y: y2)
-				let value: UInt8 = canvas.getPixel(sourcePoint)
-				let destPoint = E2CanvasPoint(x: x, y: y)
-				canvasActual.setPixel(destPoint, value: value)
+		for j: Int in 0..<h {
+			for i: Int in 0..<w {
+				let offset: Int = j * w + i
+				let canvasCell: E2TriangleCell = self.cells[offset]
+
+				do {
+					let value: UInt8 = canvasCell.tl
+					let x = i * 2
+					let y = j * 2
+					if x >= 0 && y >= 0 {
+						let destPoint = E2CanvasPoint(x: x, y: y)
+						canvas.setPixel(destPoint, value: value)
+					}
+				}
+				do {
+					let value: UInt8 = canvasCell.tr
+					let x = i * 2 + 1
+					let y = j * 2
+					if x >= 0 && y >= 0 {
+						let destPoint = E2CanvasPoint(x: x, y: y)
+						canvas.setPixel(destPoint, value: value)
+					}
+				}
+				do {
+					let value: UInt8 = canvasCell.bl
+					let x = i * 2
+					let y = j * 2 + 1
+					if x >= 0 && y >= 0 {
+						let destPoint = E2CanvasPoint(x: x, y: y)
+						canvas.setPixel(destPoint, value: value)
+					}
+				}
+				do {
+					let value: UInt8 = canvasCell.br
+					let x = i * 2 + 1
+					let y = j * 2 + 1
+					if x >= 0 && y >= 0 {
+						let destPoint = E2CanvasPoint(x: x, y: y)
+						canvas.setPixel(destPoint, value: value)
+					}
+				}
 			}
 		}
+		return canvas
+	}
+}
+
+class E2CanvasSubdivideTests: XCTestCase {
+
+    func testIdentity0() {
+		let canvasExpected: E2Canvas = loadCanvas("test_subdivide2_in.pbm")
+		let canvasActual = canvasExpected.subdivide(n: 1)
+		let actual: String = canvasActual.stringRepresentation
+		let expected: String = canvasExpected.stringRepresentation
+        XCTAssertEqual(actual, expected)
+    }
+
+    func testIdentity1() {
+		let canvasExpected: E2Canvas = loadCanvas("test_subdivide2_out5.pbm")
+		let canvasActual = canvasExpected.subdivide(n: 1)
+		let actual: String = canvasActual.stringRepresentation
+		let expected: String = canvasExpected.stringRepresentation
+        XCTAssertEqual(actual, expected)
+    }
+
+    func testSubdivideBy2() {
+		let canvas: E2Canvas = loadCanvas("test_subdivide2_in.pbm")
+		let canvasExpected: E2Canvas = loadCanvas("test_subdivide2_out3.pbm")
+
+		let canvasActual = canvas.subdivide(n: 2)
+
 
 		let actual: String = canvasActual.stringRepresentation
 		let expected: String = canvasExpected.stringRepresentation
