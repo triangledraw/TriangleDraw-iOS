@@ -55,6 +55,7 @@
 		426B951722D0A5FE00DB9359 /* BrowserViewController+PresentDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426B951622D0A5FE00DB9359 /* BrowserViewController+PresentDocument.swift */; };
 		4278E58E129C3CDB00CA8A15 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4278E58D129C3CDB00CA8A15 /* CoreGraphics.framework */; };
 		427B1657216914FB00228748 /* TDCanvasDrawingProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427B1656216914FB00228748 /* TDCanvasDrawingProtocol.swift */; };
+		427FE58522FB6B0D0032A235 /* E2Canvas+Subdivide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427FE58422FB6B0D0032A235 /* E2Canvas+Subdivide.swift */; };
 		4289827921E7EDA600FC0431 /* BorderedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4289827821E7EDA600FC0431 /* BorderedButton.swift */; };
 		428A3A3F20E2320D003F13D1 /* WFActivitySpecificItemProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428A3A3E20E2320C003F13D1 /* WFActivitySpecificItemProvider.swift */; };
 		428B12961832A46500718BEA /* CanvasVC.strings in Resources */ = {isa = PBXBuildFile; fileRef = 428B12911832A46500718BEA /* CanvasVC.strings */; };
@@ -397,6 +398,7 @@
 		426B951622D0A5FE00DB9359 /* BrowserViewController+PresentDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BrowserViewController+PresentDocument.swift"; sourceTree = "<group>"; };
 		4278E58D129C3CDB00CA8A15 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		427B1656216914FB00228748 /* TDCanvasDrawingProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TDCanvasDrawingProtocol.swift; sourceTree = "<group>"; };
+		427FE58422FB6B0D0032A235 /* E2Canvas+Subdivide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "E2Canvas+Subdivide.swift"; sourceTree = "<group>"; };
 		42855B9F19CDFE030000420E /* TriangleDrawMain-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TriangleDrawMain-Bridging-Header.h"; sourceTree = "<group>"; };
 		4289827821E7EDA600FC0431 /* BorderedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderedButton.swift; sourceTree = "<group>"; };
 		428A3A3E20E2320C003F13D1 /* WFActivitySpecificItemProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WFActivitySpecificItemProvider.swift; sourceTree = "<group>"; };
@@ -992,6 +994,7 @@
 				42CE299522DA7A50001EED4A /* E2Canvas+SetPixel.swift */,
 				42CE299722DA7A50001EED4A /* E2Canvas+SetSymmetricPixel.swift */,
 				42CE299F22DA7A50001EED4A /* E2Canvas+StringRepresentation.swift */,
+				427FE58422FB6B0D0032A235 /* E2Canvas+Subdivide.swift */,
 				42CE298922DA7A50001EED4A /* E2Canvas+Triangles.swift */,
 				42CE298F22DA7A50001EED4A /* E2CanvasBoundingBox.swift */,
 				42CE298D22DA7A50001EED4A /* E2CanvasPoint.swift */,
@@ -1879,6 +1882,7 @@
 				42CE29CE22DA7A52001EED4A /* E2CanvasTriangle.swift in Sources */,
 				42CE29EB22DA7A52001EED4A /* FloatFormatting.swift in Sources */,
 				42CE29D422DA7A52001EED4A /* Document.swift in Sources */,
+				427FE58522FB6B0D0032A235 /* E2Canvas+Subdivide.swift in Sources */,
 				42CE29C122DA7A52001EED4A /* UIImage+ScaleToSize.swift in Sources */,
 				42CE29E422DA7A52001EED4A /* TDFloat.swift in Sources */,
 				42CE29E222DA7A52001EED4A /* UserDefaults+AppGroup.swift in Sources */,
