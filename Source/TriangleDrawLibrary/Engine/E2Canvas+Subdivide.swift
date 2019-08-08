@@ -10,7 +10,9 @@ extension E2Canvas {
 	/// - For `N=1` then 1 triangle stays 1 triangle (identity).
 	/// - For `N=2` then 1 triangle gets subdivided into 4 triangles.
 	/// - For `N=3` then 1 triangle gets subdivided into 9 triangles.
-	/// - For `N=5` then 1 triangle gets subdivided into 18 triangles.
+	/// - For `N=5` then 1 triangle gets subdivided into 25 triangles.
+	///
+	/// The formula is `N*N`.
 	///
 	/// The overflow gets discarded, so that the canvas size stays the same.
 	public func subdivide(n: UInt) -> E2Canvas {
