@@ -61,6 +61,7 @@
 		428B12961832A46500718BEA /* CanvasVC.strings in Resources */ = {isa = PBXBuildFile; fileRef = 428B12911832A46500718BEA /* CanvasVC.strings */; };
 		428B12DF1832A90700718BEA /* CanvasVC.strings in Resources */ = {isa = PBXBuildFile; fileRef = 428B12DD1832A90700718BEA /* CanvasVC.strings */; };
 		428DFD0F22D9D1CD005BE880 /* HCMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428DFD0E22D9D1CD005BE880 /* HCMenuViewController.swift */; };
+		4296506022FF468300966050 /* HCMenuSubdivideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4296505F22FF468300966050 /* HCMenuSubdivideViewController.swift */; };
 		429973BB21A2C27900B816BF /* XCTestCase+LoadCanvas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 429973BA21A2C27900B816BF /* XCTestCase+LoadCanvas.swift */; };
 		429B20D3221A252C001E9597 /* StringTrimTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 429B20D2221A252C001E9597 /* StringTrimTests.swift */; };
 		429F01C217A44C6700854A50 /* CanvasVC.strings in Resources */ = {isa = PBXBuildFile; fileRef = 429F01BD17A44C6700854A50 /* CanvasVC.strings */; };
@@ -407,6 +408,7 @@
 		428DFD0E22D9D1CD005BE880 /* HCMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HCMenuViewController.swift; sourceTree = "<group>"; };
 		428EF9CF2185226C0036DB13 /* DocumentExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentExample.swift; sourceTree = "<group>"; };
 		428FBB0315C8643C00BA3D86 /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
+		4296505F22FF468300966050 /* HCMenuSubdivideViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HCMenuSubdivideViewController.swift; sourceTree = "<group>"; };
 		429973BA21A2C27900B816BF /* XCTestCase+LoadCanvas.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "XCTestCase+LoadCanvas.swift"; sourceTree = "<group>"; };
 		429B20D2221A252C001E9597 /* StringTrimTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringTrimTests.swift; sourceTree = "<group>"; };
 		429F01BE17A44C6700854A50 /* da */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = da; path = CanvasVC.strings; sourceTree = "<group>"; };
@@ -919,6 +921,7 @@
 				42608EC921CE6B9B00A99669 /* HCGridView.swift */,
 				42AF9418215451C200D07373 /* HCHexagonCorners.swift */,
 				42AF940D215451C200D07373 /* HCInteractionView.swift */,
+				4296505F22FF468300966050 /* HCMenuSubdivideViewController.swift */,
 				428DFD0E22D9D1CD005BE880 /* HCMenuViewController.swift */,
 				42646E8022E4A08800914600 /* HCMenuViewController+SharePDF.swift */,
 				42E227B2210373E000D112E7 /* HCMenuViewController+SharePNG.swift */,
@@ -1777,6 +1780,7 @@
 				42E227CD210373E000D112E7 /* UIView+SuperviewEdgeConstraints.swift in Sources */,
 				42C7B27B22E31DE500FFA1AD /* CanvasViewController+ConfigureLeaveFullscreenButton.swift in Sources */,
 				42AF941D215451C200D07373 /* HCFilledCircle.metal in Sources */,
+				4296506022FF468300966050 /* HCMenuSubdivideViewController.swift in Sources */,
 				42D2AA4922B82F24009BBC41 /* BrowserMenuViewController.swift in Sources */,
 				428DFD0F22D9D1CD005BE880 /* HCMenuViewController.swift in Sources */,
 				424CCA1B2160D9F900C91B41 /* HCView.swift in Sources */,

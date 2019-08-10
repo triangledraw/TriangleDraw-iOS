@@ -58,6 +58,11 @@ class HCMenuViewController: RFFormViewController {
 
 		builder += RFSectionHeaderTitleFormItem().title("Feedback")
 		builder += emailDeveloperButton
+
+		if AppConstant.Canvas.Menu.debug_showSubdivide {
+			builder += RFSectionHeaderTitleFormItem().title("Advanced")
+			builder += advancedSubdivideButton
+		}
 	}
 
 	lazy var symmetryMode: RFOptionPickerFormItem = {
@@ -174,6 +179,13 @@ class HCMenuViewController: RFFormViewController {
 		instance.action = { [weak self] in
 			self?.td_presentEmailWithFeedback()
 		}
+		return instance
+	}()
+
+	lazy var advancedSubdivideButton: RFViewControllerFormItem = {
+		let instance = RFViewControllerFormItem()
+		instance.title = "Subdivide"
+		instance.viewController(HCMenuSubdivideViewController.self)
 		return instance
 	}()
 
