@@ -866,6 +866,17 @@
 			path = pt_PT.lproj;
 			sourceTree = "<group>";
 		};
+		4296506122FF483400966050 /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				4296505F22FF468300966050 /* HCMenuSubdivideViewController.swift */,
+				428DFD0E22D9D1CD005BE880 /* HCMenuViewController.swift */,
+				42646E8022E4A08800914600 /* HCMenuViewController+SharePDF.swift */,
+				42E227B2210373E000D112E7 /* HCMenuViewController+SharePNG.swift */,
+			);
+			path = Menu;
+			sourceTree = "<group>";
+		};
 		429F01BC17A44C6700854A50 /* da.lproj */ = {
 			isa = PBXGroup;
 			children = (
@@ -921,10 +932,6 @@
 				42608EC921CE6B9B00A99669 /* HCGridView.swift */,
 				42AF9418215451C200D07373 /* HCHexagonCorners.swift */,
 				42AF940D215451C200D07373 /* HCInteractionView.swift */,
-				4296505F22FF468300966050 /* HCMenuSubdivideViewController.swift */,
-				428DFD0E22D9D1CD005BE880 /* HCMenuViewController.swift */,
-				42646E8022E4A08800914600 /* HCMenuViewController+SharePDF.swift */,
-				42E227B2210373E000D112E7 /* HCMenuViewController+SharePNG.swift */,
 				42AF940E215451C200D07373 /* HCMetalView.swift */,
 				42AF9415215451C200D07373 /* HCMetalView+Interaction.swift */,
 				42AF940F215451C200D07373 /* HCRenderer.swift */,
@@ -932,6 +939,7 @@
 				42DE377120FDED170007845B /* HCToolbar.swift */,
 				424CCA1A2160D9F900C91B41 /* HCView.swift */,
 				42C6B6EB21A74781004E7F58 /* HCZoomToFit.swift */,
+				4296506122FF483400966050 /* Menu */,
 				427B1656216914FB00228748 /* TDCanvasDrawingProtocol.swift */,
 				42E7DBFF2199F7F700C9E10F /* TDRenderVector.swift */,
 			);
