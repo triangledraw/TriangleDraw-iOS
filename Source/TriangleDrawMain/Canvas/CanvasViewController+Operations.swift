@@ -132,7 +132,9 @@ extension CanvasViewController {
 		}
 
 		let origCanvas: E2Canvas = currentCanvas.createCopy()
-        let actionName = NSLocalizedString("OPERATION_SUBDIVIDE", tableName: "CanvasVC", bundle: Bundle.main, value: "", comment: "The operations that subdivides into smaller triangles undo/redo name")
+		// I don't have any translations for this text.
+        //let actionName = NSLocalizedString("OPERATION_SUBDIVIDE", tableName: "CanvasVC", bundle: Bundle.main, value: "", comment: "The operations that subdivides into smaller triangles undo/redo name")
+		let actionName = "Subdivide"
 		undoManager.registerUndo(withTarget: self, handler: { (targetSelf) in
 			targetSelf.setDocCanvas(origCanvas)
 		})
