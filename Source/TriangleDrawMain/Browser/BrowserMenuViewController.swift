@@ -110,7 +110,7 @@ class BrowserMenuViewController: RFFormViewController {
 	}()
 
 	lazy var app_version: RFStaticTextFormItem = {
-		let versionAndCommitString: String = SystemInfo.appVersionAndCommit
+		let versionAndCommitString: String = SystemInfo.appVersion
 		let instance = RFStaticTextFormItem()
 		instance.title = "Version"
 		instance.value = "\(versionAndCommitString)"

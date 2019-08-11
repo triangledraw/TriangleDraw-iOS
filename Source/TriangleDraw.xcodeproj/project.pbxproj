@@ -1302,7 +1302,6 @@
 				1D60588D0D05DD3D006BFB54 /* Resources */,
 				1D60588E0D05DD3D006BFB54 /* Sources */,
 				1D60588F0D05DD3D006BFB54 /* Frameworks */,
-				42855BA919CF17A80000420E /* ShellScript */,
 				421F857222328DB800811614 /* Embed App Extensions */,
 				239EFA2279D0BC1E234EE269 /* [CP] Embed Pods Frameworks */,
 			);
@@ -1654,20 +1653,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BasePods-TriangleDrawMain/Pods-BasePods-TriangleDrawMain-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		42855BA919CF17A80000420E /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "$SRCROOT/Build-Phases/set-githash.rb\n";
 			showEnvVarsInLog = 0;
 		};
 		797036C66A7DF754CC51EC34 /* [CP] Check Pods Manifest.lock */ = {

@@ -10,7 +10,7 @@ class SystemInfo {
 		}
 
         do {
-			append("App Version", appVersionAndCommit)
+			append("App Version", appVersion)
 			append("App Creation Date", creationDateString)
 			append("App XCBuildConfiguration", xcBuildConfiguration.rawValue)
 			append("Device iOS", UIDevice.current.systemVersion)
@@ -60,10 +60,8 @@ class SystemInfo {
 		return env.keys.contains("XCTestConfigurationFilePath")
 	}
 
-	static var appVersionAndCommit: String {
-		let version: String = self.cfBundleShortVersionString
-		let githash: String = self.githash
-		return "\(version), \(githash)"
+	static var appVersion: String {
+		return self.cfBundleShortVersionString
 	}
 
 	static var cfBundleShortVersionString: String {
@@ -75,13 +73,6 @@ class SystemInfo {
 
 	static var cfBundleVersion: String {
 		guard let string = Bundle.main.infoDictionary?["CFBundleVersion"] as? String else {
-			return "N/A"
-		}
-		return string
-	}
-
-	static var githash: String {
-		guard let string = Bundle.main.infoDictionary?["githash"] as? String else {
 			return "N/A"
 		}
 		return string
