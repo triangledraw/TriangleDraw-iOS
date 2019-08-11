@@ -5,10 +5,6 @@ import TriangleDrawLibrary
 extension CanvasViewController {
 	@objc func invertPixels() {
 		log.debug("enter")
-		if AppConstant.Canvas.Subdivide.debug_subdivideInsteadOfInvert {
-			self.subdivide(n: 2)
-			return
-		}
 		disableInteraction()
 		let actionName = NSLocalizedString("OPERATION_INVERT", tableName: "CanvasVC", bundle: Bundle.main, value: "", comment: "The invert-color operations undo/redo name")
 		registerForUndo(#selector(invertPixels), actionName)

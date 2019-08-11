@@ -65,10 +65,8 @@ class HCMenuViewController: RFFormViewController {
 		builder += RFSectionHeaderTitleFormItem().title("Feedback")
 		builder += emailDeveloperButton
 
-		if AppConstant.Canvas.Menu.debug_showSubdivide {
-			builder += RFSectionHeaderTitleFormItem().title("Advanced")
-			builder += advancedSubdivideButton
-		}
+		builder += RFSectionHeaderTitleFormItem().title("Advanced")
+		builder += advancedSubdivideButton
 	}
 
 	lazy var symmetryMode: RFOptionPickerFormItem = {

@@ -38,14 +38,6 @@ public struct AppConstant {
 		}
 		public static let mode: Mode = .production
 
-		public struct Menu {
-			public static let debug_showSubdivide = false
-		}
-
-		public struct Subdivide {
-			public static let debug_subdivideInsteadOfInvert = false
-		}
-
 		public struct FilledCircle {
 			public static let debug_pointSize = false
 		}
