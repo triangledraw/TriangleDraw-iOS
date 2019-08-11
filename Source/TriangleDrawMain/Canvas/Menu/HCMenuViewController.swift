@@ -185,7 +185,11 @@ class HCMenuViewController: RFFormViewController {
 	lazy var advancedSubdivideButton: RFViewControllerFormItem = {
 		let instance = RFViewControllerFormItem()
 		instance.title = "Subdivide"
-		instance.viewController(HCMenuSubdivideViewController.self)
+		instance.createViewController = { [weak self] (_) in
+			let vc = HCMenuSubdivideViewController()
+			vc.delegate = self
+			return vc
+		}
 		return instance
 	}()
 
@@ -224,6 +228,14 @@ extension HCMenuViewController: MBProgressHUDDelegate {
 		_hud = nil
 	}
 }
+
+extension HCMenuViewController: HCMenuSubdivideViewControllerDelegate {
+	func hcMenuSubdivideViewController_apply(n: UInt8) {
+		log.debug("apply subdivide. N=\(n)")
+		self.dismiss(animated: true)
+	}
+}
+
 
 extension E2Canvas {
 	fileprivate func computeTriangleCount() -> UInt {
