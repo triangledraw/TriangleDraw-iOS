@@ -119,7 +119,7 @@ extension CanvasViewController {
 		log.debug("leave")
 	}
 
-    func subdivide(n: UInt) {
+    func subdivide(n: UInt8) {
 		log.debug("enter")
 		guard let undoManager: UndoManager = self.undoManager else {
 			log.error("Expected undoManager to be non-nil, but got nil")
@@ -129,7 +129,7 @@ extension CanvasViewController {
 			log.error("Expected document to have a non-nil canvas, but got nil")
 			return
 		}
-		let newCanvas: E2Canvas = currentCanvas.subdivide(n: n)
+		let newCanvas: E2Canvas = currentCanvas.subdivide(n: UInt(n))
 		guard newCanvas.numberOfDifferences(from: currentCanvas) >= 1 else {
 			log.debug("Nothing has changed. No need to register for undo")
 			return

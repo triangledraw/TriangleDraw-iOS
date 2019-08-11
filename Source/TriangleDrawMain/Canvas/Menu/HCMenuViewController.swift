@@ -5,6 +5,10 @@ import TriangleDrawLibrary
 import RadiantForms
 import MBProgressHUD
 
+protocol HCMenuViewControllerDelegate: class {
+	func hcMenuViewController_applySubdivide(n: UInt8)
+}
+
 enum HexagonCanvasMenuDocument {
 	case document(document: Document)
 	case mock
@@ -12,8 +16,8 @@ enum HexagonCanvasMenuDocument {
 
 extension UIViewController {
 	/// Open a menu with settings related to the canvas
-	func td_presentHexagonCanvasMenu(document: HexagonCanvasMenuDocument = .mock) {
-		let nc = HCMenuViewController.create(document: document)
+	func td_presentHexagonCanvasMenu(document: HexagonCanvasMenuDocument = .mock, delegate: HCMenuViewControllerDelegate? = nil) {
+		let nc = HCMenuViewController.create(document: document, delegate: delegate)
 		self.present(nc, animated: true, completion: nil)
 	}
 }
@@ -22,9 +26,11 @@ class HCMenuViewController: RFFormViewController {
 	var _hud: MBProgressHUD?
 	var canvas: E2Canvas?
 	var document_displayName: String?
+	weak var delegate: HCMenuViewControllerDelegate?
 
-	static func create(document: HexagonCanvasMenuDocument) -> UINavigationController {
+	static func create(document: HexagonCanvasMenuDocument, delegate: HCMenuViewControllerDelegate?) -> UINavigationController {
 		let vc = HCMenuViewController()
+		vc.delegate = delegate
 
 		switch document {
 		case let .document(document):
@@ -232,6 +238,7 @@ extension HCMenuViewController: MBProgressHUDDelegate {
 extension HCMenuViewController: HCMenuSubdivideViewControllerDelegate {
 	func hcMenuSubdivideViewController_apply(n: UInt8) {
 		log.debug("apply subdivide. N=\(n)")
+		self.delegate?.hcMenuViewController_applySubdivide(n: n)
 		self.dismiss(animated: true)
 	}
 }
