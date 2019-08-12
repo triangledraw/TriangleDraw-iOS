@@ -56,6 +56,10 @@
 		4278E58E129C3CDB00CA8A15 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4278E58D129C3CDB00CA8A15 /* CoreGraphics.framework */; };
 		427B1657216914FB00228748 /* TDCanvasDrawingProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427B1656216914FB00228748 /* TDCanvasDrawingProtocol.swift */; };
 		427FE58522FB6B0D0032A235 /* E2Canvas+Subdivide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427FE58422FB6B0D0032A235 /* E2Canvas+Subdivide.swift */; };
+		42851C892301F5B60047C7D0 /* E2CanvasPoint+Orientation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42851C882301F5B60047C7D0 /* E2CanvasPoint+Orientation.swift */; };
+		42851C8C2301F7330047C7D0 /* test_orientation_downward.pbm in Resources */ = {isa = PBXBuildFile; fileRef = 42851C8A2301F7330047C7D0 /* test_orientation_downward.pbm */; };
+		42851C8D2301F7330047C7D0 /* test_orientation_upward.pbm in Resources */ = {isa = PBXBuildFile; fileRef = 42851C8B2301F7330047C7D0 /* test_orientation_upward.pbm */; };
+		42851C8F2301F7760047C7D0 /* E2CanvasPointOrientationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42851C8E2301F7760047C7D0 /* E2CanvasPointOrientationTests.swift */; };
 		4289827921E7EDA600FC0431 /* BorderedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4289827821E7EDA600FC0431 /* BorderedButton.swift */; };
 		428A3A3F20E2320D003F13D1 /* WFActivitySpecificItemProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428A3A3E20E2320C003F13D1 /* WFActivitySpecificItemProvider.swift */; };
 		428B12961832A46500718BEA /* CanvasVC.strings in Resources */ = {isa = PBXBuildFile; fileRef = 428B12911832A46500718BEA /* CanvasVC.strings */; };
@@ -400,6 +404,10 @@
 		4278E58D129C3CDB00CA8A15 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		427B1656216914FB00228748 /* TDCanvasDrawingProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TDCanvasDrawingProtocol.swift; sourceTree = "<group>"; };
 		427FE58422FB6B0D0032A235 /* E2Canvas+Subdivide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "E2Canvas+Subdivide.swift"; sourceTree = "<group>"; };
+		42851C882301F5B60047C7D0 /* E2CanvasPoint+Orientation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "E2CanvasPoint+Orientation.swift"; sourceTree = "<group>"; };
+		42851C8A2301F7330047C7D0 /* test_orientation_downward.pbm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = test_orientation_downward.pbm; sourceTree = "<group>"; };
+		42851C8B2301F7330047C7D0 /* test_orientation_upward.pbm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = test_orientation_upward.pbm; sourceTree = "<group>"; };
+		42851C8E2301F7760047C7D0 /* E2CanvasPointOrientationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = E2CanvasPointOrientationTests.swift; sourceTree = "<group>"; };
 		42855B9F19CDFE030000420E /* TriangleDrawMain-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TriangleDrawMain-Bridging-Header.h"; sourceTree = "<group>"; };
 		4289827821E7EDA600FC0431 /* BorderedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderedButton.swift; sourceTree = "<group>"; };
 		428A3A3E20E2320C003F13D1 /* WFActivitySpecificItemProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WFActivitySpecificItemProvider.swift; sourceTree = "<group>"; };
@@ -1009,6 +1017,7 @@
 				42CE298922DA7A50001EED4A /* E2Canvas+Triangles.swift */,
 				42CE298F22DA7A50001EED4A /* E2CanvasBoundingBox.swift */,
 				42CE298D22DA7A50001EED4A /* E2CanvasPoint.swift */,
+				42851C882301F5B60047C7D0 /* E2CanvasPoint+Orientation.swift */,
 				42CE299622DA7A50001EED4A /* E2CanvasSize.swift */,
 				42CE299822DA7A50001EED4A /* E2CanvasTriangle.swift */,
 				42CE299122DA7A50001EED4A /* E2Combiner.swift */,
@@ -1158,6 +1167,8 @@
 				42E22762210365D000D112E7 /* test_move_up_wrap0_before.txt */,
 				42E2275A210365D000D112E7 /* test_move_up_wrap1_after.txt */,
 				42E22755210365D000D112E7 /* test_move_up_wrap1_before.txt */,
+				42851C8A2301F7330047C7D0 /* test_orientation_downward.pbm */,
+				42851C8B2301F7330047C7D0 /* test_orientation_upward.pbm */,
 				42E22769210365D000D112E7 /* test_rotate_line_60degree.txt */,
 				42E22746210365D000D112E7 /* test_rotate_line_none.txt */,
 				42E2274E210365D000D112E7 /* test_rotate_line2_minus60degree.txt */,
@@ -1212,6 +1223,7 @@
 				42E2271F2103633200D112E7 /* E2CanvasFlipTests.swift */,
 				422F241421B9D3A800707D13 /* E2CanvasHistogramTests.swift */,
 				42E227152103632B00D112E7 /* E2CanvasMoveTests.swift */,
+				42851C8E2301F7760047C7D0 /* E2CanvasPointOrientationTests.swift */,
 				42E227182103632C00D112E7 /* E2CanvasRotateTests.swift */,
 				429F1B2D22FA0B31005A1EBF /* E2CanvasSubdivideTests.swift */,
 				42E2271B2103632F00D112E7 /* E2CombinerTests.swift */,
@@ -1542,6 +1554,7 @@
 				42E22776210365D300D112E7 /* test_parsepbm_simple1.pbm in Resources */,
 				42E2277D210365D300D112E7 /* test_parsepbm_utf16le.pbm in Resources */,
 				42E22778210365D300D112E7 /* test_parsepbm_utf8.pbm in Resources */,
+				42851C8C2301F7330047C7D0 /* test_orientation_downward.pbm in Resources */,
 				429F1B3D22FA0BF6005A1EBF /* test_subdivide0_out2.pbm in Resources */,
 				42E227AA210365D300D112E7 /* test_readwrite_wrongdimensions1.pbm in Resources */,
 				42E2277F210365D300D112E7 /* test_rotate_line_none.txt in Resources */,
@@ -1562,6 +1575,7 @@
 				42E22780210365D300D112E7 /* test_flipx_simple_after.txt in Resources */,
 				42E22777210365D300D112E7 /* test_parsepbm_negative_width.pbm in Resources */,
 				422F241E21B9E9E800707D13 /* test_boundingbox9.txt in Resources */,
+				42851C8D2301F7330047C7D0 /* test_orientation_upward.pbm in Resources */,
 				42B48E7021C7021D008C6F7A /* test_boundingbox11.txt in Resources */,
 				422F241121B9C89A00707D13 /* test_boundingbox8.txt in Resources */,
 				429F1B3E22FA0BF6005A1EBF /* test_subdivide1_out2.pbm in Resources */,
@@ -1841,6 +1855,7 @@
 				42E227242103633600D112E7 /* E2CanvasMoveTests.swift in Sources */,
 				42E2272A2103633600D112E7 /* E2CombinerTests.swift in Sources */,
 				429B20D3221A252C001E9597 /* StringTrimTests.swift in Sources */,
+				42851C8F2301F7760047C7D0 /* E2CanvasPointOrientationTests.swift in Sources */,
 				42E227262103633600D112E7 /* TDParsePBMTests.swift in Sources */,
 				42E227272103633600D112E7 /* E2CanvasRotateTests.swift in Sources */,
 				422F241521B9D3A800707D13 /* E2CanvasHistogramTests.swift in Sources */,
@@ -1911,6 +1926,7 @@
 				42CE29DA22DA7A52001EED4A /* UIColor+Image.swift in Sources */,
 				42CE29DE22DA7A52001EED4A /* TriangleDrawFrameworkMeta.swift in Sources */,
 				42CE29E522DA7A52001EED4A /* String+Trim.swift in Sources */,
+				42851C892301F5B60047C7D0 /* E2CanvasPoint+Orientation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
