@@ -138,7 +138,7 @@ fileprivate enum DownwardTriangleNeighbour: CaseIterable {
 	// Above the triangle - Going from left to right
 	case aboveMinus2
 	case aboveMinus1
-	case aboveCenter
+	case aboveCenter // Shares the same edge with the triangle
 	case abovePlus1
 	case abovePlus2
 
@@ -150,7 +150,7 @@ fileprivate enum DownwardTriangleNeighbour: CaseIterable {
 
 	// Below the triangle - Going from left to right
 	case belowMinus1
-	case belowCenter // Shares the same edge with the triangle
+	case belowCenter
 	case belowPlus1
 }
 
