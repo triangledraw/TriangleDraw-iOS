@@ -59,10 +59,10 @@ extension E2Canvas {
 			let neighbourPoint: E2CanvasPoint = point.upwardTriangleNeighbour(neighbourType)
 			let value: UInt8 = self.getPixel(neighbourPoint)
 			if value > 0 {
-				counter += 1
+				counter += neighbourType.weight
 			}
 		}
-		return counter
+		return counter / 2
 	}
 
 	fileprivate func countLiveNeighboursForDownwardTriangle(point: E2CanvasPoint) -> UInt8 {
@@ -71,10 +71,10 @@ extension E2Canvas {
 			let neighbourPoint: E2CanvasPoint = point.downwardTriangleNeighbour(neighbourType)
 			let value: UInt8 = self.getPixel(neighbourPoint)
 			if value > 0 {
-				counter += 1
+				counter += neighbourType.weight
 			}
 		}
-		return counter
+		return counter / 2
 	}
 }
 
@@ -132,6 +132,19 @@ extension UpwardTriangleNeighbour {
 		case .belowPlus2:  return +1
 		}
 	}
+
+	/// More weight for triangles that shares the same edge with the center triangle
+	/// Less weight for triangles that are far away from the center triangle
+	fileprivate var weight: UInt8 {
+		switch self {
+		case .leftMinus1, .rightPlus1, .belowCenter:
+			return 4
+		case .aboveCenter, .belowMinus2, .belowPlus2:
+			return 2
+		default:
+			return 1
+		}
+	}
 }
 
 fileprivate enum DownwardTriangleNeighbour: CaseIterable {
@@ -186,6 +199,19 @@ extension DownwardTriangleNeighbour {
 		case .belowMinus1: return +1
 		case .belowCenter: return +1
 		case .belowPlus1:  return +1
+		}
+	}
+
+	/// More weight for triangles that shares the same edge with the center triangle
+	/// Less weight for triangles that are far away from the center triangle
+	fileprivate var weight: UInt8 {
+		switch self {
+		case .aboveCenter, .leftMinus1, .rightPlus1:
+			return 4
+		case .belowCenter, .aboveMinus2, .abovePlus2:
+			return 2
+		default:
+			return 1
 		}
 	}
 }
