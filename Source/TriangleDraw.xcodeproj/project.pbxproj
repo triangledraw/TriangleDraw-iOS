@@ -18,6 +18,7 @@
 		420C448822E8EC4A0069F6AF /* UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 420C448722E8EC4A0069F6AF /* UITests.swift */; };
 		420C449022E8F0700069F6AF /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 420C448F22E8F0700069F6AF /* SnapshotHelper.swift */; };
 		420D57B4224E25B0006C3ABD /* OptimalTileCountTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 420D57B3224E25B0006C3ABD /* OptimalTileCountTests.swift */; };
+		421B0A9F2302005600DA51E2 /* E2Canvas+GameOfLife.swift in Sources */ = {isa = PBXBuildFile; fileRef = 421B0A9E2302005600DA51E2 /* E2Canvas+GameOfLife.swift */; };
 		421E51C422EF67AF0005068E /* BrowserViewController+ImportDocumentExamples.swift in Sources */ = {isa = PBXBuildFile; fileRef = 421E51C322EF67AF0005068E /* BrowserViewController+ImportDocumentExamples.swift */; };
 		421F856A22328DB800811614 /* ThumbnailProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 421F856922328DB800811614 /* ThumbnailProvider.swift */; };
 		421F856E22328DB800811614 /* TriangleDrawThumbnail.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 421F856722328DB800811614 /* TriangleDrawThumbnail.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -363,6 +364,7 @@
 		420C448922E8EC4A0069F6AF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		420C448F22E8F0700069F6AF /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapshotHelper.swift; sourceTree = "<group>"; };
 		420D57B3224E25B0006C3ABD /* OptimalTileCountTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptimalTileCountTests.swift; sourceTree = "<group>"; };
+		421B0A9E2302005600DA51E2 /* E2Canvas+GameOfLife.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "E2Canvas+GameOfLife.swift"; sourceTree = "<group>"; };
 		421E51C322EF67AF0005068E /* BrowserViewController+ImportDocumentExamples.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "BrowserViewController+ImportDocumentExamples.swift"; sourceTree = "<group>"; };
 		421F856722328DB800811614 /* TriangleDrawThumbnail.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = TriangleDrawThumbnail.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		421F856922328DB800811614 /* ThumbnailProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThumbnailProvider.swift; sourceTree = "<group>"; };
@@ -1005,6 +1007,7 @@
 				42CE29A122DA7A50001EED4A /* E2Canvas+CountDifferencies.swift */,
 				42CE299A22DA7A50001EED4A /* E2Canvas+Equatable.swift */,
 				42CE29A322DA7A50001EED4A /* E2Canvas+Flip.swift */,
+				421B0A9E2302005600DA51E2 /* E2Canvas+GameOfLife.swift */,
 				42CE298C22DA7A50001EED4A /* E2Canvas+GetPixel.swift */,
 				42CE299222DA7A50001EED4A /* E2Canvas+Histogram.swift */,
 				42CE299022DA7A50001EED4A /* E2Canvas+Line.swift */,
@@ -1889,6 +1892,7 @@
 				42CE29D522DA7A52001EED4A /* E2Canvas+StringRepresentation.swift in Sources */,
 				42CE29D822DA7A52001EED4A /* TDRenderBitmap.swift in Sources */,
 				42CE29E622DA7A52001EED4A /* CGPoint.swift in Sources */,
+				421B0A9F2302005600DA51E2 /* E2Canvas+GameOfLife.swift in Sources */,
 				42CE29C822DA7A52001EED4A /* E2Canvas+Histogram.swift in Sources */,
 				42CE29E822DA7A52001EED4A /* TDCanvasWriter.swift in Sources */,
 				42CE29CE22DA7A52001EED4A /* E2CanvasTriangle.swift in Sources */,
