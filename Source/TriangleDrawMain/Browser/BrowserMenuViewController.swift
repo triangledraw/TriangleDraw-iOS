@@ -3,6 +3,7 @@ import UIKit
 import Foundation
 import TriangleDrawLibrary
 import RadiantForms
+import StoreKit
 
 class BrowserMenuViewController: RFFormViewController {
 	static func createInsideNavigationController() -> UINavigationController {
@@ -25,6 +26,7 @@ class BrowserMenuViewController: RFFormViewController {
 		builder.demo_showInfo("TriangleDraw is free software!\nYour support is appreciated.")
 
 		builder += RFSectionHeaderTitleFormItem().title("Web")
+		builder += appStoreWriteReviewButton
 		builder += twitterButton
 		builder += instagramButton
 
@@ -37,6 +39,15 @@ class BrowserMenuViewController: RFFormViewController {
 		builder += app_creationDate
 		builder += app_runCount
 	}
+
+	lazy var appStoreWriteReviewButton: RFButtonFormItem = {
+		let instance = RFButtonFormItem()
+		instance.title = "Write review for App Store"
+		instance.action = {
+			SKStoreReviewController.requestReview()
+		}
+		return instance
+	}()
 
 	lazy var twitterButton: RFButtonFormItem = {
 		let instance = RFButtonFormItem()
@@ -99,7 +110,7 @@ class BrowserMenuViewController: RFFormViewController {
 	}()
 
 	lazy var app_version: RFStaticTextFormItem = {
-		let versionAndCommitString: String = SystemInfo.appVersionAndCommit
+		let versionAndCommitString: String = SystemInfo.appVersion
 		let instance = RFStaticTextFormItem()
 		instance.title = "Version"
 		instance.value = "\(versionAndCommitString)"

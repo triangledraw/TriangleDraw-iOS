@@ -114,4 +114,36 @@ extension CanvasViewController {
 		enableInteraction()
 		log.debug("leave")
 	}
+
+    func subdivide(n: UInt8) {
+		log.debug("enter")
+		guard let undoManager: UndoManager = self.undoManager else {
+			log.error("Expected undoManager to be non-nil, but got nil")
+			return
+		}
+		guard let currentCanvas: E2Canvas = document?.canvas else {
+			log.error("Expected document to have a non-nil canvas, but got nil")
+			return
+		}
+		let newCanvas: E2Canvas = currentCanvas.subdivide(n: UInt(n))
+		guard newCanvas.numberOfDifferences(from: currentCanvas) >= 1 else {
+			log.debug("Nothing has changed. No need to register for undo")
+			return
+		}
+
+		let origCanvas: E2Canvas = currentCanvas.createCopy()
+		// I don't have any translations for this text.
+        //let actionName = NSLocalizedString("OPERATION_SUBDIVIDE", tableName: "CanvasVC", bundle: Bundle.main, value: "", comment: "The operations that subdivides into smaller triangles undo/redo name")
+		let actionName = "Subdivide"
+		undoManager.registerUndo(withTarget: self, handler: { (targetSelf) in
+			targetSelf.setDocCanvas(origCanvas)
+		})
+		if undoManager.isUndoing == false {
+			undoManager.setActionName(actionName)
+		}
+
+        document?.canvas = newCanvas
+        drawingView?.canvas = newCanvas
+        log.debug("leave")
+    }
 }

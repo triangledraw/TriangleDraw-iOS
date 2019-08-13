@@ -30,7 +30,7 @@ fileprivate class EmailWithFeedback: NSObject {
 		items.append("What do you think?")
 		items.append("")
 		items.append("")
-		items.append("System Info:")
+		items.append("Helpful info for the developer:")
 		items.append(systemInfo)
 		let messageBody: String = items.joined(separator: "\n")
 
@@ -38,7 +38,7 @@ fileprivate class EmailWithFeedback: NSObject {
 		let mailer = MFMailComposeViewController()
 		mailer.mailComposeDelegate = self
 		mailer.setSubject(subject)
-		mailer.setToRecipients(["neoneye+triangledraw@gmail.com"])
+		mailer.setToRecipients(["neoneye@gmail.com"])
 		mailer.setMessageBody(messageBody, isHTML: false)
 		if Platform.is_ideom_ipad {
 			mailer.modalPresentationStyle = .formSheet

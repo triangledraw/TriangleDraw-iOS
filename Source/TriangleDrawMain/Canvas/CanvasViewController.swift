@@ -423,7 +423,10 @@ class CanvasViewController: UIViewController {
 			log.error("Expected document to be non-nil, but got nil")
 			return
 		}
-		self.td_presentHexagonCanvasMenu(document: HexagonCanvasMenuDocument.document(document: document))
+		self.td_presentHexagonCanvasMenu(
+			document: HexagonCanvasMenuDocument.document(document: document),
+			delegate: self
+		)
 	}
 
 
@@ -496,4 +499,11 @@ extension CanvasViewController: MBProgressHUDDelegate {
         _hud?.removeFromSuperview()
         _hud = nil
     }
+}
+
+extension CanvasViewController: HCMenuViewControllerDelegate {
+	func hcMenuViewController_applySubdivide(n: UInt8) {
+		log.debug("apply subdivide. N=\(n)")
+		self.subdivide(n: n)
+	}
 }
