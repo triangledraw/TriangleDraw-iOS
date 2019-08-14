@@ -18,17 +18,45 @@ extension E2Canvas {
 			}
 		}
 
+		var minX: Int = pointsInsideMask.first?.x ?? 0
+		for point: E2CanvasPoint in pointsInsideMask {
+			if minX > point.x {
+				minX = point.x
+			}
+		}
+		var maxX: Int = pointsInsideMask.first?.x ?? 0
+		for point: E2CanvasPoint in pointsInsideMask {
+			if maxX < point.x {
+				maxX = point.x
+			}
+		}
+		var minY: Int = pointsInsideMask.first?.y ?? 0
+		for point: E2CanvasPoint in pointsInsideMask {
+			if minY > point.y {
+				minY = point.y
+			}
+		}
+		var maxY: Int = pointsInsideMask.first?.y ?? 0
+		for point: E2CanvasPoint in pointsInsideMask {
+			if maxY < point.y {
+				maxY = point.y
+			}
+		}
+		//log.debug("x range: \(minX) \(maxX)   y range: \(minY) \(maxY)")
+
 		var blackSegments = [String]()
 		var whiteSegments = [String]()
 		for point: E2CanvasPoint in pointsInsideMask {
 			let segment: String
 			switch point.orientation {
 			case .upward:
-				let coordinate = "\(point.x + 1) \(point.y)"
-				segment = "M\(coordinate)l-1 1 h2z"
+				let x: Int = point.x - minX + 1
+				let y: Int = point.y - minY
+				segment = "M\(x) \(y)l-1 1 h2z"
 			case .downward:
-				let coordinate = "\(point.x) \(point.y)"
-				segment = "M\(coordinate)h2l-1 1z"
+				let x: Int = point.x - minX
+				let y: Int = point.y - minY
+				segment = "M\(x) \(y)h2l-1 1z"
 			}
 			if self.getPixel(point) > 0 {
 				whiteSegments.append(segment)
@@ -38,9 +66,9 @@ extension E2Canvas {
 		}
 
 		var result: String = """
-		<svg viewBox="0 0 1000 1000" xmlns="http://www.w3.org/2000/svg">
-		<rect width="1000" height="1000" fill="green"/>
+		<svg xmlns="http://www.w3.org/2000/svg">
 		<g transform="scale(10) scale(0.5 0.866025)">
+		<rect width="176" height="88" fill="yellow"/>
 		<path fill="black" d="BLACK_PATH"/>
 		<path fill="white" d="WHITE_PATH"/>
 		</g>
