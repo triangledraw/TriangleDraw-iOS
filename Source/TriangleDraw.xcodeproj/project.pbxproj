@@ -255,6 +255,7 @@
 		42F04EC020E015450038BF11 /* Platform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F04EBF20E015450038BF11 /* Platform.swift */; };
 		42F0C2DD22DA6E22003F015B /* TriangleDrawLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F0C2DC22DA6E22003F015B /* TriangleDrawLibrary.swift */; };
 		42F0C2E622DA707C003F015B /* libTriangleDrawLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 42F0C2DA22DA6E22003F015B /* libTriangleDrawLibrary.a */; };
+		42F274B823042F0D00727F4F /* ExportToSVGTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F274B723042F0D00727F4F /* ExportToSVGTests.swift */; };
 		42F6CEB522C9565F002E596E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42F6CEB422C9565F002E596E /* Images.xcassets */; };
 		42F6CEB922CD3EE7002E596E /* hexagon_mask.txt in Resources */ = {isa = PBXBuildFile; fileRef = 42F6CEB822CD3E8B002E596E /* hexagon_mask.txt */; };
 		42F6D46322A1E5CD0042FC52 /* E2CanvasCopyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F6D46222A1E5CD0042FC52 /* E2CanvasCopyTests.swift */; };
@@ -610,6 +611,7 @@
 		42F04EBF20E015450038BF11 /* Platform.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Platform.swift; sourceTree = "<group>"; };
 		42F0C2DA22DA6E22003F015B /* libTriangleDrawLibrary.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libTriangleDrawLibrary.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		42F0C2DC22DA6E22003F015B /* TriangleDrawLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriangleDrawLibrary.swift; sourceTree = "<group>"; };
+		42F274B723042F0D00727F4F /* ExportToSVGTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExportToSVGTests.swift; sourceTree = "<group>"; };
 		42F6CEB422C9565F002E596E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		42F6CEB822CD3E8B002E596E /* hexagon_mask.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = hexagon_mask.txt; sourceTree = "<group>"; };
 		42F6D46222A1E5CD0042FC52 /* E2CanvasCopyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = E2CanvasCopyTests.swift; sourceTree = "<group>"; };
@@ -1232,6 +1234,7 @@
 				42E2271B2103632F00D112E7 /* E2CombinerTests.swift */,
 				42E227212103633400D112E7 /* E2TagPairTests.swift */,
 				42E227202103633300D112E7 /* Engine2Tests.swift */,
+				42F274B723042F0D00727F4F /* ExportToSVGTests.swift */,
 				422F241F21BAF72000707D13 /* HCZoomToFitTests.swift */,
 				421FC8D4227CD7BB001E93CE /* IntVec2Tests.swift */,
 				420D57B3224E25B0006C3ABD /* OptimalTileCountTests.swift */,
@@ -1855,6 +1858,7 @@
 				42EBB30F177EFD1000511CC7 /* gpc.c in Sources */,
 				421FC8D5227CD7BB001E93CE /* IntVec2Tests.swift in Sources */,
 				42E2272B2103633600D112E7 /* DocumentNameGeneratorTests.swift in Sources */,
+				42F274B823042F0D00727F4F /* ExportToSVGTests.swift in Sources */,
 				42E227242103633600D112E7 /* E2CanvasMoveTests.swift in Sources */,
 				42E2272A2103633600D112E7 /* E2CombinerTests.swift in Sources */,
 				429B20D3221A252C001E9597 /* StringTrimTests.swift in Sources */,
