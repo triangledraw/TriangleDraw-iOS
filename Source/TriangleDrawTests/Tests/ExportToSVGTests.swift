@@ -24,25 +24,12 @@ extension E2Canvas {
 				minX = point.x
 			}
 		}
-		var maxX: Int = pointsInsideMask.first?.x ?? 0
-		for point: E2CanvasPoint in pointsInsideMask {
-			if maxX < point.x {
-				maxX = point.x
-			}
-		}
 		var minY: Int = pointsInsideMask.first?.y ?? 0
 		for point: E2CanvasPoint in pointsInsideMask {
 			if minY > point.y {
 				minY = point.y
 			}
 		}
-		var maxY: Int = pointsInsideMask.first?.y ?? 0
-		for point: E2CanvasPoint in pointsInsideMask {
-			if maxY < point.y {
-				maxY = point.y
-			}
-		}
-		//log.debug("x range: \(minX) \(maxX)   y range: \(minY) \(maxY)")
 
 		var blackSegments = [String]()
 		var whiteSegments = [String]()
