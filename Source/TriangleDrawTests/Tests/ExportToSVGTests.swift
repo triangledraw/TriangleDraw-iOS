@@ -67,7 +67,6 @@ extension E2Canvas {
 
 		var result: String = """
 		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 720">
-		<rect width="720" height="720" fill="gray"/>
 		<svg preserveAspectRatio="xMidYMid meet" viewBox="-88 -44 176 88" x="10" y="10" width="700" height="700">
 		<g transform="rotate(ROTATION_DEGREES) scale(2) scale(0.5 0.866025) translate(-88 -44)">
 		<path fill="black" d="BLACK_PATH"/>
