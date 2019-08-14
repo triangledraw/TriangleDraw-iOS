@@ -52,7 +52,7 @@ extension E2Canvas {
 			case .upward:
 				let x: Int = point.x - minX + 1
 				let y: Int = point.y - minY
-				segment = "M\(x) \(y)l-1 1 h2z"
+				segment = "M\(x) \(y)l-1 1h2z"
 			case .downward:
 				let x: Int = point.x - minX
 				let y: Int = point.y - minY
