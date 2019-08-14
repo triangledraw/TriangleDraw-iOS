@@ -3,7 +3,7 @@ import XCTest
 @testable import TriangleDrawLibrary
 
 extension E2Canvas {
-	func exportToSVG() -> String {
+	func exportToSVG(rotated: Bool = false) -> String {
 		assert(self.size.width == AppConstant.CanvasFileFormat.width, "width")
 		assert(self.size.height == AppConstant.CanvasFileFormat.height, "height")
 
@@ -67,13 +67,17 @@ extension E2Canvas {
 
 		var result: String = """
 		<svg xmlns="http://www.w3.org/2000/svg">
-		<g transform="scale(10) scale(0.5 0.866025)">
-		<rect width="176" height="88" fill="yellow"/>
+		<rect width="720" height="720" fill="gray"/>
+		<svg preserveAspectRatio="xMidYMid meet" viewBox="-88 -44 176 88" x="10" y="10" width="700" height="700">
+		<g transform="rotate(ROTATION_DEGREES) scale(2) scale(0.5 0.866025) translate(-88 -44)">
 		<path fill="black" d="BLACK_PATH"/>
 		<path fill="white" d="WHITE_PATH"/>
 		</g>
 		</svg>
+		</svg>
 		"""
+		let rotation = rotated ? "90" : "0"
+		result = result.replacingOccurrences(of: "ROTATION_DEGREES", with: rotation)
 		result = result.replacingOccurrences(of: "BLACK_PATH", with: blackSegments.joined())
 		result = result.replacingOccurrences(of: "WHITE_PATH", with: whiteSegments.joined())
 		return result
