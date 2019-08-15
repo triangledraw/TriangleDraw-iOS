@@ -18,7 +18,7 @@ public struct AppConstant {
 			case screenshot_canvasWithRune
 			case debug_canvasMenu
 		}
-		public static let initialViewController: InitialViewController = .production_browser
+		public static let initialViewController: InitialViewController = .screenshot_canvasWithTriangleDrawLogo
 	}
 
 	public struct Browser {
@@ -43,7 +43,7 @@ public struct AppConstant {
 		}
 
 		public struct Interaction {
-			public static let experimentsWithGameOfLife = false
+			public static let experimentsWithGameOfLife = true
 			public static let debug_tapGesture = false
 			public static let debug_drawLineGesture = false
 

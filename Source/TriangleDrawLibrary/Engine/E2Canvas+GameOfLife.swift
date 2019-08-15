@@ -38,15 +38,25 @@ extension E2Canvas {
 				// D. Any dead cell with exactly three live neighbours becomes a live cell, as if by reproduction.
 
 				var resultValue: UInt8 = 0 // Rule A and Rule C
-				if isLiveCell {
-					if numberOfLiveNeighbours == 2 || numberOfLiveNeighbours == 3 {
-						resultValue = 1 // Rule B
-					}
-				} else {
-					if numberOfLiveNeighbours == 3 {
-						resultValue = 1 // Rule D
-					}
+
+				// Fredkin's Self Replicator
+				// https://dmackinnon1.github.io/svgpixel/fredkin.html?
+				// http://www.conwaylife.com/wiki/OCA:Replicator
+				if numberOfLiveNeighbours & 1 == 1 {
+					resultValue = 1
 				}
+//				if (numberOfLiveNeighbours / 3) & 1 == 1 {
+//					resultValue = 1
+//				}
+//				if isLiveCell {
+//					if numberOfLiveNeighbours == 2 || numberOfLiveNeighbours == 3 {
+//						resultValue = 1 // Rule B
+//					}
+//				} else {
+//					if numberOfLiveNeighbours == 3 {
+//						resultValue = 1 // Rule D
+//					}
+//				}
 				resultCanvas.setPixel(point, value: resultValue)
 			}
 		}
@@ -62,7 +72,7 @@ extension E2Canvas {
 				counter += neighbourType.weight
 			}
 		}
-		return counter / 2
+		return counter // 2
 	}
 
 	fileprivate func countLiveNeighboursForDownwardTriangle(point: E2CanvasPoint) -> UInt8 {
@@ -74,7 +84,7 @@ extension E2Canvas {
 				counter += neighbourType.weight
 			}
 		}
-		return counter / 2
+		return counter // 2
 	}
 }
 
@@ -138,11 +148,11 @@ extension UpwardTriangleNeighbour {
 	fileprivate var weight: UInt8 {
 		switch self {
 		case .leftMinus1, .rightPlus1, .belowCenter:
-			return 4
-		case .aboveCenter, .belowMinus2, .belowPlus2:
-			return 2
-		default:
 			return 1
+		case .aboveCenter, .belowMinus2, .belowPlus2:
+			return 0
+		default:
+			return 0
 		}
 	}
 }
@@ -207,11 +217,11 @@ extension DownwardTriangleNeighbour {
 	fileprivate var weight: UInt8 {
 		switch self {
 		case .aboveCenter, .leftMinus1, .rightPlus1:
-			return 4
-		case .belowCenter, .aboveMinus2, .abovePlus2:
-			return 2
-		default:
 			return 1
+		case .belowCenter, .aboveMinus2, .abovePlus2:
+			return 0
+		default:
+			return 0
 		}
 	}
 }
