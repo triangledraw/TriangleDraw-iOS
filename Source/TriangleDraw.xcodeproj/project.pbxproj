@@ -14,6 +14,7 @@
 		42015C81173DA5E2007597E5 /* gpc.c in Sources */ = {isa = PBXBuildFile; fileRef = 42015C7D173DA5E2007597E5 /* gpc.c */; };
 		42041A7E22C5544F003864DC /* TDLiveIndicatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42041A7D22C5544F003864DC /* TDLiveIndicatorTests.swift */; };
 		4204305A23059E1E00AEC0E0 /* test_exportsvg_corners.pbm in Resources */ = {isa = PBXBuildFile; fileRef = 42F274BA23059DAD00727F4F /* test_exportsvg_corners.pbm */; };
+		4204305C2305A97B00AEC0E0 /* test_exportsvg_cube.pbm in Resources */ = {isa = PBXBuildFile; fileRef = 4204305B2305A97B00AEC0E0 /* test_exportsvg_cube.pbm */; };
 		4209674D2235BF6D00D5C576 /* TDRenderVector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42E7DBFF2199F7F700C9E10F /* TDRenderVector.swift */; };
 		420967512235C02400D5C576 /* DocumentExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428EF9CF2185226C0036DB13 /* DocumentExample.swift */; };
 		420C448822E8EC4A0069F6AF /* UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 420C448722E8EC4A0069F6AF /* UITests.swift */; };
@@ -361,6 +362,7 @@
 		42015C7E173DA5E2007597E5 /* gpc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gpc.h; sourceTree = "<group>"; };
 		42015C7F173DA5E2007597E5 /* VERSIONS.TXT */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = VERSIONS.TXT; sourceTree = "<group>"; };
 		42041A7D22C5544F003864DC /* TDLiveIndicatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TDLiveIndicatorTests.swift; sourceTree = "<group>"; };
+		4204305B2305A97B00AEC0E0 /* test_exportsvg_cube.pbm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = test_exportsvg_cube.pbm; sourceTree = "<group>"; };
 		420C448522E8EC4A0069F6AF /* UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		420C448722E8EC4A0069F6AF /* UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITests.swift; sourceTree = "<group>"; };
 		420C448922E8EC4A0069F6AF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -1303,6 +1305,7 @@
 			isa = PBXGroup;
 			children = (
 				42F274BA23059DAD00727F4F /* test_exportsvg_corners.pbm */,
+				4204305B2305A97B00AEC0E0 /* test_exportsvg_cube.pbm */,
 			);
 			path = TestData_ExportSVG;
 			sourceTree = "<group>";
@@ -1567,6 +1570,7 @@
 				42E22787210365D300D112E7 /* test_rotate_line2_minus60degree.txt in Resources */,
 				42E22799210365D300D112E7 /* test_move_right_wrap2_after.txt in Resources */,
 				4204305A23059E1E00AEC0E0 /* test_exportsvg_corners.pbm in Resources */,
+				4204305C2305A97B00AEC0E0 /* test_exportsvg_cube.pbm in Resources */,
 				42E22773210365D300D112E7 /* test_parsepbm_utf16be.pbm in Resources */,
 				42E2278F210365D300D112E7 /* test_move_right_simple_before.txt in Resources */,
 				42E22776210365D300D112E7 /* test_parsepbm_simple1.pbm in Resources */,
