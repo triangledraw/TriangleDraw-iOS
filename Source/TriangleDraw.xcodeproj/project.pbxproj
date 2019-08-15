@@ -13,6 +13,7 @@
 		4048FFF5DE8CB99894C9635F /* Pods_BasePods_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24FA2D978727544F6BB099DF /* Pods_BasePods_Tests.framework */; };
 		42015C81173DA5E2007597E5 /* gpc.c in Sources */ = {isa = PBXBuildFile; fileRef = 42015C7D173DA5E2007597E5 /* gpc.c */; };
 		42041A7E22C5544F003864DC /* TDLiveIndicatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42041A7D22C5544F003864DC /* TDLiveIndicatorTests.swift */; };
+		4204305A23059E1E00AEC0E0 /* test_exportsvg_corners.pbm in Resources */ = {isa = PBXBuildFile; fileRef = 42F274BA23059DAD00727F4F /* test_exportsvg_corners.pbm */; };
 		4209674D2235BF6D00D5C576 /* TDRenderVector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42E7DBFF2199F7F700C9E10F /* TDRenderVector.swift */; };
 		420967512235C02400D5C576 /* DocumentExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428EF9CF2185226C0036DB13 /* DocumentExample.swift */; };
 		420C448822E8EC4A0069F6AF /* UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 420C448722E8EC4A0069F6AF /* UITests.swift */; };
@@ -612,6 +613,7 @@
 		42F0C2DA22DA6E22003F015B /* libTriangleDrawLibrary.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libTriangleDrawLibrary.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		42F0C2DC22DA6E22003F015B /* TriangleDrawLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriangleDrawLibrary.swift; sourceTree = "<group>"; };
 		42F274B723042F0D00727F4F /* ExportToSVGTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExportToSVGTests.swift; sourceTree = "<group>"; };
+		42F274BA23059DAD00727F4F /* test_exportsvg_corners.pbm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = test_exportsvg_corners.pbm; sourceTree = "<group>"; };
 		42F6CEB422C9565F002E596E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		42F6CEB822CD3E8B002E596E /* hexagon_mask.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = hexagon_mask.txt; sourceTree = "<group>"; };
 		42F6D46222A1E5CD0042FC52 /* E2CanvasCopyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = E2CanvasCopyTests.swift; sourceTree = "<group>"; };
@@ -1245,6 +1247,7 @@
 				42041A7D22C5544F003864DC /* TDLiveIndicatorTests.swift */,
 				42E227172103632B00D112E7 /* TDParsePBMTests.swift */,
 				42E22744210365D000D112E7 /* TestData_Engine */,
+				42F274B923059DAD00727F4F /* TestData_ExportSVG */,
 				42E22738210365D000D112E7 /* TestData_ParsePBM */,
 				42E22771210365D200D112E7 /* TestData_ReadWrite */,
 				429F1B2F22FA0BF6005A1EBF /* TestData_Subdivide */,
@@ -1294,6 +1297,14 @@
 				42C8855B17B2B46F00D5FF54 /* zh_CN.lproj */,
 			);
 			path = Assets;
+			sourceTree = "<group>";
+		};
+		42F274B923059DAD00727F4F /* TestData_ExportSVG */ = {
+			isa = PBXGroup;
+			children = (
+				42F274BA23059DAD00727F4F /* test_exportsvg_corners.pbm */,
+			);
+			path = TestData_ExportSVG;
 			sourceTree = "<group>";
 		};
 		42F7235622EF52B00038CEA1 /* Resources */ = {
@@ -1555,6 +1566,7 @@
 				42E2279A210365D300D112E7 /* test_move_left_wrap0_before.txt in Resources */,
 				42E22787210365D300D112E7 /* test_rotate_line2_minus60degree.txt in Resources */,
 				42E22799210365D300D112E7 /* test_move_right_wrap2_after.txt in Resources */,
+				4204305A23059E1E00AEC0E0 /* test_exportsvg_corners.pbm in Resources */,
 				42E22773210365D300D112E7 /* test_parsepbm_utf16be.pbm in Resources */,
 				42E2278F210365D300D112E7 /* test_move_right_simple_before.txt in Resources */,
 				42E22776210365D300D112E7 /* test_parsepbm_simple1.pbm in Resources */,

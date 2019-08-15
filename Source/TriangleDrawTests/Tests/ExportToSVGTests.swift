@@ -75,8 +75,9 @@ class ExportToSVGTests: XCTestCase {
     func testExample() {
 //		let canvas: E2Canvas = loadCanvas("test_subdivide2_in.pbm")
 //		let canvas: E2Canvas = loadCanvas("test_rotate_logo_none.txt")
-		let canvas: E2Canvas = loadCanvas("test_boundingbox0.txt")
+//		let canvas: E2Canvas = loadCanvas("test_boundingbox0.txt")
 //		let canvas: E2Canvas = loadCanvas("test_boundingbox3.txt")
+		let canvas: E2Canvas = loadCanvas("test_exportsvg_corners.pbm")
 
 		let xmlString: String = canvas.exportToSVG()
 		let rep: Data = xmlString.data(using: .utf8, allowLossyConversion: true)!
