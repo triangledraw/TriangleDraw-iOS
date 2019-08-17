@@ -88,6 +88,7 @@
 		429F1B4722FA0BF6005A1EBF /* test_subdivide2_out3.pbm in Resources */ = {isa = PBXBuildFile; fileRef = 429F1B3B22FA0BF6005A1EBF /* test_subdivide2_out3.pbm */; };
 		42A228B421A0D292009A2819 /* CGSize+MinMax.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42A228B321A0D292009A2819 /* CGSize+MinMax.swift */; };
 		42AC2D7A230810180089947B /* SVGExporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42AC2D79230810180089947B /* SVGExporter.swift */; };
+		42AC2D7C230812220089947B /* SVGExporterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42AC2D7B230812220089947B /* SVGExporterTests.swift */; };
 		42AF9419215451C200D07373 /* HCInteractionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42AF940D215451C200D07373 /* HCInteractionView.swift */; };
 		42AF941A215451C200D07373 /* HCMetalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42AF940E215451C200D07373 /* HCMetalView.swift */; };
 		42AF941B215451C200D07373 /* HCRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42AF940F215451C200D07373 /* HCRenderer.swift */; };
@@ -258,7 +259,6 @@
 		42F04EC020E015450038BF11 /* Platform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F04EBF20E015450038BF11 /* Platform.swift */; };
 		42F0C2DD22DA6E22003F015B /* TriangleDrawLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F0C2DC22DA6E22003F015B /* TriangleDrawLibrary.swift */; };
 		42F0C2E622DA707C003F015B /* libTriangleDrawLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 42F0C2DA22DA6E22003F015B /* libTriangleDrawLibrary.a */; };
-		42F274B823042F0D00727F4F /* ExportToSVGTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F274B723042F0D00727F4F /* ExportToSVGTests.swift */; };
 		42F6CEB522C9565F002E596E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42F6CEB422C9565F002E596E /* Images.xcassets */; };
 		42F6CEB922CD3EE7002E596E /* hexagon_mask.txt in Resources */ = {isa = PBXBuildFile; fileRef = 42F6CEB822CD3E8B002E596E /* hexagon_mask.txt */; };
 		42F6D46322A1E5CD0042FC52 /* E2CanvasCopyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F6D46222A1E5CD0042FC52 /* E2CanvasCopyTests.swift */; };
@@ -443,6 +443,7 @@
 		429F1B3B22FA0BF6005A1EBF /* test_subdivide2_out3.pbm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = test_subdivide2_out3.pbm; sourceTree = "<group>"; };
 		42A228B321A0D292009A2819 /* CGSize+MinMax.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGSize+MinMax.swift"; sourceTree = "<group>"; };
 		42AC2D79230810180089947B /* SVGExporter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SVGExporter.swift; sourceTree = "<group>"; };
+		42AC2D7B230812220089947B /* SVGExporterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SVGExporterTests.swift; sourceTree = "<group>"; };
 		42AF940D215451C200D07373 /* HCInteractionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HCInteractionView.swift; sourceTree = "<group>"; };
 		42AF940E215451C200D07373 /* HCMetalView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HCMetalView.swift; sourceTree = "<group>"; };
 		42AF940F215451C200D07373 /* HCRenderer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HCRenderer.swift; sourceTree = "<group>"; };
@@ -616,7 +617,6 @@
 		42F04EBF20E015450038BF11 /* Platform.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Platform.swift; sourceTree = "<group>"; };
 		42F0C2DA22DA6E22003F015B /* libTriangleDrawLibrary.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libTriangleDrawLibrary.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		42F0C2DC22DA6E22003F015B /* TriangleDrawLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriangleDrawLibrary.swift; sourceTree = "<group>"; };
-		42F274B723042F0D00727F4F /* ExportToSVGTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExportToSVGTests.swift; sourceTree = "<group>"; };
 		42F274BA23059DAD00727F4F /* test_exportsvg_corners.pbm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = test_exportsvg_corners.pbm; sourceTree = "<group>"; };
 		42F6CEB422C9565F002E596E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		42F6CEB822CD3E8B002E596E /* hexagon_mask.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = hexagon_mask.txt; sourceTree = "<group>"; };
@@ -1249,13 +1249,13 @@
 				42E2271B2103632F00D112E7 /* E2CombinerTests.swift */,
 				42E227212103633400D112E7 /* E2TagPairTests.swift */,
 				42E227202103633300D112E7 /* Engine2Tests.swift */,
-				42F274B723042F0D00727F4F /* ExportToSVGTests.swift */,
 				422F241F21BAF72000707D13 /* HCZoomToFitTests.swift */,
 				421FC8D4227CD7BB001E93CE /* IntVec2Tests.swift */,
 				420D57B3224E25B0006C3ABD /* OptimalTileCountTests.swift */,
 				42E227AB21036AD100D112E7 /* RemapTests.swift */,
 				429B20D2221A252C001E9597 /* StringTrimTests.swift */,
 				42EBB2F7177EFC5400511CC7 /* Supporting Files */,
+				42AC2D7B230812220089947B /* SVGExporterTests.swift */,
 				42E2271A2103632E00D112E7 /* TDCanvasReadWriteTests.swift */,
 				42041A7D22C5544F003864DC /* TDLiveIndicatorTests.swift */,
 				42E227172103632B00D112E7 /* TDParsePBMTests.swift */,
@@ -1886,10 +1886,10 @@
 				42EBB30F177EFD1000511CC7 /* gpc.c in Sources */,
 				421FC8D5227CD7BB001E93CE /* IntVec2Tests.swift in Sources */,
 				42E2272B2103633600D112E7 /* DocumentNameGeneratorTests.swift in Sources */,
-				42F274B823042F0D00727F4F /* ExportToSVGTests.swift in Sources */,
 				42E227242103633600D112E7 /* E2CanvasMoveTests.swift in Sources */,
 				42E2272A2103633600D112E7 /* E2CombinerTests.swift in Sources */,
 				429B20D3221A252C001E9597 /* StringTrimTests.swift in Sources */,
+				42AC2D7C230812220089947B /* SVGExporterTests.swift in Sources */,
 				42851C8F2301F7760047C7D0 /* E2CanvasPointOrientationTests.swift in Sources */,
 				42E227262103633600D112E7 /* TDParsePBMTests.swift in Sources */,
 				42E227272103633600D112E7 /* E2CanvasRotateTests.swift in Sources */,

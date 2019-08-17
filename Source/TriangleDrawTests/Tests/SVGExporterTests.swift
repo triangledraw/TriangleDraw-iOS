@@ -3,7 +3,7 @@ import XCTest
 @testable import TriangleDrawLibrary
 @testable import TriangleDrawMain
 
-class ExportToSVGTests: XCTestCase {
+class SVGExporterTests: XCTestCase {
 
     func testExample() {
 //		let canvas: E2Canvas = loadCanvas("test_subdivide2_in.pbm")
