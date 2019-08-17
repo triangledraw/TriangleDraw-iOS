@@ -89,6 +89,7 @@
 		42A228B421A0D292009A2819 /* CGSize+MinMax.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42A228B321A0D292009A2819 /* CGSize+MinMax.swift */; };
 		42AC2D7A230810180089947B /* SVGExporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42AC2D79230810180089947B /* SVGExporter.swift */; };
 		42AC2D7C230812220089947B /* SVGExporterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42AC2D7B230812220089947B /* SVGExporterTests.swift */; };
+		42AC2D7E2308134B0089947B /* HCMenuViewController+ShareSVG.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42AC2D7D2308134B0089947B /* HCMenuViewController+ShareSVG.swift */; };
 		42AF9419215451C200D07373 /* HCInteractionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42AF940D215451C200D07373 /* HCInteractionView.swift */; };
 		42AF941A215451C200D07373 /* HCMetalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42AF940E215451C200D07373 /* HCMetalView.swift */; };
 		42AF941B215451C200D07373 /* HCRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42AF940F215451C200D07373 /* HCRenderer.swift */; };
@@ -444,6 +445,7 @@
 		42A228B321A0D292009A2819 /* CGSize+MinMax.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGSize+MinMax.swift"; sourceTree = "<group>"; };
 		42AC2D79230810180089947B /* SVGExporter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SVGExporter.swift; sourceTree = "<group>"; };
 		42AC2D7B230812220089947B /* SVGExporterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SVGExporterTests.swift; sourceTree = "<group>"; };
+		42AC2D7D2308134B0089947B /* HCMenuViewController+ShareSVG.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "HCMenuViewController+ShareSVG.swift"; sourceTree = "<group>"; };
 		42AF940D215451C200D07373 /* HCInteractionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HCInteractionView.swift; sourceTree = "<group>"; };
 		42AF940E215451C200D07373 /* HCMetalView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HCMetalView.swift; sourceTree = "<group>"; };
 		42AF940F215451C200D07373 /* HCRenderer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HCRenderer.swift; sourceTree = "<group>"; };
@@ -892,6 +894,7 @@
 				428DFD0E22D9D1CD005BE880 /* HCMenuViewController.swift */,
 				42646E8022E4A08800914600 /* HCMenuViewController+SharePDF.swift */,
 				42E227B2210373E000D112E7 /* HCMenuViewController+SharePNG.swift */,
+				42AC2D7D2308134B0089947B /* HCMenuViewController+ShareSVG.swift */,
 			);
 			path = Menu;
 			sourceTree = "<group>";
@@ -1838,6 +1841,7 @@
 				42DE377420FDEEC60007845B /* CanvasViewController.swift in Sources */,
 				42AF9420215451C200D07373 /* HCMetalView+Interaction.swift in Sources */,
 				420967512235C02400D5C576 /* DocumentExample.swift in Sources */,
+				42AC2D7E2308134B0089947B /* HCMenuViewController+ShareSVG.swift in Sources */,
 				42015C81173DA5E2007597E5 /* gpc.c in Sources */,
 				42AF941F215451C200D07373 /* HCBuildHexagonCanvas.swift in Sources */,
 				42DC743A20E193380058DEA8 /* UserDefaults+RunCount.swift in Sources */,
