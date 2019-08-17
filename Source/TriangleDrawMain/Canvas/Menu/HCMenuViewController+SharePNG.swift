@@ -17,7 +17,12 @@ extension HCMenuViewController {
                     message = String(format: format, triangleCount)
                 } else if activityType == UIActivity.ActivityType.postToTwitter {
                     let format = NSLocalizedString("SHARE_%d_TRIANGLES_ON_TWITTER", tableName: "CanvasVC", bundle: Bundle.main, value: "", comment: "When sharing a drawing via Twitter: The message posted to Twitter feed together with a .JPG file attachment")
-                    message = String(format: format, triangleCount)
+                    let formattedString = String(format: format, triangleCount)
+
+					// In the past (iOS11 and earlier) the Twitter sheet was showing both the text and the image.
+					// However with iOS12 the image now entirely covers the text, so that the text isn't visible.
+					// A solution is insert a space at the end of "lorem ipsum #TriangleDraw".
+					message = formattedString + " "
                 } else {
                     let format = NSLocalizedString("SHARE_%d_TRIANGLES_ON_OTHER_SOCIAL_MEDIA", tableName: "CanvasVC", bundle: Bundle.main, value: "", comment: "When sharing a drawing via other kinds of social media (Email, Text messaging, Flickr, Tumblr, etc): The message posted together with a .JPG file attachment")
                     message = String(format: format, triangleCount)
