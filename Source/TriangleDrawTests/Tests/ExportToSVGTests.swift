@@ -2,15 +2,22 @@
 import XCTest
 @testable import TriangleDrawLibrary
 
-extension E2Canvas {
-	func exportToSVG(appVersion: String, rotated: Bool = false) -> String {
-		assert(self.size.width == AppConstant.CanvasFileFormat.width, "width")
-		assert(self.size.height == AppConstant.CanvasFileFormat.height, "height")
+class SVGExporter {
+	let canvas: E2Canvas
+	var rotated: Bool = false
+	var appVersion: String = "APP_VERSION"
 
+	init(canvas: E2Canvas) {
+		assert(canvas.size.width == AppConstant.CanvasFileFormat.width, "width")
+		assert(canvas.size.height == AppConstant.CanvasFileFormat.height, "height")
+		self.canvas = canvas
+	}
+
+	func generateString() -> String {
 		var pointsInsideMask = [E2CanvasPoint]()
 		let mask: E2Canvas = E2Canvas.bigCanvasMask()
-		for y in 0..<Int(self.height) {
-			for x in 0..<Int(self.width) {
+		for y in 0..<Int(canvas.height) {
+			for x in 0..<Int(canvas.width) {
 				let point = E2CanvasPoint(x: x, y: y)
 				if mask.getPixel(point) > 0 {
 					pointsInsideMask.append(point)
@@ -45,7 +52,7 @@ extension E2Canvas {
 				let y: Int = point.y - minY
 				segment = "M\(x) \(y)h2l-1 1z"
 			}
-			if self.getPixel(point) > 0 {
+			if canvas.getPixel(point) > 0 {
 				whiteSegments.append(segment)
 			} else {
 				blackSegments.append(segment)
@@ -70,6 +77,12 @@ extension E2Canvas {
 		result = result.replacingOccurrences(of: "APPVERSION", with: appVersion)
 		return result
 	}
+
+	func generateData() -> Data {
+		let svgString: String = generateString()
+		let result: Data = svgString.data(using: .utf8, allowLossyConversion: true) ?? Data()
+		return result
+	}
 }
 
 class ExportToSVGTests: XCTestCase {
@@ -82,10 +95,12 @@ class ExportToSVGTests: XCTestCase {
 //		let canvas: E2Canvas = loadCanvas("test_exportsvg_corners.pbm")
 		let canvas: E2Canvas = loadCanvas("test_exportsvg_cube.pbm")
 
-		let xmlString: String = canvas.exportToSVG(appVersion: "2019.2.1", rotated: true)
-		let rep: Data = xmlString.data(using: .utf8, allowLossyConversion: true)!
+		let exporter = SVGExporter(canvas: canvas)
+		exporter.appVersion = "2019.2.1"
+		exporter.rotated = true
+		let data = exporter.generateData()
 		let url: URL = URL(fileURLWithPath: "/Users/neoneye/Desktop/result.svg").absoluteURL
-		try! rep.write(to: url)
+		try! data.write(to: url)
     }
 
 }
