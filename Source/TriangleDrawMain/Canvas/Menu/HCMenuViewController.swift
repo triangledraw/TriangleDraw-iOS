@@ -152,14 +152,14 @@ class HCMenuViewController: RFFormViewController {
 		_hud?.mode = MBProgressHUDMode.determinateHorizontalBar
 		_hud?.label.text = NSLocalizedString("CREATE_PDF_HUD_TITLE", tableName: "CanvasVC", bundle: Bundle.main, value: "", comment: "HUD title indicating that a create PDF operation has started")
 		_hud?.show(animated: true)
-		let progressBlock: TDRenderVector.ProgressBlock = { [weak self] progress in
+		let progressBlock: PDFExporter.ProgressBlock = { [weak self] progress in
 			self?._hud?.progress = progress
 		}
-		let completionBlock: TDRenderVector.CompletionBlock = { [weak self] pdfData in
+		let completionBlock: PDFExporter.CompletionBlock = { [weak self] pdfData in
 			self?._hud?.hide(animated: true)
 			self?.exportVectorPDFAction_part2(pdfData)
 		}
-		TDRenderVector.createPDF(from: canvas, progress: progressBlock, completion: completionBlock)
+		PDFExporter.createPDF(from: canvas, progress: progressBlock, completion: completionBlock)
 	}
 
 	func exportVectorPDFAction_part2(_ pdfData: Data) {

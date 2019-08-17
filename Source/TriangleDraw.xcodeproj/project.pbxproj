@@ -15,7 +15,7 @@
 		42041A7E22C5544F003864DC /* TDLiveIndicatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42041A7D22C5544F003864DC /* TDLiveIndicatorTests.swift */; };
 		4204305A23059E1E00AEC0E0 /* test_exportsvg_corners.pbm in Resources */ = {isa = PBXBuildFile; fileRef = 42F274BA23059DAD00727F4F /* test_exportsvg_corners.pbm */; };
 		4204305C2305A97B00AEC0E0 /* test_exportsvg_cube.pbm in Resources */ = {isa = PBXBuildFile; fileRef = 4204305B2305A97B00AEC0E0 /* test_exportsvg_cube.pbm */; };
-		4209674D2235BF6D00D5C576 /* TDRenderVector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42E7DBFF2199F7F700C9E10F /* TDRenderVector.swift */; };
+		4209674D2235BF6D00D5C576 /* PDFExporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42E7DBFF2199F7F700C9E10F /* PDFExporter.swift */; };
 		420967512235C02400D5C576 /* DocumentExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428EF9CF2185226C0036DB13 /* DocumentExample.swift */; };
 		420C448822E8EC4A0069F6AF /* UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 420C448722E8EC4A0069F6AF /* UITests.swift */; };
 		420C449022E8F0700069F6AF /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 420C448F22E8F0700069F6AF /* SnapshotHelper.swift */; };
@@ -606,7 +606,7 @@
 		42E227BD210373E000D112E7 /* UIView+SuperviewEdgeConstraints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+SuperviewEdgeConstraints.swift"; sourceTree = "<group>"; };
 		42E227C0210373E000D112E7 /* UIColorExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtensions.swift; sourceTree = "<group>"; };
 		42E227C1210373E000D112E7 /* UILabel+TDAlign.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UILabel+TDAlign.swift"; sourceTree = "<group>"; };
-		42E7DBFF2199F7F700C9E10F /* TDRenderVector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TDRenderVector.swift; sourceTree = "<group>"; };
+		42E7DBFF2199F7F700C9E10F /* PDFExporter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFExporter.swift; sourceTree = "<group>"; };
 		42EBB2F2177EFC5400511CC7 /* Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		42EBB2F8177EFC5400511CC7 /* Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Tests-Info.plist"; sourceTree = "<group>"; };
 		42EBB2FA177EFC5400511CC7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -833,6 +833,7 @@
 			children = (
 				4221B9AE16F5F47300898F6E /* Browser */,
 				42AF940C215451C200D07373 /* Canvas */,
+				42AC2D7823080F3E0089947B /* Export */,
 				427A6D0115C04249008E564B /* External */,
 				42784E4716F4D7F800D89A94 /* Main */,
 				42F7235622EF52B00038CEA1 /* Resources */,
@@ -928,6 +929,14 @@
 			path = TestData_Subdivide;
 			sourceTree = "<group>";
 		};
+		42AC2D7823080F3E0089947B /* Export */ = {
+			isa = PBXGroup;
+			children = (
+				42E7DBFF2199F7F700C9E10F /* PDFExporter.swift */,
+			);
+			path = Export;
+			sourceTree = "<group>";
+		};
 		42AF940C215451C200D07373 /* Canvas */ = {
 			isa = PBXGroup;
 			children = (
@@ -957,7 +966,6 @@
 				42C6B6EB21A74781004E7F58 /* HCZoomToFit.swift */,
 				4296506122FF483400966050 /* Menu */,
 				427B1656216914FB00228748 /* TDCanvasDrawingProtocol.swift */,
-				42E7DBFF2199F7F700C9E10F /* TDRenderVector.swift */,
 			);
 			path = Canvas;
 			sourceTree = "<group>";
@@ -1800,7 +1808,7 @@
 				42646E7F22E4785E00914600 /* EmailWithFeedback.swift in Sources */,
 				42608EDA21CEABF900A99669 /* HCSafeAreaView.swift in Sources */,
 				42AF9421215451C200D07373 /* AAPLMathUtilities.m in Sources */,
-				4209674D2235BF6D00D5C576 /* TDRenderVector.swift in Sources */,
+				4209674D2235BF6D00D5C576 /* PDFExporter.swift in Sources */,
 				42D0DDA422454A210066DB3D /* BrowserViewController.swift in Sources */,
 				42E227CA210373E000D112E7 /* UINavigationItem+BarButtonItemWithTag.swift in Sources */,
 				42608ED821CEA5F500A99669 /* CanvasViewController+ConfigureHCView.swift in Sources */,
