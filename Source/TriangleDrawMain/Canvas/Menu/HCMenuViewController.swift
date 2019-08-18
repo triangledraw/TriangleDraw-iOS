@@ -61,6 +61,7 @@ class HCMenuViewController: RFFormViewController {
 		builder += RFSectionHeaderTitleFormItem().title("Export")
 		builder += exportBitmapPNGButton
 		builder += exportVectorPDFButton
+		builder += exportVectorSVGButton
 
 		builder += RFSectionHeaderTitleFormItem().title("Feedback")
 		builder += emailDeveloperButton
@@ -152,14 +153,14 @@ class HCMenuViewController: RFFormViewController {
 		_hud?.mode = MBProgressHUDMode.determinateHorizontalBar
 		_hud?.label.text = NSLocalizedString("CREATE_PDF_HUD_TITLE", tableName: "CanvasVC", bundle: Bundle.main, value: "", comment: "HUD title indicating that a create PDF operation has started")
 		_hud?.show(animated: true)
-		let progressBlock: TDRenderVector.ProgressBlock = { [weak self] progress in
+		let progressBlock: PDFExporter.ProgressBlock = { [weak self] progress in
 			self?._hud?.progress = progress
 		}
-		let completionBlock: TDRenderVector.CompletionBlock = { [weak self] pdfData in
+		let completionBlock: PDFExporter.CompletionBlock = { [weak self] pdfData in
 			self?._hud?.hide(animated: true)
 			self?.exportVectorPDFAction_part2(pdfData)
 		}
-		TDRenderVector.createPDF(from: canvas, progress: progressBlock, completion: completionBlock)
+		PDFExporter.createPDF(from: canvas, progress: progressBlock, completion: completionBlock)
 	}
 
 	func exportVectorPDFAction_part2(_ pdfData: Data) {
@@ -170,6 +171,40 @@ class HCMenuViewController: RFFormViewController {
 		let filename: String = document_displayName ?? ""
 		let triangleCount: UInt = canvas?.computeTriangleCount() ?? 0
 		let avc = HCMenuViewController.createSharePDFActivityViewController(pdfData: pdfData, filename: filename, triangleCount: triangleCount)
+		let sourceView: UIView = self.view
+		if let presenter = avc.popoverPresentationController {
+			presenter.sourceView = sourceView
+		}
+		self.present(avc, animated: true)
+	}
+
+	lazy var exportVectorSVGButton: RFButtonFormItem = {
+		let instance = RFButtonFormItem()
+		instance.title = "Vector SVG"
+		instance.action = { [weak self] in
+			self?.exportVectorSVGAction()
+		}
+		return instance
+	}()
+
+	func exportVectorSVGAction() {
+		guard let canvas: E2Canvas = self.canvas else {
+			log.error("Expected document.canvas to be non-nil, but got nil")
+			return
+		}
+		log.debug("initiate")
+		let exporter = SVGExporter(canvas: canvas)
+		exporter.appVersion = "2019.2.1"
+		exporter.rotated = false
+		let svgData: Data = exporter.generateData()
+
+		guard svgData.count > 0 else {
+			log.error("Expected size of pdf to be greater than 0 bytes")
+			return
+		}
+		let filename: String = document_displayName ?? ""
+		let triangleCount: UInt = canvas.computeTriangleCount()
+		let avc = HCMenuViewController.createShareSVGActivityViewController(svgData: svgData, filename: filename, triangleCount: triangleCount)
 		let sourceView: UIView = self.view
 		if let presenter = avc.popoverPresentationController {
 			presenter.sourceView = sourceView

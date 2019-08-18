@@ -13,7 +13,9 @@
 		4048FFF5DE8CB99894C9635F /* Pods_BasePods_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24FA2D978727544F6BB099DF /* Pods_BasePods_Tests.framework */; };
 		42015C81173DA5E2007597E5 /* gpc.c in Sources */ = {isa = PBXBuildFile; fileRef = 42015C7D173DA5E2007597E5 /* gpc.c */; };
 		42041A7E22C5544F003864DC /* TDLiveIndicatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42041A7D22C5544F003864DC /* TDLiveIndicatorTests.swift */; };
-		4209674D2235BF6D00D5C576 /* TDRenderVector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42E7DBFF2199F7F700C9E10F /* TDRenderVector.swift */; };
+		4204305A23059E1E00AEC0E0 /* test_exportsvg_corners.pbm in Resources */ = {isa = PBXBuildFile; fileRef = 42F274BA23059DAD00727F4F /* test_exportsvg_corners.pbm */; };
+		4204305C2305A97B00AEC0E0 /* test_exportsvg_cube.pbm in Resources */ = {isa = PBXBuildFile; fileRef = 4204305B2305A97B00AEC0E0 /* test_exportsvg_cube.pbm */; };
+		4209674D2235BF6D00D5C576 /* PDFExporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42E7DBFF2199F7F700C9E10F /* PDFExporter.swift */; };
 		420967512235C02400D5C576 /* DocumentExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428EF9CF2185226C0036DB13 /* DocumentExample.swift */; };
 		420C448822E8EC4A0069F6AF /* UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 420C448722E8EC4A0069F6AF /* UITests.swift */; };
 		420C449022E8F0700069F6AF /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 420C448F22E8F0700069F6AF /* SnapshotHelper.swift */; };
@@ -85,6 +87,9 @@
 		429F1B4622FA0BF6005A1EBF /* test_subdivide2_out2.pbm in Resources */ = {isa = PBXBuildFile; fileRef = 429F1B3A22FA0BF6005A1EBF /* test_subdivide2_out2.pbm */; };
 		429F1B4722FA0BF6005A1EBF /* test_subdivide2_out3.pbm in Resources */ = {isa = PBXBuildFile; fileRef = 429F1B3B22FA0BF6005A1EBF /* test_subdivide2_out3.pbm */; };
 		42A228B421A0D292009A2819 /* CGSize+MinMax.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42A228B321A0D292009A2819 /* CGSize+MinMax.swift */; };
+		42AC2D7A230810180089947B /* SVGExporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42AC2D79230810180089947B /* SVGExporter.swift */; };
+		42AC2D7C230812220089947B /* SVGExporterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42AC2D7B230812220089947B /* SVGExporterTests.swift */; };
+		42AC2D7E2308134B0089947B /* HCMenuViewController+ShareSVG.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42AC2D7D2308134B0089947B /* HCMenuViewController+ShareSVG.swift */; };
 		42AF9419215451C200D07373 /* HCInteractionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42AF940D215451C200D07373 /* HCInteractionView.swift */; };
 		42AF941A215451C200D07373 /* HCMetalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42AF940E215451C200D07373 /* HCMetalView.swift */; };
 		42AF941B215451C200D07373 /* HCRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42AF940F215451C200D07373 /* HCRenderer.swift */; };
@@ -359,6 +364,7 @@
 		42015C7E173DA5E2007597E5 /* gpc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gpc.h; sourceTree = "<group>"; };
 		42015C7F173DA5E2007597E5 /* VERSIONS.TXT */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = VERSIONS.TXT; sourceTree = "<group>"; };
 		42041A7D22C5544F003864DC /* TDLiveIndicatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TDLiveIndicatorTests.swift; sourceTree = "<group>"; };
+		4204305B2305A97B00AEC0E0 /* test_exportsvg_cube.pbm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = test_exportsvg_cube.pbm; sourceTree = "<group>"; };
 		420C448522E8EC4A0069F6AF /* UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		420C448722E8EC4A0069F6AF /* UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITests.swift; sourceTree = "<group>"; };
 		420C448922E8EC4A0069F6AF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -437,6 +443,9 @@
 		429F1B3A22FA0BF6005A1EBF /* test_subdivide2_out2.pbm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = test_subdivide2_out2.pbm; sourceTree = "<group>"; };
 		429F1B3B22FA0BF6005A1EBF /* test_subdivide2_out3.pbm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = test_subdivide2_out3.pbm; sourceTree = "<group>"; };
 		42A228B321A0D292009A2819 /* CGSize+MinMax.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGSize+MinMax.swift"; sourceTree = "<group>"; };
+		42AC2D79230810180089947B /* SVGExporter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SVGExporter.swift; sourceTree = "<group>"; };
+		42AC2D7B230812220089947B /* SVGExporterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SVGExporterTests.swift; sourceTree = "<group>"; };
+		42AC2D7D2308134B0089947B /* HCMenuViewController+ShareSVG.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "HCMenuViewController+ShareSVG.swift"; sourceTree = "<group>"; };
 		42AF940D215451C200D07373 /* HCInteractionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HCInteractionView.swift; sourceTree = "<group>"; };
 		42AF940E215451C200D07373 /* HCMetalView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HCMetalView.swift; sourceTree = "<group>"; };
 		42AF940F215451C200D07373 /* HCRenderer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HCRenderer.swift; sourceTree = "<group>"; };
@@ -602,7 +611,7 @@
 		42E227BD210373E000D112E7 /* UIView+SuperviewEdgeConstraints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+SuperviewEdgeConstraints.swift"; sourceTree = "<group>"; };
 		42E227C0210373E000D112E7 /* UIColorExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtensions.swift; sourceTree = "<group>"; };
 		42E227C1210373E000D112E7 /* UILabel+TDAlign.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UILabel+TDAlign.swift"; sourceTree = "<group>"; };
-		42E7DBFF2199F7F700C9E10F /* TDRenderVector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TDRenderVector.swift; sourceTree = "<group>"; };
+		42E7DBFF2199F7F700C9E10F /* PDFExporter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFExporter.swift; sourceTree = "<group>"; };
 		42EBB2F2177EFC5400511CC7 /* Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		42EBB2F8177EFC5400511CC7 /* Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Tests-Info.plist"; sourceTree = "<group>"; };
 		42EBB2FA177EFC5400511CC7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -610,6 +619,7 @@
 		42F04EBF20E015450038BF11 /* Platform.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Platform.swift; sourceTree = "<group>"; };
 		42F0C2DA22DA6E22003F015B /* libTriangleDrawLibrary.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libTriangleDrawLibrary.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		42F0C2DC22DA6E22003F015B /* TriangleDrawLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriangleDrawLibrary.swift; sourceTree = "<group>"; };
+		42F274BA23059DAD00727F4F /* test_exportsvg_corners.pbm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = test_exportsvg_corners.pbm; sourceTree = "<group>"; };
 		42F6CEB422C9565F002E596E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		42F6CEB822CD3E8B002E596E /* hexagon_mask.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = hexagon_mask.txt; sourceTree = "<group>"; };
 		42F6D46222A1E5CD0042FC52 /* E2CanvasCopyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = E2CanvasCopyTests.swift; sourceTree = "<group>"; };
@@ -827,6 +837,7 @@
 			children = (
 				4221B9AE16F5F47300898F6E /* Browser */,
 				42AF940C215451C200D07373 /* Canvas */,
+				42AC2D7823080F3E0089947B /* Export */,
 				427A6D0115C04249008E564B /* External */,
 				42784E4716F4D7F800D89A94 /* Main */,
 				42F7235622EF52B00038CEA1 /* Resources */,
@@ -883,6 +894,7 @@
 				428DFD0E22D9D1CD005BE880 /* HCMenuViewController.swift */,
 				42646E8022E4A08800914600 /* HCMenuViewController+SharePDF.swift */,
 				42E227B2210373E000D112E7 /* HCMenuViewController+SharePNG.swift */,
+				42AC2D7D2308134B0089947B /* HCMenuViewController+ShareSVG.swift */,
 			);
 			path = Menu;
 			sourceTree = "<group>";
@@ -922,6 +934,15 @@
 			path = TestData_Subdivide;
 			sourceTree = "<group>";
 		};
+		42AC2D7823080F3E0089947B /* Export */ = {
+			isa = PBXGroup;
+			children = (
+				42E7DBFF2199F7F700C9E10F /* PDFExporter.swift */,
+				42AC2D79230810180089947B /* SVGExporter.swift */,
+			);
+			path = Export;
+			sourceTree = "<group>";
+		};
 		42AF940C215451C200D07373 /* Canvas */ = {
 			isa = PBXGroup;
 			children = (
@@ -951,7 +972,6 @@
 				42C6B6EB21A74781004E7F58 /* HCZoomToFit.swift */,
 				4296506122FF483400966050 /* Menu */,
 				427B1656216914FB00228748 /* TDCanvasDrawingProtocol.swift */,
-				42E7DBFF2199F7F700C9E10F /* TDRenderVector.swift */,
 			);
 			path = Canvas;
 			sourceTree = "<group>";
@@ -1238,10 +1258,12 @@
 				42E227AB21036AD100D112E7 /* RemapTests.swift */,
 				429B20D2221A252C001E9597 /* StringTrimTests.swift */,
 				42EBB2F7177EFC5400511CC7 /* Supporting Files */,
+				42AC2D7B230812220089947B /* SVGExporterTests.swift */,
 				42E2271A2103632E00D112E7 /* TDCanvasReadWriteTests.swift */,
 				42041A7D22C5544F003864DC /* TDLiveIndicatorTests.swift */,
 				42E227172103632B00D112E7 /* TDParsePBMTests.swift */,
 				42E22744210365D000D112E7 /* TestData_Engine */,
+				42F274B923059DAD00727F4F /* TestData_ExportSVG */,
 				42E22738210365D000D112E7 /* TestData_ParsePBM */,
 				42E22771210365D200D112E7 /* TestData_ReadWrite */,
 				429F1B2F22FA0BF6005A1EBF /* TestData_Subdivide */,
@@ -1291,6 +1313,15 @@
 				42C8855B17B2B46F00D5FF54 /* zh_CN.lproj */,
 			);
 			path = Assets;
+			sourceTree = "<group>";
+		};
+		42F274B923059DAD00727F4F /* TestData_ExportSVG */ = {
+			isa = PBXGroup;
+			children = (
+				42F274BA23059DAD00727F4F /* test_exportsvg_corners.pbm */,
+				4204305B2305A97B00AEC0E0 /* test_exportsvg_cube.pbm */,
+			);
+			path = TestData_ExportSVG;
 			sourceTree = "<group>";
 		};
 		42F7235622EF52B00038CEA1 /* Resources */ = {
@@ -1552,6 +1583,8 @@
 				42E2279A210365D300D112E7 /* test_move_left_wrap0_before.txt in Resources */,
 				42E22787210365D300D112E7 /* test_rotate_line2_minus60degree.txt in Resources */,
 				42E22799210365D300D112E7 /* test_move_right_wrap2_after.txt in Resources */,
+				4204305A23059E1E00AEC0E0 /* test_exportsvg_corners.pbm in Resources */,
+				4204305C2305A97B00AEC0E0 /* test_exportsvg_cube.pbm in Resources */,
 				42E22773210365D300D112E7 /* test_parsepbm_utf16be.pbm in Resources */,
 				42E2278F210365D300D112E7 /* test_move_right_simple_before.txt in Resources */,
 				42E22776210365D300D112E7 /* test_parsepbm_simple1.pbm in Resources */,
@@ -1781,7 +1814,7 @@
 				42646E7F22E4785E00914600 /* EmailWithFeedback.swift in Sources */,
 				42608EDA21CEABF900A99669 /* HCSafeAreaView.swift in Sources */,
 				42AF9421215451C200D07373 /* AAPLMathUtilities.m in Sources */,
-				4209674D2235BF6D00D5C576 /* TDRenderVector.swift in Sources */,
+				4209674D2235BF6D00D5C576 /* PDFExporter.swift in Sources */,
 				42D0DDA422454A210066DB3D /* BrowserViewController.swift in Sources */,
 				42E227CA210373E000D112E7 /* UINavigationItem+BarButtonItemWithTag.swift in Sources */,
 				42608ED821CEA5F500A99669 /* CanvasViewController+ConfigureHCView.swift in Sources */,
@@ -1808,6 +1841,7 @@
 				42DE377420FDEEC60007845B /* CanvasViewController.swift in Sources */,
 				42AF9420215451C200D07373 /* HCMetalView+Interaction.swift in Sources */,
 				420967512235C02400D5C576 /* DocumentExample.swift in Sources */,
+				42AC2D7E2308134B0089947B /* HCMenuViewController+ShareSVG.swift in Sources */,
 				42015C81173DA5E2007597E5 /* gpc.c in Sources */,
 				42AF941F215451C200D07373 /* HCBuildHexagonCanvas.swift in Sources */,
 				42DC743A20E193380058DEA8 /* UserDefaults+RunCount.swift in Sources */,
@@ -1824,6 +1858,7 @@
 				42C6B6EC21A74781004E7F58 /* HCZoomToFit.swift in Sources */,
 				42608ED621CEA4DB00A99669 /* CanvasViewController+ConfigureToolbar.swift in Sources */,
 				42E227D0210373E000D112E7 /* UIColorExtensions.swift in Sources */,
+				42AC2D7A230810180089947B /* SVGExporter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1858,6 +1893,7 @@
 				42E227242103633600D112E7 /* E2CanvasMoveTests.swift in Sources */,
 				42E2272A2103633600D112E7 /* E2CombinerTests.swift in Sources */,
 				429B20D3221A252C001E9597 /* StringTrimTests.swift in Sources */,
+				42AC2D7C230812220089947B /* SVGExporterTests.swift in Sources */,
 				42851C8F2301F7760047C7D0 /* E2CanvasPointOrientationTests.swift in Sources */,
 				42E227262103633600D112E7 /* TDParsePBMTests.swift in Sources */,
 				42E227272103633600D112E7 /* E2CanvasRotateTests.swift in Sources */,
