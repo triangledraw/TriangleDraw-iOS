@@ -61,9 +61,7 @@ class HCMenuViewController: RFFormViewController {
 		builder += RFSectionHeaderTitleFormItem().title("Export")
 		builder += exportBitmapPNGButton
 		builder += exportVectorPDFButton
-		if AppConstant.Canvas.Menu.debug_enableSVGExporter {
-			builder += exportVectorSVGButton
-		}
+		builder += exportVectorSVGButton
 
 		builder += RFSectionHeaderTitleFormItem().title("Feedback")
 		builder += emailDeveloperButton

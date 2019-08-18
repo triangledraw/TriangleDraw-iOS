@@ -50,10 +50,6 @@ public struct AppConstant {
 			public static let experimentsWith3Color = false
 		}
 
-		public struct Menu {
-			public static let debug_enableSVGExporter = false
-		}
-
 		public static let hexagonEdgeColor = TDFloat4(0.25, 0.25, 0.25, 1)
 
 		/// Pinch to zoom in/out
