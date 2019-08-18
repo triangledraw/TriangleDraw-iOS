@@ -194,7 +194,7 @@ class HCMenuViewController: RFFormViewController {
 		}
 		log.debug("initiate")
 		let exporter = SVGExporter(canvas: canvas)
-		exporter.appVersion = "2019.2.1"
+		exporter.appVersion = SystemInfo.appVersion
 		exporter.rotated = false
 		let svgData: Data = exporter.generateData()
 
