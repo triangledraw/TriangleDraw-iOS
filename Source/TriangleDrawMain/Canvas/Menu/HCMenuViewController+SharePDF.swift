@@ -7,6 +7,18 @@ extension HCMenuViewController {
 		let filesize: Int = pdfData.count
 		log.debug("Open share sheet.  fileSize: \(filesize)  filename: '\(filename)'  triangleCount: \(triangleCount)")
 		
+		// There is not easy way to tell `UIActivityViewController`
+		// that the data is a PDF file, and what the filename should be.
+		// The easiest solution is to store the data in the temp dir
+		// with the filename+extension that it should be treated as.
+		let url: URL = URL(fileURLWithPath: NSTemporaryDirectory()).appendingPathComponent(filename).appendingPathExtension("pdf")
+		do {
+			try pdfData.write(to: url)
+		} catch {
+			log.error("failed to write: \(url) \(error)")
+			fatalError()
+		}
+
         let subjectFormat = NSLocalizedString("EMAIL_PDF_SUBJECT_%@", tableName: "CanvasVC", bundle: Bundle.main, value: "", comment: "TriangleDraw - {Drawing name}, a subject line for mails containing PDF attachments")
         let emailSubject = String(format: subjectFormat, filename)
 		let itemBlock: WFActivitySpecificItemProviderItemBlock = { activityType in
@@ -18,7 +30,7 @@ extension HCMenuViewController {
                 return message
             }
         let provider = WFActivitySpecificItemProvider(placeholderItem: "", block: itemBlock)
-        let avc = UIActivityViewController(activityItems: [provider, pdfData], applicationActivities: nil)
+        let avc = UIActivityViewController(activityItems: [provider, url], applicationActivities: nil)
 		avc.excludedActivityTypes = [
 			.postToFacebook,
 			.postToTwitter,
