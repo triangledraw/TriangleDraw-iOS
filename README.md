@@ -18,15 +18,17 @@ that can be used for branding on letterheads or on your website.
 - Invert, so white becomes black and black becomes white.
 - Move the canvas by one column/row. The triangles wraps around the canvas edge.
 - Symmetry modes: x, y, xy, 3 way, 6 way.
+- Subdivide: Split up all triangles into smaller triangles.
 - Undo: If something goes wrong, then you can roll back to the moment just before it went wrong.
 - Fullscreen: Hide the toolbars and work without noise.
-- Export to Vector (PDF): You get the highest possible quality with vector graphics, that you can import into PhotoShop/Illustrator.
+- Export to vector: Supports both PDF and SVG.
 - Export to bitmap: A 2048x2048 image that can be saved to the photo album or shared on social media.
 - Free: The app doesn't cost anything.
 - OpenSource: You can modify the code.
 
 # TriangleDraw on the web 
 
+- [App Store](https://apps.apple.com/app/id1453533043)
 - [TriangleDraw.com](http://www.triangledraw.com/)
 - [Instagram](https://www.instagram.com/triangledraw/)
 - [Twitter](https://twitter.com/TriangleDraw)
@@ -40,16 +42,16 @@ a very powerful tool for composing digital art, by the
 german demo group [Farbrausch](https://en.wikipedia.org/wiki/Farbrausch).
 
 I developed my own demotool for macOS, named GraphicDesignerToolbox (aka. GDT), that had building blocks 
-that could be stacked the same way as in .werkkzeug. For GDT I made a few building blocks for working with vector paths.
+that could be stacked the same way as in .werkkzeug. For GDT I made several building blocks for manipulating bitmap images and a few building blocks for manipulating vector paths.
 
-When the iPad arrived around 2010, I developed the first version of TriangleDraw, that was inspired by 1 of the 
+When the iPad arrived around 2010, I developed the first version of TriangleDraw, that was inspired by one of the 
 vector building blocks in GDT. I soon after released TriangleDraw version 1. It had a tiny tiny canvas. It only worked on iPad.
 No support for iPhone. I had no luck selling the app.
 
 Around year 2014 I had TriangleDraw version 2 ready. The canvas was much larger. It worked on iPhone+iPad. 
 I experimented with In-app-purchases, but I still had no luck earning any money on version 2.
 
-Around year 2018/2019 I migrated TriangleDraw from ObjectiveC to Swift. The `UIDocumentBrowserViewController` is used. 
+Around year 2018/2019 I migrated all the TriangleDraw source code from ObjectiveC to Swift. The `UIDocumentBrowserViewController` is now being used, where in the past I used my own adhoc document browser. 
 And best of all, it's free and open source. Please consider contributing to TriangleDraw.
 
 - [Follow me on Twitter](https://twitter.com/neoneye)

@@ -13,11 +13,14 @@
 		4048FFF5DE8CB99894C9635F /* Pods_BasePods_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24FA2D978727544F6BB099DF /* Pods_BasePods_Tests.framework */; };
 		42015C81173DA5E2007597E5 /* gpc.c in Sources */ = {isa = PBXBuildFile; fileRef = 42015C7D173DA5E2007597E5 /* gpc.c */; };
 		42041A7E22C5544F003864DC /* TDLiveIndicatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42041A7D22C5544F003864DC /* TDLiveIndicatorTests.swift */; };
-		4209674D2235BF6D00D5C576 /* TDRenderVector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42E7DBFF2199F7F700C9E10F /* TDRenderVector.swift */; };
+		4204305A23059E1E00AEC0E0 /* test_exportsvg_corners.pbm in Resources */ = {isa = PBXBuildFile; fileRef = 42F274BA23059DAD00727F4F /* test_exportsvg_corners.pbm */; };
+		4204305C2305A97B00AEC0E0 /* test_exportsvg_cube.pbm in Resources */ = {isa = PBXBuildFile; fileRef = 4204305B2305A97B00AEC0E0 /* test_exportsvg_cube.pbm */; };
+		4209674D2235BF6D00D5C576 /* PDFExporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42E7DBFF2199F7F700C9E10F /* PDFExporter.swift */; };
 		420967512235C02400D5C576 /* DocumentExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428EF9CF2185226C0036DB13 /* DocumentExample.swift */; };
 		420C448822E8EC4A0069F6AF /* UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 420C448722E8EC4A0069F6AF /* UITests.swift */; };
 		420C449022E8F0700069F6AF /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 420C448F22E8F0700069F6AF /* SnapshotHelper.swift */; };
 		420D57B4224E25B0006C3ABD /* OptimalTileCountTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 420D57B3224E25B0006C3ABD /* OptimalTileCountTests.swift */; };
+		421B0A9F2302005600DA51E2 /* E2Canvas+GameOfLife.swift in Sources */ = {isa = PBXBuildFile; fileRef = 421B0A9E2302005600DA51E2 /* E2Canvas+GameOfLife.swift */; };
 		421E51C422EF67AF0005068E /* BrowserViewController+ImportDocumentExamples.swift in Sources */ = {isa = PBXBuildFile; fileRef = 421E51C322EF67AF0005068E /* BrowserViewController+ImportDocumentExamples.swift */; };
 		421F856A22328DB800811614 /* ThumbnailProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 421F856922328DB800811614 /* ThumbnailProvider.swift */; };
 		421F856E22328DB800811614 /* TriangleDrawThumbnail.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 421F856722328DB800811614 /* TriangleDrawThumbnail.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -56,6 +59,10 @@
 		4278E58E129C3CDB00CA8A15 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4278E58D129C3CDB00CA8A15 /* CoreGraphics.framework */; };
 		427B1657216914FB00228748 /* TDCanvasDrawingProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427B1656216914FB00228748 /* TDCanvasDrawingProtocol.swift */; };
 		427FE58522FB6B0D0032A235 /* E2Canvas+Subdivide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427FE58422FB6B0D0032A235 /* E2Canvas+Subdivide.swift */; };
+		42851C892301F5B60047C7D0 /* E2CanvasPoint+Orientation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42851C882301F5B60047C7D0 /* E2CanvasPoint+Orientation.swift */; };
+		42851C8C2301F7330047C7D0 /* test_orientation_downward.pbm in Resources */ = {isa = PBXBuildFile; fileRef = 42851C8A2301F7330047C7D0 /* test_orientation_downward.pbm */; };
+		42851C8D2301F7330047C7D0 /* test_orientation_upward.pbm in Resources */ = {isa = PBXBuildFile; fileRef = 42851C8B2301F7330047C7D0 /* test_orientation_upward.pbm */; };
+		42851C8F2301F7760047C7D0 /* E2CanvasPointOrientationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42851C8E2301F7760047C7D0 /* E2CanvasPointOrientationTests.swift */; };
 		4289827921E7EDA600FC0431 /* BorderedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4289827821E7EDA600FC0431 /* BorderedButton.swift */; };
 		428A3A3F20E2320D003F13D1 /* WFActivitySpecificItemProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428A3A3E20E2320C003F13D1 /* WFActivitySpecificItemProvider.swift */; };
 		428B12961832A46500718BEA /* CanvasVC.strings in Resources */ = {isa = PBXBuildFile; fileRef = 428B12911832A46500718BEA /* CanvasVC.strings */; };
@@ -80,6 +87,9 @@
 		429F1B4622FA0BF6005A1EBF /* test_subdivide2_out2.pbm in Resources */ = {isa = PBXBuildFile; fileRef = 429F1B3A22FA0BF6005A1EBF /* test_subdivide2_out2.pbm */; };
 		429F1B4722FA0BF6005A1EBF /* test_subdivide2_out3.pbm in Resources */ = {isa = PBXBuildFile; fileRef = 429F1B3B22FA0BF6005A1EBF /* test_subdivide2_out3.pbm */; };
 		42A228B421A0D292009A2819 /* CGSize+MinMax.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42A228B321A0D292009A2819 /* CGSize+MinMax.swift */; };
+		42AC2D7A230810180089947B /* SVGExporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42AC2D79230810180089947B /* SVGExporter.swift */; };
+		42AC2D7C230812220089947B /* SVGExporterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42AC2D7B230812220089947B /* SVGExporterTests.swift */; };
+		42AC2D7E2308134B0089947B /* HCMenuViewController+ShareSVG.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42AC2D7D2308134B0089947B /* HCMenuViewController+ShareSVG.swift */; };
 		42AF9419215451C200D07373 /* HCInteractionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42AF940D215451C200D07373 /* HCInteractionView.swift */; };
 		42AF941A215451C200D07373 /* HCMetalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42AF940E215451C200D07373 /* HCMetalView.swift */; };
 		42AF941B215451C200D07373 /* HCRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42AF940F215451C200D07373 /* HCRenderer.swift */; };
@@ -354,11 +364,13 @@
 		42015C7E173DA5E2007597E5 /* gpc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gpc.h; sourceTree = "<group>"; };
 		42015C7F173DA5E2007597E5 /* VERSIONS.TXT */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = VERSIONS.TXT; sourceTree = "<group>"; };
 		42041A7D22C5544F003864DC /* TDLiveIndicatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TDLiveIndicatorTests.swift; sourceTree = "<group>"; };
+		4204305B2305A97B00AEC0E0 /* test_exportsvg_cube.pbm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = test_exportsvg_cube.pbm; sourceTree = "<group>"; };
 		420C448522E8EC4A0069F6AF /* UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		420C448722E8EC4A0069F6AF /* UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITests.swift; sourceTree = "<group>"; };
 		420C448922E8EC4A0069F6AF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		420C448F22E8F0700069F6AF /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapshotHelper.swift; sourceTree = "<group>"; };
 		420D57B3224E25B0006C3ABD /* OptimalTileCountTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptimalTileCountTests.swift; sourceTree = "<group>"; };
+		421B0A9E2302005600DA51E2 /* E2Canvas+GameOfLife.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "E2Canvas+GameOfLife.swift"; sourceTree = "<group>"; };
 		421E51C322EF67AF0005068E /* BrowserViewController+ImportDocumentExamples.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "BrowserViewController+ImportDocumentExamples.swift"; sourceTree = "<group>"; };
 		421F856722328DB800811614 /* TriangleDrawThumbnail.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = TriangleDrawThumbnail.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		421F856922328DB800811614 /* ThumbnailProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThumbnailProvider.swift; sourceTree = "<group>"; };
@@ -400,6 +412,10 @@
 		4278E58D129C3CDB00CA8A15 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		427B1656216914FB00228748 /* TDCanvasDrawingProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TDCanvasDrawingProtocol.swift; sourceTree = "<group>"; };
 		427FE58422FB6B0D0032A235 /* E2Canvas+Subdivide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "E2Canvas+Subdivide.swift"; sourceTree = "<group>"; };
+		42851C882301F5B60047C7D0 /* E2CanvasPoint+Orientation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "E2CanvasPoint+Orientation.swift"; sourceTree = "<group>"; };
+		42851C8A2301F7330047C7D0 /* test_orientation_downward.pbm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = test_orientation_downward.pbm; sourceTree = "<group>"; };
+		42851C8B2301F7330047C7D0 /* test_orientation_upward.pbm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = test_orientation_upward.pbm; sourceTree = "<group>"; };
+		42851C8E2301F7760047C7D0 /* E2CanvasPointOrientationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = E2CanvasPointOrientationTests.swift; sourceTree = "<group>"; };
 		42855B9F19CDFE030000420E /* TriangleDrawMain-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TriangleDrawMain-Bridging-Header.h"; sourceTree = "<group>"; };
 		4289827821E7EDA600FC0431 /* BorderedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderedButton.swift; sourceTree = "<group>"; };
 		428A3A3E20E2320C003F13D1 /* WFActivitySpecificItemProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WFActivitySpecificItemProvider.swift; sourceTree = "<group>"; };
@@ -427,6 +443,9 @@
 		429F1B3A22FA0BF6005A1EBF /* test_subdivide2_out2.pbm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = test_subdivide2_out2.pbm; sourceTree = "<group>"; };
 		429F1B3B22FA0BF6005A1EBF /* test_subdivide2_out3.pbm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = test_subdivide2_out3.pbm; sourceTree = "<group>"; };
 		42A228B321A0D292009A2819 /* CGSize+MinMax.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGSize+MinMax.swift"; sourceTree = "<group>"; };
+		42AC2D79230810180089947B /* SVGExporter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SVGExporter.swift; sourceTree = "<group>"; };
+		42AC2D7B230812220089947B /* SVGExporterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SVGExporterTests.swift; sourceTree = "<group>"; };
+		42AC2D7D2308134B0089947B /* HCMenuViewController+ShareSVG.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "HCMenuViewController+ShareSVG.swift"; sourceTree = "<group>"; };
 		42AF940D215451C200D07373 /* HCInteractionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HCInteractionView.swift; sourceTree = "<group>"; };
 		42AF940E215451C200D07373 /* HCMetalView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HCMetalView.swift; sourceTree = "<group>"; };
 		42AF940F215451C200D07373 /* HCRenderer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HCRenderer.swift; sourceTree = "<group>"; };
@@ -592,7 +611,7 @@
 		42E227BD210373E000D112E7 /* UIView+SuperviewEdgeConstraints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+SuperviewEdgeConstraints.swift"; sourceTree = "<group>"; };
 		42E227C0210373E000D112E7 /* UIColorExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtensions.swift; sourceTree = "<group>"; };
 		42E227C1210373E000D112E7 /* UILabel+TDAlign.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UILabel+TDAlign.swift"; sourceTree = "<group>"; };
-		42E7DBFF2199F7F700C9E10F /* TDRenderVector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TDRenderVector.swift; sourceTree = "<group>"; };
+		42E7DBFF2199F7F700C9E10F /* PDFExporter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFExporter.swift; sourceTree = "<group>"; };
 		42EBB2F2177EFC5400511CC7 /* Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		42EBB2F8177EFC5400511CC7 /* Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Tests-Info.plist"; sourceTree = "<group>"; };
 		42EBB2FA177EFC5400511CC7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -600,6 +619,7 @@
 		42F04EBF20E015450038BF11 /* Platform.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Platform.swift; sourceTree = "<group>"; };
 		42F0C2DA22DA6E22003F015B /* libTriangleDrawLibrary.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libTriangleDrawLibrary.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		42F0C2DC22DA6E22003F015B /* TriangleDrawLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriangleDrawLibrary.swift; sourceTree = "<group>"; };
+		42F274BA23059DAD00727F4F /* test_exportsvg_corners.pbm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = test_exportsvg_corners.pbm; sourceTree = "<group>"; };
 		42F6CEB422C9565F002E596E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		42F6CEB822CD3E8B002E596E /* hexagon_mask.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = hexagon_mask.txt; sourceTree = "<group>"; };
 		42F6D46222A1E5CD0042FC52 /* E2CanvasCopyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = E2CanvasCopyTests.swift; sourceTree = "<group>"; };
@@ -817,6 +837,7 @@
 			children = (
 				4221B9AE16F5F47300898F6E /* Browser */,
 				42AF940C215451C200D07373 /* Canvas */,
+				42AC2D7823080F3E0089947B /* Export */,
 				427A6D0115C04249008E564B /* External */,
 				42784E4716F4D7F800D89A94 /* Main */,
 				42F7235622EF52B00038CEA1 /* Resources */,
@@ -873,6 +894,7 @@
 				428DFD0E22D9D1CD005BE880 /* HCMenuViewController.swift */,
 				42646E8022E4A08800914600 /* HCMenuViewController+SharePDF.swift */,
 				42E227B2210373E000D112E7 /* HCMenuViewController+SharePNG.swift */,
+				42AC2D7D2308134B0089947B /* HCMenuViewController+ShareSVG.swift */,
 			);
 			path = Menu;
 			sourceTree = "<group>";
@@ -912,6 +934,15 @@
 			path = TestData_Subdivide;
 			sourceTree = "<group>";
 		};
+		42AC2D7823080F3E0089947B /* Export */ = {
+			isa = PBXGroup;
+			children = (
+				42E7DBFF2199F7F700C9E10F /* PDFExporter.swift */,
+				42AC2D79230810180089947B /* SVGExporter.swift */,
+			);
+			path = Export;
+			sourceTree = "<group>";
+		};
 		42AF940C215451C200D07373 /* Canvas */ = {
 			isa = PBXGroup;
 			children = (
@@ -941,7 +972,6 @@
 				42C6B6EB21A74781004E7F58 /* HCZoomToFit.swift */,
 				4296506122FF483400966050 /* Menu */,
 				427B1656216914FB00228748 /* TDCanvasDrawingProtocol.swift */,
-				42E7DBFF2199F7F700C9E10F /* TDRenderVector.swift */,
 			);
 			path = Canvas;
 			sourceTree = "<group>";
@@ -997,6 +1027,7 @@
 				42CE29A122DA7A50001EED4A /* E2Canvas+CountDifferencies.swift */,
 				42CE299A22DA7A50001EED4A /* E2Canvas+Equatable.swift */,
 				42CE29A322DA7A50001EED4A /* E2Canvas+Flip.swift */,
+				421B0A9E2302005600DA51E2 /* E2Canvas+GameOfLife.swift */,
 				42CE298C22DA7A50001EED4A /* E2Canvas+GetPixel.swift */,
 				42CE299222DA7A50001EED4A /* E2Canvas+Histogram.swift */,
 				42CE299022DA7A50001EED4A /* E2Canvas+Line.swift */,
@@ -1009,6 +1040,7 @@
 				42CE298922DA7A50001EED4A /* E2Canvas+Triangles.swift */,
 				42CE298F22DA7A50001EED4A /* E2CanvasBoundingBox.swift */,
 				42CE298D22DA7A50001EED4A /* E2CanvasPoint.swift */,
+				42851C882301F5B60047C7D0 /* E2CanvasPoint+Orientation.swift */,
 				42CE299622DA7A50001EED4A /* E2CanvasSize.swift */,
 				42CE299822DA7A50001EED4A /* E2CanvasTriangle.swift */,
 				42CE299122DA7A50001EED4A /* E2Combiner.swift */,
@@ -1158,6 +1190,8 @@
 				42E22762210365D000D112E7 /* test_move_up_wrap0_before.txt */,
 				42E2275A210365D000D112E7 /* test_move_up_wrap1_after.txt */,
 				42E22755210365D000D112E7 /* test_move_up_wrap1_before.txt */,
+				42851C8A2301F7330047C7D0 /* test_orientation_downward.pbm */,
+				42851C8B2301F7330047C7D0 /* test_orientation_upward.pbm */,
 				42E22769210365D000D112E7 /* test_rotate_line_60degree.txt */,
 				42E22746210365D000D112E7 /* test_rotate_line_none.txt */,
 				42E2274E210365D000D112E7 /* test_rotate_line2_minus60degree.txt */,
@@ -1212,6 +1246,7 @@
 				42E2271F2103633200D112E7 /* E2CanvasFlipTests.swift */,
 				422F241421B9D3A800707D13 /* E2CanvasHistogramTests.swift */,
 				42E227152103632B00D112E7 /* E2CanvasMoveTests.swift */,
+				42851C8E2301F7760047C7D0 /* E2CanvasPointOrientationTests.swift */,
 				42E227182103632C00D112E7 /* E2CanvasRotateTests.swift */,
 				429F1B2D22FA0B31005A1EBF /* E2CanvasSubdivideTests.swift */,
 				42E2271B2103632F00D112E7 /* E2CombinerTests.swift */,
@@ -1223,10 +1258,12 @@
 				42E227AB21036AD100D112E7 /* RemapTests.swift */,
 				429B20D2221A252C001E9597 /* StringTrimTests.swift */,
 				42EBB2F7177EFC5400511CC7 /* Supporting Files */,
+				42AC2D7B230812220089947B /* SVGExporterTests.swift */,
 				42E2271A2103632E00D112E7 /* TDCanvasReadWriteTests.swift */,
 				42041A7D22C5544F003864DC /* TDLiveIndicatorTests.swift */,
 				42E227172103632B00D112E7 /* TDParsePBMTests.swift */,
 				42E22744210365D000D112E7 /* TestData_Engine */,
+				42F274B923059DAD00727F4F /* TestData_ExportSVG */,
 				42E22738210365D000D112E7 /* TestData_ParsePBM */,
 				42E22771210365D200D112E7 /* TestData_ReadWrite */,
 				429F1B2F22FA0BF6005A1EBF /* TestData_Subdivide */,
@@ -1276,6 +1313,15 @@
 				42C8855B17B2B46F00D5FF54 /* zh_CN.lproj */,
 			);
 			path = Assets;
+			sourceTree = "<group>";
+		};
+		42F274B923059DAD00727F4F /* TestData_ExportSVG */ = {
+			isa = PBXGroup;
+			children = (
+				42F274BA23059DAD00727F4F /* test_exportsvg_corners.pbm */,
+				4204305B2305A97B00AEC0E0 /* test_exportsvg_cube.pbm */,
+			);
+			path = TestData_ExportSVG;
 			sourceTree = "<group>";
 		};
 		42F7235622EF52B00038CEA1 /* Resources */ = {
@@ -1537,11 +1583,14 @@
 				42E2279A210365D300D112E7 /* test_move_left_wrap0_before.txt in Resources */,
 				42E22787210365D300D112E7 /* test_rotate_line2_minus60degree.txt in Resources */,
 				42E22799210365D300D112E7 /* test_move_right_wrap2_after.txt in Resources */,
+				4204305A23059E1E00AEC0E0 /* test_exportsvg_corners.pbm in Resources */,
+				4204305C2305A97B00AEC0E0 /* test_exportsvg_cube.pbm in Resources */,
 				42E22773210365D300D112E7 /* test_parsepbm_utf16be.pbm in Resources */,
 				42E2278F210365D300D112E7 /* test_move_right_simple_before.txt in Resources */,
 				42E22776210365D300D112E7 /* test_parsepbm_simple1.pbm in Resources */,
 				42E2277D210365D300D112E7 /* test_parsepbm_utf16le.pbm in Resources */,
 				42E22778210365D300D112E7 /* test_parsepbm_utf8.pbm in Resources */,
+				42851C8C2301F7330047C7D0 /* test_orientation_downward.pbm in Resources */,
 				429F1B3D22FA0BF6005A1EBF /* test_subdivide0_out2.pbm in Resources */,
 				42E227AA210365D300D112E7 /* test_readwrite_wrongdimensions1.pbm in Resources */,
 				42E2277F210365D300D112E7 /* test_rotate_line_none.txt in Resources */,
@@ -1562,6 +1611,7 @@
 				42E22780210365D300D112E7 /* test_flipx_simple_after.txt in Resources */,
 				42E22777210365D300D112E7 /* test_parsepbm_negative_width.pbm in Resources */,
 				422F241E21B9E9E800707D13 /* test_boundingbox9.txt in Resources */,
+				42851C8D2301F7330047C7D0 /* test_orientation_upward.pbm in Resources */,
 				42B48E7021C7021D008C6F7A /* test_boundingbox11.txt in Resources */,
 				422F241121B9C89A00707D13 /* test_boundingbox8.txt in Resources */,
 				429F1B3E22FA0BF6005A1EBF /* test_subdivide1_out2.pbm in Resources */,
@@ -1764,7 +1814,7 @@
 				42646E7F22E4785E00914600 /* EmailWithFeedback.swift in Sources */,
 				42608EDA21CEABF900A99669 /* HCSafeAreaView.swift in Sources */,
 				42AF9421215451C200D07373 /* AAPLMathUtilities.m in Sources */,
-				4209674D2235BF6D00D5C576 /* TDRenderVector.swift in Sources */,
+				4209674D2235BF6D00D5C576 /* PDFExporter.swift in Sources */,
 				42D0DDA422454A210066DB3D /* BrowserViewController.swift in Sources */,
 				42E227CA210373E000D112E7 /* UINavigationItem+BarButtonItemWithTag.swift in Sources */,
 				42608ED821CEA5F500A99669 /* CanvasViewController+ConfigureHCView.swift in Sources */,
@@ -1791,6 +1841,7 @@
 				42DE377420FDEEC60007845B /* CanvasViewController.swift in Sources */,
 				42AF9420215451C200D07373 /* HCMetalView+Interaction.swift in Sources */,
 				420967512235C02400D5C576 /* DocumentExample.swift in Sources */,
+				42AC2D7E2308134B0089947B /* HCMenuViewController+ShareSVG.swift in Sources */,
 				42015C81173DA5E2007597E5 /* gpc.c in Sources */,
 				42AF941F215451C200D07373 /* HCBuildHexagonCanvas.swift in Sources */,
 				42DC743A20E193380058DEA8 /* UserDefaults+RunCount.swift in Sources */,
@@ -1807,6 +1858,7 @@
 				42C6B6EC21A74781004E7F58 /* HCZoomToFit.swift in Sources */,
 				42608ED621CEA4DB00A99669 /* CanvasViewController+ConfigureToolbar.swift in Sources */,
 				42E227D0210373E000D112E7 /* UIColorExtensions.swift in Sources */,
+				42AC2D7A230810180089947B /* SVGExporter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1841,6 +1893,8 @@
 				42E227242103633600D112E7 /* E2CanvasMoveTests.swift in Sources */,
 				42E2272A2103633600D112E7 /* E2CombinerTests.swift in Sources */,
 				429B20D3221A252C001E9597 /* StringTrimTests.swift in Sources */,
+				42AC2D7C230812220089947B /* SVGExporterTests.swift in Sources */,
+				42851C8F2301F7760047C7D0 /* E2CanvasPointOrientationTests.swift in Sources */,
 				42E227262103633600D112E7 /* TDParsePBMTests.swift in Sources */,
 				42E227272103633600D112E7 /* E2CanvasRotateTests.swift in Sources */,
 				422F241521B9D3A800707D13 /* E2CanvasHistogramTests.swift in Sources */,
@@ -1874,6 +1928,7 @@
 				42CE29D522DA7A52001EED4A /* E2Canvas+StringRepresentation.swift in Sources */,
 				42CE29D822DA7A52001EED4A /* TDRenderBitmap.swift in Sources */,
 				42CE29E622DA7A52001EED4A /* CGPoint.swift in Sources */,
+				421B0A9F2302005600DA51E2 /* E2Canvas+GameOfLife.swift in Sources */,
 				42CE29C822DA7A52001EED4A /* E2Canvas+Histogram.swift in Sources */,
 				42CE29E822DA7A52001EED4A /* TDCanvasWriter.swift in Sources */,
 				42CE29CE22DA7A52001EED4A /* E2CanvasTriangle.swift in Sources */,
@@ -1911,6 +1966,7 @@
 				42CE29DA22DA7A52001EED4A /* UIColor+Image.swift in Sources */,
 				42CE29DE22DA7A52001EED4A /* TriangleDrawFrameworkMeta.swift in Sources */,
 				42CE29E522DA7A52001EED4A /* String+Trim.swift in Sources */,
+				42851C892301F5B60047C7D0 /* E2CanvasPoint+Orientation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

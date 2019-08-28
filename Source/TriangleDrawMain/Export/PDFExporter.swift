@@ -3,7 +3,7 @@ import UIKit
 import CoreGraphics
 import TriangleDrawLibrary
 
-public class TDRenderVector {
+public class PDFExporter {
 
 	public typealias ProgressBlock = (_ progress: Float) -> Void
 	public typealias CompletionBlock = (_ pdfData: Data) -> Void
@@ -337,7 +337,7 @@ public class TDRenderVector {
 			}
 		}
 
-		let rv = TDRenderVector()
+		let rv = PDFExporter()
 		DispatchQueue.global(qos: .default).async {
 			let data: Data = rv.pdfData(from: canvas, progress: innerProgressBlock)
 			DispatchQueue.main.async {

@@ -5,6 +5,11 @@ import TriangleDrawLibrary
 extension CanvasViewController {
 	@objc func invertPixels() {
 		log.debug("enter")
+		if AppConstant.Canvas.Interaction.experimentsWithGameOfLife {
+			gameOfLife()
+			return
+		}
+
 		disableInteraction()
 		let actionName = NSLocalizedString("OPERATION_INVERT", tableName: "CanvasVC", bundle: Bundle.main, value: "", comment: "The invert-color operations undo/redo name")
 		registerForUndo(#selector(invertPixels), actionName)
@@ -135,6 +140,38 @@ extension CanvasViewController {
 		// I don't have any translations for this text.
         //let actionName = NSLocalizedString("OPERATION_SUBDIVIDE", tableName: "CanvasVC", bundle: Bundle.main, value: "", comment: "The operations that subdivides into smaller triangles undo/redo name")
 		let actionName = "Subdivide"
+		undoManager.registerUndo(withTarget: self, handler: { (targetSelf) in
+			targetSelf.setDocCanvas(origCanvas)
+		})
+		if undoManager.isUndoing == false {
+			undoManager.setActionName(actionName)
+		}
+
+        document?.canvas = newCanvas
+        drawingView?.canvas = newCanvas
+        log.debug("leave")
+    }
+
+    func gameOfLife() {
+		log.debug("enter")
+		guard let undoManager: UndoManager = self.undoManager else {
+			log.error("Expected undoManager to be non-nil, but got nil")
+			return
+		}
+		guard let currentCanvas: E2Canvas = document?.canvas else {
+			log.error("Expected document to have a non-nil canvas, but got nil")
+			return
+		}
+		let newCanvas: E2Canvas = currentCanvas.gameOfLife()
+		guard newCanvas.numberOfDifferences(from: currentCanvas) >= 1 else {
+			log.debug("Nothing has changed. No need to register for undo")
+			return
+		}
+
+		let origCanvas: E2Canvas = currentCanvas.createCopy()
+		// I don't have any translations for this text.
+        //let actionName = NSLocalizedString("OPERATION_GAMEOFLIFE", tableName: "CanvasVC", bundle: Bundle.main, value: "", comment: "The operations that applies the game-of-life algorithm")
+		let actionName = "Game of Life"
 		undoManager.registerUndo(withTarget: self, handler: { (targetSelf) in
 			targetSelf.setDocCanvas(origCanvas)
 		})

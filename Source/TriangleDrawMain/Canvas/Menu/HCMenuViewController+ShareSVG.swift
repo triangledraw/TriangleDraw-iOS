@@ -3,30 +3,25 @@ import UIKit
 import TriangleDrawLibrary
 
 extension HCMenuViewController {
-	static func createSharePDFActivityViewController(pdfData: Data, filename: String, triangleCount: UInt) -> UIActivityViewController {
-		let filesize: Int = pdfData.count
+	static func createShareSVGActivityViewController(svgData: Data, filename: String, triangleCount: UInt) -> UIActivityViewController {
+		let filesize: Int = svgData.count
 		log.debug("Open share sheet.  fileSize: \(filesize)  filename: '\(filename)'  triangleCount: \(triangleCount)")
-		
+
 		// There is not easy way to tell `UIActivityViewController`
-		// that the data is a PDF file, and what the filename should be.
+		// that the data is a SVG file, and what the filename should be.
 		// The easiest solution is to store the data in the temp dir
 		// with the filename+extension that it should be treated as.
-		let url: URL = URL(fileURLWithPath: NSTemporaryDirectory()).appendingPathComponent(filename).appendingPathExtension("pdf")
+		let url: URL = URL(fileURLWithPath: NSTemporaryDirectory()).appendingPathComponent(filename).appendingPathExtension("svg")
 		do {
-			try pdfData.write(to: url)
+			try svgData.write(to: url)
 		} catch {
 			log.error("failed to write: \(url) \(error)")
 			fatalError()
 		}
-
-        let subjectFormat = NSLocalizedString("EMAIL_PDF_SUBJECT_%@", tableName: "CanvasVC", bundle: Bundle.main, value: "", comment: "TriangleDraw - {Drawing name}, a subject line for mails containing PDF attachments")
-        let emailSubject = String(format: subjectFormat, filename)
+		
+        let emailSubject = "TriangleDraw - \(filename)"
 		let itemBlock: WFActivitySpecificItemProviderItemBlock = { activityType in
-                var message: String? = nil
-                do {
-                    let format = NSLocalizedString("SHARE_%d_TRIANGLES_ON_OTHER_SOCIAL_MEDIA", tableName: "CanvasVC", bundle: Bundle.main, value: "", comment: "When sharing a drawing via other kinds of social media (Email, Text messaging, Flickr, Tumblr, etc): The message posted together with a .JPG file attachment")
-                    message = String(format: format, triangleCount)
-                }
+                let message: String = "This is what I can do with \(triangleCount) triangles. What can you do?"
                 return message
             }
         let provider = WFActivitySpecificItemProvider(placeholderItem: "", block: itemBlock)
