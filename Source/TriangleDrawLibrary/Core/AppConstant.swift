@@ -44,6 +44,7 @@ public struct AppConstant {
 
 		public struct Interaction {
 			public static let experimentsWithGameOfLife = false
+			public static let experimentsWithFilledCircles = true
 			public static let debug_tapGesture = false
 			public static let debug_drawLineGesture = false
 

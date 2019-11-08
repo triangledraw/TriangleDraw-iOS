@@ -7,6 +7,21 @@ class HCView: UIView, TDCanvasDrawingProtocol {
 
 	var metalView: HCMetalView?
 
+	var filledCircleMode = HCFilledCircleMode.variableSize {
+		didSet {
+			log.debug("changing filledCircleMode from \(oldValue) to \(filledCircleMode)")
+			if filledCircleMode != oldValue {
+				if window != nil {
+					if metalView != nil {
+						removeOurSubviews()
+						addOurSubviews()
+					}
+				}
+			}
+		}
+	}
+
+
 	override func didMoveToWindow() {
 		super.didMoveToWindow()
 		if window != nil {
@@ -20,7 +35,7 @@ class HCView: UIView, TDCanvasDrawingProtocol {
 	func addOurSubviews() {
 		let metalView: HCMetalView
 		do {
-			metalView = try HCMetalView.create(frame: CGRect.zero)
+			metalView = try HCMetalView.create(frame: CGRect.zero, filledCircleMode: self.filledCircleMode)
 		} catch {
 			#if targetEnvironment(simulator)
 				log.error("Expected a device, but got nil. Metal is not available on older simulators (pre iOS13). Metal works in iOS13 or newer simulators. Error: \(error)")

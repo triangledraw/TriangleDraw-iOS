@@ -5,6 +5,20 @@ import TriangleDrawLibrary
 extension CanvasViewController {
 	@objc func invertPixels() {
 		log.debug("enter")
+		
+		if AppConstant.Canvas.Interaction.experimentsWithFilledCircles {
+			let oldFilledCircleMode: HCFilledCircleMode = drawingView?.filledCircleMode ?? .fixedSize
+			let newFilledCircleMode: HCFilledCircleMode
+			switch oldFilledCircleMode {
+			case .fixedSize:
+				newFilledCircleMode = .variableSize
+			case .variableSize:
+				newFilledCircleMode = .fixedSize
+			}
+			drawingView?.filledCircleMode = newFilledCircleMode
+			return
+		}
+
 		if AppConstant.Canvas.Interaction.experimentsWithGameOfLife {
 			gameOfLife()
 			return
