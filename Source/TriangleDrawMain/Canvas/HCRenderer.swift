@@ -412,6 +412,7 @@ class HCRenderer: NSObject {
 	}
 
 	func filledCircle_pointSizeFromScale(_ scale: Float) -> Float {
+		return 7
 		let value = scale / 125.0
 		if value > 80 {
 			return 80
