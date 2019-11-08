@@ -42,7 +42,7 @@ vertex VertexOut filledcircle_vertex(
 	return out;
 }
 
-fragment half4 xfilledcircle_fragment(
+fragment half4 filledcircle_variablesize_fragment(
 							  VertexOut in [[stage_in]],
 							  float2 pointCoord [[point_coord]])
 {
@@ -58,7 +58,7 @@ fragment half4 xfilledcircle_fragment(
 	return half4(0.75h, 0.75h, 0.75h, 1.h) * half(alpha);
 }
 
-fragment half4 filledcircle_fragment(
+fragment half4 filledcircle_fixedsize_fragment(
 							  VertexOut in [[stage_in]],
 							  float2 pointCoord [[point_coord]])
 {

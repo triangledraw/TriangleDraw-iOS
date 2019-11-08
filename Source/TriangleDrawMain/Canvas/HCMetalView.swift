@@ -48,7 +48,7 @@ class HCMetalView: MTKView {
 			log.error("installRenderer() is missing HCView.canvas")
 			return
 		}
-		guard let newRenderer = HCRenderer(metalKitView: self, canvas: canvas) else {
+		guard let newRenderer = HCRenderer(metalKitView: self, canvas: canvas, filledCircleMode: HCFilledCircleMode.variableSize) else {
 			log.error("HCRenderer cannot be initialized")
 			return
 		}
