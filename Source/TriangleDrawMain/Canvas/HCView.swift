@@ -10,14 +10,31 @@ class HCView: UIView, TDCanvasDrawingProtocol {
 	var filledCircleMode = HCFilledCircleMode.variableSize {
 		didSet {
 			log.debug("changing filledCircleMode from \(oldValue) to \(filledCircleMode)")
-			if filledCircleMode != oldValue {
-				if window != nil {
-					if metalView != nil {
-						removeOurSubviews()
-						addOurSubviews()
-					}
-				}
+			guard filledCircleMode != oldValue else {
+				return
 			}
+			guard window != nil else {
+				return
+			}
+			guard metalView != nil else {
+				return
+			}
+			var originalScrollAndZoom = HCScrollAndZoom()
+			if let renderer = metalView?.renderer {
+				originalScrollAndZoom = renderer.scrollAndZoom
+			}
+
+			removeOurSubviews()
+			addOurSubviews()
+
+			if let canvas: E2Canvas = self._canvas {
+				metalView?.renderer?.canvas = canvas
+			}
+			if let renderer = metalView?.renderer {
+				renderer.scrollAndZoom = originalScrollAndZoom
+				renderer.shouldPerformZoomToFit = false
+			}
+
 		}
 	}
 
