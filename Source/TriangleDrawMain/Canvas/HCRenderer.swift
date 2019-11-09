@@ -34,6 +34,8 @@ struct HCFilledCircleConstants {
 }
 
 struct HCScrollAndZoom {
+	var shouldPerformZoomToFit: Bool = true
+
 	var position = CGPoint.zero
 	var pinchCenter = CGPoint.zero
 
@@ -73,7 +75,6 @@ class HCRenderer: NSObject {
 	var filledCircle_constants = HCFilledCircleConstants()
 
 	var scrollAndZoom = HCScrollAndZoom()
-	var shouldPerformZoomToFit: Bool = true
 	var zoomToFitEdgeInsets: UIEdgeInsets = UIEdgeInsets.zero
 
 	init?(metalKitView: MTKView, canvas: E2Canvas, filledCircleMode: HCFilledCircleMode) {
@@ -374,13 +375,13 @@ class HCRenderer: NSObject {
 		// We keep track of time so we can animate the various transformations
 //		time = time + timestep
 
-		if shouldPerformZoomToFit {
+		if scrollAndZoom.shouldPerformZoomToFit {
 			zoomToFit(
 				viewSize: view.bounds.size,
 				uiInsets: self.zoomToFitEdgeInsets,
 				margin: CGFloat(AppConstant.Canvas.zoomToFitMargin)
 			)
-			shouldPerformZoomToFit = false
+			scrollAndZoom.shouldPerformZoomToFit = false
 		}
 
 		var rotateRadians: Float = 0

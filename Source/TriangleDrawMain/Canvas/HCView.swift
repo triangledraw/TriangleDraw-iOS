@@ -32,7 +32,6 @@ class HCView: UIView, TDCanvasDrawingProtocol {
 			}
 			if let renderer = metalView?.renderer {
 				renderer.scrollAndZoom = originalScrollAndZoom
-				renderer.shouldPerformZoomToFit = false
 			}
 
 		}
