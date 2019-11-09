@@ -152,7 +152,7 @@ class CanvasViewController: UIViewController {
 		log.debug("enter")
 		super.viewDidAppear(animated)
 
-		self.hcSafeAreaView.interactionView?.delegate = self.hcView.metalView
+		self.hcSafeAreaView.interactionView?.delegate = self.hcView
 
 		switch AppConstant.Canvas.mode {
 		case .production:

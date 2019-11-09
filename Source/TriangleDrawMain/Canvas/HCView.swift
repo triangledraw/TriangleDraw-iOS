@@ -33,7 +33,6 @@ class HCView: UIView, TDCanvasDrawingProtocol {
 			if let renderer = metalView?.renderer {
 				renderer.scrollAndZoom = originalScrollAndZoom
 			}
-
 		}
 	}
 
@@ -126,5 +125,22 @@ class HCView: UIView, TDCanvasDrawingProtocol {
 			completionBlock()
 		}
 	}
+}
 
+extension HCView: HCInteractionViewDelegate {
+	func interactionView_scroll(_ view: HCInteractionView, panGestureRecognizer: UIPanGestureRecognizer) {
+		metalView?.interactionView_scroll(view, panGestureRecognizer: panGestureRecognizer)
+	}
+
+	func interactionView_draw(_ view: HCInteractionView, panGestureRecognizer: UIPanGestureRecognizer) {
+		metalView?.interactionView_draw(view, panGestureRecognizer: panGestureRecognizer)
+	}
+
+	func interactionView_zoom(_ view: HCInteractionView, pinchGestureRecognizer: UIPinchGestureRecognizer) {
+		metalView?.interactionView_zoom(view, pinchGestureRecognizer: pinchGestureRecognizer)
+	}
+
+	func interactionView_tap(_ view: HCInteractionView, tapGestureRecognizer: UITapGestureRecognizer) {
+		metalView?.interactionView_tap(view, tapGestureRecognizer: tapGestureRecognizer)
+	}
 }
