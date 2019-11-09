@@ -176,7 +176,7 @@ class CanvasViewController: UIViewController {
 	override func viewDidLayoutSubviews() {
 		super.viewDidLayoutSubviews()
 		let insets: UIEdgeInsets = self.canvasInsets
-		self.hcView.metalView?.renderer?.zoomToFitEdgeInsets = insets
+		self.hcView.metalView?.renderer?.scrollAndZoom.zoomToFitEdgeInsets = insets
 	}
 
 	func installDeveloperLabelRefreshTimer() {
