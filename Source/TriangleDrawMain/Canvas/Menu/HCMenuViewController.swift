@@ -56,6 +56,7 @@ class HCMenuViewController: RFFormViewController {
 	override func populate(_ builder: RFFormBuilder) {
 		builder.navigationTitle = "Canvas"
 		builder += RFSectionHeaderTitleFormItem().title("Settings")
+		builder += gridMode
 		builder += symmetryMode
 
 		builder += RFSectionHeaderTitleFormItem().title("Export")
@@ -69,6 +70,13 @@ class HCMenuViewController: RFFormViewController {
 		builder += RFSectionHeaderTitleFormItem().title("Advanced")
 		builder += advancedSubdivideButton
 	}
+
+	lazy var gridMode: RFSegmentedControlFormItem = {
+		let instance = RFSegmentedControlFormItem()
+		instance.title = "Grid"
+		instance.items = ["Small Dots", "Big Dots"]
+		return instance
+	}()
 
 	lazy var symmetryMode: RFOptionPickerFormItem = {
 		let instance = RFOptionPickerFormItem()
