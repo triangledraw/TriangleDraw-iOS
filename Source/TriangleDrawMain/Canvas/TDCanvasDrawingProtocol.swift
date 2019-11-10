@@ -15,7 +15,6 @@ protocol TDCanvasDrawingProtocol: class {
 	var onAfterDrawBlock: TDCanvasDrawing_AfterDrawBlock? { get set }
 	var hideLabels: Bool { get set }
 	var canvas: E2Canvas? { get set }
-	var filledCircleMode: HCFilledCircleMode { get set }
 
 	func rotateAnimation(degrees: Int, completionBlock: @escaping TDCanvasDrawing_RotateCompletionBlock)
 }

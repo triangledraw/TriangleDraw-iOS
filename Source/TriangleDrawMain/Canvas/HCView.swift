@@ -7,13 +7,6 @@ class HCView: UIView, TDCanvasDrawingProtocol {
 
 	var metalView: HCMetalView?
 
-	var filledCircleMode = HCFilledCircleMode.variableSize {
-		didSet {
-			log.debug("changing filledCircleMode from \(oldValue) to \(filledCircleMode)")
-			canvasGridModeDidChange()
-		}
-	}
-
 	func canvasGridModeDidChange() {
 		guard window != nil else {
 			return
