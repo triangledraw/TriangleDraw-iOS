@@ -74,7 +74,13 @@ class HCMenuViewController: RFFormViewController {
 	lazy var gridMode: RFSegmentedControlFormItem = {
 		let instance = RFSegmentedControlFormItem()
 		instance.title = "Grid"
-		instance.items = ["Small Dots", "Big Dots"]
+		instance.items = CanvasGridMode.allCases.map { $0.localizedDisplayName }
+		let currentGridMode: CanvasGridMode = CanvasGridModeController().currentCanvasGridMode
+		instance.selected = CanvasGridMode.allCases.firstIndex(of: currentGridMode) ?? 0
+		instance.valueDidChangeBlock = { value in
+			let gridMode: CanvasGridMode = CanvasGridMode.allCases[value]
+			CanvasGridModeController().changeCanvasGridMode(to: gridMode)
+		}
 		return instance
 	}()
 
