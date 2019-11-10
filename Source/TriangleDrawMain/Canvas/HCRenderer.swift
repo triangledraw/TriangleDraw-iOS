@@ -8,6 +8,11 @@ enum HCRendererError: Error {
     case badVertexDescriptor
 }
 
+enum HCFilledCircleMode {
+	case variableSize
+	case fixedSize
+}
+
 struct HCFilledTriangleVertex {
 	var position: TDFloat2
 	var color: TDFloat4
@@ -29,6 +34,9 @@ struct HCFilledCircleConstants {
 }
 
 struct HCScrollAndZoom {
+	var shouldPerformZoomToFit: Bool = true
+	var zoomToFitEdgeInsets: UIEdgeInsets = UIEdgeInsets.zero
+
 	var position = CGPoint.zero
 	var pinchCenter = CGPoint.zero
 
@@ -57,6 +65,7 @@ class HCRenderer: NSObject {
 	var edgetriangle_indexBuffer: MTLBuffer
 	var edgetriangle_indices: [UInt16]
 
+	var filledcircle_mode: HCFilledCircleMode
 	var filledcircle_pipelineState: MTLRenderPipelineState
 	var filledcircle_vertexBuffer: MTLBuffer
 	var filledcircle_indexBuffer: MTLBuffer
@@ -67,27 +76,31 @@ class HCRenderer: NSObject {
 	var filledCircle_constants = HCFilledCircleConstants()
 
 	var scrollAndZoom = HCScrollAndZoom()
-	var shouldPerformZoomToFit: Bool = true
-	var zoomToFitEdgeInsets: UIEdgeInsets = UIEdgeInsets.zero
 
-	init?(metalKitView: MTKView, canvas: E2Canvas) {
+	init?(metalKitView: MTKView, canvas: E2Canvas, filledCircleMode: HCFilledCircleMode) {
 		self._canvas = canvas
         self.device = metalKitView.device!
+		self.filledcircle_mode = filledCircleMode
         guard let queue = self.device.makeCommandQueue() else { return nil }
         self.commandQueue = queue
 
 		metalKitView.colorPixelFormat = MTLPixelFormat.bgra8Unorm
 
         do {
-            filledtriangle_pipelineState = try HCRenderer.filledtriangle_renderPipelineState(device: device,
-                                                                       metalKitView: metalKitView)
+            filledtriangle_pipelineState = try HCRenderer.filledtriangle_renderPipelineState(
+				device: device,
+				metalKitView: metalKitView
+			)
         } catch {
             log.error("Unable to compile render pipeline state.  Error info: \(error)")
             return nil
         }
 		do {
-			filledcircle_pipelineState = try HCRenderer.filledcircle_renderPipelineState(device: device,
-																	   metalKitView: metalKitView)
+			filledcircle_pipelineState = try HCRenderer.filledcircle_renderPipelineState(
+				device: device,
+				metalKitView: metalKitView,
+				mode: filledCircleMode
+			)
 		} catch {
 			log.error("Unable to compile render pipeline state.  Error info: \(error)")
 			return nil
@@ -186,9 +199,10 @@ class HCRenderer: NSObject {
 		return vertexDescriptor
 	}
 
-    class func filledtriangle_renderPipelineState(device: MTLDevice,
-                                             metalKitView: MTKView) throws -> MTLRenderPipelineState {
-
+    class func filledtriangle_renderPipelineState(
+		device: MTLDevice,
+		metalKitView: MTKView) throws -> MTLRenderPipelineState
+	{
 		guard let library: MTLLibrary = device.makeDefaultLibrary() else {
 			fatalError("makeDefaultLibrary()")
 		}
@@ -211,17 +225,26 @@ class HCRenderer: NSObject {
     }
 
 
-	class func filledcircle_renderPipelineState(device: MTLDevice,
-											 metalKitView: MTKView) throws -> MTLRenderPipelineState {
-
+	class func filledcircle_renderPipelineState(
+		device: MTLDevice,
+		metalKitView: MTKView,
+		mode: HCFilledCircleMode) throws -> MTLRenderPipelineState
+	{
 		guard let library: MTLLibrary = device.makeDefaultLibrary() else {
 			fatalError("makeDefaultLibrary()")
 		}
 		guard let vertexFunction = library.makeFunction(name: "filledcircle_vertex") else {
 			fatalError("makeFunction() filledcircle_vertex")
 		}
-		guard let fragmentFunction = library.makeFunction(name: "filledcircle_fragment") else {
-			fatalError("makeFunction() filledcircle_fragment")
+		let fragmentFunctionName: String
+		switch mode {
+		case .variableSize:
+			fragmentFunctionName = "filledcircle_variablesize_fragment"
+		case .fixedSize:
+			fragmentFunctionName = "filledcircle_fixedsize_fragment"
+		}
+		guard let fragmentFunction = library.makeFunction(name: fragmentFunctionName) else {
+			fatalError("makeFunction() missing fragmentFunction for mode: '\(mode)' name: '\(fragmentFunctionName)'")
 		}
 
 		let pipelineDescriptor = MTLRenderPipelineDescriptor()
@@ -352,13 +375,13 @@ class HCRenderer: NSObject {
 		// We keep track of time so we can animate the various transformations
 //		time = time + timestep
 
-		if shouldPerformZoomToFit {
+		if scrollAndZoom.shouldPerformZoomToFit {
 			zoomToFit(
 				viewSize: view.bounds.size,
-				uiInsets: self.zoomToFitEdgeInsets,
+				uiInsets: scrollAndZoom.zoomToFitEdgeInsets,
 				margin: CGFloat(AppConstant.Canvas.zoomToFitMargin)
 			)
-			shouldPerformZoomToFit = false
+			scrollAndZoom.shouldPerformZoomToFit = false
 		}
 
 		var rotateRadians: Float = 0
@@ -412,14 +435,23 @@ class HCRenderer: NSObject {
 	}
 
 	func filledCircle_pointSizeFromScale(_ scale: Float) -> Float {
-		let value = scale / 125.0
-		if value > 80 {
-			return 80
+		switch self.filledcircle_mode {
+		case .variableSize:
+			// Zoom level affects the size of the dots.
+			// Zoom in and the dots gets larger.
+			// Zoom out and the dots gets smaller.
+			let value = scale / 125.0
+			if value > 80 {
+				return 80
+			}
+			if value < 3.5 {
+				return 3.5
+			}
+			return value
+		case .fixedSize:
+			// The dots are unaffected by the zoom level.
+			return 7
 		}
-		if value < 3.5 {
-			return 3.5
-		}
-		return value
 	}
 }
 

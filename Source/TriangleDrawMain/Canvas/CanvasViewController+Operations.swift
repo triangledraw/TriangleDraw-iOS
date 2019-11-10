@@ -5,6 +5,7 @@ import TriangleDrawLibrary
 extension CanvasViewController {
 	@objc func invertPixels() {
 		log.debug("enter")
+		
 		if AppConstant.Canvas.Interaction.experimentsWithGameOfLife {
 			gameOfLife()
 			return

@@ -42,7 +42,7 @@ vertex VertexOut filledcircle_vertex(
 	return out;
 }
 
-fragment half4 filledcircle_fragment(
+fragment half4 filledcircle_variablesize_fragment(
 							  VertexOut in [[stage_in]],
 							  float2 pointCoord [[point_coord]])
 {
@@ -56,4 +56,14 @@ fragment half4 filledcircle_fragment(
 
 	float alpha = 1.f - smoothstep(1.f - delta, 1.f + delta, r);
 	return half4(0.75h, 0.75h, 0.75h, 1.h) * half(alpha);
+}
+
+fragment half4 filledcircle_fixedsize_fragment(
+							  VertexOut in [[stage_in]],
+							  float2 pointCoord [[point_coord]])
+{
+    float2 cxy = 2.f * (pointCoord - 0.5f);
+    float v = 1.f - length(cxy);
+    float alpha = smoothstep(0.6f, 1.f, v) * 0.375f;
+	return half(alpha);
 }
