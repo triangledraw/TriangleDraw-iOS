@@ -7,6 +7,7 @@ import MBProgressHUD
 
 protocol HCMenuViewControllerDelegate: class {
 	func hcMenuViewController_applySubdivide(n: UInt8)
+	func hcMenuViewController_canvasGridModeDidChange()
 }
 
 enum HexagonCanvasMenuDocument {
@@ -77,9 +78,10 @@ class HCMenuViewController: RFFormViewController {
 		instance.items = CanvasGridMode.allCases.map { $0.localizedDisplayName }
 		let currentGridMode: CanvasGridMode = CanvasGridModeController().currentCanvasGridMode
 		instance.selected = CanvasGridMode.allCases.firstIndex(of: currentGridMode) ?? 0
-		instance.valueDidChangeBlock = { value in
+		instance.valueDidChangeBlock = { [weak self] value in
 			let gridMode: CanvasGridMode = CanvasGridMode.allCases[value]
 			CanvasGridModeController().changeCanvasGridMode(to: gridMode)
+			self?.delegate?.hcMenuViewController_canvasGridModeDidChange()
 		}
 		return instance
 	}()

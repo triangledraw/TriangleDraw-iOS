@@ -506,4 +506,8 @@ extension CanvasViewController: HCMenuViewControllerDelegate {
 		log.debug("apply subdivide. N=\(n)")
 		self.subdivide(n: n)
 	}
+
+	func hcMenuViewController_canvasGridModeDidChange() {
+		hcView?.canvasGridModeDidChange()
+	}
 }

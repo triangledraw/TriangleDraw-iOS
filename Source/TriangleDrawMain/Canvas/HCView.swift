@@ -10,32 +10,32 @@ class HCView: UIView, TDCanvasDrawingProtocol {
 	var filledCircleMode = HCFilledCircleMode.variableSize {
 		didSet {
 			log.debug("changing filledCircleMode from \(oldValue) to \(filledCircleMode)")
-			guard filledCircleMode != oldValue else {
-				return
-			}
-			guard window != nil else {
-				return
-			}
-			guard metalView != nil else {
-				return
-			}
-			var originalScrollAndZoom = HCScrollAndZoom()
-			if let renderer = metalView?.renderer {
-				originalScrollAndZoom = renderer.scrollAndZoom
-			}
-
-			removeOurSubviews()
-			addOurSubviews()
-
-			if let canvas: E2Canvas = self._canvas {
-				metalView?.renderer?.canvas = canvas
-			}
-			if let renderer = metalView?.renderer {
-				renderer.scrollAndZoom = originalScrollAndZoom
-			}
+			canvasGridModeDidChange()
 		}
 	}
 
+	func canvasGridModeDidChange() {
+		guard window != nil else {
+			return
+		}
+		guard metalView != nil else {
+			return
+		}
+		var originalScrollAndZoom = HCScrollAndZoom()
+		if let renderer = metalView?.renderer {
+			originalScrollAndZoom = renderer.scrollAndZoom
+		}
+
+		removeOurSubviews()
+		addOurSubviews()
+
+		if let canvas: E2Canvas = self._canvas {
+			metalView?.renderer?.canvas = canvas
+		}
+		if let renderer = metalView?.renderer {
+			renderer.scrollAndZoom = originalScrollAndZoom
+		}
+	}
 
 	override func didMoveToWindow() {
 		super.didMoveToWindow()
@@ -48,9 +48,11 @@ class HCView: UIView, TDCanvasDrawingProtocol {
 	}
 
 	func addOurSubviews() {
+		let filledCircleMode: HCFilledCircleMode = CanvasGridModeController().currentCanvasGridMode.filledCircleMode
+
 		let metalView: HCMetalView
 		do {
-			metalView = try HCMetalView.create(frame: CGRect.zero, filledCircleMode: self.filledCircleMode)
+			metalView = try HCMetalView.create(frame: CGRect.zero, filledCircleMode: filledCircleMode)
 		} catch {
 			#if targetEnvironment(simulator)
 				log.error("Expected a device, but got nil. Metal is not available on older simulators (pre iOS13). Metal works in iOS13 or newer simulators. Error: \(error)")
@@ -142,5 +144,16 @@ extension HCView: HCInteractionViewDelegate {
 
 	func interactionView_tap(_ view: HCInteractionView, tapGestureRecognizer: UITapGestureRecognizer) {
 		metalView?.interactionView_tap(view, tapGestureRecognizer: tapGestureRecognizer)
+	}
+}
+
+extension CanvasGridMode {
+	fileprivate var filledCircleMode: HCFilledCircleMode {
+		switch self {
+		case .smallFixedSizeDots:
+			return HCFilledCircleMode.fixedSize
+		case .bigZoomableDots:
+			return HCFilledCircleMode.variableSize
+		}
 	}
 }
