@@ -7,6 +7,29 @@ class HCView: UIView, TDCanvasDrawingProtocol {
 
 	var metalView: HCMetalView?
 
+	func canvasGridModeDidChange() {
+		guard window != nil else {
+			return
+		}
+		guard metalView != nil else {
+			return
+		}
+		var originalScrollAndZoom = HCScrollAndZoom()
+		if let renderer = metalView?.renderer {
+			originalScrollAndZoom = renderer.scrollAndZoom
+		}
+
+		removeOurSubviews()
+		addOurSubviews()
+
+		if let canvas: E2Canvas = self._canvas {
+			metalView?.renderer?.canvas = canvas
+		}
+		if let renderer = metalView?.renderer {
+			renderer.scrollAndZoom = originalScrollAndZoom
+		}
+	}
+
 	override func didMoveToWindow() {
 		super.didMoveToWindow()
 		if window != nil {
@@ -18,9 +41,11 @@ class HCView: UIView, TDCanvasDrawingProtocol {
 	}
 
 	func addOurSubviews() {
+		let filledCircleMode: HCFilledCircleMode = CanvasGridModeController().currentCanvasGridMode.filledCircleMode
+
 		let metalView: HCMetalView
 		do {
-			metalView = try HCMetalView.create(frame: CGRect.zero)
+			metalView = try HCMetalView.create(frame: CGRect.zero, filledCircleMode: filledCircleMode)
 		} catch {
 			#if targetEnvironment(simulator)
 				log.error("Expected a device, but got nil. Metal is not available on older simulators (pre iOS13). Metal works in iOS13 or newer simulators. Error: \(error)")
@@ -95,5 +120,33 @@ class HCView: UIView, TDCanvasDrawingProtocol {
 			completionBlock()
 		}
 	}
+}
 
+extension HCView: HCInteractionViewDelegate {
+	func interactionView_scroll(_ view: HCInteractionView, panGestureRecognizer: UIPanGestureRecognizer) {
+		metalView?.interactionView_scroll(view, panGestureRecognizer: panGestureRecognizer)
+	}
+
+	func interactionView_draw(_ view: HCInteractionView, panGestureRecognizer: UIPanGestureRecognizer) {
+		metalView?.interactionView_draw(view, panGestureRecognizer: panGestureRecognizer)
+	}
+
+	func interactionView_zoom(_ view: HCInteractionView, pinchGestureRecognizer: UIPinchGestureRecognizer) {
+		metalView?.interactionView_zoom(view, pinchGestureRecognizer: pinchGestureRecognizer)
+	}
+
+	func interactionView_tap(_ view: HCInteractionView, tapGestureRecognizer: UITapGestureRecognizer) {
+		metalView?.interactionView_tap(view, tapGestureRecognizer: tapGestureRecognizer)
+	}
+}
+
+extension CanvasGridMode {
+	fileprivate var filledCircleMode: HCFilledCircleMode {
+		switch self {
+		case .smallFixedSizeDots:
+			return HCFilledCircleMode.fixedSize
+		case .bigZoomableDots:
+			return HCFilledCircleMode.variableSize
+		}
+	}
 }

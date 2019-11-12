@@ -257,6 +257,7 @@
 		42EBB2F5177EFC5400511CC7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		42EBB2FB177EFC5400511CC7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 42EBB2F9177EFC5400511CC7 /* InfoPlist.strings */; };
 		42EBB30F177EFD1000511CC7 /* gpc.c in Sources */ = {isa = PBXBuildFile; fileRef = 42015C7D173DA5E2007597E5 /* gpc.c */; };
+		42ECBCC92378ADE700758303 /* CanvasGridMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42ECBCC82378ADE700758303 /* CanvasGridMode.swift */; };
 		42F04EC020E015450038BF11 /* Platform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F04EBF20E015450038BF11 /* Platform.swift */; };
 		42F0C2DD22DA6E22003F015B /* TriangleDrawLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F0C2DC22DA6E22003F015B /* TriangleDrawLibrary.swift */; };
 		42F0C2E622DA707C003F015B /* libTriangleDrawLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 42F0C2DA22DA6E22003F015B /* libTriangleDrawLibrary.a */; };
@@ -616,6 +617,7 @@
 		42EBB2F8177EFC5400511CC7 /* Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Tests-Info.plist"; sourceTree = "<group>"; };
 		42EBB2FA177EFC5400511CC7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		42EBB317177EFDEF00511CC7 /* libPods.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libPods.a; path = "Pods/build/Debug-iphoneos/libPods.a"; sourceTree = "<group>"; };
+		42ECBCC82378ADE700758303 /* CanvasGridMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasGridMode.swift; sourceTree = "<group>"; };
 		42F04EBF20E015450038BF11 /* Platform.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Platform.swift; sourceTree = "<group>"; };
 		42F0C2DA22DA6E22003F015B /* libTriangleDrawLibrary.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libTriangleDrawLibrary.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		42F0C2DC22DA6E22003F015B /* TriangleDrawLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriangleDrawLibrary.swift; sourceTree = "<group>"; };
@@ -890,6 +892,7 @@
 		4296506122FF483400966050 /* Menu */ = {
 			isa = PBXGroup;
 			children = (
+				42ECBCC82378ADE700758303 /* CanvasGridMode.swift */,
 				4296505F22FF468300966050 /* HCMenuSubdivideViewController.swift */,
 				428DFD0E22D9D1CD005BE880 /* HCMenuViewController.swift */,
 				42646E8022E4A08800914600 /* HCMenuViewController+SharePDF.swift */,
@@ -1847,6 +1850,7 @@
 				42DC743A20E193380058DEA8 /* UserDefaults+RunCount.swift in Sources */,
 				42646E8122E4A08800914600 /* HCMenuViewController+SharePDF.swift in Sources */,
 				42E227D1210373E000D112E7 /* UILabel+TDAlign.swift in Sources */,
+				42ECBCC92378ADE700758303 /* CanvasGridMode.swift in Sources */,
 				42E227C4210373E000D112E7 /* TDCalculateCubicBezier.swift in Sources */,
 				42608ECE21CE77C700A99669 /* UIEdgeInsets+InsetsByAdding.swift in Sources */,
 				427B1657216914FB00228748 /* TDCanvasDrawingProtocol.swift in Sources */,

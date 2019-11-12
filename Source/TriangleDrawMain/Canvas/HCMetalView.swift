@@ -14,27 +14,23 @@ enum HCMetalViewCreateError: Error {
 
 
 class HCMetalView: MTKView {
-	static func create(frame frameRect: CGRect) throws -> HCMetalView {
+	static func create(frame frameRect: CGRect, filledCircleMode: HCFilledCircleMode) throws -> HCMetalView {
 		guard let device: MTLDevice = MTLCreateSystemDefaultDevice() else {
 			throw HCMetalViewCreateError.unableToCreateSystemDefaultDevice
 		}
-		return HCMetalView(frame: frameRect, device: device)
+		return HCMetalView(frame: frameRect, device: device, filledCircleMode: filledCircleMode)
 	}
 
-	override init(frame frameRect: CGRect, device: MTLDevice?) {
-		assert(device != nil)
+	private let filledCircleMode: HCFilledCircleMode
+
+	private init(frame frameRect: CGRect, device: MTLDevice, filledCircleMode: HCFilledCircleMode) {
+		self.filledCircleMode = filledCircleMode
 		super.init(frame: frameRect, device: device)
-		sharedSetup()
+		self.sampleCount = AppConstant.Canvas.rasterSampleCount
 	}
 
 	required init(coder aDecoder: NSCoder) {
-		super.init(coder: aDecoder)
-		sharedSetup()
-	}
-
-	private func sharedSetup() {
-		log.debug("sharedSetup")
-		self.sampleCount = AppConstant.Canvas.rasterSampleCount
+		fatalError()
 	}
 
 	var renderer: HCRenderer?
@@ -48,7 +44,7 @@ class HCMetalView: MTKView {
 			log.error("installRenderer() is missing HCView.canvas")
 			return
 		}
-		guard let newRenderer = HCRenderer(metalKitView: self, canvas: canvas) else {
+		guard let newRenderer = HCRenderer(metalKitView: self, canvas: canvas, filledCircleMode: self.filledCircleMode) else {
 			log.error("HCRenderer cannot be initialized")
 			return
 		}

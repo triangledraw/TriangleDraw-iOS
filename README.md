@@ -1,3 +1,9 @@
+<p align="center">
+<img src="Source/Documentation/triangledraw_screenshots.png" alt="TriangleDraw screenshots"/>
+</p>
+
+---
+
 # TriangleDraw: Pixel Editor for iPad/iPhone
 
 TriangleDraw is brilliant for sketching logos. You can quickly create designs 

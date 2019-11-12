@@ -7,6 +7,7 @@ import MBProgressHUD
 
 protocol HCMenuViewControllerDelegate: class {
 	func hcMenuViewController_applySubdivide(n: UInt8)
+	func hcMenuViewController_canvasGridModeDidChange()
 }
 
 enum HexagonCanvasMenuDocument {
@@ -56,6 +57,7 @@ class HCMenuViewController: RFFormViewController {
 	override func populate(_ builder: RFFormBuilder) {
 		builder.navigationTitle = "Canvas"
 		builder += RFSectionHeaderTitleFormItem().title("Settings")
+		builder += gridMode
 		builder += symmetryMode
 
 		builder += RFSectionHeaderTitleFormItem().title("Export")
@@ -69,6 +71,20 @@ class HCMenuViewController: RFFormViewController {
 		builder += RFSectionHeaderTitleFormItem().title("Advanced")
 		builder += advancedSubdivideButton
 	}
+
+	lazy var gridMode: RFSegmentedControlFormItem = {
+		let instance = RFSegmentedControlFormItem()
+		instance.title = "Grid"
+		instance.items = CanvasGridMode.allCases.map { $0.localizedDisplayName }
+		let currentGridMode: CanvasGridMode = CanvasGridModeController().currentCanvasGridMode
+		instance.selected = CanvasGridMode.allCases.firstIndex(of: currentGridMode) ?? 0
+		instance.valueDidChangeBlock = { [weak self] value in
+			let gridMode: CanvasGridMode = CanvasGridMode.allCases[value]
+			CanvasGridModeController().changeCanvasGridMode(to: gridMode)
+			self?.delegate?.hcMenuViewController_canvasGridModeDidChange()
+		}
+		return instance
+	}()
 
 	lazy var symmetryMode: RFOptionPickerFormItem = {
 		let instance = RFOptionPickerFormItem()

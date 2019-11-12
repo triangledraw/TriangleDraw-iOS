@@ -152,7 +152,7 @@ class CanvasViewController: UIViewController {
 		log.debug("enter")
 		super.viewDidAppear(animated)
 
-		self.hcSafeAreaView.interactionView?.delegate = self.hcView.metalView
+		self.hcSafeAreaView.interactionView?.delegate = self.hcView
 
 		switch AppConstant.Canvas.mode {
 		case .production:
@@ -176,7 +176,7 @@ class CanvasViewController: UIViewController {
 	override func viewDidLayoutSubviews() {
 		super.viewDidLayoutSubviews()
 		let insets: UIEdgeInsets = self.canvasInsets
-		self.hcView.metalView?.renderer?.zoomToFitEdgeInsets = insets
+		self.hcView.metalView?.renderer?.scrollAndZoom.zoomToFitEdgeInsets = insets
 	}
 
 	func installDeveloperLabelRefreshTimer() {
@@ -505,5 +505,9 @@ extension CanvasViewController: HCMenuViewControllerDelegate {
 	func hcMenuViewController_applySubdivide(n: UInt8) {
 		log.debug("apply subdivide. N=\(n)")
 		self.subdivide(n: n)
+	}
+
+	func hcMenuViewController_canvasGridModeDidChange() {
+		hcView?.canvasGridModeDidChange()
 	}
 }
