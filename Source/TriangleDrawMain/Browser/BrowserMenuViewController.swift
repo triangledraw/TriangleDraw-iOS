@@ -51,7 +51,7 @@ class BrowserMenuViewController: RFFormViewController {
 
 	lazy var twitterButton: RFButtonFormItem = {
 		let instance = RFButtonFormItem()
-		instance.title = "twitter.com/TriangleDraw"
+		instance.title = "Twitter"
 		instance.action = { [weak self] in
 			guard let strongSelf = self else {
 				log.error("Expected self to be non-nil, but got nil. Cannot open browser.")
@@ -68,7 +68,7 @@ class BrowserMenuViewController: RFFormViewController {
 
 	lazy var instagramButton: RFButtonFormItem = {
 		let instance = RFButtonFormItem()
-		instance.title = "instagram.com/TriangleDraw"
+		instance.title = "Instagram"
 		instance.action = { [weak self] in
 			guard let strongSelf = self else {
 				log.error("Expected self to be non-nil, but got nil. Cannot open browser.")
@@ -85,7 +85,7 @@ class BrowserMenuViewController: RFFormViewController {
 
 	lazy var githubButton: RFButtonFormItem = {
 		let instance = RFButtonFormItem()
-		instance.title = "github.com/TriangleDraw"
+		instance.title = "GitHub"
 		instance.action = { [weak self] in
 			guard let strongSelf = self else {
 				log.error("Expected self to be non-nil, but got nil. Cannot open browser.")
