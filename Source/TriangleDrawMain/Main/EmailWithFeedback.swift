@@ -38,7 +38,7 @@ fileprivate class EmailWithFeedback: NSObject {
 		let mailer = MFMailComposeViewController()
 		mailer.mailComposeDelegate = self
 		mailer.setSubject(subject)
-		mailer.setToRecipients(["hello@triangledraw.com"])
+		mailer.setToRecipients(["TriangleDraw <hello@triangledraw.com>"])
 		mailer.setMessageBody(messageBody, isHTML: false)
 		if Platform.is_ideom_ipad {
 			mailer.modalPresentationStyle = .formSheet
