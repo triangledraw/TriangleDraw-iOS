@@ -91,7 +91,7 @@ class BrowserMenuViewController: RFFormViewController {
 				log.error("Expected self to be non-nil, but got nil. Cannot open browser.")
 				return
 			}
-			guard let url: URL = URL(string: "https://github.com/triangledraw") else {
+			guard let url: URL = URL(string: "https://github.com/triangledraw/TriangleDraw-iOS") else {
 				log.error("Unable to create url. Cannot open browser.")
 				return
 			}
