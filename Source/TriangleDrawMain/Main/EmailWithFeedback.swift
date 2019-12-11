@@ -41,7 +41,7 @@ fileprivate class EmailWithFeedback: NSObject {
 		mailer.setToRecipients(["TriangleDraw <hello@triangledraw.com>"])
 		mailer.setMessageBody(messageBody, isHTML: false)
 		if Platform.is_ideom_ipad {
-			mailer.modalPresentationStyle = .formSheet
+			mailer.modalPresentationStyle = .pageSheet
 		}
 		parentViewController.present(mailer, animated: true)
 	}
