@@ -29,6 +29,7 @@ class BrowserMenuViewController: RFFormViewController {
 		builder += appStoreWriteReviewButton
 		builder += twitterButton
 		builder += instagramButton
+		builder += redditButton
 
 		builder += RFSectionHeaderTitleFormItem().title("Development")
 		builder += githubButton
@@ -52,11 +53,7 @@ class BrowserMenuViewController: RFFormViewController {
 	lazy var twitterButton: RFButtonFormItem = {
 		let instance = RFButtonFormItem()
 		instance.title = "Twitter"
-		instance.action = { [weak self] in
-			guard let strongSelf = self else {
-				log.error("Expected self to be non-nil, but got nil. Cannot open browser.")
-				return
-			}
+		instance.action = {
 			guard let url: URL = URL(string: "https://twitter.com/TriangleDraw") else {
 				log.error("Unable to create url. Cannot open browser.")
 				return
@@ -69,12 +66,21 @@ class BrowserMenuViewController: RFFormViewController {
 	lazy var instagramButton: RFButtonFormItem = {
 		let instance = RFButtonFormItem()
 		instance.title = "Instagram"
-		instance.action = { [weak self] in
-			guard let strongSelf = self else {
-				log.error("Expected self to be non-nil, but got nil. Cannot open browser.")
+		instance.action = {
+			guard let url: URL = URL(string: "https://www.instagram.com/triangledraw/") else {
+				log.error("Unable to create url. Cannot open browser.")
 				return
 			}
-			guard let url: URL = URL(string: "https://www.instagram.com/triangledraw/") else {
+			UIApplication.shared.open(url)
+		}
+		return instance
+	}()
+
+	lazy var redditButton: RFButtonFormItem = {
+		let instance = RFButtonFormItem()
+		instance.title = "Reddit"
+		instance.action = {
+			guard let url: URL = URL(string: "https://www.reddit.com/r/TriangleDraw/") else {
 				log.error("Unable to create url. Cannot open browser.")
 				return
 			}
@@ -86,11 +92,7 @@ class BrowserMenuViewController: RFFormViewController {
 	lazy var githubButton: RFButtonFormItem = {
 		let instance = RFButtonFormItem()
 		instance.title = "GitHub"
-		instance.action = { [weak self] in
-			guard let strongSelf = self else {
-				log.error("Expected self to be non-nil, but got nil. Cannot open browser.")
-				return
-			}
+		instance.action = {
 			guard let url: URL = URL(string: "https://github.com/triangledraw/TriangleDraw-iOS") else {
 				log.error("Unable to create url. Cannot open browser.")
 				return
