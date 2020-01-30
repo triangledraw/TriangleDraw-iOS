@@ -553,5 +553,7 @@ extension CanvasViewController: AcceptsVerboseInfoProvider {
 			append("scale", scaleString)
 			append("position", positionString)
 		}
+
+		self.hcSafeAreaView.verboseInfo(provider)
 	}
 }
