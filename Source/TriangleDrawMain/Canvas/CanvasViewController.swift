@@ -328,36 +328,9 @@ class CanvasViewController: UIViewController {
 	@objc func debugButtonAction() {
 		log.debug("enter")
 
-		typealias Pair = (String, String)
-		var pairs = Array<Pair>()
-		func info(_ key: String, _ value: String) {
-			pairs.append((key, value))
-		}
-
-		if let document: Document = self.document {
-			info("document", "non-nil")
-			info("document.displayName", document.displayName)
-			info("document.hasUnsavedChanges", document.hasUnsavedChanges ? "true" : "false")
-			if document.canvas != nil {
-				info("document.canvas", "non-nil")
-			} else {
-				info("document.canvas", "nil (This is possible an error state!)")
-			}
-		} else {
-			info("document", "nil (This is possible an error state!)")
-		}
-
-		do {
-			let viewSize: CGSize = view.frame.size
-			let edgeInsets: UIEdgeInsets = self.canvasInsets
-			let scaleString: String = self.hcView.metalView?.renderer?.scrollAndZoom.scale.string1 ?? "N/A"
-			let positionString: String = self.hcView.metalView?.renderer?.scrollAndZoom.position.string1 ?? "N/A"
-			info("view", "\(viewSize.width.string1), \(viewSize.height.string1)")
-			info("inset top/bottom", "\(edgeInsets.top.string1), \(edgeInsets.bottom.string1)")
-			info("inset left/right", "\(edgeInsets.left.string1), \(edgeInsets.right.string1)")
-			info("scale", scaleString)
-			info("position", positionString)
-		}
+		let provider = VerboseInfoProvider()
+		self.verboseInfo(provider)
+		let pairs = provider.pairs
 
 		log.debug("pairs: \(pairs)")
 
@@ -549,5 +522,36 @@ extension CanvasViewController: HCMenuViewControllerDelegate {
 
 	func hcMenuViewController_canvasGridModeDidChange() {
 		hcView?.canvasGridModeDidChange()
+	}
+}
+
+extension CanvasViewController: AcceptsVerboseInfoProvider {
+	func verboseInfo(_ provider: VerboseInfoProvider) {
+		let append = provider.append
+
+		if let document: Document = self.document {
+			append("document.displayName", document.displayName)
+			append("document.fileURL", document.fileURL.absoluteString)
+			append("document.hasUnsavedChanges", document.hasUnsavedChanges ? "true" : "false")
+			if document.canvas != nil {
+				append("document.canvas", "non-nil")
+			} else {
+				append("document.canvas", "nil (This is possible an error state!)")
+			}
+		} else {
+			append("document", "nil (This is possible an error state!)")
+		}
+
+		do {
+			let viewSize: CGSize = view.frame.size
+			let edgeInsets: UIEdgeInsets = self.canvasInsets
+			let scaleString: String = self.hcView.metalView?.renderer?.scrollAndZoom.scale.string1 ?? "N/A"
+			let positionString: String = self.hcView.metalView?.renderer?.scrollAndZoom.position.string1 ?? "N/A"
+			append("view", "\(viewSize.width.string1), \(viewSize.height.string1)")
+			append("inset top/bottom", "\(edgeInsets.top.string1), \(edgeInsets.bottom.string1)")
+			append("inset left/right", "\(edgeInsets.left.string1), \(edgeInsets.right.string1)")
+			append("scale", scaleString)
+			append("position", positionString)
+		}
 	}
 }

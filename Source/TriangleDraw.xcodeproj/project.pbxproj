@@ -109,6 +109,7 @@
 		42B48E9421CB9F9E008C6F7A /* test_boundingbox13.txt in Resources */ = {isa = PBXBuildFile; fileRef = 42B48E9321CB9F9D008C6F7A /* test_boundingbox13.txt */; };
 		42B5308912EC49390070D150 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42B5308812EC49390070D150 /* CFNetwork.framework */; };
 		42B5308D12EC494A0070D150 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42B5308C12EC494A0070D150 /* SystemConfiguration.framework */; };
+		42B686F723E3774000969839 /* VerboseInfoProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B686F623E3774000969839 /* VerboseInfoProvider.swift */; };
 		42C6B6EC21A74781004E7F58 /* HCZoomToFit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C6B6EB21A74781004E7F58 /* HCZoomToFit.swift */; };
 		42C7B27722E309F500FFA1AD /* CanvasViewController+ConfigureNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C7B27622E309F500FFA1AD /* CanvasViewController+ConfigureNavigationBar.swift */; };
 		42C7B27922E30DCB00FFA1AD /* CanvasViewController+Operations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C7B27822E30DCB00FFA1AD /* CanvasViewController+Operations.swift */; };
@@ -467,6 +468,7 @@
 		42B48E9321CB9F9D008C6F7A /* test_boundingbox13.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = test_boundingbox13.txt; sourceTree = "<group>"; };
 		42B5308812EC49390070D150 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		42B5308C12EC494A0070D150 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		42B686F623E3774000969839 /* VerboseInfoProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerboseInfoProvider.swift; sourceTree = "<group>"; };
 		42C6B6EB21A74781004E7F58 /* HCZoomToFit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HCZoomToFit.swift; sourceTree = "<group>"; };
 		42C7B27622E309F500FFA1AD /* CanvasViewController+ConfigureNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CanvasViewController+ConfigureNavigationBar.swift"; sourceTree = "<group>"; };
 		42C7B27822E30DCB00FFA1AD /* CanvasViewController+Operations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CanvasViewController+Operations.swift"; sourceTree = "<group>"; };
@@ -1081,6 +1083,7 @@
 				42CE29AC22DA7A51001EED4A /* OSLogDestination.swift */,
 				42CE29AB22DA7A51001EED4A /* TriangleDrawFrameworkMeta.swift */,
 				42CE29AF22DA7A51001EED4A /* UserDefaults+AppGroup.swift */,
+				42B686F623E3774000969839 /* VerboseInfoProvider.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -1939,6 +1942,7 @@
 				42CE29EB22DA7A52001EED4A /* FloatFormatting.swift in Sources */,
 				42CE29D422DA7A52001EED4A /* Document.swift in Sources */,
 				427FE58522FB6B0D0032A235 /* E2Canvas+Subdivide.swift in Sources */,
+				42B686F723E3774000969839 /* VerboseInfoProvider.swift in Sources */,
 				42CE29C122DA7A52001EED4A /* UIImage+ScaleToSize.swift in Sources */,
 				42CE29E422DA7A52001EED4A /* TDFloat.swift in Sources */,
 				42CE29E222DA7A52001EED4A /* UserDefaults+AppGroup.swift in Sources */,
