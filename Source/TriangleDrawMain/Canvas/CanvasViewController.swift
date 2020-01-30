@@ -327,6 +327,40 @@ class CanvasViewController: UIViewController {
 
 	@objc func debugButtonAction() {
 		log.debug("enter")
+
+		typealias Pair = (String, String)
+		var pairs = Array<Pair>()
+		func info(_ key: String, _ value: String) {
+			pairs.append((key, value))
+		}
+
+		if let document: Document = self.document {
+			info("document", "non-nil")
+			info("document.displayName", document.displayName)
+			info("document.hasUnsavedChanges", document.hasUnsavedChanges ? "true" : "false")
+			if document.canvas != nil {
+				info("document.canvas", "non-nil")
+			} else {
+				info("document.canvas", "nil (This is possible an error state!)")
+			}
+		} else {
+			info("document", "nil (This is possible an error state!)")
+		}
+
+		do {
+			let viewSize: CGSize = view.frame.size
+			let edgeInsets: UIEdgeInsets = self.canvasInsets
+			let scaleString: String = self.hcView.metalView?.renderer?.scrollAndZoom.scale.string1 ?? "N/A"
+			let positionString: String = self.hcView.metalView?.renderer?.scrollAndZoom.position.string1 ?? "N/A"
+			info("view", "\(viewSize.width.string1), \(viewSize.height.string1)")
+			info("inset top/bottom", "\(edgeInsets.top.string1), \(edgeInsets.bottom.string1)")
+			info("inset left/right", "\(edgeInsets.left.string1), \(edgeInsets.right.string1)")
+			info("scale", scaleString)
+			info("position", positionString)
+		}
+
+		log.debug("pairs: \(pairs)")
+
 		log.debug("leave")
 	}
 
