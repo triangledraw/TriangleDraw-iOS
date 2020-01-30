@@ -325,6 +325,12 @@ class CanvasViewController: UIViewController {
 		})
     }
 
+	@objc func debugButtonAction() {
+		log.debug("enter")
+		log.debug("leave")
+	}
+
+
 	// MARK: - Drawing operations
 
     func beginDrawing() {
