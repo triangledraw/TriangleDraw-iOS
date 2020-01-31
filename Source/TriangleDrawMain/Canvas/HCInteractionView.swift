@@ -92,7 +92,6 @@ extension HCInteractionView: AcceptsVerboseInfoProvider {
 		append("interactionView.frame", "\(frame.origin.string1), \(frame.size.string1)")
 
 		if let gr: UIPinchGestureRecognizer = self.pinchGestureRecognizer {
-			append("interactionView.pinchGestureRecognizer", "non-nil")
 			append("interactionView.pinchGestureRecognizer.isEnabled", "\(gr.isEnabled)")
 			append("interactionView.pinchGestureRecognizer.state", "\(gr.state.rawValue)")
 			if gr.delegate != nil {
@@ -105,7 +104,6 @@ extension HCInteractionView: AcceptsVerboseInfoProvider {
 		}
 
 		if let gr: UIPanGestureRecognizer = self.scroll_panGestureRecognizer {
-			append("interactionView.scroll_panGestureRecognizer", "non-nil")
 			append("interactionView.scroll_panGestureRecognizer.isEnabled", "\(gr.isEnabled)")
 			append("interactionView.scroll_panGestureRecognizer.state", "\(gr.state.rawValue)")
 			if gr.delegate != nil {
@@ -118,7 +116,6 @@ extension HCInteractionView: AcceptsVerboseInfoProvider {
 		}
 
 		if let gr: UIPanGestureRecognizer = self.draw_panGestureRecognizer {
-			append("interactionView.draw_panGestureRecognizer", "non-nil")
 			append("interactionView.draw_panGestureRecognizer.isEnabled", "\(gr.isEnabled)")
 			append("interactionView.draw_panGestureRecognizer.state", "\(gr.state.rawValue)")
 			if gr.delegate != nil {
@@ -131,7 +128,6 @@ extension HCInteractionView: AcceptsVerboseInfoProvider {
 		}
 
 		if let gr: UITapGestureRecognizer = self.tapGestureRecognizer {
-			append("interactionView.tapGestureRecognizer", "non-nil")
 			append("interactionView.tapGestureRecognizer.isEnabled", "\(gr.isEnabled)")
 			append("interactionView.tapGestureRecognizer.state", "\(gr.state.rawValue)")
 			if gr.delegate != nil {
