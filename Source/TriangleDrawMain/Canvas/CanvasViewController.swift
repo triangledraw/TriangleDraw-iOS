@@ -335,9 +335,9 @@ class CanvasViewController: UIViewController {
 		let provider = VerboseInfoProvider()
 		self.verboseInfo(provider)
 		let pairs = provider.pairs
-
 		log.debug("pairs: \(pairs)")
 
+		self.td_presentEmailWithVerboseInfo(provider)
 		log.debug("leave")
 	}
 

@@ -6,7 +6,7 @@ class SystemInfo {
 	static var systemInfo: String {
 		let provider = VerboseInfoProvider()
 		SystemInfo().verboseInfo(provider)
-		let pairs = provider.pairs
+		let pairs: [VerboseInfoProvider.Pair] = provider.pairs
 		let items: [String] = pairs.map { "\($0): \($1)" }
         return items.joined(separator: "\n")
     }
