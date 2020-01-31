@@ -363,7 +363,7 @@ class CanvasViewController: UIViewController {
             // Nothing has changed. No need for undo.
             return
         }
-            // Statistics
+		// Statistics
 		let numberOfDifferences: UInt
 		if let canvas0: E2Canvas = newCanvas, let canvas1: E2Canvas = oldCanvas {
 			numberOfDifferences = canvas0.numberOfDifferences(from: canvas1)
@@ -546,6 +546,13 @@ extension CanvasViewController: AcceptsVerboseInfoProvider {
 			append("document", "nil (This is possible an error state!)")
 		}
 
+		if let undoManager: UndoManager = self.undoManager {
+			append("undoManager.canUndo", "\(undoManager.canUndo)")
+			append("undoManager.undoActionName", "\(undoManager.undoActionName)")
+		} else {
+			append("undoManager", "nil (This is possible an error state!)")
+		}
+
 		do {
 			let viewSize: CGSize = view.frame.size
 			let edgeInsets: UIEdgeInsets = self.canvasInsets
@@ -556,6 +563,14 @@ extension CanvasViewController: AcceptsVerboseInfoProvider {
 			append("inset left/right", "\(edgeInsets.left.string1), \(edgeInsets.right.string1)")
 			append("scale", scaleString)
 			append("position", positionString)
+		}
+
+		if let renderer: HCRenderer = self.hcView.metalView?.renderer {
+			let edgeInsets: UIEdgeInsets = renderer.scrollAndZoom.zoomToFitEdgeInsets
+			append("hcRenderer inset top/bottom", "\(edgeInsets.top.string1), \(edgeInsets.bottom.string1)")
+			append("hcRenderer inset left/right", "\(edgeInsets.left.string1), \(edgeInsets.right.string1)")
+		} else {
+			append("hcRenderer", "nil (This is possible an error state!)")
 		}
 
 		self.hcSafeAreaView.verboseInfo(provider)
