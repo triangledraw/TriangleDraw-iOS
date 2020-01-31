@@ -555,5 +555,7 @@ extension CanvasViewController: AcceptsVerboseInfoProvider {
 		}
 
 		self.hcSafeAreaView.verboseInfo(provider)
+
+		SystemInfo().verboseInfo(provider)
 	}
 }
