@@ -2110,7 +2110,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = NO;
 				CODE_SIGN_ENTITLEMENTS = TriangleDrawMain/Resources/TriangleDrawMain.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Simon Strandgaard (2TT32WZZZQ)";
+				CODE_SIGN_IDENTITY = "Apple Development: Simon Strandgaard (2TT32WZZZQ)";
 				COPY_PHASE_STRIP = NO;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 22DR89XVRF;
@@ -2258,7 +2258,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_ENTITLEMENTS = TriangleDrawThumbnail/TriangleDrawThumbnail.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Simon Strandgaard (2TT32WZZZQ)";
+				CODE_SIGN_IDENTITY = "Apple Development: Simon Strandgaard (2TT32WZZZQ)";
 				CODE_SIGN_STYLE = Manual;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
