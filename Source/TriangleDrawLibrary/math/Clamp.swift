@@ -1,4 +1,4 @@
-// MIT license. Copyright (c) 2019 TriangleDraw. All rights reserved.
+// MIT license. Copyright (c) 2020 TriangleDraw. All rights reserved.
 
 public func clamp<T: FloatingPoint>(_ value: T, _ minValue: T, _ maxValue: T) -> T {
 	if value <= minValue {

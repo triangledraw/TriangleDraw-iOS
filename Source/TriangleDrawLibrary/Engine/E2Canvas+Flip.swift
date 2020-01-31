@@ -1,4 +1,4 @@
-// MIT license. Copyright (c) 2019 TriangleDraw. All rights reserved.
+// MIT license. Copyright (c) 2020 TriangleDraw. All rights reserved.
 extension E2Canvas {
     public func flipX() {
 		let orig: E2Canvas = self.createCopy()
