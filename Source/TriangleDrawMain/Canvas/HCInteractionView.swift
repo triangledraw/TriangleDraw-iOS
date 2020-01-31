@@ -88,6 +88,9 @@ extension HCInteractionView: AcceptsVerboseInfoProvider {
 			append("interactionView.delegate", "nil (This is possible an error state!)")
 		}
 
+		let frame: CGRect = self.frame
+		append("interactionView.frame", "\(frame.origin.string1), \(frame.size.string1)")
+
 		if let gr: UIPinchGestureRecognizer = self.pinchGestureRecognizer {
 			append("interactionView.pinchGestureRecognizer", "non-nil")
 			append("interactionView.pinchGestureRecognizer.isEnabled", "\(gr.isEnabled)")

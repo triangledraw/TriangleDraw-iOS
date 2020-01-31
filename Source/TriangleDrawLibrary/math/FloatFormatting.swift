@@ -49,3 +49,15 @@ extension CGPoint {
 		return "(\(self.x.string2), \(self.y.string2))"
 	}
 }
+
+extension CGSize {
+	public var string0: String {
+		return "(\(self.width.string0), \(self.height.string0))"
+	}
+	public var string1: String {
+		return "(\(self.width.string1), \(self.height.string1))"
+	}
+	public var string2: String {
+		return "(\(self.width.string2), \(self.height.string2))"
+	}
+}
