@@ -318,11 +318,15 @@ class CanvasViewController: UIViewController {
     }
 
     @objc func doneButtonTaped(_ sender: Any?) {
-		let urlString = String(describing: document?.fileURL)
-		log.debug("Closing \(urlString)")
-		document?.close(completionHandler: { (_) in
-			self.dismiss(animated: true)
-		})
+		guard let document: Document = self.document else {
+			fatalError("Expected CanvasViewController.document to be non-nil, but got nil. Cannot close document, since there isn't any document.")
+		}
+		let urlString = String(describing: document.fileURL)
+		log.debug("Close A \(urlString)")
+		document.close() { [weak self] (_) in
+			log.debug("Close B \(urlString)")
+			self?.dismiss(animated: true)
+		}
     }
 
 	@objc func debugButtonAction() {
