@@ -1,4 +1,4 @@
-// MIT license. Copyright (c) 2019 TriangleDraw. All rights reserved.
+// MIT license. Copyright (c) 2020 TriangleDraw. All rights reserved.
 
 public struct E2CanvasBoundingBox {
 	/// Index of the left-most column where the user have drawn content.
