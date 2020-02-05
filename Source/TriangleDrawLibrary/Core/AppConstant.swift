@@ -43,7 +43,7 @@ public struct AppConstant {
 		}
 
 		public struct Interaction {
-			public static let installDebugButton = true
+			public static let installDebugButton = false
 			public static let experimentsWithGameOfLife = false
 			public static let debug_tapGesture = false
 			public static let debug_drawLineGesture = false
