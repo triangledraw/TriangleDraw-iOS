@@ -48,7 +48,11 @@ extension BrowserViewController {
 		// `UIDocumentBrowserViewController` is registered as the `transitioningDelegate` of the `CanvasViewController`. Next, obtain the
 		// transitionController, and store it for later (see `animationController(forPresented:presenting:source:)` and
 		// `animationController(forDismissed:)`).
-		transitionController = transitionController(forDocumentURL: document.fileURL)
+		if #available(iOS 12.0, *) {
+			transitionController = transitionController(forDocumentAt: document.fileURL)
+		} else {
+			transitionController = transitionController(forDocumentURL: document.fileURL)
+		}
 		transitionController?.targetView = canvasViewController.hcSafeAreaView
 
 		nc.transitioningDelegate = self
