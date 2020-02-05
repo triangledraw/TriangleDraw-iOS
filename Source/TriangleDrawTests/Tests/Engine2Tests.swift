@@ -140,6 +140,14 @@ class Engine2Tests: XCTestCase {
         XCTAssertEqual(actual, expected)
     }
 
+    func testLoadFromStringRepresentation_ignoreTheCarriageReturnCharacter() {
+		let c: E2Canvas = createCanvas(2, 4)
+        c.load(fromStringRepresentation: "---*\r\n--*-\r\n-*--\r\n*---")
+        let actual = c.stringRepresentation
+        let expected = "---*\n--*-\n-*--\n*---"
+        XCTAssertEqual(actual, expected)
+    }
+
     func testPointToTriangle1() {
         /*
          
