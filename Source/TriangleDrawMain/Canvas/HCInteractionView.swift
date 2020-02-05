@@ -1,5 +1,6 @@
 // MIT license. Copyright (c) 2020 TriangleDraw. All rights reserved.
 import UIKit
+import TriangleDrawLibrary
 
 protocol HCInteractionViewDelegate: class {
 	func interactionView_scroll(_ view: HCInteractionView, panGestureRecognizer: UIPanGestureRecognizer)
@@ -74,5 +75,68 @@ extension HCInteractionView: UIGestureRecognizerDelegate {
 			return false
 		}
 		return true
+	}
+}
+
+extension HCInteractionView: AcceptsVerboseInfoProvider {
+	func verboseInfo(_ provider: VerboseInfoProvider) {
+		let append = provider.append
+
+		if self.delegate != nil {
+			append("interactionView.delegate", "non-nil")
+		} else {
+			append("interactionView.delegate", "nil (This is possible an error state!)")
+		}
+
+		let frame: CGRect = self.frame
+		append("interactionView.frame", "\(frame.origin.string1), \(frame.size.string1)")
+
+		if let gr: UIPinchGestureRecognizer = self.pinchGestureRecognizer {
+			append("interactionView.pinchGestureRecognizer.isEnabled", "\(gr.isEnabled)")
+			append("interactionView.pinchGestureRecognizer.state", "\(gr.state.rawValue)")
+			if gr.delegate != nil {
+				append("interactionView.pinchGestureRecognizer.delegate", "non-nil")
+			} else {
+				append("interactionView.pinchGestureRecognizer.delegate", "nil (This is possible an error state!)")
+			}
+		} else {
+			append("interactionView.pinchGestureRecognizer", "nil (This is possible an error state!)")
+		}
+
+		if let gr: UIPanGestureRecognizer = self.scroll_panGestureRecognizer {
+			append("interactionView.scroll_panGestureRecognizer.isEnabled", "\(gr.isEnabled)")
+			append("interactionView.scroll_panGestureRecognizer.state", "\(gr.state.rawValue)")
+			if gr.delegate != nil {
+				append("interactionView.scroll_panGestureRecognizer.delegate", "non-nil")
+			} else {
+				append("interactionView.scroll_panGestureRecognizer.delegate", "nil (This is possible an error state!)")
+			}
+		} else {
+			append("interactionView.scroll_panGestureRecognizer", "nil (This is possible an error state!)")
+		}
+
+		if let gr: UIPanGestureRecognizer = self.draw_panGestureRecognizer {
+			append("interactionView.draw_panGestureRecognizer.isEnabled", "\(gr.isEnabled)")
+			append("interactionView.draw_panGestureRecognizer.state", "\(gr.state.rawValue)")
+			if gr.delegate != nil {
+				append("interactionView.draw_panGestureRecognizer.delegate", "non-nil")
+			} else {
+				append("interactionView.draw_panGestureRecognizer.delegate", "nil (This is possible an error state!)")
+			}
+		} else {
+			append("interactionView.draw_panGestureRecognizer", "nil (This is possible an error state!)")
+		}
+
+		if let gr: UITapGestureRecognizer = self.tapGestureRecognizer {
+			append("interactionView.tapGestureRecognizer.isEnabled", "\(gr.isEnabled)")
+			append("interactionView.tapGestureRecognizer.state", "\(gr.state.rawValue)")
+			if gr.delegate != nil {
+				append("interactionView.tapGestureRecognizer.delegate", "non-nil")
+			} else {
+				append("interactionView.tapGestureRecognizer.delegate", "nil (This is possible an error state!)")
+			}
+		} else {
+			append("interactionView.tapGestureRecognizer", "nil (This is possible an error state!)")
+		}
 	}
 }

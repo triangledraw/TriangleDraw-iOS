@@ -318,12 +318,29 @@ class CanvasViewController: UIViewController {
     }
 
     @objc func doneButtonTaped(_ sender: Any?) {
-		let urlString = String(describing: document?.fileURL)
-		log.debug("Closing \(urlString)")
-		document?.close(completionHandler: { (_) in
-			self.dismiss(animated: true)
-		})
+		guard let document: Document = self.document else {
+			fatalError("Expected CanvasViewController.document to be non-nil, but got nil. Cannot close document, since there isn't any document.")
+		}
+		let urlString = String(describing: document.fileURL)
+		log.debug("Close A \(urlString)")
+		document.close() { [weak self] (_) in
+			log.debug("Close B \(urlString)")
+			self?.dismiss(animated: true)
+		}
     }
+
+	@objc func debugButtonAction() {
+		log.debug("enter")
+
+		let provider = VerboseInfoProvider()
+		self.verboseInfo(provider)
+		let pairs = provider.pairs
+		log.debug("pairs: \(pairs)")
+
+		self.td_presentEmailWithVerboseInfo(provider)
+		log.debug("leave")
+	}
+
 
 	// MARK: - Drawing operations
 
@@ -346,7 +363,7 @@ class CanvasViewController: UIViewController {
             // Nothing has changed. No need for undo.
             return
         }
-            // Statistics
+		// Statistics
 		let numberOfDifferences: UInt
 		if let canvas0: E2Canvas = newCanvas, let canvas1: E2Canvas = oldCanvas {
 			numberOfDifferences = canvas0.numberOfDifferences(from: canvas1)
@@ -509,5 +526,55 @@ extension CanvasViewController: HCMenuViewControllerDelegate {
 
 	func hcMenuViewController_canvasGridModeDidChange() {
 		hcView?.canvasGridModeDidChange()
+	}
+}
+
+extension CanvasViewController: AcceptsVerboseInfoProvider {
+	func verboseInfo(_ provider: VerboseInfoProvider) {
+		let append = provider.append
+
+		if let document: Document = self.document {
+			append("document.displayName", document.displayName)
+			append("document.fileURL", document.fileURL.absoluteString)
+			append("document.hasUnsavedChanges", document.hasUnsavedChanges ? "true" : "false")
+			if document.canvas != nil {
+				append("document.canvas", "non-nil")
+			} else {
+				append("document.canvas", "nil (This is possible an error state!)")
+			}
+		} else {
+			append("document", "nil (This is possible an error state!)")
+		}
+
+		if let undoManager: UndoManager = self.undoManager {
+			append("undoManager.canUndo", "\(undoManager.canUndo)")
+			append("undoManager.undoActionName", "\(undoManager.undoActionName)")
+		} else {
+			append("undoManager", "nil (This is possible an error state!)")
+		}
+
+		do {
+			let viewSize: CGSize = view.frame.size
+			let edgeInsets: UIEdgeInsets = self.canvasInsets
+			let scaleString: String = self.hcView.metalView?.renderer?.scrollAndZoom.scale.string1 ?? "N/A"
+			let positionString: String = self.hcView.metalView?.renderer?.scrollAndZoom.position.string1 ?? "N/A"
+			append("view", "\(viewSize.width.string1), \(viewSize.height.string1)")
+			append("inset top/bottom", "\(edgeInsets.top.string1), \(edgeInsets.bottom.string1)")
+			append("inset left/right", "\(edgeInsets.left.string1), \(edgeInsets.right.string1)")
+			append("scale", scaleString)
+			append("position", positionString)
+		}
+
+		if let renderer: HCRenderer = self.hcView.metalView?.renderer {
+			let edgeInsets: UIEdgeInsets = renderer.scrollAndZoom.zoomToFitEdgeInsets
+			append("hcRenderer inset top/bottom", "\(edgeInsets.top.string1), \(edgeInsets.bottom.string1)")
+			append("hcRenderer inset left/right", "\(edgeInsets.left.string1), \(edgeInsets.right.string1)")
+		} else {
+			append("hcRenderer", "nil (This is possible an error state!)")
+		}
+
+		self.hcSafeAreaView.verboseInfo(provider)
+
+		SystemInfo().verboseInfo(provider)
 	}
 }

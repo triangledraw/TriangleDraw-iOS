@@ -4,9 +4,18 @@ import MessageUI
 import TriangleDrawLibrary
 
 extension UIViewController {
-	/// Send feedback via email to the developer
+	/// Send email to the developer with user feedback
 	func td_presentEmailWithFeedback() {
-		EmailWithFeedback.shared.present(parentViewController: self)
+		let systemInfo: String = SystemInfo.systemInfo
+		EmailWithFeedback.shared.present(parentViewController: self, infoToDeveloper: systemInfo)
+	}
+
+	/// Send email to the developer with verbose info for troubleshooting
+	func td_presentEmailWithVerboseInfo(_ verboseInfoProvider: VerboseInfoProvider) {
+		let pairs: [VerboseInfoProvider.Pair] = verboseInfoProvider.pairs
+		let items: [String] = pairs.map { "\($0): \($1)" }
+		let joinedItems: String = items.joined(separator: "\n")
+		EmailWithFeedback.shared.present(parentViewController: self, infoToDeveloper: joinedItems)
 	}
 }
 
@@ -16,7 +25,7 @@ fileprivate class EmailWithFeedback: NSObject {
 	fileprivate static let shared = EmailWithFeedback()
 	private var startTime: Double = 0
 
-	fileprivate func present(parentViewController: UIViewController) {
+	fileprivate func present(parentViewController: UIViewController, infoToDeveloper: String) {
 		startTime = CFAbsoluteTimeGetCurrent()
 		guard MFMailComposeViewController.canSendMail() else {
 			log.error("This device is not configured for sending mail")
@@ -24,14 +33,12 @@ fileprivate class EmailWithFeedback: NSObject {
 		}
 		log.debug("Ask for user for feedback")
 
-		let systemInfo: String = SystemInfo.systemInfo
-
 		var items = [String]()
 		items.append("What do you think?")
 		items.append("")
 		items.append("")
 		items.append("Helpful info for the developer:")
-		items.append(systemInfo)
+		items.append(infoToDeveloper)
 		let messageBody: String = items.joined(separator: "\n")
 
 		let subject = "Help improve TriangleDraw"
