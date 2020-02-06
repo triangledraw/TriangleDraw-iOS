@@ -86,6 +86,8 @@
 		429F1B4522FA0BF6005A1EBF /* test_subdivide2_out5.pbm in Resources */ = {isa = PBXBuildFile; fileRef = 429F1B3922FA0BF6005A1EBF /* test_subdivide2_out5.pbm */; };
 		429F1B4622FA0BF6005A1EBF /* test_subdivide2_out2.pbm in Resources */ = {isa = PBXBuildFile; fileRef = 429F1B3A22FA0BF6005A1EBF /* test_subdivide2_out2.pbm */; };
 		429F1B4722FA0BF6005A1EBF /* test_subdivide2_out3.pbm in Resources */ = {isa = PBXBuildFile; fileRef = 429F1B3B22FA0BF6005A1EBF /* test_subdivide2_out3.pbm */; };
+		429F43C423EAC38B00CCFDF2 /* BrowserMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 429F43C323EAC38B00CCFDF2 /* BrowserMenuView.swift */; };
+		429F43C623EC297400CCFDF2 /* BrowserMenuNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 429F43C523EC297400CCFDF2 /* BrowserMenuNavigationView.swift */; };
 		42A228B421A0D292009A2819 /* CGSize+MinMax.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42A228B321A0D292009A2819 /* CGSize+MinMax.swift */; };
 		42AC2D7A230810180089947B /* SVGExporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42AC2D79230810180089947B /* SVGExporter.swift */; };
 		42AC2D7C230812220089947B /* SVGExporterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42AC2D7B230812220089947B /* SVGExporterTests.swift */; };
@@ -444,6 +446,8 @@
 		429F1B3922FA0BF6005A1EBF /* test_subdivide2_out5.pbm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = test_subdivide2_out5.pbm; sourceTree = "<group>"; };
 		429F1B3A22FA0BF6005A1EBF /* test_subdivide2_out2.pbm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = test_subdivide2_out2.pbm; sourceTree = "<group>"; };
 		429F1B3B22FA0BF6005A1EBF /* test_subdivide2_out3.pbm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = test_subdivide2_out3.pbm; sourceTree = "<group>"; };
+		429F43C323EAC38B00CCFDF2 /* BrowserMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowserMenuView.swift; sourceTree = "<group>"; };
+		429F43C523EC297400CCFDF2 /* BrowserMenuNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowserMenuNavigationView.swift; sourceTree = "<group>"; };
 		42A228B321A0D292009A2819 /* CGSize+MinMax.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGSize+MinMax.swift"; sourceTree = "<group>"; };
 		42AC2D79230810180089947B /* SVGExporter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SVGExporter.swift; sourceTree = "<group>"; };
 		42AC2D7B230812220089947B /* SVGExporterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SVGExporterTests.swift; sourceTree = "<group>"; };
@@ -817,6 +821,8 @@
 		4221B9AE16F5F47300898F6E /* Browser */ = {
 			isa = PBXGroup;
 			children = (
+				429F43C523EC297400CCFDF2 /* BrowserMenuNavigationView.swift */,
+				429F43C323EAC38B00CCFDF2 /* BrowserMenuView.swift */,
 				42D2AA4822B82F24009BBC41 /* BrowserMenuViewController.swift */,
 				426B951022CFE2B000DB9359 /* BrowserViewController.storyboard */,
 				42D0DDA222454A210066DB3D /* BrowserViewController.swift */,
@@ -1836,11 +1842,13 @@
 				42D0DDA0224549980066DB3D /* UIView+PinToInside.swift in Sources */,
 				42C7B27722E309F500FFA1AD /* CanvasViewController+ConfigureNavigationBar.swift in Sources */,
 				42DE377220FDED180007845B /* HCToolbar.swift in Sources */,
+				429F43C423EAC38B00CCFDF2 /* BrowserMenuView.swift in Sources */,
 				42C7B27922E30DCB00FFA1AD /* CanvasViewController+Operations.swift in Sources */,
 				4289827921E7EDA600FC0431 /* BorderedButton.swift in Sources */,
 				42D0DD9A224547A90066DB3D /* UIApplication+Directories.swift in Sources */,
 				4245221120E1222000FCDDE3 /* AppDelegate.swift in Sources */,
 				42608ECA21CE6B9B00A99669 /* HCGridView.swift in Sources */,
+				429F43C623EC297400CCFDF2 /* BrowserMenuNavigationView.swift in Sources */,
 				428A3A3F20E2320D003F13D1 /* WFActivitySpecificItemProvider.swift in Sources */,
 				42E227C6210373E000D112E7 /* UIBarButtonItem+NegativeSpacer.swift in Sources */,
 				42AF941B215451C200D07373 /* HCRenderer.swift in Sources */,
@@ -2370,6 +2378,7 @@
 				STRIP_INSTALLED_PRODUCT = NO;
 				SWIFT_OBJC_BRIDGING_HEADER = "TriangleDrawTests/Tests/Tests-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TriangleDrawMain.app/TriangleDrawMain";
 			};
 			name = Debug;
@@ -2407,6 +2416,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "TriangleDrawTests/Tests/Tests-Bridging-Header.h";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TriangleDrawMain.app/TriangleDrawMain";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -2518,7 +2528,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
@@ -2561,7 +2571,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;

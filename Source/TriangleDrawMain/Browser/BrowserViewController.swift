@@ -1,5 +1,6 @@
 // MIT license. Copyright (c) 2020 TriangleDraw. All rights reserved.
 import UIKit
+import SwiftUI
 import TriangleDrawLibrary
 
 /**
@@ -114,9 +115,21 @@ class BrowserViewController: UIDocumentBrowserViewController {
 		additionalLeadingNavigationBarButtonItems = [button]
 	}
 
+	func presentBrowserMenu() {
+		switch AppConstant.Browser.mode {
+		case .production_uikit:
+			let nc = BrowserMenuViewController.createInsideNavigationController()
+			self.present(nc, animated: true, completion: nil)
+		case .experimental_swiftui:
+			let vc = UIHostingController(rootView: BrowserMenuNavigationView())
+			vc.modalTransitionStyle = .crossDissolve
+			vc.modalPresentationStyle = .formSheet
+			self.present(vc, animated: true, completion: nil)
+		}
+	}
+
 	@IBAction func menu_buttonAction() {
-		let nc = BrowserMenuViewController.createInsideNavigationController()
-		self.present(nc, animated: true, completion: nil)
+		presentBrowserMenu()
 	}
 
 
@@ -130,8 +143,7 @@ class BrowserViewController: UIDocumentBrowserViewController {
 
 	@IBAction func liveIndicator_buttonAction() {
 		liveIndicator_uninstallTimer()
-		let nc = BrowserMenuViewController.createInsideNavigationController()
-		self.present(nc, animated: true, completion: nil)
+		presentBrowserMenu()
 	}
 
 	private var liveIndicator_tickArray = TDLiveIndicatorTickContainer()
