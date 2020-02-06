@@ -22,6 +22,12 @@ public struct AppConstant {
 	}
 
 	public struct Browser {
+		public enum Mode {
+			case production_uikit
+			case experimental_swiftui
+		}
+		public static let mode: Mode = .production_uikit
+		
 		public static let debug_installCustomActions = false
 
 //		public static let tintColor: UIColor = AppConstant.ColorBlindSafe.ultramarine40
