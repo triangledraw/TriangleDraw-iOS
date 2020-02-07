@@ -49,6 +49,20 @@ struct BrowserMenuView: View {
 					.foregroundColor(.white)
 					.font(.title)
 			}
+			Button(action: {
+				print("visit GitHub")
+				guard let url: URL = URL(string: "https://github.com/triangledraw/TriangleDraw-iOS") else {
+					return
+				}
+				UIApplication.shared.open(url)
+			}) {
+				Text("GitHub")
+					.frame(minWidth: 0, maxWidth: .infinity)
+					.padding()
+					.background(Color.purple)
+					.foregroundColor(.white)
+					.font(.title)
+			}
 		}
     }
 }
