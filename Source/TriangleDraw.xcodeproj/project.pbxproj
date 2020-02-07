@@ -88,6 +88,7 @@
 		429F1B4722FA0BF6005A1EBF /* test_subdivide2_out3.pbm in Resources */ = {isa = PBXBuildFile; fileRef = 429F1B3B22FA0BF6005A1EBF /* test_subdivide2_out3.pbm */; };
 		429F43C423EAC38B00CCFDF2 /* BrowserMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 429F43C323EAC38B00CCFDF2 /* BrowserMenuView.swift */; };
 		429F43C623EC297400CCFDF2 /* BrowserMenuNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 429F43C523EC297400CCFDF2 /* BrowserMenuNavigationView.swift */; };
+		429F43C823ED48D500CCFDF2 /* BrowserMenuViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 429F43C723ED48D500CCFDF2 /* BrowserMenuViewController2.swift */; };
 		42A228B421A0D292009A2819 /* CGSize+MinMax.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42A228B321A0D292009A2819 /* CGSize+MinMax.swift */; };
 		42AC2D7A230810180089947B /* SVGExporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42AC2D79230810180089947B /* SVGExporter.swift */; };
 		42AC2D7C230812220089947B /* SVGExporterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42AC2D7B230812220089947B /* SVGExporterTests.swift */; };
@@ -448,6 +449,7 @@
 		429F1B3B22FA0BF6005A1EBF /* test_subdivide2_out3.pbm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = test_subdivide2_out3.pbm; sourceTree = "<group>"; };
 		429F43C323EAC38B00CCFDF2 /* BrowserMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowserMenuView.swift; sourceTree = "<group>"; };
 		429F43C523EC297400CCFDF2 /* BrowserMenuNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowserMenuNavigationView.swift; sourceTree = "<group>"; };
+		429F43C723ED48D500CCFDF2 /* BrowserMenuViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowserMenuViewController2.swift; sourceTree = "<group>"; };
 		42A228B321A0D292009A2819 /* CGSize+MinMax.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGSize+MinMax.swift"; sourceTree = "<group>"; };
 		42AC2D79230810180089947B /* SVGExporter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SVGExporter.swift; sourceTree = "<group>"; };
 		42AC2D7B230812220089947B /* SVGExporterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SVGExporterTests.swift; sourceTree = "<group>"; };
@@ -824,6 +826,7 @@
 				429F43C523EC297400CCFDF2 /* BrowserMenuNavigationView.swift */,
 				429F43C323EAC38B00CCFDF2 /* BrowserMenuView.swift */,
 				42D2AA4822B82F24009BBC41 /* BrowserMenuViewController.swift */,
+				429F43C723ED48D500CCFDF2 /* BrowserMenuViewController2.swift */,
 				426B951022CFE2B000DB9359 /* BrowserViewController.storyboard */,
 				42D0DDA222454A210066DB3D /* BrowserViewController.swift */,
 				421E51C322EF67AF0005068E /* BrowserViewController+ImportDocumentExamples.swift */,
@@ -1853,6 +1856,7 @@
 				42E227C6210373E000D112E7 /* UIBarButtonItem+NegativeSpacer.swift in Sources */,
 				42AF941B215451C200D07373 /* HCRenderer.swift in Sources */,
 				42DE377420FDEEC60007845B /* CanvasViewController.swift in Sources */,
+				429F43C823ED48D500CCFDF2 /* BrowserMenuViewController2.swift in Sources */,
 				42AF9420215451C200D07373 /* HCMetalView+Interaction.swift in Sources */,
 				420967512235C02400D5C576 /* DocumentExample.swift in Sources */,
 				42AC2D7E2308134B0089947B /* HCMenuViewController+ShareSVG.swift in Sources */,

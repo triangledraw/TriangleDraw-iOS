@@ -121,9 +121,7 @@ class BrowserViewController: UIDocumentBrowserViewController {
 			let nc = BrowserMenuViewController.createInsideNavigationController()
 			self.present(nc, animated: true, completion: nil)
 		case .experimental_swiftui:
-			let vc = UIHostingController(rootView: BrowserMenuNavigationView())
-			vc.modalTransitionStyle = .crossDissolve
-			vc.modalPresentationStyle = .formSheet
+			let vc = BrowserMenuViewController2.create()
 			self.present(vc, animated: true, completion: nil)
 		}
 	}

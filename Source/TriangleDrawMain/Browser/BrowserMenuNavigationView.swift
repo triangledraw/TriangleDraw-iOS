@@ -2,11 +2,17 @@
 import SwiftUI
 
 struct BrowserMenuNavigationView: View {
+    var dismissAction: (() -> Void)?
+
 	var body: some View {
         NavigationView {
 			BrowserMenuView()
 				.navigationBarItems(leading:
-					Button(action: {}, label: {Text("OK")})
+					Button(action: {
+						self.dismissAction?()
+					}, label: {
+						Text("OK")
+					})
 				)
 				.navigationBarTitle("TriangleDraw")
 		}
