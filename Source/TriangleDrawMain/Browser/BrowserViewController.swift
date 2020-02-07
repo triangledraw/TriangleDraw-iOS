@@ -1,6 +1,5 @@
 // MIT license. Copyright (c) 2020 TriangleDraw. All rights reserved.
 import UIKit
-import SwiftUI
 import TriangleDrawLibrary
 
 /**
