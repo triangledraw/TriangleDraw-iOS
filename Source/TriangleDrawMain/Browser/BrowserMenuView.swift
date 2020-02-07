@@ -1,5 +1,6 @@
 // MIT license. Copyright (c) 2020 TriangleDraw. All rights reserved.
 import SwiftUI
+import StoreKit
 
 struct BrowserMenuView: View {
     var body: some View {
@@ -7,6 +8,17 @@ struct BrowserMenuView: View {
 			Text("TriangleDraw is free software!\nYour support is appreciated.")
 				.padding()
 				.font(.title)
+			Button(action: {
+				print("Write review for App Store")
+				SKStoreReviewController.requestReview()
+			}) {
+				Text("Write review for App Store")
+					.frame(minWidth: 0, maxWidth: .infinity)
+					.padding()
+					.background(Color.purple)
+					.foregroundColor(.white)
+					.font(.title)
+			}
 			Button(action: {
 				print("visit twitter")
 				guard let url: URL = URL(string: "https://twitter.com/TriangleDraw") else {
