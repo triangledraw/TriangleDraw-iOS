@@ -1,8 +1,12 @@
 // MIT license. Copyright (c) 2020 TriangleDraw. All rights reserved.
 import SwiftUI
 import StoreKit
+import MessageUI
 
 struct BrowserMenuView: View {
+	@State var result: Result<MFMailComposeResult, Error>? = nil
+	@State var isShowingMailView = false
+
     var body: some View {
         VStack {
 			Text("TriangleDraw is free software!\nYour support is appreciated.")
@@ -75,6 +79,20 @@ struct BrowserMenuView: View {
 					.foregroundColor(.white)
 					.font(.title)
 			}
+			Button(action: {
+				self.isShowingMailView.toggle()
+			}) {
+				Text("Email Developer")
+					.frame(minWidth: 0, maxWidth: .infinity)
+					.padding()
+					.background(Color.purple)
+					.foregroundColor(.white)
+					.font(.title)
+			}
+				.disabled(!MFMailComposeViewController.canSendMail())
+				.sheet(isPresented: $isShowingMailView) {
+					EmailWithFeedback2(result: self.$result)
+				}
 		}
     }
 }

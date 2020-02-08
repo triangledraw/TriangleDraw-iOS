@@ -89,6 +89,7 @@
 		429F43C423EAC38B00CCFDF2 /* BrowserMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 429F43C323EAC38B00CCFDF2 /* BrowserMenuView.swift */; };
 		429F43C623EC297400CCFDF2 /* BrowserMenuNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 429F43C523EC297400CCFDF2 /* BrowserMenuNavigationView.swift */; };
 		429F43C823ED48D500CCFDF2 /* BrowserMenuViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 429F43C723ED48D500CCFDF2 /* BrowserMenuViewController2.swift */; };
+		429F43CA23EE782D00CCFDF2 /* EmailWithFeedback2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 429F43C923EE782D00CCFDF2 /* EmailWithFeedback2.swift */; };
 		42A228B421A0D292009A2819 /* CGSize+MinMax.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42A228B321A0D292009A2819 /* CGSize+MinMax.swift */; };
 		42AC2D7A230810180089947B /* SVGExporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42AC2D79230810180089947B /* SVGExporter.swift */; };
 		42AC2D7C230812220089947B /* SVGExporterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42AC2D7B230812220089947B /* SVGExporterTests.swift */; };
@@ -450,6 +451,7 @@
 		429F43C323EAC38B00CCFDF2 /* BrowserMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowserMenuView.swift; sourceTree = "<group>"; };
 		429F43C523EC297400CCFDF2 /* BrowserMenuNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowserMenuNavigationView.swift; sourceTree = "<group>"; };
 		429F43C723ED48D500CCFDF2 /* BrowserMenuViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowserMenuViewController2.swift; sourceTree = "<group>"; };
+		429F43C923EE782D00CCFDF2 /* EmailWithFeedback2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailWithFeedback2.swift; sourceTree = "<group>"; };
 		42A228B321A0D292009A2819 /* CGSize+MinMax.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGSize+MinMax.swift"; sourceTree = "<group>"; };
 		42AC2D79230810180089947B /* SVGExporter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SVGExporter.swift; sourceTree = "<group>"; };
 		42AC2D7B230812220089947B /* SVGExporterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SVGExporterTests.swift; sourceTree = "<group>"; };
@@ -871,6 +873,7 @@
 				42855B9F19CDFE030000420E /* TriangleDrawMain-Bridging-Header.h */,
 				42D0DD99224547A90066DB3D /* UIApplication+Directories.swift */,
 				42DC743320E193350058DEA8 /* UserDefaults+RunCount.swift */,
+				429F43C923EE782D00CCFDF2 /* EmailWithFeedback2.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -1861,6 +1864,7 @@
 				420967512235C02400D5C576 /* DocumentExample.swift in Sources */,
 				42AC2D7E2308134B0089947B /* HCMenuViewController+ShareSVG.swift in Sources */,
 				42015C81173DA5E2007597E5 /* gpc.c in Sources */,
+				429F43CA23EE782D00CCFDF2 /* EmailWithFeedback2.swift in Sources */,
 				42AF941F215451C200D07373 /* HCBuildHexagonCanvas.swift in Sources */,
 				42DC743A20E193380058DEA8 /* UserDefaults+RunCount.swift in Sources */,
 				42646E8122E4A08800914600 /* HCMenuViewController+SharePDF.swift in Sources */,
