@@ -38,6 +38,7 @@
 		422F508D20E835370054C702 /* DocumentNameGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 422F507B20E835200054C702 /* DocumentNameGenerator.swift */; };
 		4245221120E1222000FCDDE3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4245220D20E1221D00FCDDE3 /* AppDelegate.swift */; };
 		4245221420E1222000FCDDE3 /* SystemInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4245221020E1221F00FCDDE3 /* SystemInfo.swift */; };
+		4247F64123F185070096DDB8 /* BrowserMenuRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4247F64023F185070096DDB8 /* BrowserMenuRow.swift */; };
 		424CCA1B2160D9F900C91B41 /* HCView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424CCA1A2160D9F900C91B41 /* HCView.swift */; };
 		4251B1FA21890213006F6315 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4251B1F921890213006F6315 /* Image.swift */; };
 		425D4D7C1767B17A006B4DFB /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 425D4D7B1767B17A006B4DFB /* StoreKit.framework */; };
@@ -397,6 +398,7 @@
 		422F507B20E835200054C702 /* DocumentNameGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocumentNameGenerator.swift; sourceTree = "<group>"; };
 		4245220D20E1221D00FCDDE3 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4245221020E1221F00FCDDE3 /* SystemInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SystemInfo.swift; sourceTree = "<group>"; };
+		4247F64023F185070096DDB8 /* BrowserMenuRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowserMenuRow.swift; sourceTree = "<group>"; };
 		424CCA1A2160D9F900C91B41 /* HCView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HCView.swift; sourceTree = "<group>"; };
 		4251B1F921890213006F6315 /* Image.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 		425D4D7B1767B17A006B4DFB /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
@@ -828,6 +830,7 @@
 			isa = PBXGroup;
 			children = (
 				429F43C523EC297400CCFDF2 /* BrowserMenuNavigationView.swift */,
+				4247F64023F185070096DDB8 /* BrowserMenuRow.swift */,
 				429F43CB23EE84CD00CCFDF2 /* BrowserMenuScrollView.swift */,
 				429F43C323EAC38B00CCFDF2 /* BrowserMenuView.swift */,
 				42D2AA4822B82F24009BBC41 /* BrowserMenuViewController.swift */,
@@ -1867,6 +1870,7 @@
 				42AF9420215451C200D07373 /* HCMetalView+Interaction.swift in Sources */,
 				420967512235C02400D5C576 /* DocumentExample.swift in Sources */,
 				42AC2D7E2308134B0089947B /* HCMenuViewController+ShareSVG.swift in Sources */,
+				4247F64123F185070096DDB8 /* BrowserMenuRow.swift in Sources */,
 				42015C81173DA5E2007597E5 /* gpc.c in Sources */,
 				429F43CA23EE782D00CCFDF2 /* EmailWithFeedback2.swift in Sources */,
 				42AF941F215451C200D07373 /* HCBuildHexagonCanvas.swift in Sources */,
