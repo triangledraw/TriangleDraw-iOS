@@ -14,7 +14,7 @@ struct BrowserMenuNavigationView: View {
 						Text("OK")
 					})
 				)
-				.navigationBarTitle("TriangleDraw")
+				.navigationBarTitle("App", displayMode: .inline)
 		}
 	}
 }
