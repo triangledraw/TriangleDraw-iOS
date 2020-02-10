@@ -6,7 +6,7 @@ struct BrowserMenuNavigationView: View {
 
 	var body: some View {
         NavigationView {
-			BrowserMenuView()
+			BrowserMenuScrollView()
 				.navigationBarItems(leading:
 					Button(action: {
 						self.dismissAction?()

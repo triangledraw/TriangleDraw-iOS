@@ -12,6 +12,7 @@ struct BrowserMenuView: View {
 			Text("TriangleDraw is free software!\nYour support is appreciated.")
 				.padding()
 				.font(.title)
+            Spacer()
 			Button(action: {
 				print("Write review for App Store")
 				SKStoreReviewController.requestReview()
@@ -65,6 +66,7 @@ struct BrowserMenuView: View {
 					.foregroundColor(.white)
 					.font(.title)
 			}
+            Spacer()
 			Button(action: {
 				print("visit GitHub")
 				guard let url: URL = URL(string: "https://github.com/triangledraw/TriangleDraw-iOS") else {

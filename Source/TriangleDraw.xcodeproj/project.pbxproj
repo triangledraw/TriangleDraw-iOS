@@ -90,6 +90,7 @@
 		429F43C623EC297400CCFDF2 /* BrowserMenuNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 429F43C523EC297400CCFDF2 /* BrowserMenuNavigationView.swift */; };
 		429F43C823ED48D500CCFDF2 /* BrowserMenuViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 429F43C723ED48D500CCFDF2 /* BrowserMenuViewController2.swift */; };
 		429F43CA23EE782D00CCFDF2 /* EmailWithFeedback2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 429F43C923EE782D00CCFDF2 /* EmailWithFeedback2.swift */; };
+		429F43CC23EE84CD00CCFDF2 /* BrowserMenuScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 429F43CB23EE84CD00CCFDF2 /* BrowserMenuScrollView.swift */; };
 		42A228B421A0D292009A2819 /* CGSize+MinMax.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42A228B321A0D292009A2819 /* CGSize+MinMax.swift */; };
 		42AC2D7A230810180089947B /* SVGExporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42AC2D79230810180089947B /* SVGExporter.swift */; };
 		42AC2D7C230812220089947B /* SVGExporterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42AC2D7B230812220089947B /* SVGExporterTests.swift */; };
@@ -452,6 +453,7 @@
 		429F43C523EC297400CCFDF2 /* BrowserMenuNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowserMenuNavigationView.swift; sourceTree = "<group>"; };
 		429F43C723ED48D500CCFDF2 /* BrowserMenuViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowserMenuViewController2.swift; sourceTree = "<group>"; };
 		429F43C923EE782D00CCFDF2 /* EmailWithFeedback2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailWithFeedback2.swift; sourceTree = "<group>"; };
+		429F43CB23EE84CD00CCFDF2 /* BrowserMenuScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowserMenuScrollView.swift; sourceTree = "<group>"; };
 		42A228B321A0D292009A2819 /* CGSize+MinMax.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGSize+MinMax.swift"; sourceTree = "<group>"; };
 		42AC2D79230810180089947B /* SVGExporter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SVGExporter.swift; sourceTree = "<group>"; };
 		42AC2D7B230812220089947B /* SVGExporterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SVGExporterTests.swift; sourceTree = "<group>"; };
@@ -826,6 +828,7 @@
 			isa = PBXGroup;
 			children = (
 				429F43C523EC297400CCFDF2 /* BrowserMenuNavigationView.swift */,
+				429F43CB23EE84CD00CCFDF2 /* BrowserMenuScrollView.swift */,
 				429F43C323EAC38B00CCFDF2 /* BrowserMenuView.swift */,
 				42D2AA4822B82F24009BBC41 /* BrowserMenuViewController.swift */,
 				429F43C723ED48D500CCFDF2 /* BrowserMenuViewController2.swift */,
@@ -1832,6 +1835,7 @@
 				42646E7F22E4785E00914600 /* EmailWithFeedback.swift in Sources */,
 				42608EDA21CEABF900A99669 /* HCSafeAreaView.swift in Sources */,
 				42AF9421215451C200D07373 /* AAPLMathUtilities.m in Sources */,
+				429F43CC23EE84CD00CCFDF2 /* BrowserMenuScrollView.swift in Sources */,
 				4209674D2235BF6D00D5C576 /* PDFExporter.swift in Sources */,
 				42D0DDA422454A210066DB3D /* BrowserViewController.swift in Sources */,
 				42E227CA210373E000D112E7 /* UINavigationItem+BarButtonItemWithTag.swift in Sources */,
