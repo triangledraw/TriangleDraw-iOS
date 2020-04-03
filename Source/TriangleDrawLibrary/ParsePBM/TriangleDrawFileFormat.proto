@@ -1,0 +1,144 @@
+// TriangleDraw fileformat
+//
+// Regenerate swift file
+// PROMPT> protoc --swift_out=. TriangleDrawFileFormat.proto
+syntax = "proto3";
+
+message ColorOnOff {
+    // false = off or black
+    // true = on or white
+    bool value = 1;
+}
+
+message ColorSimple {
+    enum ColorSimpleEnum {
+      BLACK = 1;
+      WHITE = 2;
+    }
+    ColorSimpleEnum color_simple_enum = 1;
+}
+
+message ColorRGB {
+    // This is a float value corresponding to (value / uint64max).
+    fixed32 red = 1;
+    fixed32 green = 2;
+    fixed32 blue = 3;
+}
+
+// Link to a color in the root palette
+message ColorLink {
+    string uuid = 1;
+}
+
+message PaletteItem {
+    string uuid = 1;
+
+    // false = disabled. This color is transparant.
+    // true = enabled. The custom color is being used.
+    bool enabled = 2;
+    
+    // This is a float value corresponding to (value / uint64max).
+    fixed32 opacity = 3;
+    
+    oneof test_oneof {
+        ColorOnOff on_off = 4;
+        ColorSimple simple = 5;
+        ColorRGB rgb = 6;
+        ColorLink link = 7;
+        // hsv
+        // grayscale
+    }
+}
+
+message Palette {
+    repeated PaletteItem = 1;
+}
+
+message NodeRotate {
+    string uuid_input = 1;
+
+    // This is a float value corresponding to (value / uint64max).
+    // 0 = no rotation
+    // 1/4 = rotate counter clockwise by 90 degrees
+    // 2/4 = rotate counter clockwise by 180 degrees
+    // 3/4 = rotate counter clockwise by 270 degrees
+    // 4/4 = no rotation
+    fixed32 rotate = 2;
+}
+
+message NodeOffset {
+    string uuid_input = 1;
+
+    sfixed32 x = 1;
+    sfixed32 y = 2;
+}
+
+message FilledShapeWithPalette {
+    uint32 palette_index = 1;
+}
+
+message NodeDrawSquares {
+    enum LayerSize {
+      SIZE100X100 = 1;
+    }
+    LayerSize layer_size = 1;
+
+    Palette palette = 2;
+
+    repeated FilledShapeWithPalette filled_squares = 3;
+}
+
+message NodeDrawTriangles {
+    enum LayerSize {
+      SIZE180X104 = 1;
+    }
+    LayerSize layer_size = 1;
+
+    Palette palette = 2;
+
+    repeated FilledShapeWithPalette filled_triangles = 3;
+}
+
+message NodeMix {
+    string uuid_input_a = 1;
+    string uuid_input_b = 2;
+
+    enum BlendMode {
+      A_OVER_B = 1;
+      B_OVER_A = 2;
+      // add
+      // subtract
+      // multiply
+      // or
+      // and
+    }
+    BlendMode blend_mode = 3;
+}
+
+message Node {
+    string uuid = 1;
+    string name = 2;
+
+    oneof test_oneof {
+        NodeDrawSquares = 1;
+        NodeDrawTriangles = 2;
+        NodeMix = 3;
+        NodeRotate = 4;
+        NodeOffset = 5;
+        // skew
+        // scale
+        // flip
+        // gradient layer
+        // randomize pixels in layer
+    }
+}
+
+message TriangleDrawFileFormat {
+    // The first node is the root node.
+    repeated Node nodes = 1;
+    
+    // This is the root palette. The layer palettes can link to an item in the root palette.
+    Palette palette = 2;
+    
+    string info = 3;
+}
