@@ -43,23 +43,6 @@ that can be used for branding on letterheads or on your website.
 
 Greetings from Simon Strandgaard. I'm the developer of TriangleDraw. It has been my hobby project for many years.
 
-It began around year 2004, where I first learned about [.werkkzeug](https://www.pouet.net/prod.php?which=12511), 
-a very powerful tool for composing digital art, by the 
-german demo group [Farbrausch](https://en.wikipedia.org/wiki/Farbrausch).
-
-I developed my own demotool for macOS, named GraphicDesignerToolbox (aka. GDT), that had building blocks 
-that could be stacked the same way as in .werkkzeug. For GDT I made several building blocks for manipulating bitmap images and a few building blocks for manipulating vector paths.
-
-When the iPad arrived around 2010, I developed the first version of TriangleDraw, that was inspired by one of the 
-vector building blocks in GDT. I soon after released TriangleDraw version 1. It had a tiny tiny canvas. It only worked on iPad.
-No support for iPhone. I had no luck selling the app.
-
-Around year 2014 I had TriangleDraw version 2 ready. The canvas was much larger. It worked on iPhone+iPad. 
-I experimented with In-app-purchases, but I still had no luck earning any money on version 2.
-
-Around year 2018/2019 I migrated all the TriangleDraw source code from ObjectiveC to Swift. The `UIDocumentBrowserViewController` is now being used, where in the past I used my own adhoc document browser. 
-And best of all, it's free and open source. Please consider contributing to TriangleDraw.
-
 - [Follow me on Twitter](https://twitter.com/neoneye)
 - [Connect with me on LinkedIn](https://www.linkedin.com/in/simonstrandgaard/)
 
