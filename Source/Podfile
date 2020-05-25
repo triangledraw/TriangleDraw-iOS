@@ -15,7 +15,7 @@ end
 
 def my_pod_radiantforms
 	# https://github.com/radiantkit/radiantforms-ios/commits/develop
-	pod 'RadiantForms', :git => 'https://github.com/radiantkit/radiantforms-ios.git', :commit => 'd51a1380b783281f03fa3f5f1b5c34ba8e74400e'
+	pod 'RadiantForms', :git => 'https://github.com/radiantkit/radiantforms-ios.git', :commit => 'd1f4642243c043f24dbb1af489715c1b8128572b'
 end
 
 abstract_target 'BasePods' do

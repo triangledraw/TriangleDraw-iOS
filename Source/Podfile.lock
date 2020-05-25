@@ -5,7 +5,7 @@ PODS:
 
 DEPENDENCIES:
   - MBProgressHUD (from `https://github.com/jdg/MBProgressHUD.git`, commit `61fb89ce30d42f403ce53cde65883dc8cea6d02a`)
-  - RadiantForms (from `https://github.com/radiantkit/radiantforms-ios.git`, commit `d51a1380b783281f03fa3f5f1b5c34ba8e74400e`)
+  - RadiantForms (from `https://github.com/radiantkit/radiantforms-ios.git`, commit `d1f4642243c043f24dbb1af489715c1b8128572b`)
   - SwiftyBeaver (from `https://github.com/SwiftyBeaver/SwiftyBeaver.git`, commit `e0fb3a74cb993d7dcf1e56734cdc98ad6e6d8176`)
 
 EXTERNAL SOURCES:
@@ -13,7 +13,7 @@ EXTERNAL SOURCES:
     :commit: 61fb89ce30d42f403ce53cde65883dc8cea6d02a
     :git: https://github.com/jdg/MBProgressHUD.git
   RadiantForms:
-    :commit: d51a1380b783281f03fa3f5f1b5c34ba8e74400e
+    :commit: d1f4642243c043f24dbb1af489715c1b8128572b
     :git: https://github.com/radiantkit/radiantforms-ios.git
   SwiftyBeaver:
     :commit: e0fb3a74cb993d7dcf1e56734cdc98ad6e6d8176
@@ -24,7 +24,7 @@ CHECKOUT OPTIONS:
     :commit: 61fb89ce30d42f403ce53cde65883dc8cea6d02a
     :git: https://github.com/jdg/MBProgressHUD.git
   RadiantForms:
-    :commit: d51a1380b783281f03fa3f5f1b5c34ba8e74400e
+    :commit: d1f4642243c043f24dbb1af489715c1b8128572b
     :git: https://github.com/radiantkit/radiantforms-ios.git
   SwiftyBeaver:
     :commit: e0fb3a74cb993d7dcf1e56734cdc98ad6e6d8176
@@ -35,6 +35,6 @@ SPEC CHECKSUMS:
   RadiantForms: 87619162586e81f6162670562bdd815d82d39046
   SwiftyBeaver: a1f5691458561414bcfab51874b2b7445451602b
 
-PODFILE CHECKSUM: 72b2c48f263871427e8a90e2e6654fce90840a77
+PODFILE CHECKSUM: e05a46749a79d91d8209117761267be9dfe3f27b
 
 COCOAPODS: 1.8.4
