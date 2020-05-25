@@ -17,9 +17,9 @@
 	<key>CFBundlePackageType</key>
 	<string>XPC!</string>
 	<key>CFBundleShortVersionString</key>
-	<string>2019.4.1</string>
+	<string>2020.5.25</string>
 	<key>CFBundleVersion</key>
-	<string>1</string>
+	<string>$(CURRENT_PROJECT_VERSION)</string>
 	<key>LSEnvironment</key>
 	<dict>
 		<key>CG_CONTEXT_SHOW_BACKTRACE</key>

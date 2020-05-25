@@ -1,40 +1,40 @@
 PODS:
-  - MBProgressHUD (1.1.0)
+  - MBProgressHUD (1.2.0)
   - RadiantForms (2.0-beta7)
-  - SwiftyBeaver (1.7.0)
+  - SwiftyBeaver (1.9.1)
 
 DEPENDENCIES:
-  - MBProgressHUD (from `https://github.com/jdg/MBProgressHUD.git`, commit `202d8895c6eb10ead2e4b3c5837a68c95693d51f`)
-  - RadiantForms (from `https://github.com/radiantkit/radiantforms-ios.git`, commit `b4634ff787ac11f222443a0fc97e97cec15e6e7c`)
-  - SwiftyBeaver (from `https://github.com/SwiftyBeaver/SwiftyBeaver.git`, commit `f7aaaa3ee8056588b9cf5594475f0a3da0043370`)
+  - MBProgressHUD (from `https://github.com/jdg/MBProgressHUD.git`, commit `61fb89ce30d42f403ce53cde65883dc8cea6d02a`)
+  - RadiantForms (from `https://github.com/radiantkit/radiantforms-ios.git`, commit `d1f4642243c043f24dbb1af489715c1b8128572b`)
+  - SwiftyBeaver (from `https://github.com/SwiftyBeaver/SwiftyBeaver.git`, commit `e0fb3a74cb993d7dcf1e56734cdc98ad6e6d8176`)
 
 EXTERNAL SOURCES:
   MBProgressHUD:
-    :commit: 202d8895c6eb10ead2e4b3c5837a68c95693d51f
+    :commit: 61fb89ce30d42f403ce53cde65883dc8cea6d02a
     :git: https://github.com/jdg/MBProgressHUD.git
   RadiantForms:
-    :commit: b4634ff787ac11f222443a0fc97e97cec15e6e7c
+    :commit: d1f4642243c043f24dbb1af489715c1b8128572b
     :git: https://github.com/radiantkit/radiantforms-ios.git
   SwiftyBeaver:
-    :commit: f7aaaa3ee8056588b9cf5594475f0a3da0043370
+    :commit: e0fb3a74cb993d7dcf1e56734cdc98ad6e6d8176
     :git: https://github.com/SwiftyBeaver/SwiftyBeaver.git
 
 CHECKOUT OPTIONS:
   MBProgressHUD:
-    :commit: 202d8895c6eb10ead2e4b3c5837a68c95693d51f
+    :commit: 61fb89ce30d42f403ce53cde65883dc8cea6d02a
     :git: https://github.com/jdg/MBProgressHUD.git
   RadiantForms:
-    :commit: b4634ff787ac11f222443a0fc97e97cec15e6e7c
+    :commit: d1f4642243c043f24dbb1af489715c1b8128572b
     :git: https://github.com/radiantkit/radiantforms-ios.git
   SwiftyBeaver:
-    :commit: f7aaaa3ee8056588b9cf5594475f0a3da0043370
+    :commit: e0fb3a74cb993d7dcf1e56734cdc98ad6e6d8176
     :git: https://github.com/SwiftyBeaver/SwiftyBeaver.git
 
 SPEC CHECKSUMS:
-  MBProgressHUD: 0f5bb58f04db85da16d8b9e9781df7f88cadd4ec
+  MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
   RadiantForms: 87619162586e81f6162670562bdd815d82d39046
-  SwiftyBeaver: 4cc0080d2e23f980652e28978db11a5c9da39165
+  SwiftyBeaver: a1f5691458561414bcfab51874b2b7445451602b
 
-PODFILE CHECKSUM: bf8541321017ef754991325dc9fbecfca361eda1
+PODFILE CHECKSUM: e05a46749a79d91d8209117761267be9dfe3f27b
 
-COCOAPODS: 1.7.5
+COCOAPODS: 1.8.4

@@ -1,4 +1,4 @@
-// MIT license. Copyright (c) 2019 TriangleDraw. All rights reserved.
+// MIT license. Copyright (c) 2020 TriangleDraw. All rights reserved.
 import UIKit
 import Foundation
 import TriangleDrawLibrary
@@ -29,6 +29,7 @@ class BrowserMenuViewController: RFFormViewController {
 		builder += appStoreWriteReviewButton
 		builder += twitterButton
 		builder += instagramButton
+		builder += redditButton
 
 		builder += RFSectionHeaderTitleFormItem().title("Development")
 		builder += githubButton
@@ -51,12 +52,8 @@ class BrowserMenuViewController: RFFormViewController {
 
 	lazy var twitterButton: RFButtonFormItem = {
 		let instance = RFButtonFormItem()
-		instance.title = "twitter.com/TriangleDraw"
-		instance.action = { [weak self] in
-			guard let strongSelf = self else {
-				log.error("Expected self to be non-nil, but got nil. Cannot open browser.")
-				return
-			}
+		instance.title = "Twitter"
+		instance.action = {
 			guard let url: URL = URL(string: "https://twitter.com/TriangleDraw") else {
 				log.error("Unable to create url. Cannot open browser.")
 				return
@@ -68,13 +65,22 @@ class BrowserMenuViewController: RFFormViewController {
 
 	lazy var instagramButton: RFButtonFormItem = {
 		let instance = RFButtonFormItem()
-		instance.title = "instagram.com/TriangleDraw"
-		instance.action = { [weak self] in
-			guard let strongSelf = self else {
-				log.error("Expected self to be non-nil, but got nil. Cannot open browser.")
+		instance.title = "Instagram"
+		instance.action = {
+			guard let url: URL = URL(string: "https://www.instagram.com/triangledraw/") else {
+				log.error("Unable to create url. Cannot open browser.")
 				return
 			}
-			guard let url: URL = URL(string: "https://www.instagram.com/triangledraw/") else {
+			UIApplication.shared.open(url)
+		}
+		return instance
+	}()
+
+	lazy var redditButton: RFButtonFormItem = {
+		let instance = RFButtonFormItem()
+		instance.title = "Reddit"
+		instance.action = {
+			guard let url: URL = URL(string: "https://www.reddit.com/r/TriangleDraw/") else {
 				log.error("Unable to create url. Cannot open browser.")
 				return
 			}
@@ -85,13 +91,9 @@ class BrowserMenuViewController: RFFormViewController {
 
 	lazy var githubButton: RFButtonFormItem = {
 		let instance = RFButtonFormItem()
-		instance.title = "github.com/TriangleDraw"
-		instance.action = { [weak self] in
-			guard let strongSelf = self else {
-				log.error("Expected self to be non-nil, but got nil. Cannot open browser.")
-				return
-			}
-			guard let url: URL = URL(string: "https://github.com/triangledraw") else {
+		instance.title = "GitHub"
+		instance.action = {
+			guard let url: URL = URL(string: "https://github.com/triangledraw/TriangleDraw-iOS") else {
 				log.error("Unable to create url. Cannot open browser.")
 				return
 			}

@@ -1,30 +1,13 @@
-// MIT license. Copyright (c) 2019 TriangleDraw. All rights reserved.
+// MIT license. Copyright (c) 2020 TriangleDraw. All rights reserved.
 import UIKit
+import TriangleDrawLibrary
 
 class SystemInfo {
 	static var systemInfo: String {
-        var items = [String]()
-
-		func append(_ key: String, _ value: String) {
-			items.append("\(key): \(value)")
-		}
-
-        do {
-			append("App Version", appVersion)
-			append("App Creation Date", creationDateString)
-			append("App XCBuildConfiguration", xcBuildConfiguration.rawValue)
-			append("Device iOS", UIDevice.current.systemVersion)
-			append("Device Kind", unameMachine)
-        }
-        do {
-            let size: CGSize = UIScreen.main.bounds.size
-			append("Device Screen", "\(size.width.string0)x\(size.height.string0)")
-        }
-		do {
-			let languages = NSLocale.preferredLanguages
-			let languagesPretty: String = languages.joined(separator: " ")
-			append("User Languages", languagesPretty)
-		}
+		let provider = VerboseInfoProvider()
+		SystemInfo().verboseInfo(provider)
+		let pairs: [VerboseInfoProvider.Pair] = provider.pairs
+		let items: [String] = pairs.map { "\($0): \($1)" }
         return items.joined(separator: "\n")
     }
 
@@ -117,5 +100,28 @@ class SystemInfo {
 			}
 		}
 		return optionalString ?? "N/A"
+	}
+}
+
+extension SystemInfo: AcceptsVerboseInfoProvider {
+	func verboseInfo(_ provider: VerboseInfoProvider) {
+		let append = provider.append
+
+        do {
+			append("App Version", SystemInfo.appVersion)
+			append("App Creation Date", SystemInfo.creationDateString)
+			append("App XCBuildConfiguration", SystemInfo.xcBuildConfiguration.rawValue)
+			append("Device iOS", UIDevice.current.systemVersion)
+			append("Device Kind", SystemInfo.unameMachine)
+        }
+        do {
+            let size: CGSize = UIScreen.main.bounds.size
+			append("Device Screen", "\(size.width.string0)x\(size.height.string0)")
+        }
+		do {
+			let languages = NSLocale.preferredLanguages
+			let languagesPretty: String = languages.joined(separator: " ")
+			append("User Languages", languagesPretty)
+		}
 	}
 }

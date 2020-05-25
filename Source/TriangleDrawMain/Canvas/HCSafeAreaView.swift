@@ -1,4 +1,4 @@
-// MIT license. Copyright (c) 2019 TriangleDraw. All rights reserved.
+// MIT license. Copyright (c) 2020 TriangleDraw. All rights reserved.
 import UIKit
 import TriangleDrawLibrary
 
@@ -49,5 +49,24 @@ class HCSafeAreaView: UIView {
 		super.layoutSubviews()
 		gridView?.frame = bounds
 		interactionView?.frame = bounds
+	}
+}
+
+extension HCSafeAreaView: AcceptsVerboseInfoProvider {
+	func verboseInfo(_ provider: VerboseInfoProvider) {
+		let append = provider.append
+
+		if gridView != nil {
+			append("safeAreaView.gridView", "non-nil")
+		} else {
+			append("safeAreaView.gridView", "nil (This is possible an error state!)")
+		}
+
+		if let interactionView: HCInteractionView = interactionView {
+			append("safeAreaView.interactionView", "non-nil")
+			interactionView.verboseInfo(provider)
+		} else {
+			append("safeAreaView.interactionView", "nil (This is possible an error state!)")
+		}
 	}
 }

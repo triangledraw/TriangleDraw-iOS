@@ -1,7 +1,7 @@
 // MIT license. Copyright (c) 2019 RadiantKit. All rights reserved.
 import UIKit
 
-public struct RFSwitchCellModel {
+public struct RFToggleCellModel {
 	var title: String = ""
 
     var titleFont: RFFont = RFPreferredFontForTextStyle.body
@@ -11,11 +11,11 @@ public struct RFSwitchCellModel {
 	}
 }
 
-public class RFSwitchCell: UITableViewCell {
-	public let model: RFSwitchCellModel
+public class RFToggleCell: UITableViewCell {
+	public let model: RFToggleCellModel
 	public let switchView: UISwitch
 
-	public init(model: RFSwitchCellModel) {
+	public init(model: RFToggleCellModel) {
 		self.model = model
 		self.switchView = UISwitch()
 		super.init(style: .default, reuseIdentifier: nil)
@@ -34,12 +34,12 @@ public class RFSwitchCell: UITableViewCell {
     // MARK: - UIAppearance
     
     @objc public dynamic var textLabel_textColor: UIColor?
-    @objc public dynamic var switch_onTintColor: UIColor?
+    @objc public dynamic var toggle_onTintColor: UIColor?
     
     public static func configureAppearance(whenContainedInInstancesOf containerTypes: [UIAppearanceContainer.Type], theme: RFTheme) {
-        let appearanceProxy: RFSwitchCell = RFSwitchCell.appearance(whenContainedInInstancesOf: containerTypes)
-        appearanceProxy.textLabel_textColor = theme.switchCell.textLabel_textColor
-        appearanceProxy.switch_onTintColor = theme.switchCell.switch_onTintColor
+        let appearanceProxy: RFToggleCell = RFToggleCell.appearance(whenContainedInInstancesOf: containerTypes)
+        appearanceProxy.textLabel_textColor = theme.toggleCell.textLabel_textColor
+        appearanceProxy.toggle_onTintColor = theme.toggleCell.toggle_onTintColor
     }
     
 	@objc public func valueChanged() {
@@ -53,16 +53,22 @@ public class RFSwitchCell: UITableViewCell {
 	}
 }
 
-extension RFSwitchCell: RFWillDisplayCellDelegate {
+extension RFToggleCell: RFWillDisplayCellDelegate {
     public func form_willDisplay(tableView: UITableView, forRowAtIndexPath indexPath: IndexPath) {
         self.textLabel?.textColor = self.textLabel_textColor
-        self.switchView.onTintColor = self.switch_onTintColor
+        self.switchView.onTintColor = self.toggle_onTintColor
     }
 }
 
 
-@available(*, unavailable, renamed: "RFSwitchCell")
-typealias SwitchCell = RFSwitchCell
+@available(*, unavailable, renamed: "RFToggleCell")
+typealias SwitchCell = RFToggleCell
 
-@available(*, unavailable, renamed: "RFSwitchCellModel")
-typealias SwitchCellModel = RFSwitchCellModel
+@available(*, unavailable, renamed: "RFToggleCell")
+typealias RFSwitchCell = RFToggleCell
+
+@available(*, unavailable, renamed: "RFToggleCellModel")
+typealias SwitchCellModel = RFToggleCellModel
+
+@available(*, unavailable, renamed: "RFToggleCellModel")
+typealias RFSwitchCellModel = RFToggleCellModel

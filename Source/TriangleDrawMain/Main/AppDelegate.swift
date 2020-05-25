@@ -1,4 +1,4 @@
-// MIT license. Copyright (c) 2019 TriangleDraw. All rights reserved.
+// MIT license. Copyright (c) 2020 TriangleDraw. All rights reserved.
 import UIKit
 import TriangleDrawLibrary
 import RadiantForms
@@ -51,7 +51,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 	func configureForms() {
 		let builder = RFThemeBuilder.light
 		builder.tintColor = AppConstant.Browser.tintColor
-		builder.applyTo(BrowserMenuViewController.self)
 	}
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {

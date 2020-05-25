@@ -1,4 +1,4 @@
-// MIT license. Copyright (c) 2019 TriangleDraw. All rights reserved.
+// MIT license. Copyright (c) 2020 TriangleDraw. All rights reserved.
 import Foundation
 
 public class TDCanvasWriter {
@@ -7,7 +7,7 @@ public class TDCanvasWriter {
         let height: Int = Int(canvas.height)
         var rows = [String]()
         rows.append("P1")
-        rows.append("# {\"FileFormat\":3,\"ToolName\":\"TriangleDraw-iOS\",\"ToolVersion\":\"2019.4.1\"}")
+        rows.append("# {\"FileFormat\":3,\"ToolName\":\"TriangleDraw-iOS\",\"ToolVersion\":\"2020.5.25\"}")
         rows.append("\(width) \(height)")
         for y in 0..<height {
             var cells = [String]()

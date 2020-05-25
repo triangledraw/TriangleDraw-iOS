@@ -1,4 +1,4 @@
-// MIT license. Copyright (c) 2019 TriangleDraw. All rights reserved.
+// MIT license. Copyright (c) 2020 TriangleDraw. All rights reserved.
 import UIKit
 import Foundation
 import TriangleDrawLibrary
@@ -56,9 +56,10 @@ class HCMenuViewController: RFFormViewController {
 
 	override func populate(_ builder: RFFormBuilder) {
 		builder.navigationTitle = "Canvas"
-		builder += RFSectionHeaderTitleFormItem().title("Settings")
+		builder += RFSectionHeaderTitleFormItem().title("Grid System")
 		builder += gridMode
 		builder += symmetryMode
+        builder += subdivideButton
 
 		builder += RFSectionHeaderTitleFormItem().title("Export")
 		builder += exportBitmapPNGButton
@@ -67,14 +68,11 @@ class HCMenuViewController: RFFormViewController {
 
 		builder += RFSectionHeaderTitleFormItem().title("Feedback")
 		builder += emailDeveloperButton
-
-		builder += RFSectionHeaderTitleFormItem().title("Advanced")
-		builder += advancedSubdivideButton
 	}
 
 	lazy var gridMode: RFSegmentedControlFormItem = {
 		let instance = RFSegmentedControlFormItem()
-		instance.title = "Grid"
+		instance.title = "Format"
 		instance.items = CanvasGridMode.allCases.map { $0.localizedDisplayName }
 		let currentGridMode: CanvasGridMode = CanvasGridModeController().currentCanvasGridMode
 		instance.selected = CanvasGridMode.allCases.firstIndex(of: currentGridMode) ?? 0
@@ -102,6 +100,17 @@ class HCMenuViewController: RFFormViewController {
 		}
 		return instance
 	}()
+
+    lazy var subdivideButton: RFViewControllerFormItem = {
+        let instance = RFViewControllerFormItem()
+        instance.title = "Subdivide"
+        instance.createViewController = { [weak self] (_) in
+            let vc = HCMenuSubdivideViewController()
+            vc.delegate = self
+            return vc
+        }
+        return instance
+    }()
 
 	lazy var exportBitmapPNGButton: RFButtonFormItem = {
 		let instance = RFButtonFormItem()
@@ -233,17 +242,6 @@ class HCMenuViewController: RFFormViewController {
 		instance.title = "Email Developer"
 		instance.action = { [weak self] in
 			self?.td_presentEmailWithFeedback()
-		}
-		return instance
-	}()
-
-	lazy var advancedSubdivideButton: RFViewControllerFormItem = {
-		let instance = RFViewControllerFormItem()
-		instance.title = "Subdivide"
-		instance.createViewController = { [weak self] (_) in
-			let vc = HCMenuSubdivideViewController()
-			vc.delegate = self
-			return vc
 		}
 		return instance
 	}()

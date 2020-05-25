@@ -1,7 +1,7 @@
 // MIT license. Copyright (c) 2019 RadiantKit. All rights reserved.
 import Foundation
 
-public class RFSwitchFormItem: RFFormItem {
+public class RFToggleFormItem: RFFormItem {
 	override func accept(visitor: RFFormItemVisitor) {
 		visitor.visit(object: self)
 	}
@@ -45,5 +45,8 @@ public class RFSwitchFormItem: RFFormItem {
 	}
 }
 
-@available(*, unavailable, renamed: "RFSwitchFormItem")
-typealias SwitchFormItem = RFSwitchFormItem
+@available(*, unavailable, renamed: "RFToggleFormItem")
+typealias SwitchFormItem = RFToggleFormItem
+
+@available(*, unavailable, renamed: "RFToggleFormItem")
+typealias RFSwitchFormItem = RFToggleFormItem

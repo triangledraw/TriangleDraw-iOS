@@ -5,17 +5,17 @@ use_frameworks!
 
 def my_pod_mbprogresshud
 	# https://github.com/jdg/MBProgressHUD/commits/master
-	pod 'MBProgressHUD', :git => 'https://github.com/jdg/MBProgressHUD.git', :commit => '202d8895c6eb10ead2e4b3c5837a68c95693d51f'
+	pod 'MBProgressHUD', :git => 'https://github.com/jdg/MBProgressHUD.git', :commit => '61fb89ce30d42f403ce53cde65883dc8cea6d02a'
 end
 
 def my_pod_swiftybeaver
 	# https://github.com/SwiftyBeaver/SwiftyBeaver/commits/master
-	pod 'SwiftyBeaver', :git => 'https://github.com/SwiftyBeaver/SwiftyBeaver.git', :commit => 'f7aaaa3ee8056588b9cf5594475f0a3da0043370'
+	pod 'SwiftyBeaver', :git => 'https://github.com/SwiftyBeaver/SwiftyBeaver.git', :commit => 'e0fb3a74cb993d7dcf1e56734cdc98ad6e6d8176'
 end
 
 def my_pod_radiantforms
 	# https://github.com/radiantkit/radiantforms-ios/commits/develop
-	pod 'RadiantForms', :git => 'https://github.com/radiantkit/radiantforms-ios.git', :commit => 'b4634ff787ac11f222443a0fc97e97cec15e6e7c'
+	pod 'RadiantForms', :git => 'https://github.com/radiantkit/radiantforms-ios.git', :commit => 'd1f4642243c043f24dbb1af489715c1b8128572b'
 end
 
 abstract_target 'BasePods' do

@@ -1,4 +1,4 @@
-// MIT license. Copyright (c) 2019 TriangleDraw. All rights reserved.
+// MIT license. Copyright (c) 2020 TriangleDraw. All rights reserved.
 import XCTest
 @testable import TriangleDrawMain
 @testable import TriangleDrawLibrary
@@ -137,6 +137,14 @@ class Engine2Tests: XCTestCase {
         c.invertPixels()
         let actual = c.stringRepresentation
         let expected = "**--\n****\n-***\n****"
+        XCTAssertEqual(actual, expected)
+    }
+
+    func testLoadFromStringRepresentation_ignoreTheCarriageReturnCharacter() {
+		let c: E2Canvas = createCanvas(2, 4)
+        c.load(fromStringRepresentation: "---*\r\n--*-\r\n-*--\r\n*---")
+        let actual = c.stringRepresentation
+        let expected = "---*\n--*-\n-*--\n*---"
         XCTAssertEqual(actual, expected)
     }
 

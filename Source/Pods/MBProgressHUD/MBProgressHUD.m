@@ -1,6 +1,6 @@
 //
 // MBProgressHUD.m
-// Version 1.1.0
+// Version 1.2.0
 // Created by Matej Bukovinski on 2.4.09.
 //
 
@@ -26,6 +26,7 @@ static const CGFloat MBDefaultDetailsLabelFontSize = 12.f;
 @property (nonatomic, strong) NSArray *bezelConstraints;
 @property (nonatomic, strong) UIView *topSpacer;
 @property (nonatomic, strong) UIView *bottomSpacer;
+@property (nonatomic, strong) UIMotionEffectGroup *bezelMotionEffects;
 @property (nonatomic, weak) NSTimer *graceTimer;
 @property (nonatomic, weak) NSTimer *minShowTimer;
 @property (nonatomic, weak) NSTimer *hideDelayTimer;
@@ -80,8 +81,13 @@ static const CGFloat MBDefaultDetailsLabelFontSize = 12.f;
     _animationType = MBProgressHUDAnimationFade;
     _mode = MBProgressHUDModeIndeterminate;
     _margin = 20.0f;
-    _defaultMotionEffectsEnabled = YES;
-    _contentColor = [UIColor colorWithWhite:0.f alpha:0.7f];
+    _defaultMotionEffectsEnabled = NO;
+
+    if (@available(iOS 13.0, tvOS 13, *)) {
+       _contentColor = [[UIColor labelColor] colorWithAlphaComponent:0.7f];
+    } else {
+        _contentColor = [UIColor colorWithWhite:0.f alpha:0.7f];
+    }
 
     // Transparent background
     self.opaque = NO;
@@ -131,7 +137,7 @@ static const CGFloat MBDefaultDetailsLabelFontSize = 12.f;
         NSTimer *timer = [NSTimer timerWithTimeInterval:self.graceTime target:self selector:@selector(handleGraceTimer:) userInfo:nil repeats:NO];
         [[NSRunLoop currentRunLoop] addTimer:timer forMode:NSRunLoopCommonModes];
         self.graceTimer = timer;
-    } 
+    }
     // ... otherwise show the HUD immediately
     else {
         [self showUsingAnimation:self.useAnimation];
@@ -152,7 +158,7 @@ static const CGFloat MBDefaultDetailsLabelFontSize = 12.f;
             [[NSRunLoop currentRunLoop] addTimer:timer forMode:NSRunLoopCommonModes];
             self.minShowTimer = timer;
             return;
-        } 
+        }
     }
     // ... otherwise hide the HUD immediately
     [self hideUsingAnimation:self.useAnimation];
@@ -205,6 +211,10 @@ static const CGFloat MBDefaultDetailsLabelFontSize = 12.f;
 
     // Needed in case we hide and re-show with the same NSProgress object attached.
     [self setNSProgressDisplayLinkEnabled:YES];
+
+    // Set up motion effects only at this point to avoid needlessly
+    // creating the effect if it was disabled after initialization.
+    [self updateBezelMotionEffects];
 
     if (animated) {
         [self animateIn:YES withType:self.animationType completion:NULL];
@@ -305,7 +315,6 @@ static const CGFloat MBDefaultDetailsLabelFontSize = 12.f;
     bezelView.alpha = 0.f;
     [self addSubview:bezelView];
     _bezelView = bezelView;
-    [self updateBezelMotionEffects];
 
     UILabel *label = [UILabel new];
     label.adjustsFontSizeToFitWidth = NO;
@@ -361,9 +370,20 @@ static const CGFloat MBDefaultDetailsLabelFontSize = 12.f;
     if (mode == MBProgressHUDModeIndeterminate) {
         if (!isActivityIndicator) {
             // Update to indeterminate indicator
+            UIActivityIndicatorView *activityIndicator;
             [indicator removeFromSuperview];
-            indicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
-            [(UIActivityIndicatorView *)indicator startAnimating];
+#if !TARGET_OS_MACCATALYST
+            if (@available(iOS 13.0, tvOS 13.0, *)) {
+#endif
+                activityIndicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleLarge];
+                activityIndicator.color = [UIColor whiteColor];
+#if !TARGET_OS_MACCATALYST
+            } else {
+               activityIndicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+            }
+#endif
+            [activityIndicator startAnimating];
+            indicator = activityIndicator;
             [self.bezelView addSubview:indicator];
         }
     }
@@ -383,7 +403,7 @@ static const CGFloat MBDefaultDetailsLabelFontSize = 12.f;
         if (mode == MBProgressHUDModeAnnularDeterminate) {
             [(MBRoundProgressView *)indicator setAnnular:YES];
         }
-    } 
+    }
     else if (mode == MBProgressHUDModeCustomView && self.customView != indicator) {
         // Update custom view indicator
         [indicator removeFromSuperview];
@@ -426,7 +446,7 @@ static const CGFloat MBDefaultDetailsLabelFontSize = 12.f;
         // For iOS 9+
         appearance = [UIActivityIndicatorView appearanceWhenContainedInInstancesOfClasses:@[[MBProgressHUD class]]];
 #endif
-        
+
         if (appearance.color == nil) {
             ((UIActivityIndicatorView *)indicator).color = color;
         }
@@ -457,20 +477,15 @@ static const CGFloat MBDefaultDetailsLabelFontSize = 12.f;
             ((MBBarProgressView *)indicator).lineColor = color;
         }
     } else {
-#if __IPHONE_OS_VERSION_MAX_ALLOWED >= 70000 || TARGET_OS_TV
-        if ([indicator respondsToSelector:@selector(setTintColor:)]) {
-            [indicator setTintColor:color];
-        }
-#endif
+        [indicator setTintColor:color];
     }
 }
 
 - (void)updateBezelMotionEffects {
-#if __IPHONE_OS_VERSION_MAX_ALLOWED >= 70000 || TARGET_OS_TV
     MBBackgroundView *bezelView = self.bezelView;
-    if (![bezelView respondsToSelector:@selector(addMotionEffect:)]) return;
+    UIMotionEffectGroup *bezelMotionEffects = self.bezelMotionEffects;
 
-    if (self.defaultMotionEffectsEnabled) {
+    if (self.defaultMotionEffectsEnabled && !bezelMotionEffects) {
         CGFloat effectOffset = 10.f;
         UIInterpolatingMotionEffect *effectX = [[UIInterpolatingMotionEffect alloc] initWithKeyPath:@"center.x" type:UIInterpolatingMotionEffectTypeTiltAlongHorizontalAxis];
         effectX.maximumRelativeValue = @(effectOffset);
@@ -483,14 +498,12 @@ static const CGFloat MBDefaultDetailsLabelFontSize = 12.f;
         UIMotionEffectGroup *group = [[UIMotionEffectGroup alloc] init];
         group.motionEffects = @[effectX, effectY];
 
+        self.bezelMotionEffects = group;
         [bezelView addMotionEffect:group];
-    } else {
-        NSArray *effects = [bezelView motionEffects];
-        for (UIMotionEffect *effect in effects) {
-            [bezelView removeMotionEffect:effect];
-        }
+    } else if (bezelMotionEffects) {
+        self.bezelMotionEffects = nil;
+        [bezelView removeMotionEffect:bezelMotionEffects];
     }
-#endif
 }
 
 #pragma mark - Layout
@@ -578,10 +591,10 @@ static const CGFloat MBDefaultDetailsLabelFontSize = 12.f;
 
     [bezel addConstraints:bezelConstraints];
     self.bezelConstraints = bezelConstraints;
-    
+
     self.paddingConstraints = [paddingConstraints copy];
     [self updatePaddingConstraints];
-    
+
     [super updateConstraints];
 }
 
@@ -666,9 +679,9 @@ static const CGFloat MBDefaultDetailsLabelFontSize = 12.f;
 - (void)setProgressObjectDisplayLink:(CADisplayLink *)progressObjectDisplayLink {
     if (progressObjectDisplayLink != _progressObjectDisplayLink) {
         [_progressObjectDisplayLink invalidate];
-        
+
         _progressObjectDisplayLink = progressObjectDisplayLink;
-        
+
         [_progressObjectDisplayLink addToRunLoop:[NSRunLoop mainRunLoop] forMode:NSDefaultRunLoopMode];
     }
 }
@@ -726,7 +739,7 @@ static const CGFloat MBDefaultDetailsLabelFontSize = 12.f;
 #pragma mark - Notifications
 
 - (void)registerForNotifications {
-#if !TARGET_OS_TV
+#if !TARGET_OS_TV && !TARGET_OS_MACCATALYST
     NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
 
     [nc addObserver:self selector:@selector(statusBarOrientationDidChange:)
@@ -735,13 +748,13 @@ static const CGFloat MBDefaultDetailsLabelFontSize = 12.f;
 }
 
 - (void)unregisterFromNotifications {
-#if !TARGET_OS_TV
+#if !TARGET_OS_TV && !TARGET_OS_MACCATALYST
     NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
     [nc removeObserver:self name:UIApplicationDidChangeStatusBarOrientationNotification object:nil];
 #endif
 }
 
-#if !TARGET_OS_TV
+#if !TARGET_OS_TV && !TARGET_OS_MACCATALYST
 - (void)statusBarOrientationDidChange:(NSNotification *)notification {
     UIView *superview = self.superview;
     if (!superview) {
@@ -773,7 +786,7 @@ static const CGFloat MBDefaultDetailsLabelFontSize = 12.f;
     UIApplication *application = [UIApplication performSelector:@selector(sharedApplication)];
     UIInterfaceOrientation orientation = application.statusBarOrientation;
     CGFloat radians = 0;
-    
+
     if (UIInterfaceOrientationIsLandscape(orientation)) {
         radians = orientation == UIInterfaceOrientationLandscapeLeft ? -(CGFloat)M_PI_2 : (CGFloat)M_PI_2;
         // Window coordinates differ!
@@ -958,11 +971,11 @@ static const CGFloat MBDefaultDetailsLabelFontSize = 12.f;
 
 - (void)drawRect:(CGRect)rect {
     CGContextRef context = UIGraphicsGetCurrentContext();
-    
+
     CGContextSetLineWidth(context, 2);
     CGContextSetStrokeColorWithColor(context,[_lineColor CGColor]);
     CGContextSetFillColorWithColor(context, [_progressRemainingColor CGColor]);
-    
+
     // Draw background and Border
     CGFloat radius = (rect.size.height / 2) - 2;
     CGContextMoveToPoint(context, 2, rect.size.height/2);
@@ -971,26 +984,26 @@ static const CGFloat MBDefaultDetailsLabelFontSize = 12.f;
     CGContextAddArcToPoint(context, rect.size.width - 2, rect.size.height - 2, rect.size.width - radius - 2, rect.size.height - 2, radius);
     CGContextAddArcToPoint(context, 2, rect.size.height - 2, 2, rect.size.height/2, radius);
     CGContextDrawPath(context, kCGPathFillStroke);
-    
+
     CGContextSetFillColorWithColor(context, [_progressColor CGColor]);
     radius = radius - 2;
     CGFloat amount = self.progress * rect.size.width;
-    
+
     // Progress in the middle area
     if (amount >= radius + 4 && amount <= (rect.size.width - radius - 4)) {
         CGContextMoveToPoint(context, 4, rect.size.height/2);
         CGContextAddArcToPoint(context, 4, 4, radius + 4, 4, radius);
         CGContextAddLineToPoint(context, amount, 4);
         CGContextAddLineToPoint(context, amount, radius + 4);
-        
+
         CGContextMoveToPoint(context, 4, rect.size.height/2);
         CGContextAddArcToPoint(context, 4, rect.size.height - 4, radius + 4, rect.size.height - 4, radius);
         CGContextAddLineToPoint(context, amount, rect.size.height - 4);
         CGContextAddLineToPoint(context, amount, radius + 4);
-        
+
         CGContextFillPath(context);
     }
-    
+
     // Progress in the right arc
     else if (amount > radius + 4) {
         CGFloat x = amount - (rect.size.width - radius - 4);
@@ -1010,10 +1023,10 @@ static const CGFloat MBDefaultDetailsLabelFontSize = 12.f;
         if (isnan(angle)) angle = 0;
         CGContextAddArc(context, rect.size.width - radius - 4, rect.size.height/2, radius, -M_PI, angle, 1);
         CGContextAddLineToPoint(context, amount, rect.size.height/2);
-        
+
         CGContextFillPath(context);
     }
-    
+
     // Progress is in the left arc
     else if (amount < radius + 4 && amount > 0) {
         CGContextMoveToPoint(context, 4, rect.size.height/2);
@@ -1023,7 +1036,7 @@ static const CGFloat MBDefaultDetailsLabelFontSize = 12.f;
         CGContextMoveToPoint(context, 4, rect.size.height/2);
         CGContextAddArcToPoint(context, 4, rect.size.height - 4, radius + 4, rect.size.height - 4, radius);
         CGContextAddLineToPoint(context, radius + 4, rect.size.height/2);
-        
+
         CGContextFillPath(context);
     }
 }
@@ -1045,8 +1058,17 @@ static const CGFloat MBDefaultDetailsLabelFontSize = 12.f;
 - (instancetype)initWithFrame:(CGRect)frame {
     if ((self = [super initWithFrame:frame])) {
         _style = MBProgressHUDBackgroundStyleBlur;
-        _blurEffectStyle = UIBlurEffectStyleLight;
-        _color = [UIColor colorWithWhite:0.8f alpha:0.6f];
+        if (@available(iOS 13.0, *)) {
+            #if TARGET_OS_TV
+            _blurEffectStyle = UIBlurEffectStyleRegular;
+            #else
+            _blurEffectStyle = UIBlurEffectStyleSystemThickMaterial;
+            #endif
+            // Leaving the color unassigned yields best results.
+        } else {
+            _blurEffectStyle = UIBlurEffectStyleLight;
+            _color = [UIColor colorWithWhite:0.8f alpha:0.6f];
+        }
 
         self.clipsToBounds = YES;
 
@@ -1079,8 +1101,6 @@ static const CGFloat MBDefaultDetailsLabelFontSize = 12.f;
     }
 }
 
-#if __IPHONE_OS_VERSION_MAX_ALLOWED >= 80000 || TARGET_OS_TV
-
 - (void)setBlurEffectStyle:(UIBlurEffectStyle)blurEffectStyle {
     if (_blurEffectStyle == blurEffectStyle) {
         return;
@@ -1090,8 +1110,6 @@ static const CGFloat MBDefaultDetailsLabelFontSize = 12.f;
 
     [self updateForBackgroundStyle];
 }
-
-#endif
 
 ///////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Views
@@ -1149,8 +1167,9 @@ static const CGFloat MBDefaultDetailsLabelFontSize = 12.f;
 }
 
 - (CGSize)intrinsicContentSize {
-    // Only show if we have associated control events
-    if (self.allControlEvents == 0) return CGSizeZero;
+    // Only show if we have associated control events and a title
+    if ((self.allControlEvents == 0) || ([self titleForState:UIControlStateNormal].length == 0))
+		return CGSizeZero;
     CGSize size = [super intrinsicContentSize];
     // Add some side padding
     size.width += 20.f;
