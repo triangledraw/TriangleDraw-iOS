@@ -51,7 +51,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 	func configureForms() {
 		let builder = RFThemeBuilder.light
 		builder.tintColor = AppConstant.Browser.tintColor
-		builder.applyTo(BrowserMenuViewController.self)
 	}
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
