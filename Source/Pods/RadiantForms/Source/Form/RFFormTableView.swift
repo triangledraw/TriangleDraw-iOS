@@ -44,7 +44,8 @@ public class RFFormTableView: UITableView {
             RFOptionViewControllerCell.configureAppearance(whenContainedInInstancesOf: allContainerTypes, theme: theme)
             RFSegmentedControlCell.configureAppearance(whenContainedInInstancesOf: allContainerTypes, theme: theme)
             RFStepperCell.configureAppearance(whenContainedInInstancesOf: allContainerTypes, theme: theme)
-            RFSwitchCell.configureAppearance(whenContainedInInstancesOf: allContainerTypes, theme: theme)
+            RFToggleCell.configureAppearance(whenContainedInInstancesOf: allContainerTypes, theme: theme)
+            RFTextCell.configureAppearance(whenContainedInInstancesOf: allContainerTypes, theme: theme)
             RFTextFieldCell.configureAppearance(whenContainedInInstancesOf: allContainerTypes, theme: theme)
             RFViewControllerCell.configureAppearance(whenContainedInInstancesOf: allContainerTypes, theme: theme)
         }

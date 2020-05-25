@@ -6,6 +6,13 @@ public struct RFAttributedTextCellModel {
 	var valueAttributedText: NSAttributedString?
 }
 
+/// Cell for displaying oneliner `Key` and `Value`.
+///
+/// Shows the `title` in the left side, and the `value` in the right side.
+///
+/// Neither the `title` nor the `value` can span multiple lines.
+///
+/// The cell is not selectable.
 public class RFAttributedTextCell: UITableViewCell {
     public var model: RFAttributedTextCellModel
 

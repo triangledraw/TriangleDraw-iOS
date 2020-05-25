@@ -6,6 +6,13 @@ public struct RFStaticTextCellModel {
 	var value: String = ""
 }
 
+/// Cell for displaying oneliner `Key` and `Value`.
+///
+/// Shows the `title` in the left side, and the `value` in the right side.
+///
+/// Neither the `title` nor the `value` can span multiple lines.
+///
+/// The cell is not selectable.
 public class RFStaticTextCell: UITableViewCell {
 	public var model: RFStaticTextCellModel
 

@@ -27,9 +27,10 @@ class RFValidateVisitor: RFFormItemVisitor {
 	func visit(object: RFSliderFormItem) {}
 	func visit(object: RFStaticTextFormItem) {}
 	func visit(object: RFStepperFormItem) {}
-	func visit(object: RFSwitchFormItem) {}
+	func visit(object: RFToggleFormItem) {}
 	func visit(object: RFTextViewFormItem) {}
 	func visit(object: RFViewControllerFormItem) {}
+    func visit(object: RFTextFormItem) {}
 }
 
 @available(*, unavailable, renamed: "RFValidateVisitor")

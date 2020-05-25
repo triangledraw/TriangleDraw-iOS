@@ -319,8 +319,13 @@ extension RFAmountCell: UITextFieldDelegate {
         let updatedText: String = currentText.replacingCharacters(in: stringRange, with: string)
         
         let digitsString: String = type(of: self).extractDigitsFromString(updatedText)
-        if digitsString.isEmpty {
-            return true
+        if digitsString.isEmpty && updatedText.isEmpty {
+			RFLog("user has deleted all the text")
+			return true
+		}
+		if digitsString.isEmpty && !updatedText.isEmpty {
+			RFLog("Prevent inserting special characters via copy/paste or via external keyboard")
+            return false
         }
         guard let internalValue: UInt64 = self.createInternalValue(digitsString) else {
             RFLog("Cannot create an internalValue")

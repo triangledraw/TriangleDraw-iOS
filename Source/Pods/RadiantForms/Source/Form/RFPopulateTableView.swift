@@ -568,10 +568,10 @@ class RFPopulateTableView: RFFormItemVisitor {
 		}
 	}
 
-	// MARK: RFSwitchFormItem
+	// MARK: RFToggleFormItem
 
-	func visit(object: RFSwitchFormItem) {
-		var model = RFSwitchCellModel()
+	func visit(object: RFToggleFormItem) {
+		var model = RFToggleCellModel()
 		model.title = object.title
         model.titleFont = self.model.fontStrategy.titleFont()
 
@@ -582,7 +582,7 @@ class RFPopulateTableView: RFFormItemVisitor {
 			return
 		}
 
-		let cell = RFSwitchCell(model: model)
+		let cell = RFToggleCell(model: model)
 		cells.append(cell)
 		lastItemType = .item
 
@@ -767,6 +767,14 @@ class RFPopulateTableView: RFFormItemVisitor {
 			weakObject?.valueDidChange(selectedRows)
 		}
 	}
+    
+    // MARK: - RFTextFormItem
+
+    func visit(object: RFTextFormItem) {
+        let model = RFTextCellModel(text: object.text)
+        let cell = RFTextCell(model: model)
+        cells.append(cell)
+    }
 }
 
 
