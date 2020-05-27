@@ -21,7 +21,7 @@ class BrowserMenuViewController: RFFormViewController {
 	}
 
 	override func populate(_ builder: RFFormBuilder) {
-		builder.navigationTitle = "App"
+		builder.navigationTitle = "TriangleDraw"
 
 		builder.demo_showInfo("TriangleDraw is free software!\nYour support is appreciated.")
 
