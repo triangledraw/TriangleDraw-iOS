@@ -9,22 +9,16 @@
 TriangleDraw is brilliant for sketching logos. You can quickly create designs 
 that can be used for branding on letterheads or on your website.
 
-[Features of TriangleDraw](Source/Documentation/features.md)
+[Install via App Store](https://apps.apple.com/app/id1453533043) - available for iPhone + iPad.
 
-# TriangleDraw on the web 
 
-- [App Store](https://apps.apple.com/app/id1453533043)
-- [TriangleDraw.com](http://www.triangledraw.com/)
-- [Instagram](https://www.instagram.com/triangledraw/)
-- [Twitter](https://twitter.com/TriangleDraw)
+# Inspiration
 
-# Development of TriangleDraw
+[TriangleDraw Gallery](https://github.com/triangledraw/TriangleDraw-Community) - see what can be done using this app.
 
-Greetings from Simon Strandgaard. I'm the developer of TriangleDraw. It has been my hobby project for many years.
 
-- [Follow me on Twitter](https://twitter.com/neoneye)
-- [Connect with me on LinkedIn](https://www.linkedin.com/in/simonstrandgaard/)
+# Development
 
-Thank you all for your generous support. 
+Greetings from Simon Strandgaard, the developer of TriangleDraw.
 
-This is Simon Strandgaard, developer of TriangleDraw, signing off.
+Feel free to write to me: [hello@triangledraw.com](mailto:hello@triangledraw.com).
