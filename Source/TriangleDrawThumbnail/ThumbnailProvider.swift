@@ -75,7 +75,7 @@ class ThumbnailProvider: QLThumbnailProvider {
 
 			if documentName == "boom3" {
 				log.error("Detected document that triggers an error. Boom3")
-				let error = MyDocumentError.forceError
+				//let error = MyDocumentError.forceError
 
 				let image: UIImage = MyImage.boom.image
 				let r = CGRect(origin: .zero, size: maximumSize)
