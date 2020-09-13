@@ -24,9 +24,6 @@ It worked on iPhone+iPad. I experimented with In-app-purchases, but I still had 
 Around year 2018/2019 I migrated all the TriangleDraw source code from ObjectiveC to Swift. The `UIDocumentBrowserViewController` is now being used, where in the past I used my own adhoc document browser. 
 And best of all, it's free and open source. Please consider contributing to TriangleDraw.
 
-- [Follow me on Twitter](https://twitter.com/neoneye)
-- [Connect with me on LinkedIn](https://www.linkedin.com/in/simonstrandgaard/)
-
-Thank you all for your generous support. 
+Feel free to write to me: [hello@triangledraw.com](mailto:hello@triangledraw.com).
 
 This is Simon Strandgaard, developer of TriangleDraw, signing off.
