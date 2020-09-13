@@ -14,7 +14,7 @@ that can be used for branding on letterheads or on your website.
 
 # Inspiration
 
-[TriangleDraw Gallery](https://github.com/triangledraw/TriangleDraw-Community) - see what can be done using this app.
+[TriangleDraw Gallery](https://github.com/triangledraw/TriangleDraw-Gallery) - see what can be done using this app.
 
 
 # Development
