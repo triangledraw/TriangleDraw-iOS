@@ -21,16 +21,7 @@ extension HCMenuViewController {
 
         let subjectFormat = NSLocalizedString("EMAIL_PDF_SUBJECT_%@", tableName: "CanvasVC", bundle: Bundle.main, value: "", comment: "TriangleDraw - {Drawing name}, a subject line for mails containing PDF attachments")
         let emailSubject = String(format: subjectFormat, filename)
-		let itemBlock: WFActivitySpecificItemProviderItemBlock = { activityType in
-                var message: String? = nil
-                do {
-                    let format = NSLocalizedString("SHARE_%d_TRIANGLES_ON_OTHER_SOCIAL_MEDIA", tableName: "CanvasVC", bundle: Bundle.main, value: "", comment: "When sharing a drawing via other kinds of social media (Email, Text messaging, Flickr, Tumblr, etc): The message posted together with a .JPG file attachment")
-                    message = String(format: format, triangleCount)
-                }
-                return message
-            }
-        let provider = WFActivitySpecificItemProvider(placeholderItem: "", block: itemBlock)
-        let avc = UIActivityViewController(activityItems: [provider, url], applicationActivities: nil)
+        let avc = UIActivityViewController(activityItems: [url], applicationActivities: nil)
 		avc.excludedActivityTypes = [
 			.postToFacebook,
 			.postToTwitter,

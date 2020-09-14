@@ -64,7 +64,6 @@
 		42851C8D2301F7330047C7D0 /* test_orientation_upward.pbm in Resources */ = {isa = PBXBuildFile; fileRef = 42851C8B2301F7330047C7D0 /* test_orientation_upward.pbm */; };
 		42851C8F2301F7760047C7D0 /* E2CanvasPointOrientationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42851C8E2301F7760047C7D0 /* E2CanvasPointOrientationTests.swift */; };
 		4289827921E7EDA600FC0431 /* BorderedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4289827821E7EDA600FC0431 /* BorderedButton.swift */; };
-		428A3A3F20E2320D003F13D1 /* WFActivitySpecificItemProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428A3A3E20E2320C003F13D1 /* WFActivitySpecificItemProvider.swift */; };
 		428B12961832A46500718BEA /* CanvasVC.strings in Resources */ = {isa = PBXBuildFile; fileRef = 428B12911832A46500718BEA /* CanvasVC.strings */; };
 		428B12DF1832A90700718BEA /* CanvasVC.strings in Resources */ = {isa = PBXBuildFile; fileRef = 428B12DD1832A90700718BEA /* CanvasVC.strings */; };
 		428DFD0F22D9D1CD005BE880 /* HCMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428DFD0E22D9D1CD005BE880 /* HCMenuViewController.swift */; };
@@ -420,7 +419,6 @@
 		42851C8E2301F7760047C7D0 /* E2CanvasPointOrientationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = E2CanvasPointOrientationTests.swift; sourceTree = "<group>"; };
 		42855B9F19CDFE030000420E /* TriangleDrawMain-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TriangleDrawMain-Bridging-Header.h"; sourceTree = "<group>"; };
 		4289827821E7EDA600FC0431 /* BorderedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderedButton.swift; sourceTree = "<group>"; };
-		428A3A3E20E2320C003F13D1 /* WFActivitySpecificItemProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WFActivitySpecificItemProvider.swift; sourceTree = "<group>"; };
 		428B12921832A46500718BEA /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = CanvasVC.strings; sourceTree = "<group>"; };
 		428B12DE1832A90700718BEA /* pt_PT */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pt_PT; path = CanvasVC.strings; sourceTree = "<group>"; };
 		428DFD0E22D9D1CD005BE880 /* HCMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HCMenuViewController.swift; sourceTree = "<group>"; };
@@ -794,14 +792,6 @@
 			path = UITests;
 			sourceTree = "<group>";
 		};
-		4216B41C17CBB06F00A35359 /* WFActivitySpecificItemProvider */ = {
-			isa = PBXGroup;
-			children = (
-				428A3A3E20E2320C003F13D1 /* WFActivitySpecificItemProvider.swift */,
-			);
-			path = WFActivitySpecificItemProvider;
-			sourceTree = "<group>";
-		};
 		421F856822328DB800811614 /* TriangleDrawThumbnail */ = {
 			isa = PBXGroup;
 			children = (
@@ -870,7 +860,6 @@
 			isa = PBXGroup;
 			children = (
 				42015C7B173DA5E2007597E5 /* gpc232-release */,
-				4216B41C17CBB06F00A35359 /* WFActivitySpecificItemProvider */,
 			);
 			path = External;
 			sourceTree = "<group>";
@@ -1841,7 +1830,6 @@
 				42D0DD9A224547A90066DB3D /* UIApplication+Directories.swift in Sources */,
 				4245221120E1222000FCDDE3 /* AppDelegate.swift in Sources */,
 				42608ECA21CE6B9B00A99669 /* HCGridView.swift in Sources */,
-				428A3A3F20E2320D003F13D1 /* WFActivitySpecificItemProvider.swift in Sources */,
 				42E227C6210373E000D112E7 /* UIBarButtonItem+NegativeSpacer.swift in Sources */,
 				42AF941B215451C200D07373 /* HCRenderer.swift in Sources */,
 				42DE377420FDEEC60007845B /* CanvasViewController.swift in Sources */,
@@ -2123,6 +2111,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 2020.9.13;
 				PRODUCT_BUNDLE_IDENTIFIER = com.triangledraw.td3;
 				PRODUCT_NAME = TriangleDrawMain;
 				PROVISIONING_PROFILE = "8d8084cb-8210-4ff6-b0be-55134390795b";
@@ -2153,6 +2142,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 2020.9.13;
 				PRODUCT_BUNDLE_IDENTIFIER = com.triangledraw.td3;
 				PRODUCT_NAME = TriangleDrawMain;
 				PROVISIONING_PROFILE = "";
@@ -2280,6 +2270,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
+				MARKETING_VERSION = 2020.9.13;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.triangledraw.td3.thumbnail;
@@ -2322,6 +2313,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
+				MARKETING_VERSION = 2020.9.13;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.triangledraw.td3.thumbnail;

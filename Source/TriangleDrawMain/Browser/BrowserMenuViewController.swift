@@ -23,19 +23,15 @@ class BrowserMenuViewController: RFFormViewController {
 	override func populate(_ builder: RFFormBuilder) {
 		builder.navigationTitle = "TriangleDraw"
 
-		builder.demo_showInfo("TriangleDraw is free software!\nYour support is appreciated.")
-
-		builder += RFSectionHeaderTitleFormItem().title("Web")
+		builder += RFSectionHeaderTitleFormItem().title("Help Needed")
 		builder += appStoreWriteReviewButton
-		builder += twitterButton
-		builder += instagramButton
-		builder += redditButton
 
-		builder += RFSectionHeaderTitleFormItem().title("Development")
-		builder += githubButton
-		builder += emailDeveloperButton
+        builder += RFSectionHeaderTitleFormItem().title("Development")
+        builder += emailDeveloperButton
+		builder += githubTriangleDrawIOSButton
+        builder += githubTriangleDrawGalleryButton
 
-		builder += RFSectionHeaderTitleFormItem().title("App")
+		builder += RFSectionHeaderTitleFormItem().title("App Info")
 		builder += app_version
 		builder += app_creationDate
 		builder += app_runCount
@@ -50,48 +46,9 @@ class BrowserMenuViewController: RFFormViewController {
 		return instance
 	}()
 
-	lazy var twitterButton: RFButtonFormItem = {
+	lazy var githubTriangleDrawIOSButton: RFButtonFormItem = {
 		let instance = RFButtonFormItem()
-		instance.title = "Twitter"
-		instance.action = {
-			guard let url: URL = URL(string: "https://twitter.com/TriangleDraw") else {
-				log.error("Unable to create url. Cannot open browser.")
-				return
-			}
-			UIApplication.shared.open(url)
-		}
-		return instance
-	}()
-
-	lazy var instagramButton: RFButtonFormItem = {
-		let instance = RFButtonFormItem()
-		instance.title = "Instagram"
-		instance.action = {
-			guard let url: URL = URL(string: "https://www.instagram.com/triangledraw/") else {
-				log.error("Unable to create url. Cannot open browser.")
-				return
-			}
-			UIApplication.shared.open(url)
-		}
-		return instance
-	}()
-
-	lazy var redditButton: RFButtonFormItem = {
-		let instance = RFButtonFormItem()
-		instance.title = "Reddit"
-		instance.action = {
-			guard let url: URL = URL(string: "https://www.reddit.com/r/TriangleDraw/") else {
-				log.error("Unable to create url. Cannot open browser.")
-				return
-			}
-			UIApplication.shared.open(url)
-		}
-		return instance
-	}()
-
-	lazy var githubButton: RFButtonFormItem = {
-		let instance = RFButtonFormItem()
-		instance.title = "GitHub"
+		instance.title = "GitHub - TriangleDraw-iOS"
 		instance.action = {
 			guard let url: URL = URL(string: "https://github.com/triangledraw/TriangleDraw-iOS") else {
 				log.error("Unable to create url. Cannot open browser.")
@@ -101,6 +58,19 @@ class BrowserMenuViewController: RFFormViewController {
 		}
 		return instance
 	}()
+
+    lazy var githubTriangleDrawGalleryButton: RFButtonFormItem = {
+        let instance = RFButtonFormItem()
+        instance.title = "GitHub - TriangleDraw-Gallery"
+        instance.action = {
+            guard let url: URL = URL(string: "https://github.com/triangledraw/TriangleDraw-Gallery") else {
+                log.error("Unable to create url. Cannot open browser.")
+                return
+            }
+            UIApplication.shared.open(url)
+        }
+        return instance
+    }()
 
 	lazy var emailDeveloperButton: RFButtonFormItem = {
 		let instance = RFButtonFormItem()

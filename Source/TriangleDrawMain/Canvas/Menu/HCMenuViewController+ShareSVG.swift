@@ -20,12 +20,7 @@ extension HCMenuViewController {
 		}
 		
         let emailSubject = "TriangleDraw - \(filename)"
-		let itemBlock: WFActivitySpecificItemProviderItemBlock = { activityType in
-                let message: String = "This is what I can do with \(triangleCount) triangles. What can you do?"
-                return message
-            }
-        let provider = WFActivitySpecificItemProvider(placeholderItem: "", block: itemBlock)
-        let avc = UIActivityViewController(activityItems: [provider, url], applicationActivities: nil)
+        let avc = UIActivityViewController(activityItems: [url], applicationActivities: nil)
 		avc.excludedActivityTypes = [
 			.postToFacebook,
 			.postToTwitter,
