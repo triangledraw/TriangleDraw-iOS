@@ -33,7 +33,7 @@
 		<dict>
 			<key>QLSupportedContentTypes</key>
 			<array>
-				<string>com.triangledraw.td3.doc</string>
+				<string>com.triangledraw.td4.doc</string>
 			</array>
 		</dict>
 		<key>NSExtensionPointIdentifier</key>

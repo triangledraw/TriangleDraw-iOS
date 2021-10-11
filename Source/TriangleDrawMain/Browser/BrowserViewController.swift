@@ -84,7 +84,7 @@ class BrowserViewController: UIDocumentBrowserViewController {
 		// Define one custom `UIDocumentBrowserAction`, which will show up when interacting with a selection of items. In this case, the action is
 		// configured to be presented both in the navigation bar of the `UIDocumentBrowserViewController`, and the menu controller, which appears
 		// when long-pressing items.
-		let action = UIDocumentBrowserAction(identifier: "com.triangledraw.td3.doc.export",
+		let action = UIDocumentBrowserAction(identifier: "com.triangledraw.td4.doc.export",
 											 localizedTitle: "Export",
 											 availability: [.menu, .navigationBar],
 											 handler: { (_) in
@@ -93,7 +93,7 @@ class BrowserViewController: UIDocumentBrowserViewController {
 
 		// By specifying the supported content types of the action, the action can only be performed on Particles files, but not on any other type of
 		// file.
-		action.supportedContentTypes = ["com.triangledraw.td3.doc"]
+		action.supportedContentTypes = ["com.triangledraw.td4.doc"]
 
 		// Last but not least, the newly created action is assigned to the `UIDocumentBrowserViewController`.
 		customActions = [action]
