@@ -48,6 +48,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         trackActivation(runCount)
     }
 
+    func configureNavigationBar() {
+        if #available(iOS 15, *) {
+            // On the draw page, the navigationbar is semitransparent with blurry background.
+            let appearance = UINavigationBarAppearance()
+            appearance.configureWithTransparentBackground()
+            appearance.backgroundColor = UIColor.clear
+            appearance.backgroundEffect = UIBlurEffect(style: .dark)
+            UINavigationBar.appearance().standardAppearance = appearance
+            UINavigationBar.appearance().scrollEdgeAppearance = appearance
+            UINavigationBar.appearance().compactAppearance = appearance
+        }
+    }
+
 	func configureForms() {
 		let builder = RFThemeBuilder.light
 		builder.tintColor = AppConstant.Browser.tintColor
@@ -58,6 +71,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 		//AppDelegate.resetAppleLanguagesAfterUnittest()
 
+        configureNavigationBar()
 		configureForms()
         dumpSystemInfo()
         trackLaunch()
