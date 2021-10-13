@@ -2,7 +2,7 @@
 import UIKit
 import TriangleDrawLibrary
 
-protocol HCInteractionViewDelegate: class {
+protocol HCInteractionViewDelegate: AnyObject {
 	func interactionView_scroll(_ view: HCInteractionView, panGestureRecognizer: UIPanGestureRecognizer)
 	func interactionView_draw(_ view: HCInteractionView, panGestureRecognizer: UIPanGestureRecognizer)
 	func interactionView_zoom(_ view: HCInteractionView, pinchGestureRecognizer: UIPinchGestureRecognizer)

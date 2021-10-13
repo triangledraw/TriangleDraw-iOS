@@ -4,7 +4,7 @@ import MetalKit
 import QuartzCore
 import TriangleDrawLibrary
 
-protocol CAMetalLayerProtocol: class {
+protocol CAMetalLayerProtocol: AnyObject {
 	var contentsScale: CGFloat { get set }
 }
 

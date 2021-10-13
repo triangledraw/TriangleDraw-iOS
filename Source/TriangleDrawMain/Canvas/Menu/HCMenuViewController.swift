@@ -5,7 +5,7 @@ import TriangleDrawLibrary
 import RadiantForms
 import MBProgressHUD
 
-protocol HCMenuViewControllerDelegate: class {
+protocol HCMenuViewControllerDelegate: AnyObject {
 	func hcMenuViewController_applySubdivide(n: UInt8)
 	func hcMenuViewController_canvasGridModeDidChange()
 }

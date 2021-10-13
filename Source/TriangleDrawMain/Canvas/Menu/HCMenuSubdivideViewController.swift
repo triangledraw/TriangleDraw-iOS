@@ -3,7 +3,7 @@ import UIKit
 import TriangleDrawLibrary
 import RadiantForms
 
-protocol HCMenuSubdivideViewControllerDelegate: class {
+protocol HCMenuSubdivideViewControllerDelegate: AnyObject {
 	func hcMenuSubdivideViewController_apply(n: UInt8)
 }
 
