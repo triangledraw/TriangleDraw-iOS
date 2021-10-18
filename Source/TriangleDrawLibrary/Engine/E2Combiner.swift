@@ -1,4 +1,4 @@
-// MIT license. Copyright (c) 2020 TriangleDraw. All rights reserved.
+// MIT license. Copyright (c) 2021 TriangleDraw. All rights reserved.
 import Foundation
 
 
@@ -345,7 +345,7 @@ public class E2Combiner {
 		// Reassign tag numbers, so that there are no gaps
         var tag: Int = 1
         var optimalTagReplacements = [Int: Int]()
-        var processedTags = NSMutableIndexSet()
+        let processedTags = NSMutableIndexSet()
 
 		func PROCESS_TAG(_ triangleTag: Int) {
 			if triangleTag == 0 {

@@ -1,4 +1,4 @@
-// MIT license. Copyright (c) 2020 TriangleDraw. All rights reserved.
+// MIT license. Copyright (c) 2021 TriangleDraw. All rights reserved.
 import simd
 import UIKit
 
@@ -8,7 +8,7 @@ public struct AppConstant {
 		// The AppGroup makes it possible to embed the "ThumbnailExtension" executable
 		// inside the "TriangleDraw.app". This AppGroup id is used inside the entitlement files.
 		// Further more the AppGroup makes it possible to share UserDefaults between executables.
-		public static let id: String = "group.com.triangledraw.td3"
+		public static let id: String = "group.com.triangledraw.td4"
 	}
 
 	public struct App {

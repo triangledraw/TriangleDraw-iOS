@@ -1,9 +1,9 @@
-// MIT license. Copyright (c) 2020 TriangleDraw. All rights reserved.
+// MIT license. Copyright (c) 2021 TriangleDraw. All rights reserved.
 import UIKit
 import TriangleDrawLibrary
 import RadiantForms
 
-protocol HCMenuSubdivideViewControllerDelegate: class {
+protocol HCMenuSubdivideViewControllerDelegate: AnyObject {
 	func hcMenuSubdivideViewController_apply(n: UInt8)
 }
 

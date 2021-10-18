@@ -18,7 +18,7 @@
 # - Doesn't crash when running UITests.
 #
 lane :snapshot_canvas do
-	xcode_select("/Applications/Xcode-beta4.app")
+	xcode_select("/Applications/Xcode.app")
 	
 	my_devices = [
 		# iPad 12.9" display

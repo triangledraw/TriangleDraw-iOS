@@ -1,10 +1,10 @@
-// MIT license. Copyright (c) 2020 TriangleDraw. All rights reserved.
+// MIT license. Copyright (c) 2021 TriangleDraw. All rights reserved.
 import UIKit
 import MetalKit
 import QuartzCore
 import TriangleDrawLibrary
 
-protocol CAMetalLayerProtocol: class {
+protocol CAMetalLayerProtocol: AnyObject {
 	var contentsScale: CGFloat { get set }
 }
 

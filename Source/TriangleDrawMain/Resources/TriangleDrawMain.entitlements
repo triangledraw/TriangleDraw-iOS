@@ -16,7 +16,7 @@
 	</array>
 	<key>com.apple.security.application-groups</key>
 	<array>
-		<string>group.com.triangledraw.td3</string>
+		<string>group.com.triangledraw.td4</string>
 	</array>
 </dict>
 </plist>

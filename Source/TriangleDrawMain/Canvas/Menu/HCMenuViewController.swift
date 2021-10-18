@@ -1,11 +1,11 @@
-// MIT license. Copyright (c) 2020 TriangleDraw. All rights reserved.
+// MIT license. Copyright (c) 2021 TriangleDraw. All rights reserved.
 import UIKit
 import Foundation
 import TriangleDrawLibrary
 import RadiantForms
 import MBProgressHUD
 
-protocol HCMenuViewControllerDelegate: class {
+protocol HCMenuViewControllerDelegate: AnyObject {
 	func hcMenuViewController_applySubdivide(n: UInt8)
 	func hcMenuViewController_canvasGridModeDidChange()
 }

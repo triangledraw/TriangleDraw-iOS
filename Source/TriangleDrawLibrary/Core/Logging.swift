@@ -1,4 +1,4 @@
-// MIT license. Copyright (c) 2020 TriangleDraw. All rights reserved.
+// MIT license. Copyright (c) 2021 TriangleDraw. All rights reserved.
 import Foundation
 import SwiftyBeaver
 
@@ -13,7 +13,7 @@ public class LogHelper {
 	/// When the app is launched without Xcode attached, then we want the log
 	/// to be written to the os_log(), that can be seen via the `Console.app`.
 	/// In order to see these log messages, do like this:
-	/// Do a search query where subsystem **equals** "com.triangledraw.td3".
+	/// Do a search query where subsystem **equals** "com.triangledraw.td4".
 	/// Search queries uses `Contains` by default, and have to be changed to `Equals`,
 	/// otherwise log messages from the `Thumbnail process` will be shown.
 	public static func setup_mainExecutable() {
@@ -44,7 +44,7 @@ public class LogHelper {
 	///
 	/// We always want the log to be written to the os_log(), that can be seen via the `Console.app`.
 	/// In order to see these log messages, do like this:
-	/// Do a search query where subsystem **equals** "com.triangledraw.td3.thumbnail".
+	/// Do a search query where subsystem **equals** "com.triangledraw.td4.thumbnail".
 	/// Search queries uses `Contains` by default, and have to be changed to `Equals`,
 	/// otherwise log messages from the `Main process` will be shown.
 	public static func setup_thumbnailExecutable() {
