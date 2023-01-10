@@ -158,19 +158,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 	}
 
 	// MARK: State Preservation and Restoration
-
-	// See also `encodeRestorableState(with:)` and `decodeRestorableState(with:)` in the implementation of `UIDocumentBrowserViewController`.
-
-	func application(_ application: UIApplication, shouldSaveApplicationState coder: NSCoder) -> Bool {
-
-		// This delegate method is called by the system when dealing with application state preservation and restoration.
-		// Return true in order to indicate that the application state should be preserved.
+	func application(_ application: UIApplication, shouldSaveSecureApplicationState coder: NSCoder) -> Bool {
 		return true
 	}
 
-	func application(_ application: UIApplication, shouldRestoreApplicationState coder: NSCoder) -> Bool {
-
-		// Similarly, return true in order to indicate that the application should attempt to restore the saved application state.
+	func application(_ application: UIApplication, shouldRestoreSecureApplicationState coder: NSCoder) -> Bool {
 		return true
 	}
 }
