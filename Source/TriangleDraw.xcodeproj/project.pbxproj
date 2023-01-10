@@ -2189,9 +2189,9 @@
 				);
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = com.triangledraw.td4.UITests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.triangledraw.td6.UITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "TriangleDraw4 UITests Development";
+				PROVISIONING_PROFILE_SPECIFIER = "TriangleDraw6 UITests Development";
 				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -2230,9 +2230,9 @@
 				);
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = com.triangledraw.td4.UITests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.triangledraw.td6.UITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "TriangleDraw4 UITests Development";
+				PROVISIONING_PROFILE_SPECIFIER = "TriangleDraw6 UITests Development";
 				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
