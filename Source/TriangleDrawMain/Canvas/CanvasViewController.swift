@@ -3,6 +3,7 @@ import UIKit
 import MBProgressHUD
 import TriangleDrawLibrary
 
+// swiftlint:disable identifier_name type_body_length
 class CanvasViewController: UIViewController {
 	@IBOutlet weak var hcView: HCView!
 	@IBOutlet weak var hcToolbar: HCToolbar!
@@ -10,7 +11,6 @@ class CanvasViewController: UIViewController {
 	@IBOutlet weak var developerLabelContainerView: UIView!
 	@IBOutlet weak var developerLabel: UILabel!
 	@IBOutlet weak var leaveFullscreenButton: UIButton!
-
 
 	lazy var hcSafeAreaView: HCSafeAreaView = {
 		let instance = HCSafeAreaView(frame: CGRect.zero)
@@ -35,6 +35,7 @@ class CanvasViewController: UIViewController {
 		log.debug("document: \(document)")
 		guard setInitialDocument_invocationCounter == 1 else {
 			let oldDocument: Document? = self.document
+            // swiftlint:disable:next line_length
 			log.error("This function was invoked \(setInitialDocument_invocationCounter) times. It's supposed to only be invoked once.\noldDocument: \(String(describing: oldDocument))\nnewDocument: \(document)")
 			return
 		}
@@ -208,6 +209,7 @@ class CanvasViewController: UIViewController {
 
     override func viewWillDisappear(_ animated: Bool) {
 		log.debug("enter")
+        // swiftlint:disable:next notification_center_detachment
         NotificationCenter.default.removeObserver(self)
 		uninstallDeveloperLabelRefreshTimer()
         super.viewWillDisappear(animated)
@@ -247,6 +249,7 @@ class CanvasViewController: UIViewController {
         if notification.name == .NSUndoManagerWillUndoChange {
             installHUD()
             _hud?.mode = MBProgressHUDMode.text
+            // swiftlint:disable:next line_length
             _hud?.label.text = NSLocalizedString("PERFORM_UNDO_HUD_TITLE", tableName: "CanvasVC", bundle: Bundle.main, value: "", comment: "HUD showing Undo and the name of the operation that is being undoed")
 			_hud?.detailsLabel.text = undoManager?.undoActionName
 			_hud?.show(animated: true)
@@ -254,6 +257,7 @@ class CanvasViewController: UIViewController {
         if notification.name == .NSUndoManagerWillRedoChange {
             installHUD()
             _hud?.mode = MBProgressHUDMode.text
+            // swiftlint:disable:next line_length
             _hud?.label.text = NSLocalizedString("PERFORM_REDO_HUD_TITLE", tableName: "CanvasVC", bundle: Bundle.main, value: "", comment: "HUD showing Redo and the name of the operation that is being redoed")
             _hud?.detailsLabel.text = undoManager?.redoActionName
 			_hud?.show(animated: true)
@@ -340,7 +344,6 @@ class CanvasViewController: UIViewController {
 		self.td_presentEmailWithVerboseInfo(provider)
 		log.debug("leave")
 	}
-
 
 	// MARK: - Drawing operations
 
@@ -446,9 +449,8 @@ class CanvasViewController: UIViewController {
 		)
 	}
 
-
 	// MARK: - Fullscreen mode
-	
+
     @objc func enterFullscreenAction() {
         fullscreenMode = true
     }
@@ -495,7 +497,6 @@ class CanvasViewController: UIViewController {
 			setNeedsStatusBarAppearanceUpdate()
 		}
 	}
-
 
 	// MARK: - MBProgressHUD methods
 
@@ -582,4 +583,4 @@ extension CanvasViewController: AcceptsVerboseInfoProvider {
 
 		SystemInfo().verboseInfo(provider)
 	}
-}
+} // swiftlint:disable:this file_length

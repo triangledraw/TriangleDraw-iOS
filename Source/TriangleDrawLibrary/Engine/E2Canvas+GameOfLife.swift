@@ -27,7 +27,6 @@ extension E2Canvas {
 					numberOfLiveNeighbours = countLiveNeighboursForDownwardTriangle(point: point)
 				}
 
-
 				// https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life
 				//
 				// At each step in time, the following transitions occur:
@@ -78,7 +77,7 @@ extension E2Canvas {
 	}
 }
 
-fileprivate enum UpwardTriangleNeighbour: CaseIterable {
+private enum UpwardTriangleNeighbour: CaseIterable {
 	// Above the triangle - Going from left to right
 	case aboveMinus1
 	case aboveCenter
@@ -147,7 +146,7 @@ extension UpwardTriangleNeighbour {
 	}
 }
 
-fileprivate enum DownwardTriangleNeighbour: CaseIterable {
+private enum DownwardTriangleNeighbour: CaseIterable {
 	// Above the triangle - Going from left to right
 	case aboveMinus2
 	case aboveMinus1

@@ -3,11 +3,14 @@ import UIKit
 import CoreGraphics
 import TriangleDrawLibrary
 
+// swiftlint:disable identifier_name
+// swiftlint:disable:next type_body_length
 public class PDFExporter {
 
 	public typealias ProgressBlock = (_ progress: Float) -> Void
 	public typealias CompletionBlock = (_ pdfData: Data) -> Void
 
+    // swiftlint:disable:next function_body_length
 	private func fillPolygon(context: CGContext, p: UnsafePointer<gpc_polygon>) {
 		var outers = IndexSet()
 		var inners = IndexSet()
@@ -166,6 +169,7 @@ public class PDFExporter {
 		return data as Data
 	}
 
+    // swiftlint:disable:next function_body_length cyclomatic_complexity
 	private func pdfDataGPC(
 		from canvas: E2Canvas,
 		progress progressBlock: ProgressBlock) -> Data {
@@ -188,7 +192,6 @@ public class PDFExporter {
 			log.debug("maxTag: \(maxTag)")
 		}
 
-
 		var expire: Double = 0
 		var lastProgress: Float = 0
 
@@ -206,7 +209,6 @@ public class PDFExporter {
 			fatalError()
 		}
 		context.beginPDFPage(nil)
-
 
 		do {
 			context.saveGState()

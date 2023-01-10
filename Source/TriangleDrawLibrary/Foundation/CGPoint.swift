@@ -1,11 +1,12 @@
 // MIT license. Copyright (c) 2023 TriangleDraw. All rights reserved.
 import CoreGraphics
 
+// swiftlint:disable identifier_name
 extension CGPoint {
 	public var flip: CGPoint {
 		return CGPoint(x: -x, y: -y)
 	}
-	
+
 	public var flipY: CGPoint {
 		return CGPoint(x: x, y: -y)
 	}
@@ -13,19 +14,19 @@ extension CGPoint {
 	public func offset(_ x: CGFloat, _ y: CGFloat) -> CGPoint {
 		return CGPoint(x: self.x + x, y: self.y + y)
 	}
-	
+
 	public func offsetX(_ x: CGFloat) -> CGPoint {
 		return CGPoint(x: self.x + x, y: self.y)
 	}
-	
+
 	public func offsetY(_ y: CGFloat) -> CGPoint {
 		return CGPoint(x: self.x, y: self.y + y)
 	}
-	
+
 	public func offset(_ point: CGPoint) -> CGPoint {
 		return CGPoint(x: self.x + point.x, y: self.y + point.y)
 	}
-	
+
 	public func scaleBy(_ scale: CGFloat) -> CGPoint {
 		return CGPoint(x: self.x * scale, y: self.y * scale)
 	}
@@ -33,15 +34,15 @@ extension CGPoint {
 	public func divideBy(_ amount: CGFloat) -> CGPoint {
 		return CGPoint(x: self.x / amount, y: self.y / amount)
 	}
-	
+
 	public var rounded: CGPoint {
 		return CGPoint(x: round(self.x), y: round(self.y))
 	}
-	
+
 	public var lengthSquared: CGFloat {
 		return x * x + y * y
 	}
-	
+
 	public func scaleBy(_ scale: CGFloat, aroundPoint center: CGPoint) -> CGPoint {
 		let x0 = x - center.x
 		let x1 = x0 * scale
@@ -56,7 +57,7 @@ extension CGPoint {
 	public func alignToNearestPixel(_ screenScale: Int) -> CGPoint {
 		let scale = CGFloat(screenScale)
 		let inv = 1 / scale
-		
+
 		let x = self.x * scale
 		let rx = floor(x)
 		let xx = rx * inv

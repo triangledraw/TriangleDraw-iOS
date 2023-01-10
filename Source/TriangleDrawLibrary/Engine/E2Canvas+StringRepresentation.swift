@@ -4,7 +4,7 @@ import Foundation
 extension E2Canvas {
 	/// - Converts the character `"-"` to the value `0`.
 	/// - Converts the character `"*"` to the value `1`.
-	public func load(fromStringRepresentation aString: String) {
+    public func load(fromStringRepresentation aString: String) { // swiftlint:disable:this function_body_length
 		clearWithBlackColor()
 		// Workaround skipping the ASCII character 0x0D aka. "Carriage return"
 		// Before iOS13 the Scanner skipped the 0x0D character without problems.
@@ -69,8 +69,10 @@ extension E2Canvas {
 			for i: UInt in 0..<self.cellsPerRow {
 				let offset = Int(j * self.cellsPerRow + i)
 				let cell: E2TriangleCell = self.cells[offset]
+                // swiftlint:disable:next identifier_name
 				let s_l = (cell.tl == 1) ? "*" : "-"
 				s += s_l
+                // swiftlint:disable:next identifier_name
 				let s_r = (cell.tr == 1) ? "*" : "-"
 				s += s_r
 			}
@@ -78,8 +80,10 @@ extension E2Canvas {
 			for i: UInt in 0..<self.cellsPerRow {
 				let offset = Int(j * self.cellsPerRow + i)
 				let cell: E2TriangleCell = self.cells[offset]
+                // swiftlint:disable:next identifier_name
 				let s_l = (cell.bl == 1) ? "*" : "-"
 				s += s_l
+                // swiftlint:disable:next identifier_name
 				let s_r = (cell.br == 1) ? "*" : "-"
 				s += s_r
 			}

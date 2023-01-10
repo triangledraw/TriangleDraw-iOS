@@ -9,4 +9,3 @@ public func clamp<T: FloatingPoint>(_ value: T, _ minValue: T, _ maxValue: T) ->
 	}
 	return value
 }
-

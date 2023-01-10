@@ -32,7 +32,9 @@ extension SymmetryMode {
 public var globalSymmetryMode = SymmetryMode.noSymmetry
 
 extension E2Canvas {
+    // swiftlint:disable:next cyclomatic_complexity
 	public func setSymmetricPixel(_ point: E2CanvasPoint, value: UInt8, symmetryMode: SymmetryMode) {
+        // swiftlint:disable identifier_name
 		self.inner_setPixel(point: point, value: value)
 
 		switch symmetryMode {

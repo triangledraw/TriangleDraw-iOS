@@ -19,7 +19,9 @@ extension E2CanvasPoint {
 
 extension E2CanvasPoint: Equatable {
 	public static func == (lhs: E2CanvasPoint, rhs: E2CanvasPoint) -> Bool {
+        // swiftlint:disable:next identifier_name
 		let same_x: Bool = lhs.x == rhs.x
+        // swiftlint:disable:next identifier_name
 		let same_y: Bool = lhs.y == rhs.y
 		return same_x && same_y
 	}

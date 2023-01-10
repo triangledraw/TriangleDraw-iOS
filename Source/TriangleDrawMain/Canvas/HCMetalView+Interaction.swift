@@ -97,6 +97,7 @@ extension HCMetalView: HCInteractionViewDelegate {
 		}
 
 		let index: E2CanvasPoint = canvas.canvasPoint(from: point)
+        // swiftlint:disable:next identifier_name
 		let mask_value: UInt8 = maskCanvas.getPixel(index)
 		if AppConstant.Canvas.Interaction.debug_tapGesture {
 			log.debug("screen: \(screenPosition.string0)   point: \(point.string2)  index: \(index)  mask_value: \(mask_value)  orientation: \(index.orientation)")

@@ -7,6 +7,7 @@ extension E2Canvas {
         let h = Int(self.cellsPerColumn)
         for j in 0..<h {
             for i in 0..<w {
+                // swiftlint:disable:next identifier_name
                 let inverse_i: Int = w - 1 - i
                 do {
 					// dest->tl = source->tl
@@ -20,6 +21,7 @@ extension E2Canvas {
 					let dst: E2CanvasPoint = E2CanvasPoint(x: 2 * i, y: 2 * j + 1)
 					setPixel(dst, value: orig.getPixel(src))
                 }
+                // swiftlint:disable:next identifier_name
                 let inverse_i_minus1: Int = inverse_i - 1
                 if inverse_i_minus1 >= 0 {
                     do {
@@ -45,6 +47,7 @@ extension E2Canvas {
 		let h = Int(self.cellsPerColumn)
         for j in 0..<h {
             for i in 0..<w {
+                // swiftlint:disable:next identifier_name
                 let inverse_j: Int = h - 1 - j
                 do {
 					// dest->tl = source->bl

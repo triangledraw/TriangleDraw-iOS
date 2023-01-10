@@ -3,6 +3,7 @@ import XCTest
 @testable import TriangleDrawLibrary
 
 extension CGSize {
+    // swiftlint:disable:next identifier_name
 	var td_tileCount: UInt {
 		return triangleDraw_findOptimalTileCount(clampN: 16)
 	}

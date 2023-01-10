@@ -20,7 +20,6 @@ extension DocumentError {
 	}
 }
 
-
 public class Document: UIDocument {
     public var canvas: E2Canvas?
 
@@ -54,6 +53,7 @@ public class Document: UIDocument {
 		self.canvas = canvas
 	}
 
+    // swiftlint:disable:next identifier_name
 	public private(set) var handleError_latestError: Error?
 
 	public func clearLatestError() {
@@ -61,6 +61,7 @@ public class Document: UIDocument {
 	}
 
 	override public func handleError(_ error: Error, userInteractionPermitted: Bool) {
+        // swiftlint:disable:next line_length
 		log.error("Error: \(type(of: error)) '\(error)'\nDocument: '\(self)'\nuserInteractionPermitted: \(userInteractionPermitted)\nfileUrl: \(self.fileURL)\ndocumentState: \(self.documentState.td_humanReadable)")
 		self.handleError_latestError = error
         super.handleError(error, userInteractionPermitted: userInteractionPermitted)

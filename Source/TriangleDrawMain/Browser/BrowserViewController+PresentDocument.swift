@@ -58,7 +58,6 @@ extension BrowserViewController {
 		nc.transitioningDelegate = self
 		nc.modalPresentationStyle = .fullScreen
 
-
 		// Now load the contents of the presented document, and once that is done, present the `CanvasViewController` instance.
 		// In order for the transition animation to work, the transition controller needs a view to zoom into, which is the particle system on the
 		// left side of the main application user interface.

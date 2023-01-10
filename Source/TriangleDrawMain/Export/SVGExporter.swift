@@ -13,6 +13,7 @@ class SVGExporter {
 		self.canvas = canvas
 	}
 
+    // swiftlint:disable:next cyclomatic_complexity function_body_length
 	func generateString() -> String {
 		var pointsInsideMask = [E2CanvasPoint]()
 		let mask: E2Canvas = E2Canvas.bigCanvasMask()
@@ -27,12 +28,14 @@ class SVGExporter {
 
 		var minX: Int = pointsInsideMask.first?.x ?? 0
 		for point: E2CanvasPoint in pointsInsideMask {
+            // swiftlint:disable:next for_where
 			if minX > point.x {
 				minX = point.x
 			}
 		}
 		var minY: Int = pointsInsideMask.first?.y ?? 0
 		for point: E2CanvasPoint in pointsInsideMask {
+            // swiftlint:disable:next for_where
 			if minY > point.y {
 				minY = point.y
 			}

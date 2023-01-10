@@ -2,6 +2,7 @@
 import simd
 import UIKit
 
+// swiftlint:disable identifier_name nesting
 public struct AppConstant {
 	public struct AppGroup {
 		// The AppGroup is must exist inside the Apple provisioning portal.

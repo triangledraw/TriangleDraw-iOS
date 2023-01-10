@@ -90,6 +90,7 @@ class HCView: UIView, TDCanvasDrawingProtocol {
 	var hideLabels: Bool = false
 	var maskCanvas: E2Canvas?
 
+    // swiftlint:disable:next identifier_name
 	var _canvas: E2Canvas?
 	var canvas: E2Canvas? {
 		get {

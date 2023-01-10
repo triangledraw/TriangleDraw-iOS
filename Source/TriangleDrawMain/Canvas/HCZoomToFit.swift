@@ -58,6 +58,7 @@ class HCZoomToFitRuleImpl: HCZoomToFitRule {
 	}
 }
 
+// swiftlint:disable cyclomatic_complexity function_body_length
 class HCZoomToFit {
 	static let debug = false
 
@@ -156,7 +157,6 @@ class HCZoomToFit {
 		let vertexCount2 = Double(vertexCount * 2)
 		let canvasWidthRatio = vertexCount2 / Double(boundingBox.width)
 		let rawScale = CGFloat(Double(fittedRect.size.width) * canvasWidthRatio)
-
 
 		let scale: CGFloat = clamp(rawScale, minScale, maxScale)
 

@@ -42,7 +42,7 @@ public struct TDLiveIndicatorTick {
 	}
 }
 
-
+// swiftlint:disable:next type_name
 public class TDLiveIndicator_Fifo<T> {
 	private let capacity: UInt
 	public private (set) var array: [T]
@@ -65,7 +65,6 @@ public class TDLiveIndicator_Fifo<T> {
 	}
 }
 
-
 public class TDLiveIndicatorTickContainer: TDLiveIndicator_Fifo<TDLiveIndicatorTick> {
 	public init() {
 		let defaultValue = TDLiveIndicatorTick(statusMainProcess: .good, statusThumbnailProcess: .good)
@@ -85,7 +84,6 @@ public class TDLiveIndicatorTickContainer: TDLiveIndicator_Fifo<TDLiveIndicatorT
 		}
 	}
 }
-
 
 public class TDLiveIndicator {
 

@@ -40,7 +40,7 @@ extension E2Canvas {
     }
 }
 
-fileprivate enum E2CanvasMoveOperation {
+private enum E2CanvasMoveOperation {
 	case left, right, up, down
 
 	var offset: (Int, Int) {

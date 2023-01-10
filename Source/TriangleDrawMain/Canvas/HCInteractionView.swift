@@ -12,11 +12,13 @@ protocol HCInteractionViewDelegate: AnyObject {
 class HCInteractionView: UIView {
 	weak var delegate: HCInteractionViewDelegate?
 
-	// MARK: -  Gesture handling
+	// MARK: - Gesture handling
 
 	private var pinchGestureRecognizer: UIPinchGestureRecognizer?
-	private var scroll_panGestureRecognizer: UIPanGestureRecognizer?
-	private var draw_panGestureRecognizer: UIPanGestureRecognizer?
+    // swiftlint:disable:next identifier_name
+    private var scroll_panGestureRecognizer: UIPanGestureRecognizer?
+    // swiftlint:disable:next identifier_name
+    private var draw_panGestureRecognizer: UIPanGestureRecognizer?
 	private var tapGestureRecognizer: UITapGestureRecognizer?
 
 	func installGestures() {
@@ -79,6 +81,7 @@ extension HCInteractionView: UIGestureRecognizerDelegate {
 }
 
 extension HCInteractionView: AcceptsVerboseInfoProvider {
+    // swiftlint:disable:next function_body_length
 	func verboseInfo(_ provider: VerboseInfoProvider) {
 		let append = provider.append
 
@@ -91,6 +94,7 @@ extension HCInteractionView: AcceptsVerboseInfoProvider {
 		let frame: CGRect = self.frame
 		append("interactionView.frame", "\(frame.origin.string1), \(frame.size.string1)")
 
+        // swiftlint:disable:next identifier_name
 		if let gr: UIPinchGestureRecognizer = self.pinchGestureRecognizer {
 			append("interactionView.pinchGestureRecognizer.isEnabled", "\(gr.isEnabled)")
 			append("interactionView.pinchGestureRecognizer.state", "\(gr.state.rawValue)")
@@ -103,6 +107,7 @@ extension HCInteractionView: AcceptsVerboseInfoProvider {
 			append("interactionView.pinchGestureRecognizer", "nil (This is possible an error state!)")
 		}
 
+        // swiftlint:disable:next identifier_name
 		if let gr: UIPanGestureRecognizer = self.scroll_panGestureRecognizer {
 			append("interactionView.scroll_panGestureRecognizer.isEnabled", "\(gr.isEnabled)")
 			append("interactionView.scroll_panGestureRecognizer.state", "\(gr.state.rawValue)")
@@ -115,6 +120,7 @@ extension HCInteractionView: AcceptsVerboseInfoProvider {
 			append("interactionView.scroll_panGestureRecognizer", "nil (This is possible an error state!)")
 		}
 
+        // swiftlint:disable:next identifier_name
 		if let gr: UIPanGestureRecognizer = self.draw_panGestureRecognizer {
 			append("interactionView.draw_panGestureRecognizer.isEnabled", "\(gr.isEnabled)")
 			append("interactionView.draw_panGestureRecognizer.state", "\(gr.state.rawValue)")
@@ -127,6 +133,7 @@ extension HCInteractionView: AcceptsVerboseInfoProvider {
 			append("interactionView.draw_panGestureRecognizer", "nil (This is possible an error state!)")
 		}
 
+        // swiftlint:disable:next identifier_name
 		if let gr: UITapGestureRecognizer = self.tapGestureRecognizer {
 			append("interactionView.tapGestureRecognizer.isEnabled", "\(gr.isEnabled)")
 			append("interactionView.tapGestureRecognizer.state", "\(gr.state.rawValue)")

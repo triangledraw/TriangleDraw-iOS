@@ -83,6 +83,7 @@ class BrowserMenuViewController: RFFormViewController {
 		return instance
 	}()
 
+    // swiftlint:disable:next identifier_name
 	lazy var app_version: RFStaticTextFormItem = {
 		let versionAndCommitString: String = SystemInfo.appVersion
 		let instance = RFStaticTextFormItem()
@@ -91,6 +92,7 @@ class BrowserMenuViewController: RFFormViewController {
 		return instance
 	}()
 
+    // swiftlint:disable:next identifier_name
 	lazy var app_creationDate: RFStaticTextFormItem = {
 		let creationDateString: String = SystemInfo.creationDateString
 		let instance = RFStaticTextFormItem()
@@ -99,6 +101,7 @@ class BrowserMenuViewController: RFFormViewController {
 		return instance
 	}()
 
+    // swiftlint:disable:next identifier_name
 	lazy var app_runCount: RFStaticTextFormItem = {
 		let count: Int = UserDefaults.standard.td_runCount()
 		let instance = RFStaticTextFormItem()

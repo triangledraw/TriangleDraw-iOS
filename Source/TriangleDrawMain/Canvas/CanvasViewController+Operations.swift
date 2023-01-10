@@ -5,7 +5,7 @@ import TriangleDrawLibrary
 extension CanvasViewController {
 	@objc func invertPixels() {
 		log.debug("enter")
-		
+
 		if AppConstant.Canvas.Interaction.experimentsWithGameOfLife {
 			gameOfLife()
 			return
@@ -41,6 +41,7 @@ extension CanvasViewController {
 	@objc func rotateCW() {
 		log.debug("enter")
 		disableInteraction()
+        // swiftlint:disable:next line_length
 		let actionName = NSLocalizedString("OPERATION_ROTATE_60_COUNTERCLOCKWISE", tableName: "CanvasVC", bundle: Bundle.main, value: "", comment: "The rotate 60 degree counter-clockwise operations undo/redo name")
 		registerForUndo(#selector(rotateCCW), actionName)
 		drawingView?.rotateAnimation(degrees: -60) { [weak self] in

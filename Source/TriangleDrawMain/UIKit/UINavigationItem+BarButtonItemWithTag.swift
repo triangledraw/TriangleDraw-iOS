@@ -7,6 +7,7 @@ extension UINavigationItem {
 		items += leftBarButtonItems ?? []
 		items += rightBarButtonItems ?? []
         for item: UIBarButtonItem in items {
+            // swiftlint:disable:next for_where
             if item.tag == tag {
                 return item
             }

@@ -6,14 +6,18 @@ struct E2CanvasClockwiseRotater {
 	let w: Int
 	let h: Int
 	let h2: Int
+    // swiftlint:disable:next identifier_name
 	let half_w: Float
+    // swiftlint:disable:next identifier_name
 	let half_h: Float
 
 	init(canvas: E2Canvas) {
 		let w = Int(canvas.cellsPerRow)
 		let h = Int(canvas.cellsPerColumn)
 		let h2 = Int(canvas.size.height)
+        // swiftlint:disable:next identifier_name
 		let half_w: Float = Float(w) * 0.5
+        // swiftlint:disable:next identifier_name
 		let half_h: Float = Float(h2) * 0.5
 		self.canvas = canvas
 		self.w = w
@@ -81,6 +85,7 @@ extension E2Canvas {
     }
 
 	fileprivate func pointRotatedClockwise(_ point: CGPoint) -> E2CanvasPoint? {
+        // swiftlint:disable identifier_name
 		let point_x = Float(point.x)
 		let point_y = Float(point.y)
 		let rads: Float = .pi / 3.0

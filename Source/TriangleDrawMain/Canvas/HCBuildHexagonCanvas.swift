@@ -3,12 +3,13 @@ import CoreGraphics
 import simd
 import TriangleDrawLibrary
 
+// swiftlint:disable identifier_name
 class HCBuildHexagonCanvas {
 	var filledtriangle_vertices = [HCFilledTriangleVertex]()
 	var filledtriangle_indices = [UInt16]()
 	var filledtriangle_count = 0
 
-	var filledcircle_vertices = [HCFilledCircleVertex]()
+    var filledcircle_vertices = [HCFilledCircleVertex]()
 	var filledcircle_indices = [UInt16]()
 
 	var corners = HCHexagonCorners()
@@ -40,6 +41,7 @@ class HCBuildHexagonCanvas {
 			HCFilledCircleVertex(position: $0.position)
 		}
 		var filledcircle_indices = [UInt16]()
+        // swiftlint:disable:next unused_enumerated
 		for (index, _) in filledcircle_vertices.enumerated() {
 			filledcircle_indices.append(UInt16(index))
 		}
@@ -66,24 +68,25 @@ class HCBuildHexagonCanvas {
 			let right: CGPoint  = leftMostPosition.offsetX(CGFloat(i + 1) * width)
 
 			if i < repeatCount / 2 {
-				appendVertex(HCFilledTriangleVertex(position: convert(left),   color: TDFloat4(1, 0, 0, 1)))
+				appendVertex(HCFilledTriangleVertex(position: convert(left), color: TDFloat4(1, 0, 0, 1)))
 				appendVertex(HCFilledTriangleVertex(position: convert(middle), color: TDFloat4(0, 1, 0, 1)))
-				appendVertex(HCFilledTriangleVertex(position: convert(right),  color: TDFloat4(0, 0, 1, 1)))
+				appendVertex(HCFilledTriangleVertex(position: convert(right), color: TDFloat4(0, 0, 1, 1)))
 			} else
 				if filledtriangle_count % 2 == 0 {
-					appendVertex(HCFilledTriangleVertex(position: convert(left),   color: TDFloat4(0, 0, 0, 1)))
+					appendVertex(HCFilledTriangleVertex(position: convert(left), color: TDFloat4(0, 0, 0, 1)))
 					appendVertex(HCFilledTriangleVertex(position: convert(middle), color: TDFloat4(0, 0, 0, 1)))
-					appendVertex(HCFilledTriangleVertex(position: convert(right),  color: TDFloat4(0, 0, 0, 1)))
+					appendVertex(HCFilledTriangleVertex(position: convert(right), color: TDFloat4(0, 0, 0, 1)))
 				} else {
-					appendVertex(HCFilledTriangleVertex(position: convert(left),   color: TDFloat4(1, 1, 1, 1)))
+					appendVertex(HCFilledTriangleVertex(position: convert(left), color: TDFloat4(1, 1, 1, 1)))
 					appendVertex(HCFilledTriangleVertex(position: convert(middle), color: TDFloat4(1, 1, 1, 1)))
-					appendVertex(HCFilledTriangleVertex(position: convert(right),  color: TDFloat4(1, 1, 1, 1)))
+					appendVertex(HCFilledTriangleVertex(position: convert(right), color: TDFloat4(1, 1, 1, 1)))
 			}
 
 		}
 		filledtriangle_count += 1
 	}
 
+    // swiftlint:disable:next function_body_length
 	func buildHexagon(sideCount: Int) {
 		let halfWidth: CGFloat = 1
 		let halfHeight: CGFloat = halfWidth * CGFloat(AppConstant.Canvas.hexagonApothem)
@@ -154,6 +157,7 @@ class HCBuildHexagonCanvas {
 		buildHexagon(canvas: canvas)
 	}
 
+    // swiftlint:disable:next cyclomatic_complexity function_body_length
 	func buildHexagon(canvas: E2Canvas) {
 		func convert(_ point: CGPoint) -> TDFloat2 {
 			return TDFloat2(Float(point.x), Float(point.y))
@@ -273,6 +277,7 @@ class HCBuildHexagonCanvas {
 
 extension HCBuildHexagonCanvas: CustomStringConvertible {
 	var description: String {
+        // swiftlint:disable:next line_length
 		return "<corners: \(corners)  filledtriangle_vertices.count: \(filledtriangle_vertices.count)  filledtriangle_indices.count: \(filledtriangle_indices.count)  filledcircle_vertices.count: \(filledcircle_vertices.count)  filledcircle_indices.count: \(filledcircle_indices.count)>"
 	}
 }

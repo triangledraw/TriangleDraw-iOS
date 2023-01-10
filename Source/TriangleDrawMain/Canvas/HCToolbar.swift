@@ -3,7 +3,7 @@ import UIKit
 import TriangleDrawLibrary
 
 class HCToolbarHandlers {
-	typealias ActionBlock = () -> ()
+	typealias ActionBlock = () -> Void
 
 	var onInvert: ActionBlock = {}
 	var onRotateCCW: ActionBlock = {}
@@ -39,6 +39,7 @@ class HCToolbar: UIToolbar {
 	}
 
     private func createItems() -> [Item] {
+        // swiftlint:disable:next identifier_name
         let is_iPad: Bool = UIDevice.current.userInterfaceIdiom == .pad
         if is_iPad {
             // On iPad there is plenty of room
@@ -67,7 +68,7 @@ class HCToolbar: UIToolbar {
 			.fixedSpace(width: 20),
 			.rotateCW,
 			.flexibleSpace,
-			.invert,
+			.invert
 		]
     }
 
@@ -102,6 +103,7 @@ class HCToolbar: UIToolbar {
 		case showSheet
 	}
 
+    // swiftlint:disable:next cyclomatic_complexity
 	private func barButtonItem(item: Item) -> UIBarButtonItem {
 		guard let handlers: HCToolbarHandlers = self.handlers else {
 			fatalError("Expected handlers to be non-nil, but got nil")
@@ -132,6 +134,7 @@ class HCToolbar: UIToolbar {
 			return imageItem(Image.canvas_rotateCW, handlers.onRotateCW)
 		case .invert:
 			let title: String
+            // swiftlint:disable:next identifier_name
 			let is_iPad: Bool = UIDevice.current.userInterfaceIdiom == .pad
 			if is_iPad {
 				title = NSLocalizedString("BOTTOM_TOOLBAR_INVERT_iPad", tableName: "CanvasVC", bundle: Bundle.main, value: "", comment: "Button for inverting colors in navigationbar. (Only visible on iPad)")
@@ -156,6 +159,7 @@ class HCToolbar: UIToolbar {
 			actionSheet.addAction(action)
 		}
 		do {
+            // swiftlint:disable:next line_length
 			let title = NSLocalizedString("MORE_ACTIONSHEET_ROTATE_60_COUNTERCLOCKWISE", tableName: "CanvasVC", bundle: Bundle.main, value: "", comment: "Rotate CounterClockWise 60 degree button in actionsheet (iPhone actionsheet)")
 			let action = UIAlertAction(title: title, style: .default) { [weak self] (_) in
 				self?.handlers?.onRotateCCW()
@@ -163,6 +167,7 @@ class HCToolbar: UIToolbar {
 			actionSheet.addAction(action)
 		}
 		do {
+            // swiftlint:disable:next line_length
 			let title = NSLocalizedString("MORE_ACTIONSHEET_ROTATE_60_CLOCKWISE", tableName: "CanvasVC", bundle: Bundle.main, value: "", comment: "Rotate ClockWise 60 degree button in actionsheet (iPhone actionsheet)")
 			let action = UIAlertAction(title: title, style: .default) { [weak self] (_) in
 				self?.handlers?.onRotateCW()

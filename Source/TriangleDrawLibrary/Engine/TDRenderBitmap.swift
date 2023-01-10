@@ -47,6 +47,8 @@ public typealias TDRenderBitmapTileIndex = (x: Int, y: Int)
 public typealias TDRenderBitmapProgressBlock = (Float) -> Void
 public typealias TDRenderBitmapCompletionBlock = (_ imageOrNil: UIImage?) -> Void
 
+// swiftlint:disable identifier_name
+// swiftlint:disable:next type_body_length
 public class TDRenderBitmap {
     private let canvas: E2Canvas
 	private var context: CGContext?
@@ -80,6 +82,7 @@ public class TDRenderBitmap {
 	// Perhaps rework `TDRenderBitmap` to instead use an `enum Result` type,
 	// with a `success` case for the generated image.
 	// with a `failure` case for the error or error message. Maybe with a localized text.
+    // swiftlint:disable:next line_length
     public class func image(with size: CGSize, tileCount: Int, canvas: E2Canvas, progress progressBlock: TDRenderBitmapProgressBlock?, completion completionBlock: TDRenderBitmapCompletionBlock?) -> UIImage? {
         let sync: Bool = (progressBlock == nil) || (completionBlock == nil)
         if sync {
@@ -122,6 +125,7 @@ public class TDRenderBitmap {
 		return inner_image2(with: size, tileCount: tileCount, canvas: canvas, context: context, progress: progressBlock)
 	}
 
+    // swiftlint:disable:next function_body_length
 	public class func inner_image2(with size: CGSize, tileCount: Int, canvas: E2Canvas, context: CGContext, progress progressBlock: TDRenderBitmapProgressBlock?) -> UIImage? {
 		let t0 = CFAbsoluteTimeGetCurrent()
 		let sw = Int(size.width)
@@ -131,7 +135,6 @@ public class TDRenderBitmap {
         let bounds: CGRect = context.boundingBoxOfClipPath
         context.scaleBy(x: 1.0, y: -1.0)
         context.translateBy(x: 0.0, y: -bounds.size.height)
-
 
 		let res: E2Canvas = E2Canvas.createBigCanvas()
 		res.load(fromStringRepresentation: canvas.stringRepresentation)
@@ -189,6 +192,7 @@ public class TDRenderBitmap {
 		log.debug("imageSize: \(imageSize)  tiles: \(tileCount)x\(tileCount) (\(numberOfTiles))   Elapsed \(elapsed.string2)   Tiles/second: \(tilesPerSecond.string2)")
 	}
 
+    // swiftlint:disable:next cyclomatic_complexity function_body_length
     public func image(forTile tileIndex: TDRenderBitmapTileIndex) -> UIImage? {
         let tile_index: Int = tileIndex.y * tile_count + tileIndex.x
 		if AppConstant.TDRenderBitmap.debug_print {
@@ -354,14 +358,14 @@ public class TDRenderBitmap {
     }
 }
 
-fileprivate func ASSERT_INTEGER(_ value: CGFloat, file: String = #file, _ function: String = #function, line: Int = #line) {
+private func ASSERT_INTEGER(_ value: CGFloat, file: String = #file, _ function: String = #function, line: Int = #line) {
 	#if DEBUG
     let remainder: CGFloat = abs(fmod(value, 1.0))
 	assert(remainder < 0.001, "too inaccurate. value: \(value.string2)  remainder: \(remainder)   file: \(file)  \(function)  line: \(line)")
 	#endif
 }
 
-fileprivate func TDRenderBitmapTileIndexMake(x: Int, y: Int) -> TDRenderBitmapTileIndex {
+private func TDRenderBitmapTileIndexMake(x: Int, y: Int) -> TDRenderBitmapTileIndex {
     var index: TDRenderBitmapTileIndex
     index.x = x
     index.y = y

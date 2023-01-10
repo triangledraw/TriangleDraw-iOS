@@ -24,8 +24,10 @@ extension UIViewController {
 }
 
 class HCMenuViewController: RFFormViewController {
+    // swiftlint:disable:next identifier_name
 	var _hud: MBProgressHUD?
 	var canvas: E2Canvas?
+    // swiftlint:disable:next identifier_name
 	var document_displayName: String?
 	weak var delegate: HCMenuViewControllerDelegate?
 
@@ -130,6 +132,7 @@ class HCMenuViewController: RFFormViewController {
 		let t0 = CFAbsoluteTimeGetCurrent()
 		installHUD()
 		_hud?.mode = MBProgressHUDMode.determinateHorizontalBar
+        // swiftlint:disable:next line_length
 		_hud?.label.text = NSLocalizedString("CREATE_IMAGE_FOR_SHARING_HUD_TITLE", tableName: "CanvasVC", bundle: Bundle.main, value: "", comment: "HUD title indicating that a share-image operation has started")
 		_hud?.show(animated: true)
 		let triangleCount = canvas.computeTriangleCount()
@@ -138,7 +141,7 @@ class HCMenuViewController: RFFormViewController {
 		let sourceView: UIView = self.view
 		TDRenderBitmap.imageWithSize2048x2048(for: canvas, progress: { [weak self] progress in
 			self?._hud?.progress = progress
-		}) { [weak self] imageOrNil in
+		}) { [weak self] imageOrNil in // swiftlint:disable:this multiple_closures_with_trailing_closure
 			self?._hud?.hide(animated: true)
 			guard let strongSelf: HCMenuViewController = self else {
 				log.error("Expected self to be non-nil, but got nil")
@@ -290,9 +293,9 @@ extension HCMenuViewController: HCMenuSubdivideViewControllerDelegate {
 	}
 }
 
-
 extension E2Canvas {
 	fileprivate func computeTriangleCount() -> UInt {
+        // swiftlint:disable identifier_name
 		let n1: UInt = self.numberOfDifferences(from: E2Canvas.createBigCanvas())
 		let n2: UInt = self.numberOfDifferences(from: E2Canvas.bigCanvasMask())
 		//log.debug("number of triangles: \(n1) \(n2)")

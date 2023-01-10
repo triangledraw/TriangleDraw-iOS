@@ -2,7 +2,7 @@
 
 public class VerboseInfoProvider {
 	public typealias Pair = (String, String)
-	public var pairs = Array<Pair>()
+	public var pairs = [Pair]()
 
 	public init() {}
 

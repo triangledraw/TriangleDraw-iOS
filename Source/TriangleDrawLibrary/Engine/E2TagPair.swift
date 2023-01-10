@@ -50,7 +50,9 @@ public class E2TagPair: NSObject {
 			guard let first: Int = indexset.first else {
 				continue
 			}
+            // swiftlint:disable:next unused_enumerated
 			for (_, index) in indexset.enumerated() {
+                // swiftlint:disable:next for_where
 				if index != first {
 					replacements[index] = first
 				}

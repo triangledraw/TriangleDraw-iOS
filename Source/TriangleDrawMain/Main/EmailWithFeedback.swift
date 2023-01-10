@@ -21,7 +21,7 @@ extension UIViewController {
 
 /// Presents a `MFMailComposeViewController` that is prefilled
 /// with info about the system, device, app.
-fileprivate class EmailWithFeedback: NSObject {
+private class EmailWithFeedback: NSObject {
 	fileprivate static let shared = EmailWithFeedback()
 	private var startTime: Double = 0
 

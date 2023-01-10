@@ -11,10 +11,10 @@ import TriangleDrawLibrary
  - Fewer bugs because you are writing less code.
 
 */
+// swiftlint:disable identifier_name
 class BrowserViewController: UIDocumentBrowserViewController {
 	// Used for document presentation
 	var transitionController: UIDocumentBrowserTransitionController?
-
 
 	// This key is used to encode the bookmark data of the URL of the opened document as part of the state restoration data.
 	static let bookmarkDataKey = "bookmarkData"
@@ -60,8 +60,6 @@ class BrowserViewController: UIDocumentBrowserViewController {
 		if UserDefaults.standard.bool(forKey: "ScreenshotCanvasWithRune") {
 			initialViewController = .screenshot_canvasWithRune
 		}
-
-
 
 		switch initialViewController {
 		case .production_browser:
@@ -118,7 +116,6 @@ class BrowserViewController: UIDocumentBrowserViewController {
 		let nc = BrowserMenuViewController.createInsideNavigationController()
 		self.present(nc, animated: true, completion: nil)
 	}
-
 
 	// MARK: Live Indicator
 
@@ -215,13 +212,13 @@ class BrowserViewController: UIDocumentBrowserViewController {
 	}
 }
 
-
 // MARK: UIDocumentBrowserViewControllerDelegate
 
 extension BrowserViewController: UIDocumentBrowserViewControllerDelegate {
 	/// Called when you select "Create Document" in the browser UI.
-	func documentBrowser(_ controller: UIDocumentBrowserViewController,
-						 didRequestDocumentCreationWithHandler importHandler: @escaping (URL?, UIDocumentBrowserViewController.ImportMode) -> Void) {
+	func documentBrowser(
+        _ controller: UIDocumentBrowserViewController,
+        didRequestDocumentCreationWithHandler importHandler: @escaping (URL?, UIDocumentBrowserViewController.ImportMode) -> Void) {
 
 		// When the user wants to create a new document, a blank version of a new Partiles file needs to be provided to the
 		// `UIDocumentBrowserViewController`. In this case, obtain the URL of the "Drawing.triangleDraw", which is part of the application bundle, and

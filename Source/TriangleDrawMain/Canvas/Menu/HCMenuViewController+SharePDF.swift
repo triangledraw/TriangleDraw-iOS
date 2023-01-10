@@ -6,7 +6,7 @@ extension HCMenuViewController {
 	static func createSharePDFActivityViewController(pdfData: Data, filename: String, triangleCount: UInt) -> UIActivityViewController {
 		let filesize: Int = pdfData.count
 		log.debug("Open share sheet.  fileSize: \(filesize)  filename: '\(filename)'  triangleCount: \(triangleCount)")
-		
+
 		// There is not easy way to tell `UIActivityViewController`
 		// that the data is a PDF file, and what the filename should be.
 		// The easiest solution is to store the data in the temp dir
@@ -19,6 +19,7 @@ extension HCMenuViewController {
 			fatalError()
 		}
 
+        // swiftlint:disable:next line_length
         let subjectFormat = NSLocalizedString("EMAIL_PDF_SUBJECT_%@", tableName: "CanvasVC", bundle: Bundle.main, value: "", comment: "TriangleDraw - {Drawing name}, a subject line for mails containing PDF attachments")
         let emailSubject = String(format: subjectFormat, filename)
         let avc = UIActivityViewController(activityItems: [url], applicationActivities: nil)

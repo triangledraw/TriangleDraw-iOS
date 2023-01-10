@@ -12,7 +12,6 @@ enum HCMetalViewCreateError: Error {
     case unableToCreateSystemDefaultDevice
 }
 
-
 class HCMetalView: MTKView {
 	static func create(frame frameRect: CGRect, filledCircleMode: HCFilledCircleMode) throws -> HCMetalView {
 		guard let device: MTLDevice = MTLCreateSystemDefaultDevice() else {

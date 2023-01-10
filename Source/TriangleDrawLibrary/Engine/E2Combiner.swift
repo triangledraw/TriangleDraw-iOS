@@ -1,15 +1,18 @@
 // MIT license. Copyright (c) 2023 TriangleDraw. All rights reserved.
 import Foundation
 
-
 public struct E2TriangleTagCell {
+    // swiftlint:disable:next identifier_name
     var tl: Int = 0
+    // swiftlint:disable:next identifier_name
     var tr: Int = 0
+    // swiftlint:disable:next identifier_name
     var bl: Int = 0
+    // swiftlint:disable:next identifier_name
     var br: Int = 0
 }
 
-
+// swiftlint:disable:next type_body_length
 public class E2Combiner {
     /*
      Create an E2Combiner instance with a canvas
@@ -133,6 +136,7 @@ public class E2Combiner {
     public func triangles(forTag tag: Int) -> [E2CanvasTriangle] {
         var triangleArray = [E2CanvasTriangle]()
 
+        // swiftlint:disable:next function_parameter_count
 		func triangleArrayAppend(_ triangleTag: Int, _ x: Int, _ y: Int, _ x0: Int, _ y0: Int, _ x1: Int, _ y1: Int, _ x2: Int, _ y2: Int) {
 			if tag != triangleTag {
 				return
@@ -180,7 +184,9 @@ public class E2Combiner {
 		tagPairs.append(E2TagPair.create(tag0: tag0, tag1: tag1))
     }
 
+    // swiftlint:disable:next cyclomatic_complexity function_body_length
     public func assignTags() {
+        // swiftlint:disable identifier_name
             /*
              
                                +1,0

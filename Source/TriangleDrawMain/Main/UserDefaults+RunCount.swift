@@ -16,4 +16,5 @@ extension UserDefaults {
     }
 }
 
+// swiftlint:disable:next identifier_name
 let TRIANGLEDRAW_RUN_COUNT = "TRIANGLEDRAW_RUN_COUNT"

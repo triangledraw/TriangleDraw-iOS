@@ -2,6 +2,7 @@
 import UIKit
 import TriangleDrawLibrary
 
+// swiftlint:disable type_name
 typealias TDCanvasDrawing_TapBlock = (TDCanvasDrawingProtocol, E2CanvasPoint) -> Void
 typealias TDCanvasDrawing_DrawBlock = (TDCanvasDrawingProtocol, CGPoint, E2CanvasPoint, Bool) -> Void
 typealias TDCanvasDrawing_BeforeDrawBlock = () -> Void

@@ -18,7 +18,7 @@ extension HCMenuViewController {
 			log.error("failed to write: \(url) \(error)")
 			fatalError()
 		}
-		
+
         let emailSubject = "TriangleDraw - \(filename)"
         let avc = UIActivityViewController(activityItems: [url], applicationActivities: nil)
 		avc.excludedActivityTypes = [

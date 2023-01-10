@@ -22,6 +22,7 @@ br = bottom right
 ********************
 
 */
+// swiftlint:disable identifier_name
 public struct E2TriangleCell {
 	public var tl: UInt8 = 0
 	public var tr: UInt8 = 0

@@ -1,6 +1,7 @@
 // MIT license. Copyright (c) 2023 TriangleDraw. All rights reserved.
 import CoreGraphics
 
+// swiftlint:disable identifier_name
 extension CGContext {
 	public func triangleDraw_setFillColor(triangleValue: UInt8) {
 		switch triangleValue {
@@ -14,7 +15,6 @@ extension CGContext {
 			setFillColor(red: 1.0, green: 0.0, blue: 0.0, alpha: 1.0)
 		}
 	}
-	
 
 	public func triangleDraw_fillTriangle(a: CGPoint, b: CGPoint, c: CGPoint) {
 		beginPath()
@@ -25,7 +25,7 @@ extension CGContext {
 		fillPath()
 	}
 
-
+    // swiftlint:disable:next function_body_length function_parameter_count
 	public func triangleDraw_fillTrianglesInTile(triangles: [E2CanvasTriangle2], window_x0: Double, window_x1: Double, window_y0: Double, window_y1: Double, scale_x: Double, scale_y: Double) {
 		for (triangleIndex, triangle) in triangles.enumerated() {
 			if AppConstant.TDRenderBitmap.debug_fillTriangles_skip {

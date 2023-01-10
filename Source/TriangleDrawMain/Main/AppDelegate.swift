@@ -8,6 +8,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
 	static var shared: AppDelegate {
+        // swiftlint:disable:next force_cast
 		return UIApplication.shared.delegate as! AppDelegate
 	}
 
@@ -66,7 +67,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		builder.tintColor = AppConstant.Browser.tintColor
 	}
 
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]? = nil) -> Bool {
 		LogHelper.setup_mainExecutable()
 
 		//AppDelegate.resetAppleLanguagesAfterUnittest()
@@ -110,7 +111,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //log.debug(@"applicationDidReceiveMemoryWarning:");
     }
 
-	func application(_ app: UIApplication, open inputURL: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
+	func application(_ app: UIApplication, open inputURL: URL, options: [UIApplication.OpenURLOptionsKey: Any] = [:]) -> Bool {
 
 		// This delegate method is invoked when the Particles app is externally asked to open a document at a specific URL.
 		// Ensure that the URL is an actual file URL.
@@ -128,7 +129,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 			log.error("Expected rootViewController to be of type BrowserViewController")
 			return false
 		}
-		
+
 		browserViewController.revealDocument(at: inputURL, importIfNeeded: true) { (revealedDocumentURL, error) in
 			if let error = error {
 				// Handle the error appropriately

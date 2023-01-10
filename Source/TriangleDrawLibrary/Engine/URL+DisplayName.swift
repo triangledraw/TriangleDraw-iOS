@@ -1,6 +1,7 @@
 // MIT license. Copyright (c) 2023 TriangleDraw. All rights reserved.
 import Foundation
 
+// swiftlint:disable identifier_name
 extension URL {
 	/// From a long url like
 	///

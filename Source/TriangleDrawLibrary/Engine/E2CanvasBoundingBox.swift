@@ -52,7 +52,7 @@ extension E2CanvasBoundingBox {
 	public var midX: Float {
 		return Float(1 + minX + maxX) / 2
 	}
-	
+
 	public var midY: Float {
 		return Float(1 + minY + maxY) / 2
 	}
@@ -112,6 +112,7 @@ public class E2CanvasBoundingBoxFinder {
 		var foundNumberOfOccurances: UInt = 0
 		var foundPixelValue: UInt8 = 255
 		for (pixelValue, numberOfOccurrances) in self.histogram {
+            // swiftlint:disable:next for_where
 			if numberOfOccurrances > foundNumberOfOccurances {
 				foundNumberOfOccurances = numberOfOccurrances
 				foundPixelValue = pixelValue
