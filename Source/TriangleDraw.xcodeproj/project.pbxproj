@@ -2097,11 +2097,12 @@
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = NO;
 				CODE_SIGN_ENTITLEMENTS = TriangleDrawMain/Resources/TriangleDrawMain.entitlements;
-				CODE_SIGN_IDENTITY = "Apple Development: Nathan Sheung Yin Cheng (TV29LYY456)";
+				CODE_SIGN_IDENTITY = "Apple Development: Simon Strandgaard (2TT32WZZZQ)";
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = YSABPVXCLN;
+				DEVELOPMENT_TEAM = 22DR89XVRF;
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 22DR89XVRF;
 				GCC_DYNAMIC_NO_PIC = NO;
 				"GCC_THUMB_SUPPORT[arch=armv6]" = "";
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
@@ -2111,10 +2112,10 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 2021.10.13;
-				PRODUCT_BUNDLE_IDENTIFIER = com.triangledraw.td4;
+				PRODUCT_BUNDLE_IDENTIFIER = com.triangledraw.td6;
 				PRODUCT_NAME = TriangleDrawMain;
 				PROVISIONING_PROFILE = "8d8084cb-8210-4ff6-b0be-55134390795b";
-				PROVISIONING_PROFILE_SPECIFIER = "TriangleDraw4 Main Development";
+				PROVISIONING_PROFILE_SPECIFIER = "TriangleDraw6 Main Development";
 				STRIP_INSTALLED_PRODUCT = NO;
 				SWIFT_OBJC_BRIDGING_HEADER = "TriangleDrawMain/main/TriangleDrawMain-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -2129,11 +2130,12 @@
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = NO;
 				CODE_SIGN_ENTITLEMENTS = TriangleDrawMain/Resources/TriangleDrawMain.entitlements;
-				CODE_SIGN_IDENTITY = "Apple Distribution: Nathan Sheung Yin Cheng (YSABPVXCLN)";
+				CODE_SIGN_IDENTITY = "Apple Distribution: Simon Strandgaard (22DR89XVRF)";
 				COPY_PHASE_STRIP = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = YSABPVXCLN;
+				DEVELOPMENT_TEAM = 22DR89XVRF;
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 22DR89XVRF;
 				"GCC_THUMB_SUPPORT[arch=armv6]" = "";
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "$(SRCROOT)/TriangleDrawMain/Resources/Info.plist";
@@ -2142,10 +2144,10 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 2021.10.13;
-				PRODUCT_BUNDLE_IDENTIFIER = com.triangledraw.td4;
+				PRODUCT_BUNDLE_IDENTIFIER = com.triangledraw.td6;
 				PRODUCT_NAME = TriangleDrawMain;
 				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "TriangleDraw4 Main AppStore";
+				PROVISIONING_PROFILE_SPECIFIER = "TriangleDraw6 Main AppStore";
 				SWIFT_OBJC_BRIDGING_HEADER = "TriangleDrawMain/main/TriangleDrawMain-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -2255,12 +2257,13 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_ENTITLEMENTS = TriangleDrawThumbnail/TriangleDrawThumbnail.entitlements;
-				CODE_SIGN_IDENTITY = "Apple Development: Nathan Sheung Yin Cheng (TV29LYY456)";
+				CODE_SIGN_IDENTITY = "Apple Development: Simon Strandgaard (2TT32WZZZQ)";
 				CODE_SIGN_STYLE = Manual;
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = YSABPVXCLN;
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 22DR89XVRF;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -2278,9 +2281,9 @@
 				MARKETING_VERSION = 2021.10.13;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = com.triangledraw.td4.thumbnail;
+				PRODUCT_BUNDLE_IDENTIFIER = com.triangledraw.td6.thumbnail;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "TriangleDraw4 Thumbnail Development";
+				PROVISIONING_PROFILE_SPECIFIER = "TriangleDraw6 Thumbnail Development";
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -2302,12 +2305,13 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_ENTITLEMENTS = TriangleDrawThumbnail/TriangleDrawThumbnail.entitlements;
-				CODE_SIGN_IDENTITY = "Apple Distribution: Nathan Sheung Yin Cheng (YSABPVXCLN)";
+				CODE_SIGN_IDENTITY = "Apple Distribution: Simon Strandgaard (22DR89XVRF)";
 				CODE_SIGN_STYLE = Manual;
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = YSABPVXCLN;
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 22DR89XVRF;
 				ENABLE_NS_ASSERTIONS = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
@@ -2321,9 +2325,9 @@
 				MARKETING_VERSION = 2021.10.13;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = com.triangledraw.td4.thumbnail;
+				PRODUCT_BUNDLE_IDENTIFIER = com.triangledraw.td6.thumbnail;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "TriangleDraw4 Thumbnail AppStore";
+				PROVISIONING_PROFILE_SPECIFIER = "TriangleDraw6 Thumbnail AppStore";
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
