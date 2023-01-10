@@ -461,6 +461,11 @@ class CanvasViewController: UIViewController {
         return fullscreenMode
     }
 
+    /// Hide the 3 dots at the top of the iPad
+    override var prefersHomeIndicatorAutoHidden: Bool {
+        return fullscreenMode
+    }
+
 	private var _fullscreenMode = false
 	private var fullscreenMode: Bool {
 		get {
