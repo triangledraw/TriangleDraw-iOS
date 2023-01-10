@@ -8,7 +8,7 @@ typealias TDCanvasDrawing_BeforeDrawBlock = () -> Void
 typealias TDCanvasDrawing_AfterDrawBlock = () -> Void
 typealias TDCanvasDrawing_RotateCompletionBlock = () -> Void
 
-protocol TDCanvasDrawingProtocol: class {
+protocol TDCanvasDrawingProtocol: AnyObject {
 	var onTapBlock: TDCanvasDrawing_TapBlock? { get set }
 	var onBeforeDrawBlock: TDCanvasDrawing_BeforeDrawBlock? { get set }
 	var onDrawBlock: TDCanvasDrawing_DrawBlock? { get set }
