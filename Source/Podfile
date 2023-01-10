@@ -1,16 +1,16 @@
 source 'https://github.com/CocoaPods/Specs.git'
 swift_version = "5.0"
-platform :ios, '11.3'
+platform :ios, '14'
 use_frameworks!
 
 def my_pod_mbprogresshud
 	# https://github.com/jdg/MBProgressHUD/commits/master
-	pod 'MBProgressHUD', :git => 'https://github.com/jdg/MBProgressHUD.git', :commit => '61fb89ce30d42f403ce53cde65883dc8cea6d02a'
+	pod 'MBProgressHUD', :git => 'https://github.com/jdg/MBProgressHUD.git', :commit => 'c843e4c86d320a11552898646effa8000042ab16'
 end
 
 def my_pod_swiftybeaver
 	# https://github.com/SwiftyBeaver/SwiftyBeaver/commits/master
-	pod 'SwiftyBeaver', :git => 'https://github.com/SwiftyBeaver/SwiftyBeaver.git', :commit => 'e0fb3a74cb993d7dcf1e56734cdc98ad6e6d8176'
+	pod 'SwiftyBeaver', :git => 'https://github.com/SwiftyBeaver/SwiftyBeaver.git', :commit => 'dc3b9adf6c8faeb91a93b60993b5292d66b26c1c'
 end
 
 def my_pod_radiantforms

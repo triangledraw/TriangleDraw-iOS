@@ -41,7 +41,7 @@ import FoundationNetworking
     let DEVICE_NAME = ""
 #endif
 
-public class SBPlatformDestination: BaseDestination {
+open class SBPlatformDestination: BaseDestination {
 
     public var appID = ""
     public var appSecret = ""
@@ -60,7 +60,7 @@ public class SBPlatformDestination: BaseDestination {
     }
     public var sendingPoints = SendingPoints()
     public var showNSLog = false // executes toNSLog statements to debug the class
-    var points = 0
+    public var points = 0
 
     public var serverURL = URL(string: "https://api.swiftybeaver.com/api/entries/") // optional
     public var entriesFileURL = URL(fileURLWithPath: "") // not optional
@@ -153,7 +153,7 @@ public class SBPlatformDestination: BaseDestination {
     }
 
     // append to file, each line is a JSON dict
-    override public func send(_ level: SwiftyBeaver.Level, msg: String, thread: String,
+    override open func send(_ level: SwiftyBeaver.Level, msg: String, thread: String,
         file: String, function: String, line: Int, context: Any? = nil) -> String? {
 
         var jsonString: String?
@@ -309,10 +309,14 @@ public class SBPlatformDestination: BaseDestination {
 
             // POST parameters
             let params = ["payload": payload]
-            do {
-                request.httpBody = try JSONSerialization.data(withJSONObject: params, options: [])
-            } catch {
-                toNSLog("Error! Could not create JSON for server payload.")
+            if(JSONSerialization.isValidJSONObject(params)){
+                do {
+                    request.httpBody = try JSONSerialization.data(withJSONObject: params, options: [])
+                } catch {
+                    toNSLog("Error! Could not create JSON for server payload.")
+                    return complete(false, 0)
+                }
+            }else{
                 return complete(false, 0)
             }
             toNSLog("sending params: \(params)")
@@ -474,10 +478,9 @@ public class SBPlatformDestination: BaseDestination {
         osVersionStr += "." + String(osVersion.minorVersion)
         osVersionStr += "." + String(osVersion.patchVersion)
         details["osVersion"] = osVersionStr
-        details["hostName"] = ProcessInfo.processInfo.hostName
         details["deviceName"] = ""
         details["deviceModel"] = ""
-
+        details["hostName"] = ""
         if DEVICE_NAME != "" {
             details["deviceName"] = DEVICE_NAME
         }
