@@ -4,6 +4,7 @@ import Foundation
 import TriangleDrawLibrary
 import RadiantForms
 import MBProgressHUD
+import SwiftUI
 
 protocol HCMenuViewControllerDelegate: AnyObject {
 	func hcMenuViewController_applySubdivide(n: UInt8)
@@ -31,7 +32,7 @@ class HCMenuViewController: RFFormViewController {
 	var document_displayName: String?
 	weak var delegate: HCMenuViewControllerDelegate?
 
-	static func create(document: HexagonCanvasMenuDocument, delegate: HCMenuViewControllerDelegate?) -> UINavigationController {
+	static func xcreate(document: HexagonCanvasMenuDocument, delegate: HCMenuViewControllerDelegate?) -> UINavigationController {
 		let vc = HCMenuViewController()
 		vc.delegate = delegate
 
@@ -50,6 +51,11 @@ class HCMenuViewController: RFFormViewController {
 		nc.modalPresentationStyle = .formSheet
 		return nc
 	}
+
+    static func create(document: HexagonCanvasMenuDocument, delegate: HCMenuViewControllerDelegate?) -> UIViewController {
+        let model = HCMenuViewModel.create()
+        return UIHostingController(rootView: HCMenuView(model: model))
+    }
 
 	override func loadView() {
 		super.loadView()

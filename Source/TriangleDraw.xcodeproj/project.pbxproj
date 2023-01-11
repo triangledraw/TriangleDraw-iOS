@@ -114,6 +114,8 @@
 		42B5308912EC49390070D150 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42B5308812EC49390070D150 /* CFNetwork.framework */; };
 		42B5308D12EC494A0070D150 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42B5308C12EC494A0070D150 /* SystemConfiguration.framework */; };
 		42B686F723E3774000969839 /* VerboseInfoProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B686F623E3774000969839 /* VerboseInfoProvider.swift */; };
+		42BB9664296F2E210049FA66 /* HCMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42BB9663296F2E210049FA66 /* HCMenuView.swift */; };
+		42BB9666296F2EA70049FA66 /* HCMenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42BB9665296F2EA70049FA66 /* HCMenuViewModel.swift */; };
 		42C6B6EC21A74781004E7F58 /* HCZoomToFit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C6B6EB21A74781004E7F58 /* HCZoomToFit.swift */; };
 		42C7B27722E309F500FFA1AD /* CanvasViewController+ConfigureNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C7B27622E309F500FFA1AD /* CanvasViewController+ConfigureNavigationBar.swift */; };
 		42C7B27922E30DCB00FFA1AD /* CanvasViewController+Operations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C7B27822E30DCB00FFA1AD /* CanvasViewController+Operations.swift */; };
@@ -476,6 +478,8 @@
 		42B5308812EC49390070D150 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		42B5308C12EC494A0070D150 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		42B686F623E3774000969839 /* VerboseInfoProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerboseInfoProvider.swift; sourceTree = "<group>"; };
+		42BB9663296F2E210049FA66 /* HCMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HCMenuView.swift; sourceTree = "<group>"; };
+		42BB9665296F2EA70049FA66 /* HCMenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HCMenuViewModel.swift; sourceTree = "<group>"; };
 		42C6B6EB21A74781004E7F58 /* HCZoomToFit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HCZoomToFit.swift; sourceTree = "<group>"; };
 		42C7B27622E309F500FFA1AD /* CanvasViewController+ConfigureNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CanvasViewController+ConfigureNavigationBar.swift"; sourceTree = "<group>"; };
 		42C7B27822E30DCB00FFA1AD /* CanvasViewController+Operations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CanvasViewController+Operations.swift"; sourceTree = "<group>"; };
@@ -901,6 +905,8 @@
 				42646E8022E4A08800914600 /* HCMenuViewController+SharePDF.swift */,
 				42E227B2210373E000D112E7 /* HCMenuViewController+SharePNG.swift */,
 				42AC2D7D2308134B0089947B /* HCMenuViewController+ShareSVG.swift */,
+				42BB9663296F2E210049FA66 /* HCMenuView.swift */,
+				42BB9665296F2EA70049FA66 /* HCMenuViewModel.swift */,
 			);
 			path = Menu;
 			sourceTree = "<group>";
@@ -1860,9 +1866,11 @@
 				42DE377220FDED180007845B /* HCToolbar.swift in Sources */,
 				42C7B27922E30DCB00FFA1AD /* CanvasViewController+Operations.swift in Sources */,
 				4289827921E7EDA600FC0431 /* BorderedButton.swift in Sources */,
+				42BB9666296F2EA70049FA66 /* HCMenuViewModel.swift in Sources */,
 				42D0DD9A224547A90066DB3D /* UIApplication+Directories.swift in Sources */,
 				4245221120E1222000FCDDE3 /* AppDelegate.swift in Sources */,
 				42608ECA21CE6B9B00A99669 /* HCGridView.swift in Sources */,
+				42BB9664296F2E210049FA66 /* HCMenuView.swift in Sources */,
 				42E227C6210373E000D112E7 /* UIBarButtonItem+NegativeSpacer.swift in Sources */,
 				42AF941B215451C200D07373 /* HCRenderer.swift in Sources */,
 				42DE377420FDEEC60007845B /* CanvasViewController.swift in Sources */,
