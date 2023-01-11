@@ -63,6 +63,7 @@
 		42851C8C2301F7330047C7D0 /* test_orientation_downward.pbm in Resources */ = {isa = PBXBuildFile; fileRef = 42851C8A2301F7330047C7D0 /* test_orientation_downward.pbm */; };
 		42851C8D2301F7330047C7D0 /* test_orientation_upward.pbm in Resources */ = {isa = PBXBuildFile; fileRef = 42851C8B2301F7330047C7D0 /* test_orientation_upward.pbm */; };
 		42851C8F2301F7760047C7D0 /* E2CanvasPointOrientationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42851C8E2301F7760047C7D0 /* E2CanvasPointOrientationTests.swift */; };
+		428666A6296EC83A001F0192 /* BrowserMenu2View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428666A5296EC83A001F0192 /* BrowserMenu2View.swift */; };
 		4289827921E7EDA600FC0431 /* BorderedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4289827821E7EDA600FC0431 /* BorderedButton.swift */; };
 		428B12961832A46500718BEA /* CanvasVC.strings in Resources */ = {isa = PBXBuildFile; fileRef = 428B12911832A46500718BEA /* CanvasVC.strings */; };
 		428B12DF1832A90700718BEA /* CanvasVC.strings in Resources */ = {isa = PBXBuildFile; fileRef = 428B12DD1832A90700718BEA /* CanvasVC.strings */; };
@@ -418,6 +419,7 @@
 		42851C8B2301F7330047C7D0 /* test_orientation_upward.pbm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = test_orientation_upward.pbm; sourceTree = "<group>"; };
 		42851C8E2301F7760047C7D0 /* E2CanvasPointOrientationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = E2CanvasPointOrientationTests.swift; sourceTree = "<group>"; };
 		42855B9F19CDFE030000420E /* TriangleDrawMain-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TriangleDrawMain-Bridging-Header.h"; sourceTree = "<group>"; };
+		428666A5296EC83A001F0192 /* BrowserMenu2View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowserMenu2View.swift; sourceTree = "<group>"; };
 		4289827821E7EDA600FC0431 /* BorderedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderedButton.swift; sourceTree = "<group>"; };
 		428B12921832A46500718BEA /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = CanvasVC.strings; sourceTree = "<group>"; };
 		428B12DE1832A90700718BEA /* pt_PT */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pt_PT; path = CanvasVC.strings; sourceTree = "<group>"; };
@@ -813,6 +815,7 @@
 				421E51C322EF67AF0005068E /* BrowserViewController+ImportDocumentExamples.swift */,
 				426B951622D0A5FE00DB9359 /* BrowserViewController+PresentDocument.swift */,
 				422F507B20E835200054C702 /* DocumentNameGenerator.swift */,
+				428666A5296EC83A001F0192 /* BrowserMenu2View.swift */,
 			);
 			path = Browser;
 			sourceTree = "<group>";
@@ -1840,6 +1843,7 @@
 				42D2AA4922B82F24009BBC41 /* BrowserMenuViewController.swift in Sources */,
 				428DFD0F22D9D1CD005BE880 /* HCMenuViewController.swift in Sources */,
 				424CCA1B2160D9F900C91B41 /* HCView.swift in Sources */,
+				428666A6296EC83A001F0192 /* BrowserMenu2View.swift in Sources */,
 				42D0DDA0224549980066DB3D /* UIView+PinToInside.swift in Sources */,
 				42C7B27722E309F500FFA1AD /* CanvasViewController+ConfigureNavigationBar.swift in Sources */,
 				42DE377220FDED180007845B /* HCToolbar.swift in Sources */,

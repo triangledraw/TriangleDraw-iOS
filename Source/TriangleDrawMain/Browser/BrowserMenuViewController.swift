@@ -1,12 +1,13 @@
 // MIT license. Copyright (c) 2023 TriangleDraw. All rights reserved.
 import UIKit
+import SwiftUI
 import Foundation
 import TriangleDrawLibrary
 import RadiantForms
 import StoreKit
 
 class BrowserMenuViewController: RFFormViewController {
-	static func createInsideNavigationController() -> UINavigationController {
+	static func xcreateInsideNavigationController() -> UINavigationController {
 		let vc = BrowserMenuViewController()
 		let nc = UINavigationController(rootViewController: vc)
 		nc.navigationBar.barStyle = .default
@@ -14,6 +15,15 @@ class BrowserMenuViewController: RFFormViewController {
 		nc.modalPresentationStyle = .formSheet
 		return nc
 	}
+
+    static func createInsideNavigationController() -> UINavigationController {
+        let vc = UIHostingController(rootView: BrowserMenu2View())
+        let nc = UINavigationController(rootViewController: vc)
+        nc.navigationBar.barStyle = .default
+        nc.modalTransitionStyle = .crossDissolve
+        nc.modalPresentationStyle = .formSheet
+        return nc
+    }
 
 	override func loadView() {
 		super.loadView()
