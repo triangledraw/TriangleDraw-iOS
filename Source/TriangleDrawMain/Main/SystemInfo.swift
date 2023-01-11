@@ -85,6 +85,16 @@ class SystemInfo {
 		return formatter.string(from: date)
 	}
 
+    static var creationDateStringShort: String {
+        guard let date = creationDate else {
+            return "Unknown"
+        }
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd"
+        formatter.timeZone = TimeZone(abbreviation: "UTC")
+        return formatter.string(from: date)
+    }
+
 	/// Obtain the machine hardware platform from the `uname()` unix command
 	///
 	/// Example of return values

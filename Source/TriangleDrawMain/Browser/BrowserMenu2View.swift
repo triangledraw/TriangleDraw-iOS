@@ -3,6 +3,8 @@ import SwiftUI
 import StoreKit
 
 struct BrowserMenu2View: View {
+    @ObservedObject var model: BrowserMenu2ViewModel
+
     func appStoreWriteReviewAction() {
         if let scene = UIApplication.shared.connectedScenes.first as? UIWindowScene {
             SKStoreReviewController.requestReview(in: scene)
@@ -57,9 +59,21 @@ struct BrowserMenu2View: View {
                     emailDeveloperButton
                 }
                 Section(header: Text("App info")) {
-                    Text("Version x.y.z")
-                    Text("Creation Date x")
-                    Text("Run Count x")
+                    HStack {
+                        Text("Version")
+                        Spacer()
+                        Text(self.model.appVersion)
+                    }
+                    HStack {
+                        Text("Creation Date")
+                        Spacer()
+                        Text(self.model.appCreationDateString)
+                    }
+                    HStack {
+                        Text("Run Count")
+                        Spacer()
+                        Text(self.model.appRunCount)
+                    }
                 }
             }
             .navigationTitle("TriangleDraw")
@@ -69,6 +83,7 @@ struct BrowserMenu2View: View {
 
 struct BrowserMenu2View_Previews: PreviewProvider {
     static var previews: some View {
-        BrowserMenu2View()
+        let model = BrowserMenu2ViewModel()
+        BrowserMenu2View(model: model)
     }
 }

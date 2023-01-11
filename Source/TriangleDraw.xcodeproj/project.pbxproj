@@ -27,6 +27,7 @@
 		421F856E22328DB800811614 /* TriangleDrawThumbnail.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 421F856722328DB800811614 /* TriangleDrawThumbnail.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		4228EDA1296EDF020082B798 /* MailButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4228ED9F296EDF020082B798 /* MailButtonView.swift */; };
 		4228EDA2296EDF020082B798 /* MailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4228EDA0296EDF020082B798 /* MailView.swift */; };
+		4228EDA4296EEFD60082B798 /* BrowserMenu2ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4228EDA3296EEFD60082B798 /* BrowserMenu2ViewModel.swift */; };
 		422C9488178A0347001BF506 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 422C9487178A0347001BF506 /* Security.framework */; };
 		422F240921B984A000707D13 /* test_boundingbox6.txt in Resources */ = {isa = PBXBuildFile; fileRef = 422F240821B984A000707D13 /* test_boundingbox6.txt */; };
 		422F240B21B9AA2300707D13 /* test_boundingbox7.txt in Resources */ = {isa = PBXBuildFile; fileRef = 422F240A21B9AA2300707D13 /* test_boundingbox7.txt */; };
@@ -382,6 +383,7 @@
 		421F856B22328DB800811614 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4228ED9F296EDF020082B798 /* MailButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MailButtonView.swift; sourceTree = "<group>"; };
 		4228EDA0296EDF020082B798 /* MailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MailView.swift; sourceTree = "<group>"; };
+		4228EDA3296EEFD60082B798 /* BrowserMenu2ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowserMenu2ViewModel.swift; sourceTree = "<group>"; };
 		4229200E22EF5A9F006B4527 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		422C9487178A0347001BF506 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		422F240821B984A000707D13 /* test_boundingbox6.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = test_boundingbox6.txt; sourceTree = "<group>"; };
@@ -822,6 +824,7 @@
 				428666A5296EC83A001F0192 /* BrowserMenu2View.swift */,
 				4228ED9F296EDF020082B798 /* MailButtonView.swift */,
 				4228EDA0296EDF020082B798 /* MailView.swift */,
+				4228EDA3296EEFD60082B798 /* BrowserMenu2ViewModel.swift */,
 			);
 			path = Browser;
 			sourceTree = "<group>";
@@ -1852,6 +1855,7 @@
 				424CCA1B2160D9F900C91B41 /* HCView.swift in Sources */,
 				428666A6296EC83A001F0192 /* BrowserMenu2View.swift in Sources */,
 				42D0DDA0224549980066DB3D /* UIView+PinToInside.swift in Sources */,
+				4228EDA4296EEFD60082B798 /* BrowserMenu2ViewModel.swift in Sources */,
 				42C7B27722E309F500FFA1AD /* CanvasViewController+ConfigureNavigationBar.swift in Sources */,
 				42DE377220FDED180007845B /* HCToolbar.swift in Sources */,
 				42C7B27922E30DCB00FFA1AD /* CanvasViewController+Operations.swift in Sources */,
