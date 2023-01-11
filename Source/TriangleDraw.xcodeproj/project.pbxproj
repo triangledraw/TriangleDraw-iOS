@@ -59,6 +59,7 @@
 		426B951122CFE2B000DB9359 /* BrowserViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 426B951022CFE2B000DB9359 /* BrowserViewController.storyboard */; };
 		426B951322CFE86500DB9359 /* CanvasViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 426B951222CFE86500DB9359 /* CanvasViewController.storyboard */; };
 		426B951722D0A5FE00DB9359 /* BrowserViewController+PresentDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426B951622D0A5FE00DB9359 /* BrowserViewController+PresentDocument.swift */; };
+		42706B00296F3C2E00B8B8C0 /* HCMenuSubdivideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42706AFF296F3C2E00B8B8C0 /* HCMenuSubdivideView.swift */; };
 		4278E58E129C3CDB00CA8A15 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4278E58D129C3CDB00CA8A15 /* CoreGraphics.framework */; };
 		427B1657216914FB00228748 /* TDCanvasDrawingProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427B1656216914FB00228748 /* TDCanvasDrawingProtocol.swift */; };
 		427FE58522FB6B0D0032A235 /* E2Canvas+Subdivide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427FE58422FB6B0D0032A235 /* E2Canvas+Subdivide.swift */; };
@@ -419,6 +420,7 @@
 		426B951022CFE2B000DB9359 /* BrowserViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BrowserViewController.storyboard; sourceTree = "<group>"; };
 		426B951222CFE86500DB9359 /* CanvasViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CanvasViewController.storyboard; sourceTree = "<group>"; };
 		426B951622D0A5FE00DB9359 /* BrowserViewController+PresentDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BrowserViewController+PresentDocument.swift"; sourceTree = "<group>"; };
+		42706AFF296F3C2E00B8B8C0 /* HCMenuSubdivideView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HCMenuSubdivideView.swift; sourceTree = "<group>"; };
 		4278E58D129C3CDB00CA8A15 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		427B1656216914FB00228748 /* TDCanvasDrawingProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TDCanvasDrawingProtocol.swift; sourceTree = "<group>"; };
 		427FE58422FB6B0D0032A235 /* E2Canvas+Subdivide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "E2Canvas+Subdivide.swift"; sourceTree = "<group>"; };
@@ -907,6 +909,7 @@
 				42AC2D7D2308134B0089947B /* HCMenuViewController+ShareSVG.swift */,
 				42BB9663296F2E210049FA66 /* HCMenuView.swift */,
 				42BB9665296F2EA70049FA66 /* HCMenuViewModel.swift */,
+				42706AFF296F3C2E00B8B8C0 /* HCMenuSubdivideView.swift */,
 			);
 			path = Menu;
 			sourceTree = "<group>";
@@ -1831,6 +1834,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				42706B00296F3C2E00B8B8C0 /* HCMenuSubdivideView.swift in Sources */,
 				42E227C2210373E000D112E7 /* HCMenuViewController+SharePNG.swift in Sources */,
 				421E51C422EF67AF0005068E /* BrowserViewController+ImportDocumentExamples.swift in Sources */,
 				42AF9422215451C200D07373 /* HCFilledTriangle.metal in Sources */,
