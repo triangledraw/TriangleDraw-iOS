@@ -86,7 +86,7 @@ struct BrowserMenu2View: View {
                     }
                 }
             }
-        }
+        }.navigationViewStyle(.stack)
     }
 }
 
