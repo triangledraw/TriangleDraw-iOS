@@ -9,7 +9,7 @@ struct HCMenuView: View {
     @State private var symmetryMode: SymmetryMode = SymmetryMode.noSymmetry
 
     var body: some View {
-        NavigationView {
+        NavigationStack {
             Form {
                 Section(header: Text("Grid system")) {
                     Picker("Format", selection: $gridMode) {
@@ -22,7 +22,12 @@ struct HCMenuView: View {
                             Text(value.localizedDisplayName).tag(value)
                         }
                     }
-                    Button("Subdivide") {}
+                    NavigationLink("Subdivide") {
+                        HCMenuSubdivideView() { n in
+                            model.delegate?.hcMenuViewController_applySubdivide(n: n)
+                            dismiss()
+                        }
+                    }
                 }
                 Section(header: Text("Export")) {
                     Button("Bitmap PNG") {}

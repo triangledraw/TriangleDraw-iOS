@@ -2,26 +2,46 @@
 import SwiftUI
 
 struct HCMenuSubdivideView: View {
-    @State private var divisionSize: UInt = 2
+    let applySubdivide: (_ n: UInt8) -> Void
+    @State private var divisionSize: UInt8 = 2
+    let pickerValues: [UInt8] = [2, 3, 4, 5, 6, 7]
 
     var body: some View {
         Form {
-            Text("Split up all triangles into smaller triangles")
-            Picker("Divisions", selection: $divisionSize) {
-                Text("2").tag(2)
-                Text("3").tag(3)
-                Text("4").tag(4)
-                Text("5").tag(5)
-                Text("6").tag(6)
-                Text("7").tag(7)
-            }.pickerStyle(.wheel)
-            Button("Apply") {}
+            Section() {
+                HStack {
+                    Spacer()
+                    Text("Split up all triangles\ninto smaller triangles")
+                        .multilineTextAlignment(.center)
+                        .font(.title2)
+                    Spacer()
+                }
+            }
+            Section() {
+                Text("Select number of divisions")
+
+                Picker("Subdivide", selection: $divisionSize) {
+                    ForEach(pickerValues, id: \.self) { i in
+                        Text(String(i))
+                    }
+                }
+                .id(pickerValues)
+                .pickerStyle(.wheel)
+
+                Button("Apply") {
+                    self.applySubdivide(divisionSize)
+                }
+                .fontWeight(.bold)
+                .frame(maxWidth: .infinity, alignment: .center)
+            }
         }
+        .navigationTitle("Subdivide")
+        .navigationBarTitleDisplayMode(.inline)
     }
 }
 
 struct HCMenuSubdivideView_Previews: PreviewProvider {
     static var previews: some View {
-        HCMenuSubdivideView()
+        HCMenuSubdivideView() { _ in }
     }
 }
