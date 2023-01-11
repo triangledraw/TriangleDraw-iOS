@@ -29,6 +29,9 @@ class BrowserViewController: UIDocumentBrowserViewController {
 		// Since the application allows creating Particles documents, document creation is enabled on the `UIDocumentBrowserViewController`.
 		allowsDocumentCreation = true
 
+        // The default text is "Create Document". This is a drawing app.
+        localizedCreateDocumentActionTitle = "Create Drawing"
+
 		// In this application, selecting multiple items is not supported. Instead, only one document at a time can be opened.
 		allowsPickingMultipleItems = false
 
