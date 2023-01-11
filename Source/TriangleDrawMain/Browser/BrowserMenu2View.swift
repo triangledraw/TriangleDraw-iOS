@@ -4,6 +4,7 @@ import StoreKit
 
 struct BrowserMenu2View: View {
     @ObservedObject var model: BrowserMenu2ViewModel
+    @Environment(\.dismiss) var dismiss
 
     func appStoreWriteReviewAction() {
         if let scene = UIApplication.shared.connectedScenes.first as? UIWindowScene {
@@ -77,6 +78,14 @@ struct BrowserMenu2View: View {
                 }
             }
             .navigationTitle("TriangleDraw")
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItem(placement: .navigationBarLeading) {
+                    Button("OK") {
+                        dismiss()
+                    }
+                }
+            }
         }
     }
 }
