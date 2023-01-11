@@ -25,8 +25,15 @@ struct BrowserMenu2View: View {
         UIApplication.shared.open(url)
     }
 
-    func emailDeveloperAction() {
-        print("TODO: td_presentEmailWithFeedback open MFMailComposeViewController from SwiftUI")
+    var emailDeveloperButton: some View {
+        #if os(iOS)
+        let view = MailButtonView(
+            mailAttachmentData: nil
+        )
+        return AnyView(view)
+        #else
+        return AnyView(EmptyView())
+        #endif
     }
 
     var body: some View {
@@ -47,10 +54,7 @@ struct BrowserMenu2View: View {
                         "GitHub - TriangleDraw-Gallery",
                         action: githubTriangleDrawGalleryAction
                     )
-                    Button(
-                        "Email Developer",
-                        action: emailDeveloperAction
-                    )
+                    emailDeveloperButton
                 }
                 Section(header: Text("App info")) {
                     Text("Version x.y.z")

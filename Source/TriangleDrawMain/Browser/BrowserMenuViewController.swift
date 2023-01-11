@@ -16,13 +16,18 @@ class BrowserMenuViewController: RFFormViewController {
 		return nc
 	}
 
-    static func createInsideNavigationController() -> UINavigationController {
+    static func ycreateInsideNavigationController() -> UINavigationController {
         let vc = UIHostingController(rootView: BrowserMenu2View())
         let nc = UINavigationController(rootViewController: vc)
         nc.navigationBar.barStyle = .default
         nc.modalTransitionStyle = .crossDissolve
         nc.modalPresentationStyle = .formSheet
         return nc
+    }
+
+    static func createInsideNavigationController() -> UIViewController {
+        let vc = UIHostingController(rootView: BrowserMenu2View())
+        return vc
     }
 
 	override func loadView() {

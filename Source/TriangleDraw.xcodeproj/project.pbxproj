@@ -25,6 +25,8 @@
 		421E51C422EF67AF0005068E /* BrowserViewController+ImportDocumentExamples.swift in Sources */ = {isa = PBXBuildFile; fileRef = 421E51C322EF67AF0005068E /* BrowserViewController+ImportDocumentExamples.swift */; };
 		421F856A22328DB800811614 /* ThumbnailProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 421F856922328DB800811614 /* ThumbnailProvider.swift */; };
 		421F856E22328DB800811614 /* TriangleDrawThumbnail.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 421F856722328DB800811614 /* TriangleDrawThumbnail.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		4228EDA1296EDF020082B798 /* MailButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4228ED9F296EDF020082B798 /* MailButtonView.swift */; };
+		4228EDA2296EDF020082B798 /* MailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4228EDA0296EDF020082B798 /* MailView.swift */; };
 		422C9488178A0347001BF506 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 422C9487178A0347001BF506 /* Security.framework */; };
 		422F240921B984A000707D13 /* test_boundingbox6.txt in Resources */ = {isa = PBXBuildFile; fileRef = 422F240821B984A000707D13 /* test_boundingbox6.txt */; };
 		422F240B21B9AA2300707D13 /* test_boundingbox7.txt in Resources */ = {isa = PBXBuildFile; fileRef = 422F240A21B9AA2300707D13 /* test_boundingbox7.txt */; };
@@ -378,6 +380,8 @@
 		421F856722328DB800811614 /* TriangleDrawThumbnail.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = TriangleDrawThumbnail.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		421F856922328DB800811614 /* ThumbnailProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThumbnailProvider.swift; sourceTree = "<group>"; };
 		421F856B22328DB800811614 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4228ED9F296EDF020082B798 /* MailButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MailButtonView.swift; sourceTree = "<group>"; };
+		4228EDA0296EDF020082B798 /* MailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MailView.swift; sourceTree = "<group>"; };
 		4229200E22EF5A9F006B4527 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		422C9487178A0347001BF506 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		422F240821B984A000707D13 /* test_boundingbox6.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = test_boundingbox6.txt; sourceTree = "<group>"; };
@@ -816,6 +820,8 @@
 				426B951622D0A5FE00DB9359 /* BrowserViewController+PresentDocument.swift */,
 				422F507B20E835200054C702 /* DocumentNameGenerator.swift */,
 				428666A5296EC83A001F0192 /* BrowserMenu2View.swift */,
+				4228ED9F296EDF020082B798 /* MailButtonView.swift */,
+				4228EDA0296EDF020082B798 /* MailView.swift */,
 			);
 			path = Browser;
 			sourceTree = "<group>";
@@ -1819,6 +1825,7 @@
 				42E227C2210373E000D112E7 /* HCMenuViewController+SharePNG.swift in Sources */,
 				421E51C422EF67AF0005068E /* BrowserViewController+ImportDocumentExamples.swift in Sources */,
 				42AF9422215451C200D07373 /* HCFilledTriangle.metal in Sources */,
+				4228EDA2296EDF020082B798 /* MailView.swift in Sources */,
 				42A228B421A0D292009A2819 /* CGSize+MinMax.swift in Sources */,
 				422F508D20E835370054C702 /* DocumentNameGenerator.swift in Sources */,
 				42608ED021CE78F700A99669 /* CGSize+Inset.swift in Sources */,
@@ -1857,6 +1864,7 @@
 				42DE377420FDEEC60007845B /* CanvasViewController.swift in Sources */,
 				42AF9420215451C200D07373 /* HCMetalView+Interaction.swift in Sources */,
 				420967512235C02400D5C576 /* DocumentExample.swift in Sources */,
+				4228EDA1296EDF020082B798 /* MailButtonView.swift in Sources */,
 				42AC2D7E2308134B0089947B /* HCMenuViewController+ShareSVG.swift in Sources */,
 				42015C81173DA5E2007597E5 /* gpc.c in Sources */,
 				42AF941F215451C200D07373 /* HCBuildHexagonCanvas.swift in Sources */,
