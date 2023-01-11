@@ -2,8 +2,8 @@
 import SwiftUI
 import StoreKit
 
-struct BrowserMenu2View: View {
-    @ObservedObject var model: BrowserMenu2ViewModel
+struct BrowserMenuView: View {
+    @ObservedObject var model: BrowserMenuViewModel
     @Environment(\.dismiss) var dismiss
 
     func appStoreWriteReviewAction() {
@@ -92,7 +92,6 @@ struct BrowserMenu2View: View {
 
 struct BrowserMenu2View_Previews: PreviewProvider {
     static var previews: some View {
-        let model = BrowserMenu2ViewModel()
-        BrowserMenu2View(model: model)
+        BrowserMenuView(model: BrowserMenuViewModel())
     }
 }
