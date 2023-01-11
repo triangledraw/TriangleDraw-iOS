@@ -35,10 +35,6 @@ class BrowserViewController: UIDocumentBrowserViewController {
 		// In this application, selecting multiple items is not supported. Instead, only one document at a time can be opened.
 		allowsPickingMultipleItems = false
 
-		// Apple's "Numbers" app, looks great. It uses a "white" style and "green" tint.
-		browserUserInterfaceStyle = .white
-		view.tintColor = AppConstant.Browser.tintColor
-
 		if AppConstant.Browser.debug_installCustomActions {
 			installCustomActions()
 		}
