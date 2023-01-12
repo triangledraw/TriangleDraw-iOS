@@ -1,7 +1,6 @@
 // MIT license. Copyright (c) 2023 TriangleDraw. All rights reserved.
 import UIKit
 import TriangleDrawLibrary
-import RadiantForms
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -62,18 +61,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
     }
 
-	func configureForms() {
-		let builder = RFThemeBuilder.light
-		builder.tintColor = AppConstant.Browser.tintColor
-	}
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]? = nil) -> Bool {
 		LogHelper.setup_mainExecutable()
 
 		//AppDelegate.resetAppleLanguagesAfterUnittest()
 
         configureNavigationBar()
-		configureForms()
         dumpSystemInfo()
         trackLaunch()
 
