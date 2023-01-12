@@ -530,7 +530,8 @@ extension CanvasViewController: HCMenuViewControllerDelegate {
 		self.subdivide(n: n)
 	}
 
-	func hcMenuViewController_canvasGridModeDidChange() {
+	func hcMenuViewController_canvasGridModeDidChange(gridMode: CanvasGridMode) {
+        CanvasGridModeController().changeCanvasGridMode(to: gridMode)
 		hcView?.canvasGridModeDidChange()
 	}
 }

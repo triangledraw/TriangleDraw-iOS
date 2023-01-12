@@ -5,11 +5,12 @@ import TriangleDrawLibrary
 struct HCMenuView: View {
     @ObservedObject var model: HCMenuViewModel
     @Environment(\.dismiss) var dismiss
-    @State private var gridMode: CanvasGridMode = CanvasGridMode.smallFixedSizeDots
+    @State private var gridMode: CanvasGridMode
     @State private var symmetryMode: SymmetryMode
 
     init(model: HCMenuViewModel, symmetryMode: SymmetryMode) {
         self.model = model
+        self._gridMode = State(initialValue: model.initialGridMode)
         self._symmetryMode = State(initialValue: symmetryMode)
     }
 
@@ -21,13 +22,15 @@ struct HCMenuView: View {
                         ForEach(CanvasGridMode.allCases, id: \.self) { value in
                             Text(value.localizedDisplayName).tag(value)
                         }
+                    }.onChange(of: gridMode) { newValue in
+                        self.model.delegate?.hcMenuViewController_canvasGridModeDidChange(gridMode: newValue)
                     }
                     Picker("Symmetry", selection: $symmetryMode) {
                         ForEach(SymmetryMode.allCases, id: \.self) { value in
                             Text(value.localizedDisplayName).tag(value)
                         }
-                    }.onChange(of: symmetryMode) { tag in
-                        globalSymmetryMode = tag
+                    }.onChange(of: symmetryMode) { newValue in
+                        globalSymmetryMode = newValue
                     }
                     NavigationLink("Subdivide") {
                         HCMenuSubdivideView() { n in
