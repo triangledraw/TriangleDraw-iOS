@@ -30,7 +30,7 @@ public class HCMenuViewModel: ObservableObject {
 
     public enum ExportPNGStatus {
         case progress(progress: Float)
-        case ok(image: UIImage, filename: String?)
+        case ok(image: UIImage, filename: String)
         case error(message: String)
     }
 
@@ -54,6 +54,35 @@ public class HCMenuViewModel: ObservableObject {
             let elapsed: Double = t1 - t0
             log.debug("exportToPNG - ready for sharing. elapsed: \(elapsed.string2)")
             callback(ExportPNGStatus.ok(image: image, filename: filename))
+        }
+    }
+
+    public enum ExportPDFStatus {
+        case progress(progress: Float)
+        case ok(pdfData: Data, filename: String)
+        case error(message: String)
+    }
+
+    func exportToPDF(callback: @escaping (ExportPDFStatus) -> Void) {
+        guard let canvas: E2Canvas = self.initialCanvas else {
+            callback(ExportPDFStatus.error(message: "exportToPDF - Expected document.canvas to be non-nil, but got nil"))
+            return
+        }
+        log.debug("exportToPDF initiate")
+        let t0 = CFAbsoluteTimeGetCurrent()
+        let filename = document_displayName ?? ""
+
+        PDFExporter.createPDF(from: canvas, progress: { progress in
+            callback(ExportPDFStatus.progress(progress: progress))
+        }) { pdfData in // swiftlint:disable:this multiple_closures_with_trailing_closure
+            guard pdfData.count > 0 else {
+                callback(ExportPDFStatus.error(message: "exportToPDF - Expected size of pdf to be greater than 0 bytes"))
+                return
+            }
+            let t1 = CFAbsoluteTimeGetCurrent()
+            let elapsed: Double = t1 - t0
+            log.debug("exportToPDF - ready for sharing. elapsed: \(elapsed.string2)")
+            callback(ExportPDFStatus.ok(pdfData: pdfData, filename: filename))
         }
     }
 }

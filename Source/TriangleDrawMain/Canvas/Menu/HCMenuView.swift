@@ -5,7 +5,8 @@ import TTProgressHUD
 
 enum ShareData {
     case none
-    case exportPNG(image: UIImage, filename: String?)
+    case exportPNG(image: UIImage, filename: String)
+    case exportPDF(pdfData: Data, filename: String)
 }
 
 struct HCMenuView: View {
@@ -37,6 +38,25 @@ struct HCMenuView: View {
                     log.debug("progress: \(progress)")
                 case HCMenuViewModel.ExportPNGStatus.error(let message):
                     log.error("Unable to export to PNG. \(message)")
+                    hudVisible = false
+                }
+            }
+        }
+    }
+
+    var exportPDFButton: some View {
+        Button("Vector PDF") {
+            hudVisible = true
+            model.exportToPDF() { status in
+                switch status {
+                case let HCMenuViewModel.ExportPDFStatus.ok(pdfData, filename):
+                    hudVisible = false
+                    self.shareData = ShareData.exportPDF(pdfData: pdfData, filename: filename)
+                    self.isSharePresented = true
+                case HCMenuViewModel.ExportPDFStatus.progress(let progress):
+                    log.debug("progress: \(progress)")
+                case HCMenuViewModel.ExportPDFStatus.error(let message):
+                    log.error("Unable to export to PDF. \(message)")
                     hudVisible = false
                 }
             }
@@ -81,7 +101,7 @@ struct HCMenuView: View {
                 }
                 Section(header: Text("Export")) {
                     exportPNGButton
-                    Button("Vector PDF") {}
+                    exportPDFButton
                     Button("Vector SVG") {}
                 }
                 Section(header: Text("Feedback")) {
@@ -126,6 +146,9 @@ struct ActivityViewController: UIViewControllerRepresentable {
         case let .exportPNG(image, filename):
             log.debug("share: png")
             return HCMenuViewController.createSharePNGActivityViewController(image: image, filename: filename, triangleCount: 0)
+        case let .exportPDF(pdfData, filename):
+            log.debug("share: pdf")
+            return HCMenuViewController.createSharePDFActivityViewController(pdfData: pdfData, filename: filename, triangleCount: 0)
         }
     }
 
