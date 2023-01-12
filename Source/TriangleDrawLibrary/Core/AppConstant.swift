@@ -24,12 +24,6 @@ public struct AppConstant {
 
 	public struct Browser {
 		public static let debug_installCustomActions = false
-
-//		public static let tintColor: UIColor = AppConstant.ColorBlindSafe.ultramarine40
-//		public static let tintColor: UIColor = AppConstant.ColorBlindSafe.indigo50
-		public static let tintColor: UIColor = AppConstant.ColorBlindSafe.magenta50
-//		public static let tintColor: UIColor = AppConstant.ColorBlindSafe.orange40
-//		public static let tintColor: UIColor = AppConstant.ColorBlindSafe.gold20
 	}
 
 	public struct Canvas {
