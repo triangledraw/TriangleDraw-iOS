@@ -1,6 +1,6 @@
 source 'https://github.com/CocoaPods/Specs.git'
 swift_version = "5.0"
-platform :ios, '14'
+platform :ios, '16'
 use_frameworks!
 
 def my_pod_mbprogresshud
@@ -13,11 +13,6 @@ def my_pod_swiftybeaver
 	pod 'SwiftyBeaver', :git => 'https://github.com/SwiftyBeaver/SwiftyBeaver.git', :commit => 'dc3b9adf6c8faeb91a93b60993b5292d66b26c1c'
 end
 
-def my_pod_radiantforms
-	# https://github.com/radiantkit/radiantforms-ios/commits/develop
-	pod 'RadiantForms', :git => 'https://github.com/radiantkit/radiantforms-ios.git', :commit => 'd1f4642243c043f24dbb1af489715c1b8128572b'
-end
-
 abstract_target 'BasePods' do
 	my_pod_swiftybeaver
 
@@ -26,7 +21,6 @@ abstract_target 'BasePods' do
 
 	target 'TriangleDrawMain' do
 		my_pod_mbprogresshud
-		my_pod_radiantforms
 	end
 
 	target 'TriangleDrawThumbnail' do
