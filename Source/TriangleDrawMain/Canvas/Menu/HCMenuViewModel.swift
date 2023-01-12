@@ -7,15 +7,18 @@ import TriangleDrawLibrary
 public class HCMenuViewModel: ObservableObject {
     weak var delegate: HCMenuViewControllerDelegate?
     var initialGridMode: CanvasGridMode
+    var initialSymmetryMode: SymmetryMode
 
     init() {
         self.delegate = nil
         self.initialGridMode = CanvasGridMode.smallFixedSizeDots
+        self.initialSymmetryMode = SymmetryMode.noSymmetry
     }
 
     static func create() -> HCMenuViewModel {
         let instance = HCMenuViewModel()
         instance.initialGridMode = CanvasGridModeController().currentCanvasGridMode
+        instance.initialSymmetryMode = globalSymmetryMode
         return instance
     }
 }

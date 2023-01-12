@@ -8,10 +8,10 @@ struct HCMenuView: View {
     @State private var gridMode: CanvasGridMode
     @State private var symmetryMode: SymmetryMode
 
-    init(model: HCMenuViewModel, symmetryMode: SymmetryMode) {
+    init(model: HCMenuViewModel) {
         self.model = model
         self._gridMode = State(initialValue: model.initialGridMode)
-        self._symmetryMode = State(initialValue: symmetryMode)
+        self._symmetryMode = State(initialValue: model.initialSymmetryMode)
     }
 
     var body: some View {
@@ -63,6 +63,6 @@ struct HCMenuView: View {
 
 struct HCMenuView_Previews: PreviewProvider {
     static var previews: some View {
-        HCMenuView(model: HCMenuViewModel(), symmetryMode: .noSymmetry)
+        HCMenuView(model: HCMenuViewModel())
     }
 }

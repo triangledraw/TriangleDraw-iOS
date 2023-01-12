@@ -55,7 +55,7 @@ class HCMenuViewController: RFFormViewController {
     static func create(document: HexagonCanvasMenuDocument, delegate: HCMenuViewControllerDelegate?) -> UIViewController {
         let model = HCMenuViewModel.create()
         model.delegate = delegate
-        let rootView = HCMenuView(model: model, symmetryMode: globalSymmetryMode)
+        let rootView = HCMenuView(model: model)
         return UIHostingController(rootView: rootView)
     }
 
