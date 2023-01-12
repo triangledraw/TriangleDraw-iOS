@@ -7,6 +7,7 @@ enum ShareData {
     case none
     case exportPNG(image: UIImage, filename: String)
     case exportPDF(pdfData: Data, filename: String)
+    case exportSVG(svgData: Data, filename: String)
 }
 
 struct HCMenuView: View {
@@ -63,6 +64,20 @@ struct HCMenuView: View {
         }
     }
 
+    var exportSVGButton: some View {
+        Button("Vector SVG") {
+            model.exportToSVG() { status in
+                switch status {
+                case let HCMenuViewModel.ExportSVGStatus.ok(svgData, filename):
+                    self.shareData = ShareData.exportSVG(svgData: svgData, filename: filename)
+                    self.isSharePresented = true
+                case HCMenuViewModel.ExportSVGStatus.error(let message):
+                    log.error("Unable to export to SVG. \(message)")
+                }
+            }
+        }
+    }
+
     var emailDeveloperButton: some View {
         #if os(iOS)
         let view = MailButtonView(
@@ -102,7 +117,7 @@ struct HCMenuView: View {
                 Section(header: Text("Export")) {
                     exportPNGButton
                     exportPDFButton
-                    Button("Vector SVG") {}
+                    exportSVGButton
                 }
                 Section(header: Text("Feedback")) {
                     emailDeveloperButton
@@ -149,6 +164,9 @@ struct ActivityViewController: UIViewControllerRepresentable {
         case let .exportPDF(pdfData, filename):
             log.debug("share: pdf")
             return HCMenuViewController.createSharePDFActivityViewController(pdfData: pdfData, filename: filename, triangleCount: 0)
+        case let .exportSVG(svgData, filename):
+            log.debug("share: svg")
+            return HCMenuViewController.createShareSVGActivityViewController(svgData: svgData, filename: filename, triangleCount: 0)
         }
     }
 

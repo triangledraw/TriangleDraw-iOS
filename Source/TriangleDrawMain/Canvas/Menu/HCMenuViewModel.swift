@@ -28,7 +28,9 @@ public class HCMenuViewModel: ObservableObject {
         return instance
     }
 
-    public enum ExportPNGStatus {
+    // MARK: Export to PNG
+
+    enum ExportPNGStatus {
         case progress(progress: Float)
         case ok(image: UIImage, filename: String)
         case error(message: String)
@@ -57,7 +59,9 @@ public class HCMenuViewModel: ObservableObject {
         }
     }
 
-    public enum ExportPDFStatus {
+    // MARK: Export to PDF
+
+    enum ExportPDFStatus {
         case progress(progress: Float)
         case ok(pdfData: Data, filename: String)
         case error(message: String)
@@ -84,5 +88,34 @@ public class HCMenuViewModel: ObservableObject {
             log.debug("exportToPDF - ready for sharing. elapsed: \(elapsed.string2)")
             callback(ExportPDFStatus.ok(pdfData: pdfData, filename: filename))
         }
+    }
+
+    // MARK: Export to SVG
+
+    enum ExportSVGStatus {
+        case ok(svgData: Data, filename: String)
+        case error(message: String)
+    }
+
+    func exportToSVG(callback: @escaping (ExportSVGStatus) -> Void) {
+        guard let canvas: E2Canvas = self.initialCanvas else {
+            callback(ExportSVGStatus.error(message: "exportToSVG - Expected document.canvas to be non-nil, but got nil"))
+            return
+        }
+        log.debug("exportToSVG initiate")
+        let filename = document_displayName ?? ""
+
+        let exporter = SVGExporter(canvas: canvas)
+        exporter.appVersion = SystemInfo.appVersion
+        exporter.rotated = false
+        let svgData: Data = exporter.generateData()
+
+        guard svgData.count > 0 else {
+            callback(ExportSVGStatus.error(message: "exportToSVG - Expected size of svg to be greater than 0 bytes"))
+            return
+        }
+
+        log.debug("exportToSVG - ready for sharing.")
+        callback(ExportSVGStatus.ok(svgData: svgData, filename: filename))
     }
 }
