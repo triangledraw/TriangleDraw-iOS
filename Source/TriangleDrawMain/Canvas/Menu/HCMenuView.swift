@@ -89,40 +89,44 @@ struct HCMenuView: View {
         #endif
     }
 
-    var navigationStack: some View {
-        NavigationStack {
-            Form {
-                Section(header: Text("Grid system")) {
-                    Picker("Format", selection: $gridMode) {
-                        ForEach(CanvasGridMode.allCases, id: \.self) { value in
-                            Text(value.localizedDisplayName).tag(value)
-                        }
-                    }.onChange(of: gridMode) { newValue in
-                        self.model.delegate?.hcMenuViewController_canvasGridModeDidChange(gridMode: newValue)
+    var formContent: some View {
+        Form {
+            Section(header: Text("Grid system")) {
+                Picker("Format", selection: $gridMode) {
+                    ForEach(CanvasGridMode.allCases, id: \.self) { value in
+                        Text(value.localizedDisplayName).tag(value)
                     }
-                    Picker("Symmetry", selection: $symmetryMode) {
-                        ForEach(SymmetryMode.allCases, id: \.self) { value in
-                            Text(value.localizedDisplayName).tag(value)
-                        }
-                    }.onChange(of: symmetryMode) { newValue in
-                        globalSymmetryMode = newValue
-                    }
-                    NavigationLink("Subdivide") {
-                        HCMenuSubdivideView() { n in
-                            model.delegate?.hcMenuViewController_applySubdivide(n: n)
-                            dismiss()
-                        }
-                    }
+                }.onChange(of: gridMode) { newValue in
+                    self.model.delegate?.hcMenuViewController_canvasGridModeDidChange(gridMode: newValue)
                 }
-                Section(header: Text("Export")) {
-                    exportPNGButton
-                    exportPDFButton
-                    exportSVGButton
+                Picker("Symmetry", selection: $symmetryMode) {
+                    ForEach(SymmetryMode.allCases, id: \.self) { value in
+                        Text(value.localizedDisplayName).tag(value)
+                    }
+                }.onChange(of: symmetryMode) { newValue in
+                    globalSymmetryMode = newValue
                 }
-                Section(header: Text("Feedback")) {
-                    emailDeveloperButton
+                NavigationLink("Subdivide") {
+                    HCMenuSubdivideView() { n in
+                        model.delegate?.hcMenuViewController_applySubdivide(n: n)
+                        dismiss()
+                    }
                 }
             }
+            Section(header: Text("Export")) {
+                exportPNGButton
+                exportPDFButton
+                exportSVGButton
+            }
+            Section(header: Text("Feedback")) {
+                emailDeveloperButton
+            }
+        }
+    }
+
+    var navigationStack: some View {
+        NavigationStack {
+            formContent
             .navigationTitle("Canvas")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
