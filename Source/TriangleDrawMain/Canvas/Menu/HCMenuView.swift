@@ -14,6 +14,17 @@ struct HCMenuView: View {
         self._symmetryMode = State(initialValue: model.initialSymmetryMode)
     }
 
+    var emailDeveloperButton: some View {
+        #if os(iOS)
+        let view = MailButtonView(
+            mailAttachmentData: nil
+        )
+        return AnyView(view)
+        #else
+        return AnyView(EmptyView())
+        #endif
+    }
+
     var body: some View {
         NavigationStack {
             Form {
@@ -45,7 +56,7 @@ struct HCMenuView: View {
                     Button("Vector SVG") {}
                 }
                 Section(header: Text("Feedback")) {
-                    Button("Email Developer") {}
+                    emailDeveloperButton
                 }
             }
             .navigationTitle("Canvas")
