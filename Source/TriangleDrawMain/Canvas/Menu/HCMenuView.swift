@@ -6,7 +6,12 @@ struct HCMenuView: View {
     @ObservedObject var model: HCMenuViewModel
     @Environment(\.dismiss) var dismiss
     @State private var gridMode: CanvasGridMode = CanvasGridMode.smallFixedSizeDots
-    @State private var symmetryMode: SymmetryMode = SymmetryMode.noSymmetry
+    @State private var symmetryMode: SymmetryMode
+
+    init(model: HCMenuViewModel, symmetryMode: SymmetryMode) {
+        self.model = model
+        self._symmetryMode = State(initialValue: symmetryMode)
+    }
 
     var body: some View {
         NavigationStack {
@@ -21,6 +26,8 @@ struct HCMenuView: View {
                         ForEach(SymmetryMode.allCases, id: \.self) { value in
                             Text(value.localizedDisplayName).tag(value)
                         }
+                    }.onChange(of: symmetryMode) { tag in
+                        globalSymmetryMode = tag
                     }
                     NavigationLink("Subdivide") {
                         HCMenuSubdivideView() { n in
@@ -53,6 +60,6 @@ struct HCMenuView: View {
 
 struct HCMenuView_Previews: PreviewProvider {
     static var previews: some View {
-        HCMenuView(model: HCMenuViewModel())
+        HCMenuView(model: HCMenuViewModel(), symmetryMode: .noSymmetry)
     }
 }
