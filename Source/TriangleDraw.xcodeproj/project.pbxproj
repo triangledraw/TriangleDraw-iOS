@@ -115,6 +115,7 @@
 		42B5308912EC49390070D150 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42B5308812EC49390070D150 /* CFNetwork.framework */; };
 		42B5308D12EC494A0070D150 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42B5308C12EC494A0070D150 /* SystemConfiguration.framework */; };
 		42B686F723E3774000969839 /* VerboseInfoProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B686F623E3774000969839 /* VerboseInfoProvider.swift */; };
+		42B74E0C29703E5E00905A48 /* TTProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = 42B74E0B29703E5E00905A48 /* TTProgressHUD */; };
 		42BB9664296F2E210049FA66 /* HCMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42BB9663296F2E210049FA66 /* HCMenuView.swift */; };
 		42BB9666296F2EA70049FA66 /* HCMenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42BB9665296F2EA70049FA66 /* HCMenuViewModel.swift */; };
 		42C6B6EC21A74781004E7F58 /* HCZoomToFit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C6B6EB21A74781004E7F58 /* HCZoomToFit.swift */; };
@@ -670,6 +671,7 @@
 				28FD15080DC6FC5B0079059D /* QuartzCore.framework in Frameworks */,
 				4278E58E129C3CDB00CA8A15 /* CoreGraphics.framework in Frameworks */,
 				42FC77EE12AC1EF1008D213C /* MessageUI.framework in Frameworks */,
+				42B74E0C29703E5E00905A48 /* TTProgressHUD in Frameworks */,
 				42B5308912EC49390070D150 /* CFNetwork.framework in Frameworks */,
 				42B5308D12EC494A0070D150 /* SystemConfiguration.framework in Frameworks */,
 				42F0C2E622DA707C003F015B /* libTriangleDrawLibrary.a in Frameworks */,
@@ -1375,6 +1377,9 @@
 				42F0C2E422DA6F20003F015B /* PBXTargetDependency */,
 			);
 			name = TriangleDrawMain;
+			packageProductDependencies = (
+				42B74E0B29703E5E00905A48 /* TTProgressHUD */,
+			);
 			productName = Draw1;
 			productReference = 1D6058910D05DD3D006BFB54 /* TriangleDrawMain.app */;
 			productType = "com.apple.product-type.application";
@@ -1540,6 +1545,9 @@
 				Base,
 			);
 			mainGroup = 29B97314FDCFA39411CA2CEA /* CustomTemplate */;
+			packageReferences = (
+				42B74E0A29703E5E00905A48 /* XCRemoteSwiftPackageReference "TTProgressHUD" */,
+			);
 			productRefGroup = 19C28FACFE9D520D11CA2CBB /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -2683,6 +2691,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		42B74E0A29703E5E00905A48 /* XCRemoteSwiftPackageReference "TTProgressHUD" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/honkmaster/TTProgressHUD";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.0.5;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		42B74E0B29703E5E00905A48 /* TTProgressHUD */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 42B74E0A29703E5E00905A48 /* XCRemoteSwiftPackageReference "TTProgressHUD" */;
+			productName = TTProgressHUD;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 29B97313FDCFA39411CA2CEA /* Project object */;
 }

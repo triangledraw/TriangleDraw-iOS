@@ -1,0 +1,23 @@
+{
+  "pins" : [
+    {
+      "identity" : "swiftui-visual-effects",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/lucasbrown/swiftui-visual-effects.git",
+      "state" : {
+        "revision" : "b26f8cebd55ff60ed8953768aa818dfb005b5838",
+        "version" : "1.0.3"
+      }
+    },
+    {
+      "identity" : "ttprogresshud",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/honkmaster/TTProgressHUD",
+      "state" : {
+        "revision" : "2233fe789944154d04dff08d4567d96bc17cbf9a",
+        "version" : "0.0.5"
+      }
+    }
+  ],
+  "version" : 2
+}
