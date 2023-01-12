@@ -1,17 +1,46 @@
 // MIT license. Copyright (c) 2023 TriangleDraw. All rights reserved.
 import SwiftUI
 import TriangleDrawLibrary
+import TTProgressHUD
+
+enum ShareData {
+    case none
+    case exportPNG(image: UIImage, filename: String?)
+}
 
 struct HCMenuView: View {
     @ObservedObject var model: HCMenuViewModel
     @Environment(\.dismiss) var dismiss
     @State private var gridMode: CanvasGridMode
     @State private var symmetryMode: SymmetryMode
+    @State private var hudVisible = false
+    @State private var hudConfig = TTProgressHUDConfig(title: "Exporting")
+    @State private var isSharePresented: Bool = false
+    @State private var shareData: ShareData = .none
 
     init(model: HCMenuViewModel) {
         self.model = model
         self._gridMode = State(initialValue: model.initialGridMode)
         self._symmetryMode = State(initialValue: model.initialSymmetryMode)
+    }
+
+    var exportPNGButton: some View {
+        Button("Bitmap PNG") {
+            hudVisible = true
+            model.exportToPNG() { status in
+                switch status {
+                case let HCMenuViewModel.ExportPNGStatus.ok(image, filename):
+                    hudVisible = false
+                    self.shareData = ShareData.exportPNG(image: image, filename: filename)
+                    self.isSharePresented = true
+                case HCMenuViewModel.ExportPNGStatus.progress(let progress):
+                    log.debug("progress: \(progress)")
+                case HCMenuViewModel.ExportPNGStatus.error(let message):
+                    log.error("Unable to export to PNG. \(message)")
+                    hudVisible = false
+                }
+            }
+        }
     }
 
     var emailDeveloperButton: some View {
@@ -25,7 +54,7 @@ struct HCMenuView: View {
         #endif
     }
 
-    var body: some View {
+    var navigationStack: some View {
         NavigationStack {
             Form {
                 Section(header: Text("Grid system")) {
@@ -51,7 +80,7 @@ struct HCMenuView: View {
                     }
                 }
                 Section(header: Text("Export")) {
-                    Button("Bitmap PNG") {}
+                    exportPNGButton
                     Button("Vector PDF") {}
                     Button("Vector SVG") {}
                 }
@@ -70,6 +99,37 @@ struct HCMenuView: View {
             }
         }.navigationViewStyle(.stack)
     }
+
+    var body: some View {
+        ZStack(alignment: .top) {
+            navigationStack
+            TTProgressHUD($hudVisible, config: hudConfig)
+        }
+        .sheet(isPresented: $isSharePresented, onDismiss: {
+            log.debug("dismiss ActivityViewController")
+            shareData = .none
+        }, content: {
+            ActivityViewController(shareData: $shareData)
+        })
+    }
+}
+
+struct ActivityViewController: UIViewControllerRepresentable {
+    @Binding var shareData: ShareData
+
+    func makeUIViewController(context: UIViewControllerRepresentableContext<ActivityViewController>) -> UIActivityViewController {
+        switch shareData {
+        case .none:
+            log.debug("share: none")
+            let activityItems = [URL(string: "http://www.triangledraw.com/")!]
+            return UIActivityViewController(activityItems: activityItems, applicationActivities: nil)
+        case let .exportPNG(image, filename):
+            log.debug("share: png")
+            return HCMenuViewController.createSharePNGActivityViewController(image: image, filename: filename, triangleCount: 0)
+        }
+    }
+
+    func updateUIViewController(_ uiViewController: UIActivityViewController, context: UIViewControllerRepresentableContext<ActivityViewController>) {}
 }
 
 struct HCMenuView_Previews: PreviewProvider {

@@ -55,6 +55,16 @@ class HCMenuViewController: RFFormViewController {
     static func create(document: HexagonCanvasMenuDocument, delegate: HCMenuViewControllerDelegate?) -> UIViewController {
         let model = HCMenuViewModel.create()
         model.delegate = delegate
+
+        switch document {
+        case let .document(document):
+            model.initialCanvas = document.canvas
+            model.document_displayName = document.displayName
+        case .mock:
+            model.initialCanvas = DocumentExample.triangledrawLogo.canvas
+            model.document_displayName = "Mock"
+        }
+
         let rootView = HCMenuView(model: model)
         return UIHostingController(rootView: rootView)
     }
@@ -301,7 +311,7 @@ extension HCMenuViewController: HCMenuSubdivideViewControllerDelegate {
 }
 
 extension E2Canvas {
-	fileprivate func computeTriangleCount() -> UInt {
+	func computeTriangleCount() -> UInt {
         // swiftlint:disable identifier_name
 		let n1: UInt = self.numberOfDifferences(from: E2Canvas.createBigCanvas())
 		let n2: UInt = self.numberOfDifferences(from: E2Canvas.bigCanvasMask())
