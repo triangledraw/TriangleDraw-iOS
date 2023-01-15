@@ -7,7 +7,7 @@ public class TDCanvasWriter {
         let height: Int = Int(canvas.height)
         var rows = [String]()
         rows.append("P1")
-        rows.append("# {\"FileFormat\":3,\"ToolName\":\"TriangleDraw-iOS\",\"ToolVersion\":\"2021.10.13\"}")
+        rows.append("# {\"FileFormat\":3,\"ToolName\":\"TriangleDraw-iOS\",\"ToolVersion\":\"2023.1.15\"}")
         rows.append("\(width) \(height)")
         for y in 0..<height {
             var cells = [String]()
