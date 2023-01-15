@@ -22,14 +22,14 @@ extension CanvasViewController {
 	}
 
 	@objc func rotateCCW() {
-		log.debug("enter")
+//		log.debug("enter")
 		disableInteraction()
 		let actionName = NSLocalizedString("OPERATION_ROTATE_60_CLOCKWISE", tableName: "CanvasVC", bundle: Bundle.main, value: "", comment: "The rotate 60 degree clockwise operations undo/redo name")
 		registerForUndo(#selector(rotateCW), actionName)
 		drawingView?.rotateAnimation(degrees: 60) { [weak self] in
 			self?.didRotateCCW()
 		}
-		log.debug("leave")
+//		log.debug("leave")
 	}
 
 	fileprivate func didRotateCCW() {
@@ -39,7 +39,7 @@ extension CanvasViewController {
 	}
 
 	@objc func rotateCW() {
-		log.debug("enter")
+//		log.debug("enter")
 		disableInteraction()
         // swiftlint:disable:next line_length
 		let actionName = NSLocalizedString("OPERATION_ROTATE_60_COUNTERCLOCKWISE", tableName: "CanvasVC", bundle: Bundle.main, value: "", comment: "The rotate 60 degree counter-clockwise operations undo/redo name")
@@ -47,7 +47,7 @@ extension CanvasViewController {
 		drawingView?.rotateAnimation(degrees: -60) { [weak self] in
 			self?.didRotateCW()
 		}
-		log.debug("leave")
+//		log.debug("leave")
 	}
 
 	fileprivate func didRotateCW() {
