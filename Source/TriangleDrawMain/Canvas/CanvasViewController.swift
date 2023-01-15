@@ -59,10 +59,9 @@ class CanvasViewController: UIViewController {
 
 	static func createInsideNavigationController() -> (UINavigationController, CanvasViewController) {
 		let vc = CanvasViewController.create()
-		let nc = UINavigationController(rootViewController: vc)
-		nc.navigationBar.barStyle = .black
-		nc.modalTransitionStyle = .crossDissolve
-		return (nc, vc)
+        let nc = CanvasNavigationController(rootViewController: vc)
+        nc.configure()
+        return (nc, vc)
 	}
 
 	required init?(coder aDecoder: NSCoder) {

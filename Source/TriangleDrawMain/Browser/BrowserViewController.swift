@@ -96,13 +96,6 @@ class BrowserViewController: UIDocumentBrowserViewController {
 		customActions = [action]
 	}
 
-	override var preferredStatusBarStyle: UIStatusBarStyle {
-
-		// Since the `UIDocumentBrowserViewController` is configured to use the "dark" browser user interface style, using the "lightContent" for the
-		// status bar is a good choice.
-		return UIStatusBarStyle.default
-	}
-
 	// MARK: Gear that opens a Menu
 
 	func menu_installMenuButton() {

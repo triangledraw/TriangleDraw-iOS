@@ -68,6 +68,7 @@
 		42851C8D2301F7330047C7D0 /* test_orientation_upward.pbm in Resources */ = {isa = PBXBuildFile; fileRef = 42851C8B2301F7330047C7D0 /* test_orientation_upward.pbm */; };
 		42851C8F2301F7760047C7D0 /* E2CanvasPointOrientationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42851C8E2301F7760047C7D0 /* E2CanvasPointOrientationTests.swift */; };
 		428666A6296EC83A001F0192 /* BrowserMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428666A5296EC83A001F0192 /* BrowserMenuView.swift */; };
+		428762DC2974511000AA8EE8 /* CanvasNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428762DB2974511000AA8EE8 /* CanvasNavigationController.swift */; };
 		4289827921E7EDA600FC0431 /* BorderedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4289827821E7EDA600FC0431 /* BorderedButton.swift */; };
 		428B12961832A46500718BEA /* CanvasVC.strings in Resources */ = {isa = PBXBuildFile; fileRef = 428B12911832A46500718BEA /* CanvasVC.strings */; };
 		428B12DF1832A90700718BEA /* CanvasVC.strings in Resources */ = {isa = PBXBuildFile; fileRef = 428B12DD1832A90700718BEA /* CanvasVC.strings */; };
@@ -430,6 +431,7 @@
 		42851C8E2301F7760047C7D0 /* E2CanvasPointOrientationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = E2CanvasPointOrientationTests.swift; sourceTree = "<group>"; };
 		42855B9F19CDFE030000420E /* TriangleDrawMain-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TriangleDrawMain-Bridging-Header.h"; sourceTree = "<group>"; };
 		428666A5296EC83A001F0192 /* BrowserMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowserMenuView.swift; sourceTree = "<group>"; };
+		428762DB2974511000AA8EE8 /* CanvasNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasNavigationController.swift; sourceTree = "<group>"; };
 		4289827821E7EDA600FC0431 /* BorderedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderedButton.swift; sourceTree = "<group>"; };
 		428B12921832A46500718BEA /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = CanvasVC.strings; sourceTree = "<group>"; };
 		428B12DE1832A90700718BEA /* pt_PT */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pt_PT; path = CanvasVC.strings; sourceTree = "<group>"; };
@@ -963,6 +965,7 @@
 				42AF9413215451C200D07373 /* AAPLMathUtilities.h */,
 				42AF9416215451C200D07373 /* AAPLMathUtilities.m */,
 				42F236B61763FB0500C5D3B9 /* Assets */,
+				428762DB2974511000AA8EE8 /* CanvasNavigationController.swift */,
 				426B951222CFE86500DB9359 /* CanvasViewController.storyboard */,
 				42DE377320FDEEC50007845B /* CanvasViewController.swift */,
 				42608ED721CEA5F500A99669 /* CanvasViewController+ConfigureHCView.swift */,
@@ -1895,6 +1898,7 @@
 				42E227C4210373E000D112E7 /* TDCalculateCubicBezier.swift in Sources */,
 				42608ECE21CE77C700A99669 /* UIEdgeInsets+InsetsByAdding.swift in Sources */,
 				427B1657216914FB00228748 /* TDCanvasDrawingProtocol.swift in Sources */,
+				428762DC2974511000AA8EE8 /* CanvasNavigationController.swift in Sources */,
 				42E227C9210373E000D112E7 /* UITextField+TDAlign.swift in Sources */,
 				42AF941C215451C200D07373 /* HCBuildEdgeAroundHexagon.swift in Sources */,
 				42608ED221CE832000A99669 /* CGRect+FitSizeInSize.swift in Sources */,

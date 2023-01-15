@@ -48,25 +48,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         trackActivation(runCount)
     }
 
-    func configureNavigationBar() {
-        if #available(iOS 15, *) {
-            // On the draw page, the navigationbar is semitransparent with blurry background.
-            let appearance = UINavigationBarAppearance()
-            appearance.configureWithTransparentBackground()
-            appearance.backgroundColor = UIColor.clear
-            appearance.backgroundEffect = UIBlurEffect(style: .dark)
-            UINavigationBar.appearance().standardAppearance = appearance
-            UINavigationBar.appearance().scrollEdgeAppearance = appearance
-            UINavigationBar.appearance().compactAppearance = appearance
-        }
-    }
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]? = nil) -> Bool {
 		LogHelper.setup_mainExecutable()
 
 		//AppDelegate.resetAppleLanguagesAfterUnittest()
 
-        configureNavigationBar()
         dumpSystemInfo()
         trackLaunch()
 
