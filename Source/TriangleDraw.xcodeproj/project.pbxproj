@@ -2163,10 +2163,11 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 2021.10.13;
-				PRODUCT_BUNDLE_IDENTIFIER = com.triangledraw.td6;
+				PRODUCT_BUNDLE_IDENTIFIER = com.triangledraw.td3;
 				PRODUCT_NAME = TriangleDrawMain;
 				PROVISIONING_PROFILE = "8d8084cb-8210-4ff6-b0be-55134390795b";
 				PROVISIONING_PROFILE_SPECIFIER = "TriangleDraw6 Main Development";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "TriangleDraw3 Main Development";
 				STRIP_INSTALLED_PRODUCT = NO;
 				SWIFT_OBJC_BRIDGING_HEADER = "TriangleDrawMain/main/TriangleDrawMain-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -2195,10 +2196,11 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 2021.10.13;
-				PRODUCT_BUNDLE_IDENTIFIER = com.triangledraw.td6;
+				PRODUCT_BUNDLE_IDENTIFIER = com.triangledraw.td3;
 				PRODUCT_NAME = TriangleDrawMain;
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "TriangleDraw6 Main AppStore";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "TriangleDraw3 Main AppStore";
 				SWIFT_OBJC_BRIDGING_HEADER = "TriangleDrawMain/main/TriangleDrawMain-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -2242,10 +2244,10 @@
 				);
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = com.triangledraw.td6.UITests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.triangledraw.td3.UITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "TriangleDraw6 UITests Development";
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "TriangleDraw6 UITests Development";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "TriangleDraw3 UITests Development";
 				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -2286,10 +2288,10 @@
 				);
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = com.triangledraw.td6.UITests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.triangledraw.td3.UITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "TriangleDraw6 UITests Development";
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "TriangleDraw6 UITests Development";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "TriangleDraw3 UITests Development";
 				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -2338,9 +2340,10 @@
 				MARKETING_VERSION = 2021.10.13;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = com.triangledraw.td6.thumbnail;
+				PRODUCT_BUNDLE_IDENTIFIER = com.triangledraw.td3.thumbnail;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "TriangleDraw6 Thumbnail Development";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "TriangleDraw3 Thumbnail Development";
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -2382,9 +2385,10 @@
 				MARKETING_VERSION = 2021.10.13;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = com.triangledraw.td6.thumbnail;
+				PRODUCT_BUNDLE_IDENTIFIER = com.triangledraw.td3.thumbnail;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "TriangleDraw6 Thumbnail AppStore";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "TriangleDraw3 Thumbnail AppStore";
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;

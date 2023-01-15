@@ -21,7 +21,7 @@
 			<string>Owner</string>
 			<key>LSItemContentTypes</key>
 			<array>
-				<string>com.triangledraw.td6.doc</string>
+				<string>com.triangledraw.td3.doc</string>
 			</array>
 			<key>LSTypeIsPackage</key>
 			<false/>
@@ -53,7 +53,7 @@
 		<true/>
 	</dict>
 	<key>NSPhotoLibraryAddUsageDescription</key>
-	<string>Save your TriangleDraw&apos;ings to your Photo Library </string>
+	<string>Save your TriangleDraw'ings to your Photo Library </string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
@@ -89,7 +89,7 @@
 			<key>UTTypeIconFiles</key>
 			<array/>
 			<key>UTTypeIdentifier</key>
-			<string>com.triangledraw.td6.doc</string>
+			<string>com.triangledraw.td3.doc</string>
 			<key>UTTypeTagSpecification</key>
 			<dict>
 				<key>public.filename-extension</key>
