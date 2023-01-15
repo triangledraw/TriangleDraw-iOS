@@ -18,25 +18,28 @@
 # - Doesn't crash when running UITests.
 #
 lane :snapshot_canvas do
-	xcode_select("/Applications/Xcode.app")
-	
-	my_devices = [
-		# iPad 12.9" display
-		"iPad Pro (12.9-inch) (3rd generation)",
-		"iPad Pro (12.9-inch) (2nd generation)",
-		
-		# iPhone 6.5" display
-		"iPhone Xs Max",
-		
-		# iPhone 5.5" display
-		"iPhone 8 Plus",
-	]
-	capture_ios_screenshots(
-		devices: my_devices,
-		ios_version: '13.0',
-		skip_open_summary: true,
-		clean: false,
-		stop_after_first_error: true,
-		concurrent_simulators: false
-	)
+    xcode_select("/Applications/Xcode.app")
+    
+    my_devices = [
+        # iPad 12.9" display
+        "iPad Pro (12.9-inch) (6th generation)",
+        "iPad Pro (12.9-inch) (2nd generation)",
+        
+        # iPhone 6.7" display
+        "iPhone 14 Pro Max",
+        
+        # iPhone 6.5" display
+        "iPhone Xs Max",
+        
+        # iPhone 5.5" display
+        "iPhone 8 Plus",
+    ]
+    capture_ios_screenshots(
+        devices: my_devices,
+        ios_version: '16.0',
+        skip_open_summary: true,
+        clean: false,
+        stop_after_first_error: true,
+        concurrent_simulators: false
+    )
 end
