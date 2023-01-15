@@ -2152,8 +2152,6 @@
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 22DR89XVRF;
-				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 22DR89XVRF;
 				GCC_DYNAMIC_NO_PIC = NO;
 				"GCC_THUMB_SUPPORT[arch=armv6]" = "";
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
@@ -2166,7 +2164,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.triangledraw.td3;
 				PRODUCT_NAME = TriangleDrawMain;
 				PROVISIONING_PROFILE = "8d8084cb-8210-4ff6-b0be-55134390795b";
-				PROVISIONING_PROFILE_SPECIFIER = "TriangleDraw6 Main Development";
+				PROVISIONING_PROFILE_SPECIFIER = "TriangleDraw3 Main Development";
 				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "TriangleDraw3 Main Development";
 				STRIP_INSTALLED_PRODUCT = NO;
 				SWIFT_OBJC_BRIDGING_HEADER = "TriangleDrawMain/main/TriangleDrawMain-Bridging-Header.h";
@@ -2186,8 +2184,6 @@
 				COPY_PHASE_STRIP = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 22DR89XVRF;
-				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 22DR89XVRF;
 				"GCC_THUMB_SUPPORT[arch=armv6]" = "";
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "$(SRCROOT)/TriangleDrawMain/Resources/Info.plist";
@@ -2199,7 +2195,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.triangledraw.td3;
 				PRODUCT_NAME = TriangleDrawMain;
 				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "TriangleDraw6 Main AppStore";
+				PROVISIONING_PROFILE_SPECIFIER = "TriangleDraw3 Main AppStore";
 				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "TriangleDraw3 Main AppStore";
 				SWIFT_OBJC_BRIDGING_HEADER = "TriangleDrawMain/main/TriangleDrawMain-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -2224,9 +2220,6 @@
 				CODE_SIGN_STYLE = Manual;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEVELOPMENT_TEAM = YSABPVXCLN;
-				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 22DR89XVRF;
-				"DEVELOPMENT_TEAM[sdk=macosx*]" = "";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -2246,7 +2239,7 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.triangledraw.td3.UITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "TriangleDraw6 UITests Development";
+				PROVISIONING_PROFILE_SPECIFIER = "TriangleDraw3 UITests Development";
 				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "TriangleDraw3 UITests Development";
 				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
 				SWIFT_VERSION = 5.0;
@@ -2272,9 +2265,6 @@
 				CODE_SIGN_STYLE = Manual;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = YSABPVXCLN;
-				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 22DR89XVRF;
-				"DEVELOPMENT_TEAM[sdk=macosx*]" = "";
 				ENABLE_NS_ASSERTIONS = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
@@ -2290,8 +2280,8 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.triangledraw.td3.UITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "TriangleDraw6 UITests Development";
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "TriangleDraw3 UITests Development";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "";
 				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -2321,8 +2311,6 @@
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEVELOPMENT_TEAM = YSABPVXCLN;
-				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 22DR89XVRF;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -2342,7 +2330,7 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.triangledraw.td3.thumbnail;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "TriangleDraw6 Thumbnail Development";
+				PROVISIONING_PROFILE_SPECIFIER = "TriangleDraw3 Thumbnail Development";
 				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "TriangleDraw3 Thumbnail Development";
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -2370,8 +2358,6 @@
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = YSABPVXCLN;
-				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 22DR89XVRF;
 				ENABLE_NS_ASSERTIONS = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
@@ -2387,7 +2373,7 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.triangledraw.td3.thumbnail;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "TriangleDraw6 Thumbnail AppStore";
+				PROVISIONING_PROFILE_SPECIFIER = "TriangleDraw3 Thumbnail AppStore";
 				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "TriangleDraw3 Thumbnail AppStore";
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -2572,7 +2558,8 @@
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Development: Simon Strandgaard (2TT32WZZZQ)";
+				DEVELOPMENT_TEAM = 22DR89XVRF;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -2620,7 +2607,8 @@
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Distribution: Simon Strandgaard (22DR89XVRF)";
+				DEVELOPMENT_TEAM = 22DR89XVRF;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
