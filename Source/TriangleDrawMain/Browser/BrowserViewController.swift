@@ -32,6 +32,9 @@ class BrowserViewController: UIDocumentBrowserViewController {
         // The default text is "Create Document". This is a drawing app.
         localizedCreateDocumentActionTitle = "Create Drawing"
 
+        // The "Create Document" button, has a default ration of 2/3 and is inconsistent with the TriangleDraw square thumbnails.
+        defaultDocumentAspectRatio = 1
+
 		// In this application, selecting multiple items is not supported. Instead, only one document at a time can be opened.
 		allowsPickingMultipleItems = false
 
