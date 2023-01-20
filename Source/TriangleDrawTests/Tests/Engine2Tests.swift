@@ -1,8 +1,9 @@
-// MIT license. Copyright (c) 2021 TriangleDraw. All rights reserved.
+// MIT license. Copyright (c) 2023 TriangleDraw. All rights reserved.
 import XCTest
 @testable import TriangleDrawMain
 @testable import TriangleDrawLibrary
 
+// swiftlint:disable type_body_length
 class Engine2Tests: XCTestCase {
 	func point(_ x: Int, _ y: Int) -> E2CanvasPoint {
 		return E2CanvasPoint(x: x, y: y)
@@ -148,6 +149,7 @@ class Engine2Tests: XCTestCase {
         XCTAssertEqual(actual, expected)
     }
 
+    // swiftlint:disable:next function_body_length
     func testPointToTriangle1() {
         /*
          
@@ -238,6 +240,7 @@ class Engine2Tests: XCTestCase {
         }
     }
 
+    // swiftlint:disable:next function_body_length
     func testPointToTriangle2() {
         /*
          
@@ -374,6 +377,7 @@ class Engine2Tests: XCTestCase {
         }
     }
 
+    // swiftlint:disable:next function_body_length
     func testIndexForPoint2() {
 		let c: E2Canvas = createCanvas(2, 4)
         // column 0
@@ -559,4 +563,4 @@ class Engine2Tests: XCTestCase {
         let expected = canvasExpected.stringRepresentation
         XCTAssertEqual(actual, expected)
     }
-}
+} // swiftlint:disable:this file_length

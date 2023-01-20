@@ -1,4 +1,4 @@
-// MIT license. Copyright (c) 2021 TriangleDraw. All rights reserved.
+// MIT license. Copyright (c) 2023 TriangleDraw. All rights reserved.
 
 public struct E2CanvasBoundingBox {
 	/// Index of the left-most column where the user have drawn content.
@@ -52,7 +52,7 @@ extension E2CanvasBoundingBox {
 	public var midX: Float {
 		return Float(1 + minX + maxX) / 2
 	}
-	
+
 	public var midY: Float {
 		return Float(1 + minY + maxY) / 2
 	}
@@ -112,6 +112,7 @@ public class E2CanvasBoundingBoxFinder {
 		var foundNumberOfOccurances: UInt = 0
 		var foundPixelValue: UInt8 = 255
 		for (pixelValue, numberOfOccurrances) in self.histogram {
+            // swiftlint:disable:next for_where
 			if numberOfOccurrances > foundNumberOfOccurances {
 				foundNumberOfOccurances = numberOfOccurrances
 				foundPixelValue = pixelValue

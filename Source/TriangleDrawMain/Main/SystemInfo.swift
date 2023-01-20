@@ -1,4 +1,4 @@
-// MIT license. Copyright (c) 2021 TriangleDraw. All rights reserved.
+// MIT license. Copyright (c) 2023 TriangleDraw. All rights reserved.
 import UIKit
 import TriangleDrawLibrary
 
@@ -85,6 +85,15 @@ class SystemInfo {
 		return formatter.string(from: date)
 	}
 
+    static var creationDateStringShort: String {
+        guard let date = creationDate else {
+            return "Unknown"
+        }
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd"
+        formatter.timeZone = TimeZone(abbreviation: "UTC")
+        return formatter.string(from: date)
+    }
 
 	/// Obtain the machine hardware platform from the `uname()` unix command
 	///
@@ -96,6 +105,7 @@ class SystemInfo {
 		uname(&utsnameInstance)
 		let optionalString: String? = withUnsafePointer(to: &utsnameInstance.machine) {
 			$0.withMemoryRebound(to: CChar.self, capacity: 1) {
+                // swiftlint:disable:next closure_parameter_position
 				ptr in String.init(validatingUTF8: ptr)
 			}
 		}

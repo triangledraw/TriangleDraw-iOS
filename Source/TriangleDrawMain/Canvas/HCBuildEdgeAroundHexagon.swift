@@ -1,9 +1,11 @@
-// MIT license. Copyright (c) 2021 TriangleDraw. All rights reserved.
+// MIT license. Copyright (c) 2023 TriangleDraw. All rights reserved.
 import CoreGraphics
 import TriangleDrawLibrary
 
 class HCBuildEdgeAroundHexagon {
+    // swiftlint:disable:next identifier_name
 	let edgetriangle_vertices: [HCFilledTriangleVertex]
+    // swiftlint:disable:next identifier_name
 	let edgetriangle_indices: [UInt16]
 
 	init(corners: HCHexagonCorners, extrudeScale: CGFloat = 1.05, color: TDFloat4, debug: Bool = false) {
@@ -60,7 +62,6 @@ class HCBuildEdgeAroundHexagon {
 		// Side between middleRight and bottomRight
 		append(corners.bottomRight, corners.middleRight, extrudedBottomRight)
 		append(extrudedMiddleRight, corners.middleRight, extrudedBottomRight)
-
 
 		var indices = [UInt16]()
 		for i in 0..<vertices.count {

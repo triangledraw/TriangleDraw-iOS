@@ -1,4 +1,4 @@
-// MIT license. Copyright (c) 2021 TriangleDraw. All rights reserved.
+// MIT license. Copyright (c) 2023 TriangleDraw. All rights reserved.
 import Foundation
 
 public class E2TagPair: NSObject {
@@ -50,7 +50,9 @@ public class E2TagPair: NSObject {
 			guard let first: Int = indexset.first else {
 				continue
 			}
+            // swiftlint:disable:next unused_enumerated
 			for (_, index) in indexset.enumerated() {
+                // swiftlint:disable:next for_where
 				if index != first {
 					replacements[index] = first
 				}

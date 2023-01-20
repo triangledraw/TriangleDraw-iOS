@@ -1,6 +1,7 @@
-// MIT license. Copyright (c) 2021 TriangleDraw. All rights reserved.
+// MIT license. Copyright (c) 2023 TriangleDraw. All rights reserved.
 import Foundation
 
+// swiftlint:disable identifier_name
 class DocumentNameGenerator {
     class func defaultName(_ defaultNamex: String, existingNames: Set<AnyHashable>) -> String {
 		let trimmedName: String = defaultNamex.trim()
@@ -104,7 +105,7 @@ class DocumentNameGenerator {
 			if let r: Range = Range(match.range(at: 1), in: trimmedName) {
 				defaultName = String(trimmedName[r])
 			}
-			var s1: String? = nil
+			var s1: String?
 			if let r: Range = Range(match.range(at: 2), in: trimmedName) {
 				s1 = String(trimmedName[r])
 			}

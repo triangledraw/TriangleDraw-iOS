@@ -1,12 +1,12 @@
-// MIT license. Copyright (c) 2021 TriangleDraw. All rights reserved.
+// MIT license. Copyright (c) 2023 TriangleDraw. All rights reserved.
 import Foundation
 
 public enum CanvasGridMode: String, CaseIterable {
 	/// Tiny dots that are barely noticable with a size unaffected by the zoom level.
-	case smallFixedSizeDots = "smallFixedSizeDots"
+	case smallFixedSizeDots
 
 	/// Big dots that changes size depending on the zoom level.
-	case bigZoomableDots = "bigZoomableDots"
+	case bigZoomableDots
 }
 
 extension CanvasGridMode {

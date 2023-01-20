@@ -1,6 +1,8 @@
-// MIT license. Copyright (c) 2021 TriangleDraw. All rights reserved.
+// MIT license. Copyright (c) 2023 TriangleDraw. All rights reserved.
 import Foundation
 import CoreGraphics
+
+// swiftlint:disable identifier_name
 
 public struct E2TriangleResult {
     // x can be: -1, 0, +1
@@ -200,8 +202,6 @@ public class E2Canvas {
 		let value: UInt8 = getPixel(point)
 		print("pixel[\(x), \(y)] = \(value)")
 	}
-
-
 
     /*
      aPoint.x must be in the range 0..1

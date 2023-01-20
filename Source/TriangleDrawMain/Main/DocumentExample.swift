@@ -1,12 +1,13 @@
-// MIT license. Copyright (c) 2021 TriangleDraw. All rights reserved.
+// MIT license. Copyright (c) 2023 TriangleDraw. All rights reserved.
 import Foundation
 import TriangleDrawLibrary
-
 
 enum DocumentExample: String {
 	case blankFile = "Drawing"
 	case triangledrawLogo = "triangledraw logo"
+    // swiftlint:disable:next identifier_name
 	case developer_rows
+    // swiftlint:disable:next identifier_name
 	case developer_columns
 	case rune1 = "rune 1"
 	case injection

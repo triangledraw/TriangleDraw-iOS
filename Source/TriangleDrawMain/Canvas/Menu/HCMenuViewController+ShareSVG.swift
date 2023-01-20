@@ -1,4 +1,4 @@
-// MIT license. Copyright (c) 2021 TriangleDraw. All rights reserved.
+// MIT license. Copyright (c) 2023 TriangleDraw. All rights reserved.
 import UIKit
 import TriangleDrawLibrary
 
@@ -18,7 +18,7 @@ extension HCMenuViewController {
 			log.error("failed to write: \(url) \(error)")
 			fatalError()
 		}
-		
+
         let emailSubject = "TriangleDraw - \(filename)"
         let avc = UIActivityViewController(activityItems: [url], applicationActivities: nil)
 		avc.excludedActivityTypes = [

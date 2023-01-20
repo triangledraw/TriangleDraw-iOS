@@ -1,4 +1,4 @@
-// MIT license. Copyright (c) 2021 TriangleDraw. All rights reserved.
+// MIT license. Copyright (c) 2023 TriangleDraw. All rights reserved.
 import UIKit
 import TriangleDrawLibrary
 
@@ -11,10 +11,10 @@ import TriangleDrawLibrary
  - Fewer bugs because you are writing less code.
 
 */
+// swiftlint:disable identifier_name
 class BrowserViewController: UIDocumentBrowserViewController {
 	// Used for document presentation
 	var transitionController: UIDocumentBrowserTransitionController?
-
 
 	// This key is used to encode the bookmark data of the URL of the opened document as part of the state restoration data.
 	static let bookmarkDataKey = "bookmarkData"
@@ -29,12 +29,14 @@ class BrowserViewController: UIDocumentBrowserViewController {
 		// Since the application allows creating Particles documents, document creation is enabled on the `UIDocumentBrowserViewController`.
 		allowsDocumentCreation = true
 
+        // The default text is "Create Document". This is a drawing app.
+        localizedCreateDocumentActionTitle = "Create Drawing"
+
+        // The "Create Document" button, has a default ration of 2/3 and is inconsistent with the TriangleDraw square thumbnails.
+        defaultDocumentAspectRatio = 1
+
 		// In this application, selecting multiple items is not supported. Instead, only one document at a time can be opened.
 		allowsPickingMultipleItems = false
-
-		// Apple's "Numbers" app, looks great. It uses a "white" style and "green" tint.
-		browserUserInterfaceStyle = .white
-		view.tintColor = AppConstant.Browser.tintColor
 
 		if AppConstant.Browser.debug_installCustomActions {
 			installCustomActions()
@@ -61,8 +63,6 @@ class BrowserViewController: UIDocumentBrowserViewController {
 			initialViewController = .screenshot_canvasWithRune
 		}
 
-
-
 		switch initialViewController {
 		case .production_browser:
 			// The UIDocumentBrowserViewController has to be the 1st viewcontroller
@@ -84,7 +84,7 @@ class BrowserViewController: UIDocumentBrowserViewController {
 		// Define one custom `UIDocumentBrowserAction`, which will show up when interacting with a selection of items. In this case, the action is
 		// configured to be presented both in the navigation bar of the `UIDocumentBrowserViewController`, and the menu controller, which appears
 		// when long-pressing items.
-		let action = UIDocumentBrowserAction(identifier: "com.triangledraw.td4.doc.export",
+		let action = UIDocumentBrowserAction(identifier: "com.triangledraw.td3.doc.export",
 											 localizedTitle: "Export",
 											 availability: [.menu, .navigationBar],
 											 handler: { (_) in
@@ -93,17 +93,10 @@ class BrowserViewController: UIDocumentBrowserViewController {
 
 		// By specifying the supported content types of the action, the action can only be performed on Particles files, but not on any other type of
 		// file.
-		action.supportedContentTypes = ["com.triangledraw.td4.doc"]
+		action.supportedContentTypes = ["com.triangledraw.td3.doc"]
 
 		// Last but not least, the newly created action is assigned to the `UIDocumentBrowserViewController`.
 		customActions = [action]
-	}
-
-	override var preferredStatusBarStyle: UIStatusBarStyle {
-
-		// Since the `UIDocumentBrowserViewController` is configured to use the "dark" browser user interface style, using the "lightContent" for the
-		// status bar is a good choice.
-		return UIStatusBarStyle.default
 	}
 
 	// MARK: Gear that opens a Menu
@@ -118,7 +111,6 @@ class BrowserViewController: UIDocumentBrowserViewController {
 		let nc = BrowserMenuViewController.createInsideNavigationController()
 		self.present(nc, animated: true, completion: nil)
 	}
-
 
 	// MARK: Live Indicator
 
@@ -215,13 +207,13 @@ class BrowserViewController: UIDocumentBrowserViewController {
 	}
 }
 
-
 // MARK: UIDocumentBrowserViewControllerDelegate
 
 extension BrowserViewController: UIDocumentBrowserViewControllerDelegate {
 	/// Called when you select "Create Document" in the browser UI.
-	func documentBrowser(_ controller: UIDocumentBrowserViewController,
-						 didRequestDocumentCreationWithHandler importHandler: @escaping (URL?, UIDocumentBrowserViewController.ImportMode) -> Void) {
+	func documentBrowser(
+        _ controller: UIDocumentBrowserViewController,
+        didRequestDocumentCreationWithHandler importHandler: @escaping (URL?, UIDocumentBrowserViewController.ImportMode) -> Void) {
 
 		// When the user wants to create a new document, a blank version of a new Partiles file needs to be provided to the
 		// `UIDocumentBrowserViewController`. In this case, obtain the URL of the "Drawing.triangleDraw", which is part of the application bundle, and

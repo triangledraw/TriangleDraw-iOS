@@ -1,4 +1,4 @@
-// MIT license. Copyright (c) 2021 TriangleDraw. All rights reserved.
+// MIT license. Copyright (c) 2023 TriangleDraw. All rights reserved.
 import Foundation
 
 // Keep track of how many times the app have been started
@@ -16,4 +16,5 @@ extension UserDefaults {
     }
 }
 
+// swiftlint:disable:next identifier_name
 let TRIANGLEDRAW_RUN_COUNT = "TRIANGLEDRAW_RUN_COUNT"

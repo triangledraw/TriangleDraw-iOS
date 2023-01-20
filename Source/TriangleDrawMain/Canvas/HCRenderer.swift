@@ -1,4 +1,4 @@
-// MIT license. Copyright (c) 2021 TriangleDraw. All rights reserved.
+// MIT license. Copyright (c) 2023 TriangleDraw. All rights reserved.
 import Metal
 import MetalKit
 import simd
@@ -49,6 +49,8 @@ struct HCScrollAndZoom {
 	}
 }
 
+// swiftlint:disable identifier_name
+// swiftlint:disable:next type_body_length
 class HCRenderer: NSObject {
     public let device: MTLDevice
     let commandQueue: MTLCommandQueue
@@ -77,6 +79,7 @@ class HCRenderer: NSObject {
 
 	var scrollAndZoom = HCScrollAndZoom()
 
+    // swiftlint:disable:next function_body_length
 	init?(metalKitView: MTKView, canvas: E2Canvas, filledCircleMode: HCFilledCircleMode) {
 		self._canvas = canvas
         self.device = metalKitView.device!
@@ -106,7 +109,6 @@ class HCRenderer: NSObject {
 			return nil
 		}
 
-
 		let buildHexagon = HCBuildHexagonCanvas()
 //		buildHexagon.buildHexagon(sideCount: 10)
 //		buildHexagon.buildHexagon(sideCount: 30)
@@ -127,6 +129,7 @@ class HCRenderer: NSObject {
 		let hexagonCorners: HCHexagonCorners = buildHexagon.corners
 
 		self.filledtriangle_vertices = filledtriangle_vertices
+        // swiftlint:disable:next line_length
 		guard let filledtriangle_vertexBuffer: MTLBuffer = device.makeBuffer(bytes: filledtriangle_vertices, length: filledtriangle_vertices.count * MemoryLayout<HCFilledTriangleVertex>.stride, options: []) else {
 			fatalError("makeBuffer() filledtriangle_vertexBuffer")
 		}
@@ -136,7 +139,6 @@ class HCRenderer: NSObject {
 			fatalError("makeBuffer() filledtriangle_indexBuffer")
 		}
 		self.filledtriangle_indexBuffer = filledtriangle_indexBuffer
-
 
 		guard let filledcircle_vertexBuffer: MTLBuffer = device.makeBuffer(bytes: filledcircle_vertices, length: filledcircle_vertices.count * MemoryLayout<HCFilledCircleVertex>.stride, options: []) else {
 			fatalError("makeBuffer() filledcircle_vertexBuffer")
@@ -148,7 +150,6 @@ class HCRenderer: NSObject {
 		}
 		self.filledcircle_indexBuffer = filledcircle_indexBuffer
 
-
 		let buildEdge = HCBuildEdgeAroundHexagon(
 			corners: hexagonCorners,
 			color: AppConstant.Canvas.hexagonEdgeColor
@@ -157,6 +158,7 @@ class HCRenderer: NSObject {
 		let edgetriangle_indices: [UInt16] = buildEdge.edgetriangle_indices
 		self.edgetriangle_indices = edgetriangle_indices
 
+        // swiftlint:disable:next line_length
 		guard let edgetriangle_vertexBuffer: MTLBuffer = device.makeBuffer(bytes: edgetriangle_vertices, length: edgetriangle_vertices.count * MemoryLayout<HCFilledTriangleVertex>.stride, options: []) else {
 			fatalError("makeBuffer() edgetriangle_vertices")
 		}
@@ -167,10 +169,9 @@ class HCRenderer: NSObject {
 		}
 		self.edgetriangle_indexBuffer = edgetriangle_indexBuffer
 
-
         super.init()
     }
-    
+
     class func filledtriangle_vertexDescriptor() -> MTLVertexDescriptor {
         let vertexDescriptor = MTLVertexDescriptor()
 
@@ -186,7 +187,7 @@ class HCRenderer: NSObject {
 
         return vertexDescriptor
     }
-    
+
 	class func filledcircle_vertexDescriptor() -> MTLVertexDescriptor {
 		let vertexDescriptor = MTLVertexDescriptor()
 
@@ -201,8 +202,7 @@ class HCRenderer: NSObject {
 
     class func filledtriangle_renderPipelineState(
 		device: MTLDevice,
-		metalKitView: MTKView) throws -> MTLRenderPipelineState
-	{
+		metalKitView: MTKView) throws -> MTLRenderPipelineState {
 		guard let library: MTLLibrary = device.makeDefaultLibrary() else {
 			fatalError("makeDefaultLibrary()")
 		}
@@ -212,7 +212,7 @@ class HCRenderer: NSObject {
 		guard let fragmentFunction = library.makeFunction(name: "filledtriangle_fragment") else {
 			fatalError("makeFunction() filledtriangle_fragment")
 		}
-        
+
         let pipelineDescriptor = MTLRenderPipelineDescriptor()
         pipelineDescriptor.label = "Filled Triangles"
         pipelineDescriptor.vertexFunction = vertexFunction
@@ -224,12 +224,10 @@ class HCRenderer: NSObject {
         return try device.makeRenderPipelineState(descriptor: pipelineDescriptor)
     }
 
-
 	class func filledcircle_renderPipelineState(
 		device: MTLDevice,
 		metalKitView: MTKView,
-		mode: HCFilledCircleMode) throws -> MTLRenderPipelineState
-	{
+		mode: HCFilledCircleMode) throws -> MTLRenderPipelineState {
 		guard let library: MTLLibrary = device.makeDefaultLibrary() else {
 			fatalError("makeDefaultLibrary()")
 		}
@@ -254,7 +252,6 @@ class HCRenderer: NSObject {
 		pipelineDescriptor.rasterSampleCount = AppConstant.Canvas.rasterSampleCount
 		pipelineDescriptor.vertexDescriptor = filledcircle_vertexDescriptor()
 		pipelineDescriptor.colorAttachments[0].pixelFormat = metalKitView.colorPixelFormat
-
 
 		/*
 		Invert colors
@@ -492,7 +489,7 @@ extension HCRenderer: MTKViewDelegate {
 		commandBuffer.present(drawable)
 		commandBuffer.commit()
     }
-    
+
 	/// Called whenever view changes orientation or is resized
     func mtkView(_ view: MTKView, drawableSizeWillChange size: CGSize) {
 		log.debug("newSize: \(size)")
@@ -501,4 +498,4 @@ extension HCRenderer: MTKViewDelegate {
 		// values to our vertex shader when we draw
 		viewportSize = size
     }
-}
+} // swiftlint:disable:this file_length

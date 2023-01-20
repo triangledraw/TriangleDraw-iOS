@@ -21,7 +21,7 @@
 			<string>Owner</string>
 			<key>LSItemContentTypes</key>
 			<array>
-				<string>com.triangledraw.td4.doc</string>
+				<string>com.triangledraw.td3.doc</string>
 			</array>
 			<key>LSTypeIsPackage</key>
 			<false/>
@@ -76,6 +76,8 @@
 	</array>
 	<key>UISupportsDocumentBrowser</key>
 	<true/>
+	<key>UIViewControllerBasedStatusBarAppearance</key>
+	<true/>
 	<key>UTExportedTypeDeclarations</key>
 	<array>
 		<dict>
@@ -89,7 +91,7 @@
 			<key>UTTypeIconFiles</key>
 			<array/>
 			<key>UTTypeIdentifier</key>
-			<string>com.triangledraw.td4.doc</string>
+			<string>com.triangledraw.td3.doc</string>
 			<key>UTTypeTagSpecification</key>
 			<dict>
 				<key>public.filename-extension</key>

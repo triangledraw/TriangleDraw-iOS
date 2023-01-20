@@ -12,9 +12,9 @@ import Foundation
 open class SwiftyBeaver {
 
     /// version string of framework
-    public static let version = "1.9.1"  // UPDATE ON RELEASE!
+    public static let version = "1.9.6"  // UPDATE ON RELEASE!
     /// build number of framework
-    public static let build = 1910 // version 1.6.2 -> 1620, UPDATE ON RELEASE!
+    public static let build = 1960 // version 1.6.2 -> 1620, UPDATE ON RELEASE!
 
     public enum Level: Int {
         case verbose = 0
@@ -60,7 +60,7 @@ open class SwiftyBeaver {
     }
 
     /// returns the current thread name
-    class func threadName() -> String {
+    open class func threadName() -> String {
 
         #if os(Linux)
             // on 9/30/2016 not yet implemented in server-side Swift:
@@ -80,8 +80,8 @@ open class SwiftyBeaver {
     // MARK: Levels
 
     /// log something generally unimportant (lowest priority)
-    open class func verbose(_ message: @autoclosure () -> Any, _
-        file: String = #file, _ function: String = #function, line: Int = #line, context: Any? = nil) {
+    open class func verbose(_ message: @autoclosure () -> Any,
+        file: String = #file, function: String = #function, line: Int = #line, context: Any? = nil) {
         #if swift(>=5)
         custom(level: .verbose, message: message(), file: file, function: function, line: line, context: context)
         #else
@@ -90,8 +90,8 @@ open class SwiftyBeaver {
     }
 
     /// log something which help during debugging (low priority)
-    open class func debug(_ message: @autoclosure () -> Any, _
-        file: String = #file, _ function: String = #function, line: Int = #line, context: Any? = nil) {
+    open class func debug(_ message: @autoclosure () -> Any,
+        file: String = #file, function: String = #function, line: Int = #line, context: Any? = nil) {
         #if swift(>=5)
         custom(level: .debug, message: message(), file: file, function: function, line: line, context: context)
         #else
@@ -100,8 +100,8 @@ open class SwiftyBeaver {
     }
 
     /// log something which you are really interested but which is not an issue or error (normal priority)
-    open class func info(_ message: @autoclosure () -> Any, _
-        file: String = #file, _ function: String = #function, line: Int = #line, context: Any? = nil) {
+    open class func info(_ message: @autoclosure () -> Any,
+        file: String = #file, function: String = #function, line: Int = #line, context: Any? = nil) {
         #if swift(>=5)
         custom(level: .info, message: message(), file: file, function: function, line: line, context: context)
         #else
@@ -110,8 +110,8 @@ open class SwiftyBeaver {
     }
 
     /// log something which may cause big trouble soon (high priority)
-    open class func warning(_ message: @autoclosure () -> Any, _
-        file: String = #file, _ function: String = #function, line: Int = #line, context: Any? = nil) {
+    open class func warning(_ message: @autoclosure () -> Any,
+        file: String = #file, function: String = #function, line: Int = #line, context: Any? = nil) {
         #if swift(>=5)
         custom(level: .warning, message: message(), file: file, function: function, line: line, context: context)
         #else
@@ -120,8 +120,8 @@ open class SwiftyBeaver {
     }
 
     /// log something which will keep you awake at night (highest priority)
-    open class func error(_ message: @autoclosure () -> Any, _
-        file: String = #file, _ function: String = #function, line: Int = #line, context: Any? = nil) {
+    open class func error(_ message: @autoclosure () -> Any,
+        file: String = #file, function: String = #function, line: Int = #line, context: Any? = nil) {
         #if swift(>=5)
         custom(level: .error, message: message(), file: file, function: function, line: line, context: context)
         #else
@@ -130,7 +130,7 @@ open class SwiftyBeaver {
     }
 
     /// custom logging to manually adjust values, should just be used by other frameworks
-    public class func custom(level: SwiftyBeaver.Level, message: @autoclosure () -> Any,
+    open class func custom(level: SwiftyBeaver.Level, message: @autoclosure () -> Any,
                              file: String = #file, function: String = #function, line: Int = #line, context: Any? = nil) {
         #if swift(>=5)
         dispatch_send(level: level, message: message(), thread: threadName(),
@@ -170,30 +170,29 @@ open class SwiftyBeaver {
         }
     }
 
-    /**
-     DEPRECATED & NEEDS COMPLETE REWRITE DUE TO SWIFT 3 AND GENERAL INCORRECT LOGIC
-     Flush all destinations to make sure all logging messages have been written out
-     Returns after all messages flushed or timeout seconds
-
-     - returns: true if all messages flushed, false if timeout or error occurred
-     */
+    /// flush all destinations to make sure all logging messages have been written out
+    /// returns after all messages flushed or timeout seconds
+    /// returns: true if all messages flushed, false if timeout or error occurred
     public class func flush(secondTimeout: Int64) -> Bool {
-
-        /*
-        guard let grp = dispatch_group_create() else { return false }
+        let grp = DispatchGroup()
         for dest in destinations {
-            if let queue = dest.queue {
-                dispatch_group_enter(grp)
-                queue.asynchronously(execute: {
+            guard let queue = dest.queue else {
+                continue
+            }
+            grp.enter()
+            if dest.asynchronously {
+                queue.async {
                     dest.flush()
                     grp.leave()
-                })
+                }
+            } else {
+                queue.sync {
+                    dest.flush()
+                    grp.leave()
+                }
             }
         }
-        let waitUntil = DispatchTime.now(dispatch_time_t(DISPATCH_TIME_NOW), secondTimeout * 1000000000)
-        return dispatch_group_wait(grp, waitUntil) == 0
-         */
-        return true
+        return grp.wait(timeout: .now() + .seconds(Int(secondTimeout))) == .success
     }
 
     /// removes the parameters from a function because it looks weird with a single param

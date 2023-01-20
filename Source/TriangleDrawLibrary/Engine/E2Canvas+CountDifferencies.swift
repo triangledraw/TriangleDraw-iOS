@@ -1,4 +1,4 @@
-// MIT license. Copyright (c) 2021 TriangleDraw. All rights reserved.
+// MIT license. Copyright (c) 2023 TriangleDraw. All rights reserved.
 extension E2Canvas {
     public func numberOfDifferences(from otherCanvas: E2Canvas) -> UInt {
         assert(otherCanvas.width == width)

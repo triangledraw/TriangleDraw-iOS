@@ -1,4 +1,4 @@
-// MIT license. Copyright (c) 2021 TriangleDraw. All rights reserved.
+// MIT license. Copyright (c) 2023 TriangleDraw. All rights reserved.
 import Foundation
 
 public class TDCanvasReader {
@@ -10,6 +10,7 @@ public class TDCanvasReader {
 		// Check that the dimensions corresponds to our canvas size
         let ok1: Bool = width == 180
         let ok2: Bool = height == 104
+        // swiftlint:disable:next identifier_name
         let dimensions_ok: Bool = ok1 && ok2
         if !dimensions_ok {
 			let messageFormat = NSLocalizedString("READ_FAILED_WRONG_DIMENSIONS_%d_%d", tableName: "ReadWrite", bundle: Bundle.main, value: "", comment: "Expected dimensions 180x104, but got {width}x{height}")

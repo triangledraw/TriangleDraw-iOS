@@ -1,4 +1,4 @@
-// MIT license. Copyright (c) 2021 TriangleDraw. All rights reserved.
+// MIT license. Copyright (c) 2023 TriangleDraw. All rights reserved.
 import UIKit
 import TriangleDrawLibrary
 
@@ -90,6 +90,7 @@ class HCView: UIView, TDCanvasDrawingProtocol {
 	var hideLabels: Bool = false
 	var maskCanvas: E2Canvas?
 
+    // swiftlint:disable:next identifier_name
 	var _canvas: E2Canvas?
 	var canvas: E2Canvas? {
 		get {

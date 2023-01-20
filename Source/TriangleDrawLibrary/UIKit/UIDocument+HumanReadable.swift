@@ -1,6 +1,7 @@
-// MIT license. Copyright (c) 2021 TriangleDraw. All rights reserved.
+// MIT license. Copyright (c) 2023 TriangleDraw. All rights reserved.
 import UIKit
 
+// swiftlint:disable identifier_name
 extension UIDocument.State {
 	/// Returns a string like this: `[normal,editingDisabled]` or `[normal,closed]`.
 	public var td_humanReadable: String {

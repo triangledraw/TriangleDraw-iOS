@@ -1,4 +1,4 @@
-// MIT license. Copyright (c) 2021 TriangleDraw. All rights reserved.
+// MIT license. Copyright (c) 2023 TriangleDraw. All rights reserved.
 import UIKit
 import TriangleDrawLibrary
 
@@ -7,7 +7,8 @@ extension HCMenuViewController {
 		let filenameDebugString: String = filename ?? "nil"
 		let imageSize: CGSize = imageToShare.size
 		log.debug("Open share sheet.  imageSize: \(imageSize)  filename: '\(filenameDebugString)'  triangleCount: \(triangleCount)")
-		
+
+        // swiftlint:disable:next line_length
         let subjectFormat = NSLocalizedString("EMAIL_PNG_SUBJECT_%@", tableName: "CanvasVC", bundle: Bundle.main, value: "", comment: "TriangleDraw - {Drawing name}, a subject line for mails containing PNG attachments")
         let emailSubject = String(format: subjectFormat, filename ?? "")
         let avc = UIActivityViewController(activityItems: [imageToShare], applicationActivities: nil)

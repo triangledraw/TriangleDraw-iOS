@@ -1,4 +1,4 @@
-// MIT license. Copyright (c) 2021 TriangleDraw. All rights reserved.
+// MIT license. Copyright (c) 2023 TriangleDraw. All rights reserved.
 import UIKit
 import TriangleDrawLibrary
 
@@ -19,6 +19,7 @@ extension CanvasViewController {
 		view.onAfterDrawBlock = { [weak self] in
 			self?.endDrawing()
 		}
+        // swiftlint:disable:next identifier_name
 		var stroke_value: UInt8 = 0
 		view.onDrawBlock = { [weak self] canvasView, cgPoint, point, gestureBegin in
 			guard let strongSelf = self else {

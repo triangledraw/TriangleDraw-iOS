@@ -1,4 +1,4 @@
-// MIT license. Copyright (c) 2021 TriangleDraw. All rights reserved.
+// MIT license. Copyright (c) 2023 TriangleDraw. All rights reserved.
 extension E2Canvas {
     public func moveRight() {
         moveOperation(.right)
@@ -40,7 +40,7 @@ extension E2Canvas {
     }
 }
 
-fileprivate enum E2CanvasMoveOperation {
+private enum E2CanvasMoveOperation {
 	case left, right, up, down
 
 	var offset: (Int, Int) {

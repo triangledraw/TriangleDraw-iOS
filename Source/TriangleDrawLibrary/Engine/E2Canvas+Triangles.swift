@@ -1,4 +1,4 @@
-// MIT license. Copyright (c) 2021 TriangleDraw. All rights reserved.
+// MIT license. Copyright (c) 2023 TriangleDraw. All rights reserved.
 import Foundation
 
 extension E2Canvas {
@@ -7,6 +7,7 @@ extension E2Canvas {
 		return _convertToTriangles(debug: false)
 	}
 
+    // swiftlint:disable:next identifier_name
 	public func _convertToTriangles(debug: Bool) -> [E2CanvasTriangle2] {
 		var triangleArray = [E2CanvasTriangle2]()
 
@@ -21,6 +22,7 @@ extension E2Canvas {
 			triangleArray.append(triangle)
 		}
 
+        // swiftlint:disable:next function_parameter_count
 		func append(_ value: UInt8, _ xy: IntVec2, _ x0: Int32, _ y0: Int32, _ x1: Int32, _ y1: Int32, _ x2: Int32, _ y2: Int32) {
 			append(
 				value: value,

@@ -26,13 +26,14 @@ import os
 
 final class OSLogDestination: BaseDestination {
 
-	override func send(_ level: SwiftyBeaver.Level,
-					   msg: String,
-					   thread: String,
-					   file: String,
-					   function: String,
-					   line: Int,
-					   context: Any?) -> String? {
+	override func send(
+        _ level: SwiftyBeaver.Level,
+        msg: String,
+        thread: String,
+        file: String,
+        function: String,
+        line: Int,
+        context: Any?) -> String? {
 
 		let log = self.createOSLog(context: context)
 		let fileName: String = self.osLogFileNameOfFile(file)
@@ -91,7 +92,7 @@ private extension OSLogDestination {
 
 		return logType
 	}
-	
+
 	/// Identical to BaseDestination.fileNameOfFile() which is internal to SwiftyBeaver
 	func osLogFileNameOfFile(_ file: String) -> String {
 		let fileParts = file.components(separatedBy: "/")

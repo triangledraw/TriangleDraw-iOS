@@ -1,4 +1,4 @@
-// MIT license. Copyright (c) 2021 TriangleDraw. All rights reserved.
+// MIT license. Copyright (c) 2023 TriangleDraw. All rights reserved.
 import Foundation
 
 public enum SymmetryMode: String, CaseIterable {
@@ -32,7 +32,9 @@ extension SymmetryMode {
 public var globalSymmetryMode = SymmetryMode.noSymmetry
 
 extension E2Canvas {
+    // swiftlint:disable:next cyclomatic_complexity
 	public func setSymmetricPixel(_ point: E2CanvasPoint, value: UInt8, symmetryMode: SymmetryMode) {
+        // swiftlint:disable identifier_name
 		self.inner_setPixel(point: point, value: value)
 
 		switch symmetryMode {

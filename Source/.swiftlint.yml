@@ -1,0 +1,74 @@
+included:
+  - TriangleDrawLibrary
+  - TriangleDrawMain
+  - TriangleDrawTests
+  - TriangleDrawThumbnail
+
+identifier_name:
+  min_length:
+    error: 2
+  excluded:
+    - a
+    - b
+    - c
+    - cw
+    - cx
+    - cy
+    - dx
+    - dy
+    - e2
+    - fm
+    - g
+    - h
+    - h2
+    - hh
+    - i
+    - i2
+    - id
+    - ii
+    - j
+    - j2
+    - jj
+    - m
+    - n
+    - nc
+    - ok
+    - ox
+    - oy
+    - px
+    - py
+    - r
+    - s
+    - sx
+    - sy
+    - t
+    - t0
+    - t1
+    - up
+    - v
+    - vc
+    - w
+    - w1
+    - x
+    - xx
+    - x0
+    - x1
+    - x2
+    - x3
+    - xy
+    - y
+    - yy
+    - y0
+    - y1
+    - y2
+    - y3
+
+line_length: 
+  warning: 200
+  error: 400
+  ignores_comments: true
+
+disabled_rules:
+  - switch_case_alignment
+  - no_space_in_method_call
+  - shorthand_operator

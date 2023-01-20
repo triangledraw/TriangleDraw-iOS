@@ -1,4 +1,4 @@
-// MIT license. Copyright (c) 2021 TriangleDraw. All rights reserved.
+// MIT license. Copyright (c) 2023 TriangleDraw. All rights reserved.
 import UIKit
 import MessageUI
 import TriangleDrawLibrary
@@ -21,7 +21,7 @@ extension UIViewController {
 
 /// Presents a `MFMailComposeViewController` that is prefilled
 /// with info about the system, device, app.
-fileprivate class EmailWithFeedback: NSObject {
+private class EmailWithFeedback: NSObject {
 	fileprivate static let shared = EmailWithFeedback()
 	private var startTime: Double = 0
 

@@ -1,6 +1,7 @@
-// MIT license. Copyright (c) 2021 TriangleDraw. All rights reserved.
+// MIT license. Copyright (c) 2023 TriangleDraw. All rights reserved.
 import QuartzCore
 
+// swiftlint:disable identifier_name
 class TDCalculateBezierPoint {
 	static func calculate(t: CGFloat, p0: CGPoint, p1: CGPoint, p2: CGPoint, p3: CGPoint) -> CGPoint {
 		let u: CGFloat = 1.0 - t
@@ -22,10 +23,10 @@ class TDCalculateBezierPoint {
 	static func easeInEaseOut(t: CGFloat) -> CGPoint {
 		let f = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
 
-		var a:[Float] = [0.0, 0.0]
-		var b:[Float] = [0.0, 0.0]
-		var c:[Float] = [0.0, 0.0]
-		var d:[Float] = [0.0, 0.0]
+		var a: [Float] = [0.0, 0.0]
+		var b: [Float] = [0.0, 0.0]
+		var c: [Float] = [0.0, 0.0]
+		var d: [Float] = [0.0, 0.0]
 
 		f.getControlPoint(at: 0, values: &a)
 		f.getControlPoint(at: 1, values: &b)

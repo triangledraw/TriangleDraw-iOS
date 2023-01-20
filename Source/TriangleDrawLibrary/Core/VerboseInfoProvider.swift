@@ -1,8 +1,8 @@
-// MIT license. Copyright (c) 2021 TriangleDraw. All rights reserved.
+// MIT license. Copyright (c) 2023 TriangleDraw. All rights reserved.
 
 public class VerboseInfoProvider {
 	public typealias Pair = (String, String)
-	public var pairs = Array<Pair>()
+	public var pairs = [Pair]()
 
 	public init() {}
 

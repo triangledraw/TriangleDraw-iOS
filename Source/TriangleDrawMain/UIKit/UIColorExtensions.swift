@@ -1,4 +1,4 @@
-// MIT license. Copyright (c) 2021 TriangleDraw. All rights reserved.
+// MIT license. Copyright (c) 2023 TriangleDraw. All rights reserved.
 import UIKit
 
 extension UIColor {
@@ -7,18 +7,18 @@ extension UIColor {
 	class func rgb(_ red: Int, _ green: Int, _ blue: Int) -> UIColor {
 		return rgba(red, green, blue, 255)
 	}
-	
+
 	// usage:
 	// myButton.backgroundColor = UIColor.rgba(240, 10, 20, 20)
 	class func rgba(_ red: Int, _ green: Int, _ blue: Int, _ alpha: Int) -> UIColor {
 		return UIColor(
-			red  : CGFloat(red)   / 255.0,
+			red: CGFloat(red)   / 255.0,
 			green: CGFloat(green) / 255.0,
-			blue : CGFloat(blue)  / 255.0,
+			blue: CGFloat(blue)  / 255.0,
 			alpha: CGFloat(alpha) / 255.0
 		)
 	}
-	
+
 	// usage:
 	// myButton.backgroundColor = UIColor.hex(0xaabbcc)
 	// or
@@ -29,7 +29,7 @@ extension UIColor {
 		let blue  = Double((hex & 0xFF)) / 255.0
 		return UIColor(red: CGFloat(red), green: CGFloat(green), blue: CGFloat(blue), alpha: CGFloat(alpha))
 	}
-	
+
 	struct ColorRGBA {
 		var r: Int = 0
 		var g: Int = 0

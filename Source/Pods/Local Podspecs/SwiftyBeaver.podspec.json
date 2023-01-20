@@ -1,6 +1,6 @@
 {
   "name": "SwiftyBeaver",
-  "version": "1.9.1",
+  "version": "1.9.6",
   "summary": "Convenient logging during development & release in Swift 4 & 5.",
   "description": "Easy-to-use, extensible & powerful logging & analytics for Swift 4 and Swift 5.\nGreat for development & release due to its support for many logging destinations & platforms.",
   "homepage": "https://github.com/SwiftyBeaver/SwiftyBeaver",
@@ -13,14 +13,14 @@
     "Sebastian Kreutzberger": "s.kreutzberger@googlemail.com"
   },
   "platforms": {
-    "ios": "8.0",
-    "watchos": "2.0",
-    "tvos": "9.0",
-    "osx": "10.10"
+    "ios": "13.4",
+    "watchos": "6.2",
+    "tvos": "13.4",
+    "osx": "10.15.4"
   },
   "source": {
     "git": "https://github.com/SwiftyBeaver/SwiftyBeaver.git",
-    "tag": "1.9.1"
+    "tag": "1.9.6"
   },
   "source_files": "Sources",
   "swift_versions": [

@@ -1,8 +1,9 @@
-// MIT license. Copyright (c) 2021 TriangleDraw. All rights reserved.
+// MIT license. Copyright (c) 2023 TriangleDraw. All rights reserved.
 import XCTest
 @testable import TriangleDrawMain
 @testable import TriangleDrawLibrary
 
+// swiftlint:disable identifier_name
 class E2CanvasCountDifferenciesTests: XCTestCase {
 	func point(_ x: Int, _ y: Int) -> E2CanvasPoint {
 		return E2CanvasPoint(x: x, y: y)
@@ -11,7 +12,6 @@ class E2CanvasCountDifferenciesTests: XCTestCase {
 	func createCanvas(_ width: UInt, _ height: UInt) -> E2Canvas {
 		return E2Canvas(canvasSize: E2CanvasSize(width: width, height: height))
 	}
-
 
     func testCountNoDifference0() {
 		let c0: E2Canvas = createCanvas(1, 2)

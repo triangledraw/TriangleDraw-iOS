@@ -1,4 +1,4 @@
-// MIT license. Copyright (c) 2021 TriangleDraw. All rights reserved.
+// MIT license. Copyright (c) 2023 TriangleDraw. All rights reserved.
 import UIKit
 import TriangleDrawLibrary
 
@@ -57,7 +57,6 @@ extension BrowserViewController {
 
 		nc.transitioningDelegate = self
 		nc.modalPresentationStyle = .fullScreen
-
 
 		// Now load the contents of the presented document, and once that is done, present the `CanvasViewController` instance.
 		// In order for the transition animation to work, the transition controller needs a view to zoom into, which is the particle system on the

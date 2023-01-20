@@ -1,4 +1,4 @@
-// MIT license. Copyright (c) 2021 TriangleDraw. All rights reserved.
+// MIT license. Copyright (c) 2023 TriangleDraw. All rights reserved.
 import XCTest
 @testable import TriangleDrawMain
 
@@ -72,7 +72,7 @@ class DocumentNameGeneratorTests: XCTestCase {
     }
 
 	// MARK: - Batch
-	
+
     func defaultNames(_ preferredNames: [String], taken takenNames: [String]) -> [String] {
         return DocumentNameGenerator.defaultNames(preferredNames, existingNames: Set<AnyHashable>(takenNames))
     }

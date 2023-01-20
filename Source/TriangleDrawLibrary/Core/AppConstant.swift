@@ -1,14 +1,15 @@
-// MIT license. Copyright (c) 2021 TriangleDraw. All rights reserved.
+// MIT license. Copyright (c) 2023 TriangleDraw. All rights reserved.
 import simd
 import UIKit
 
+// swiftlint:disable identifier_name nesting
 public struct AppConstant {
 	public struct AppGroup {
 		// The AppGroup is must exist inside the Apple provisioning portal.
 		// The AppGroup makes it possible to embed the "ThumbnailExtension" executable
 		// inside the "TriangleDraw.app". This AppGroup id is used inside the entitlement files.
 		// Further more the AppGroup makes it possible to share UserDefaults between executables.
-		public static let id: String = "group.com.triangledraw.td4"
+		public static let id: String = "group.com.triangledraw.td3"
 	}
 
 	public struct App {
@@ -23,12 +24,6 @@ public struct AppConstant {
 
 	public struct Browser {
 		public static let debug_installCustomActions = false
-
-//		public static let tintColor: UIColor = AppConstant.ColorBlindSafe.ultramarine40
-//		public static let tintColor: UIColor = AppConstant.ColorBlindSafe.indigo50
-		public static let tintColor: UIColor = AppConstant.ColorBlindSafe.magenta50
-//		public static let tintColor: UIColor = AppConstant.ColorBlindSafe.orange40
-//		public static let tintColor: UIColor = AppConstant.ColorBlindSafe.gold20
 	}
 
 	public struct Canvas {

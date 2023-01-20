@@ -1,14 +1,15 @@
-// MIT license. Copyright (c) 2021 TriangleDraw. All rights reserved.
+// MIT license. Copyright (c) 2023 TriangleDraw. All rights reserved.
 import UIKit
 import TriangleDrawLibrary
 
+// swiftlint:disable type_name
 typealias TDCanvasDrawing_TapBlock = (TDCanvasDrawingProtocol, E2CanvasPoint) -> Void
 typealias TDCanvasDrawing_DrawBlock = (TDCanvasDrawingProtocol, CGPoint, E2CanvasPoint, Bool) -> Void
 typealias TDCanvasDrawing_BeforeDrawBlock = () -> Void
 typealias TDCanvasDrawing_AfterDrawBlock = () -> Void
 typealias TDCanvasDrawing_RotateCompletionBlock = () -> Void
 
-protocol TDCanvasDrawingProtocol: class {
+protocol TDCanvasDrawingProtocol: AnyObject {
 	var onTapBlock: TDCanvasDrawing_TapBlock? { get set }
 	var onBeforeDrawBlock: TDCanvasDrawing_BeforeDrawBlock? { get set }
 	var onDrawBlock: TDCanvasDrawing_DrawBlock? { get set }

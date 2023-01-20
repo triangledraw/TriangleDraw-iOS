@@ -1,13 +1,13 @@
-// MIT license. Copyright (c) 2021 TriangleDraw. All rights reserved.
+// MIT license. Copyright (c) 2023 TriangleDraw. All rights reserved.
 import UIKit
 import TriangleDrawLibrary
-import RadiantForms
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
 	static var shared: AppDelegate {
+        // swiftlint:disable:next force_cast
 		return UIApplication.shared.delegate as! AppDelegate
 	}
 
@@ -48,31 +48,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         trackActivation(runCount)
     }
 
-    func configureNavigationBar() {
-        if #available(iOS 15, *) {
-            // On the draw page, the navigationbar is semitransparent with blurry background.
-            let appearance = UINavigationBarAppearance()
-            appearance.configureWithTransparentBackground()
-            appearance.backgroundColor = UIColor.clear
-            appearance.backgroundEffect = UIBlurEffect(style: .dark)
-            UINavigationBar.appearance().standardAppearance = appearance
-            UINavigationBar.appearance().scrollEdgeAppearance = appearance
-            UINavigationBar.appearance().compactAppearance = appearance
-        }
-    }
-
-	func configureForms() {
-		let builder = RFThemeBuilder.light
-		builder.tintColor = AppConstant.Browser.tintColor
-	}
-
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]? = nil) -> Bool {
 		LogHelper.setup_mainExecutable()
 
 		//AppDelegate.resetAppleLanguagesAfterUnittest()
 
-        configureNavigationBar()
-		configureForms()
         dumpSystemInfo()
         trackLaunch()
 
@@ -110,7 +90,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //log.debug(@"applicationDidReceiveMemoryWarning:");
     }
 
-	func application(_ app: UIApplication, open inputURL: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
+	func application(_ app: UIApplication, open inputURL: URL, options: [UIApplication.OpenURLOptionsKey: Any] = [:]) -> Bool {
 
 		// This delegate method is invoked when the Particles app is externally asked to open a document at a specific URL.
 		// Ensure that the URL is an actual file URL.
@@ -128,7 +108,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 			log.error("Expected rootViewController to be of type BrowserViewController")
 			return false
 		}
-		
+
 		browserViewController.revealDocument(at: inputURL, importIfNeeded: true) { (revealedDocumentURL, error) in
 			if let error = error {
 				// Handle the error appropriately
@@ -158,19 +138,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 	}
 
 	// MARK: State Preservation and Restoration
-
-	// See also `encodeRestorableState(with:)` and `decodeRestorableState(with:)` in the implementation of `UIDocumentBrowserViewController`.
-
-	func application(_ application: UIApplication, shouldSaveApplicationState coder: NSCoder) -> Bool {
-
-		// This delegate method is called by the system when dealing with application state preservation and restoration.
-		// Return true in order to indicate that the application state should be preserved.
+	func application(_ application: UIApplication, shouldSaveSecureApplicationState coder: NSCoder) -> Bool {
 		return true
 	}
 
-	func application(_ application: UIApplication, shouldRestoreApplicationState coder: NSCoder) -> Bool {
-
-		// Similarly, return true in order to indicate that the application should attempt to restore the saved application state.
+	func application(_ application: UIApplication, shouldRestoreSecureApplicationState coder: NSCoder) -> Bool {
 		return true
 	}
 }

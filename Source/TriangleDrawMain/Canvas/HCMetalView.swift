@@ -1,4 +1,4 @@
-// MIT license. Copyright (c) 2021 TriangleDraw. All rights reserved.
+// MIT license. Copyright (c) 2023 TriangleDraw. All rights reserved.
 import UIKit
 import MetalKit
 import QuartzCore
@@ -11,7 +11,6 @@ protocol CAMetalLayerProtocol: AnyObject {
 enum HCMetalViewCreateError: Error {
     case unableToCreateSystemDefaultDevice
 }
-
 
 class HCMetalView: MTKView {
 	static func create(frame frameRect: CGRect, filledCircleMode: HCFilledCircleMode) throws -> HCMetalView {

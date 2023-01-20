@@ -1,6 +1,7 @@
-// MIT license. Copyright (c) 2021 TriangleDraw. All rights reserved.
+// MIT license. Copyright (c) 2023 TriangleDraw. All rights reserved.
 import UIKit
 
+// swiftlint:disable identifier_name
 enum Image: String {
 	case browser_gear
 	case canvas_moveLeft

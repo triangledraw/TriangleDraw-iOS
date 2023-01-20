@@ -1,4 +1,4 @@
-// MIT license. Copyright (c) 2021 TriangleDraw. All rights reserved.
+// MIT license. Copyright (c) 2023 TriangleDraw. All rights reserved.
 import UIKit
 import QuickLook
 import TriangleDrawLibrary
@@ -26,7 +26,7 @@ extension MyImage {
 	}
 }
 
-
+// swiftlint:disable function_body_length
 class ThumbnailProvider: QLThumbnailProvider {
 
 	/// Main method to implement in order to provide thumbnails for files.
@@ -143,12 +143,12 @@ class ThumbnailProvider: QLThumbnailProvider {
 
 	private enum LoadCanvasError: Error {
 		case timeoutWhileOpeningDocument
+        // swiftlint:disable:next identifier_name
 		case expectedDocumentStateToBeNormalButGotSomethingElse
 		case documentOpenFailedForUnknownReason
 		case timeoutWhileClosingDocument
 		case expectedCanvasToBeNonNil
 	}
-
 
 	private static func loadCanvas(tracking: ThumbnailTracking, fileURL: URL) throws -> E2Canvas {
 		let defaultTimeoutLengthInSeconds: Int = 3
@@ -218,6 +218,7 @@ class ThumbnailProvider: QLThumbnailProvider {
 		return canvas
 	}
 
+    // swiftlint:disable:next function_parameter_count
 	private static func drawThumbnail(tracking: ThumbnailTracking, startTime: CFAbsoluteTime, fileURL: URL, contextSize: CGSize, scale: CGFloat, context: CGContext) -> Bool {
 
 		let canvas: E2Canvas

@@ -1,4 +1,4 @@
-// MIT license. Copyright (c) 2021 TriangleDraw. All rights reserved.
+// MIT license. Copyright (c) 2023 TriangleDraw. All rights reserved.
 import Foundation
 
 /***************************************
@@ -50,6 +50,7 @@ public class TDParsePBM: NSObject {
         return result.joined(separator: " ")
     }
 
+    // swiftlint:disable:next cyclomatic_complexity function_body_length
 	public func parse(_ inputData: Data?) -> (Bool, String) {
         var input: String! = nil
         if let aData = inputData {

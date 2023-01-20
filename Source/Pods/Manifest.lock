@@ -1,40 +1,31 @@
 PODS:
   - MBProgressHUD (1.2.0)
-  - RadiantForms (2.0-beta7)
-  - SwiftyBeaver (1.9.1)
+  - SwiftyBeaver (1.9.6)
 
 DEPENDENCIES:
-  - MBProgressHUD (from `https://github.com/jdg/MBProgressHUD.git`, commit `61fb89ce30d42f403ce53cde65883dc8cea6d02a`)
-  - RadiantForms (from `https://github.com/radiantkit/radiantforms-ios.git`, commit `d1f4642243c043f24dbb1af489715c1b8128572b`)
-  - SwiftyBeaver (from `https://github.com/SwiftyBeaver/SwiftyBeaver.git`, commit `e0fb3a74cb993d7dcf1e56734cdc98ad6e6d8176`)
+  - MBProgressHUD (from `https://github.com/jdg/MBProgressHUD.git`, commit `c843e4c86d320a11552898646effa8000042ab16`)
+  - SwiftyBeaver (from `https://github.com/SwiftyBeaver/SwiftyBeaver.git`, commit `dc3b9adf6c8faeb91a93b60993b5292d66b26c1c`)
 
 EXTERNAL SOURCES:
   MBProgressHUD:
-    :commit: 61fb89ce30d42f403ce53cde65883dc8cea6d02a
+    :commit: c843e4c86d320a11552898646effa8000042ab16
     :git: https://github.com/jdg/MBProgressHUD.git
-  RadiantForms:
-    :commit: d1f4642243c043f24dbb1af489715c1b8128572b
-    :git: https://github.com/radiantkit/radiantforms-ios.git
   SwiftyBeaver:
-    :commit: e0fb3a74cb993d7dcf1e56734cdc98ad6e6d8176
+    :commit: dc3b9adf6c8faeb91a93b60993b5292d66b26c1c
     :git: https://github.com/SwiftyBeaver/SwiftyBeaver.git
 
 CHECKOUT OPTIONS:
   MBProgressHUD:
-    :commit: 61fb89ce30d42f403ce53cde65883dc8cea6d02a
+    :commit: c843e4c86d320a11552898646effa8000042ab16
     :git: https://github.com/jdg/MBProgressHUD.git
-  RadiantForms:
-    :commit: d1f4642243c043f24dbb1af489715c1b8128572b
-    :git: https://github.com/radiantkit/radiantforms-ios.git
   SwiftyBeaver:
-    :commit: e0fb3a74cb993d7dcf1e56734cdc98ad6e6d8176
+    :commit: dc3b9adf6c8faeb91a93b60993b5292d66b26c1c
     :git: https://github.com/SwiftyBeaver/SwiftyBeaver.git
 
 SPEC CHECKSUMS:
-  MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
-  RadiantForms: 87619162586e81f6162670562bdd815d82d39046
-  SwiftyBeaver: a1f5691458561414bcfab51874b2b7445451602b
+  MBProgressHUD: 81cfc510382828962d6fd893c003d1b2beee386c
+  SwiftyBeaver: c8241b4745aa269a78ca5a022532c6915e948536
 
-PODFILE CHECKSUM: e05a46749a79d91d8209117761267be9dfe3f27b
+PODFILE CHECKSUM: 632baee4cf71123d3a2a89e88a2c485537718a46
 
-COCOAPODS: 1.8.4
+COCOAPODS: 1.10.1
