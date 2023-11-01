@@ -193,18 +193,16 @@ class HCToolbar: UIToolbar {
     }
 
 	private func imageItem(_ image: Image, _ actionBlock: @escaping HCToolbarHandlers.ActionBlock) -> UIBarButtonItem {
-		let barButtonItem = UIBarButtonItem(image: image.image, style: .plain, target: nil, action: nil)
-		barButtonItem.actionClosure = { (_) in
-			actionBlock()
-		}
-		return barButtonItem
+        let actionHandler: SwiftBarButtonItem.ActionHandler = { (_) in
+            actionBlock()
+        }
+        return SwiftBarButtonItem(image: image.image, style: .plain, actionHandler: actionHandler)
 	}
 
 	private func textItem(_ title: String, _ actionBlock: @escaping HCToolbarHandlers.ActionBlock) -> UIBarButtonItem {
-		let barButtonItem = UIBarButtonItem(title: title, style: .plain, target: nil, action: nil)
-		barButtonItem.actionClosure = { (_) in
-			actionBlock()
-		}
-		return barButtonItem
+        let actionHandler: SwiftBarButtonItem.ActionHandler = { (_) in
+            actionBlock()
+        }
+        return SwiftBarButtonItem(title: title, style: .plain, actionHandler: actionHandler)
 	}
 }

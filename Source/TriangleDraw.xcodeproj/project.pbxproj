@@ -55,7 +55,7 @@
 		42646E7F22E4785E00914600 /* EmailWithFeedback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42646E7E22E4785E00914600 /* EmailWithFeedback.swift */; };
 		42646E8122E4A08800914600 /* HCMenuViewController+SharePDF.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42646E8022E4A08800914600 /* HCMenuViewController+SharePDF.swift */; };
 		4269A6752198338E00A6796C /* URLDisplayNameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4269A6742198338E00A6796C /* URLDisplayNameTests.swift */; };
-		4269A67E2198E65B00A6796C /* UIBarButtonItem+ActionClosure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4269A67D2198E65B00A6796C /* UIBarButtonItem+ActionClosure.swift */; };
+		4269A67E2198E65B00A6796C /* SwiftBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4269A67D2198E65B00A6796C /* SwiftBarButtonItem.swift */; };
 		426B951122CFE2B000DB9359 /* BrowserViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 426B951022CFE2B000DB9359 /* BrowserViewController.storyboard */; };
 		426B951322CFE86500DB9359 /* CanvasViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 426B951222CFE86500DB9359 /* CanvasViewController.storyboard */; };
 		426B951722D0A5FE00DB9359 /* BrowserViewController+PresentDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426B951622D0A5FE00DB9359 /* BrowserViewController+PresentDocument.swift */; };
@@ -417,7 +417,7 @@
 		42646E7E22E4785E00914600 /* EmailWithFeedback.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailWithFeedback.swift; sourceTree = "<group>"; };
 		42646E8022E4A08800914600 /* HCMenuViewController+SharePDF.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "HCMenuViewController+SharePDF.swift"; sourceTree = "<group>"; };
 		4269A6742198338E00A6796C /* URLDisplayNameTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLDisplayNameTests.swift; sourceTree = "<group>"; };
-		4269A67D2198E65B00A6796C /* UIBarButtonItem+ActionClosure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+ActionClosure.swift"; sourceTree = "<group>"; };
+		4269A67D2198E65B00A6796C /* SwiftBarButtonItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftBarButtonItem.swift; sourceTree = "<group>"; };
 		426B951022CFE2B000DB9359 /* BrowserViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BrowserViewController.storyboard; sourceTree = "<group>"; };
 		426B951222CFE86500DB9359 /* CanvasViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CanvasViewController.storyboard; sourceTree = "<group>"; };
 		426B951622D0A5FE00DB9359 /* BrowserViewController+PresentDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BrowserViewController+PresentDocument.swift"; sourceTree = "<group>"; };
@@ -1237,8 +1237,8 @@
 				42608ED121CE832000A99669 /* CGRect+FitSizeInSize.swift */,
 				42608ECF21CE78F700A99669 /* CGSize+Inset.swift */,
 				42A228B321A0D292009A2819 /* CGSize+MinMax.swift */,
+				4269A67D2198E65B00A6796C /* SwiftBarButtonItem.swift */,
 				42E227B4210373E000D112E7 /* TDCalculateCubicBezier.swift */,
-				4269A67D2198E65B00A6796C /* UIBarButtonItem+ActionClosure.swift */,
 				42E227B6210373E000D112E7 /* UIBarButtonItem+NegativeSpacer.swift */,
 				42E227C0210373E000D112E7 /* UIColorExtensions.swift */,
 				42608ECD21CE77C700A99669 /* UIEdgeInsets+InsetsByAdding.swift */,
@@ -1903,7 +1903,7 @@
 				42AF941C215451C200D07373 /* HCBuildEdgeAroundHexagon.swift in Sources */,
 				42608ED221CE832000A99669 /* CGRect+FitSizeInSize.swift in Sources */,
 				426B951722D0A5FE00DB9359 /* BrowserViewController+PresentDocument.swift in Sources */,
-				4269A67E2198E65B00A6796C /* UIBarButtonItem+ActionClosure.swift in Sources */,
+				4269A67E2198E65B00A6796C /* SwiftBarButtonItem.swift in Sources */,
 				42C6B6EC21A74781004E7F58 /* HCZoomToFit.swift in Sources */,
 				42608ED621CEA4DB00A99669 /* CanvasViewController+ConfigureToolbar.swift in Sources */,
 				42E227D0210373E000D112E7 /* UIColorExtensions.swift in Sources */,
