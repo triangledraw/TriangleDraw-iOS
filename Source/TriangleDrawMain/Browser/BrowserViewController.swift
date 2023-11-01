@@ -249,7 +249,7 @@ extension BrowserViewController: UIDocumentBrowserViewControllerDelegate {
 			log.error("documentURL: '\(documentURL)'  error: nil")
 		}
 
-        // Show an error to the user
+        // Show the error to the user
         let errorMessage: String = error.map { "\($0)" } ?? "The error is 'nil'. No info provided."
         let alert = UIAlertController(title: "Error in failedToImportDocumentAt", message: errorMessage, preferredStyle: .alert)
         let action = UIAlertAction(title: "OK", style: .default) { (_) in }
