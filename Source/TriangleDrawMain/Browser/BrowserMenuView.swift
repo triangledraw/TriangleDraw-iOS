@@ -28,6 +28,14 @@ struct BrowserMenuView: View {
         UIApplication.shared.open(url)
     }
 
+    func discordTriangleDrawAction() {
+        guard let url: URL = URL(string: "http://triangledraw.com/discord") else {
+            print("Unable to create url. Cannot open browser.")
+            return
+        }
+        UIApplication.shared.open(url)
+    }
+
     var emailDeveloperButton: some View {
         #if os(iOS)
         let view = MailButtonView(
@@ -42,20 +50,24 @@ struct BrowserMenuView: View {
     var body: some View {
         NavigationView {
             Form {
-                Section(header: Text("Help needed")) {
+                Section(header: Text("Community")) {
                     Button(
-                        "Write review for App Store",
+                        "Chat about TriangleDraw on Discord",
+                        action: discordTriangleDrawAction
+                    )
+                    Button(
+                        "Please write a review on the App Store",
                         action: appStoreWriteReviewAction
                     )
                 }
                 Section(header: Text("Development")) {
                     Button(
-                        "GitHub - TriangleDraw-iOS",
-                        action: githubTriangleDrawRepositoryAction
-                    )
-                    Button(
                         "GitHub - TriangleDraw-Gallery",
                         action: githubTriangleDrawGalleryAction
+                    )
+                    Button(
+                        "GitHub - TriangleDraw-iOS",
+                        action: githubTriangleDrawRepositoryAction
                     )
                     emailDeveloperButton
                 }
