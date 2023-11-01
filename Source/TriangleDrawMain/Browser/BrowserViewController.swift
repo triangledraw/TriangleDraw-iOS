@@ -243,12 +243,18 @@ extension BrowserViewController: UIDocumentBrowserViewControllerDelegate {
 
 	/// Informs the delegate that an import action failed.
 	func documentBrowser(_ controller: UIDocumentBrowserViewController, failedToImportDocumentAt documentURL: URL, error: Error?) {
-		// Make sure to handle the failed import appropriately, e.g., by presenting an error message to the user.
 		if let error = error {
 			log.error("documentURL: '\(documentURL)'  error: '\(error)'")
 		} else {
 			log.error("documentURL: '\(documentURL)'  error: nil")
 		}
+
+        // Show an error to the user
+        let errorMessage: String = error.map { "\($0)" } ?? "The error is 'nil'. No info provided."
+        let alert = UIAlertController(title: "Error in failedToImportDocumentAt", message: errorMessage, preferredStyle: .alert)
+        let action = UIAlertAction(title: "OK", style: .default) { (_) in }
+        alert.addAction(action)
+        controller.present(alert, animated: true)
 	}
 
 	func documentBrowser(_ controller: UIDocumentBrowserViewController, applicationActivitiesForDocumentURLs documentURLs: [URL]) -> [UIActivity] {
