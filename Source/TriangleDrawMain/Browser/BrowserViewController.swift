@@ -215,13 +215,28 @@ extension BrowserViewController: UIDocumentBrowserViewControllerDelegate {
         _ controller: UIDocumentBrowserViewController,
         didRequestDocumentCreationWithHandler importHandler: @escaping (URL?, UIDocumentBrowserViewController.ImportMode) -> Void) {
 
-		// When the user wants to create a new document, a blank version of a new Partiles file needs to be provided to the
-		// `UIDocumentBrowserViewController`. In this case, obtain the URL of the "Drawing.triangleDraw", which is part of the application bundle, and
-		// afterwards, perform the importHandler on the URL with a Copy operation.
+        // Get url to "Drawing.triangleDraw", which is part of the application bundle.
+		let originalURL: URL = DocumentExample.blankFile.url
 
-		let url: URL = DocumentExample.blankFile.url
-		log.debug("importHandler mode_copy with url: \(url)")
-		importHandler(url, .copy)
+        // Create a temporary file url
+        guard let temporaryFileURL: URL = createTemporaryFile() else {
+            log.error("Failed to create temporary file")
+            importHandler(nil, .none)
+            return
+        }
+
+        // Save a copy at the temporary location
+        do {
+            try FileManager.default.copyItem(at: originalURL, to: temporaryFileURL)
+        } catch {
+            log.error("Failed to copy file: \(error)")
+            importHandler(nil, .none)
+            return
+        }
+
+        // Import the file
+        log.debug("File copied from \(originalURL) to \(temporaryFileURL)")
+        importHandler(temporaryFileURL, .move)
 	}
 
 	/// Called when you select an existing document in the browser.
@@ -243,12 +258,18 @@ extension BrowserViewController: UIDocumentBrowserViewControllerDelegate {
 
 	/// Informs the delegate that an import action failed.
 	func documentBrowser(_ controller: UIDocumentBrowserViewController, failedToImportDocumentAt documentURL: URL, error: Error?) {
-		// Make sure to handle the failed import appropriately, e.g., by presenting an error message to the user.
 		if let error = error {
 			log.error("documentURL: '\(documentURL)'  error: '\(error)'")
 		} else {
 			log.error("documentURL: '\(documentURL)'  error: nil")
 		}
+
+        // Show the error to the user
+        let errorMessage: String = error.map { "\($0)" } ?? "The error is 'nil'. No info provided."
+        let alert = UIAlertController(title: "Error in failedToImportDocumentAt", message: errorMessage, preferredStyle: .alert)
+        let action = UIAlertAction(title: "OK", style: .default) { (_) in }
+        alert.addAction(action)
+        controller.present(alert, animated: true)
 	}
 
 	func documentBrowser(_ controller: UIDocumentBrowserViewController, applicationActivitiesForDocumentURLs documentURLs: [URL]) -> [UIActivity] {
@@ -256,5 +277,11 @@ extension BrowserViewController: UIDocumentBrowserViewControllerDelegate {
 		// with custom ones. In this case, no additional activities are added.
 		return []
 	}
+}
 
+func createTemporaryFile() -> URL? {
+    let temporaryDirectory = FileManager.default.temporaryDirectory
+    let uniqueFilename = UUID().uuidString
+    let temporaryFileURL = temporaryDirectory.appendingPathComponent(uniqueFilename).appendingPathExtension("triangleDraw")
+    return temporaryFileURL
 }

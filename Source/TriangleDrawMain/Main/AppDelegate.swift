@@ -122,9 +122,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 				return
 			}
 
+            guard let url = revealedDocumentURL else {
+                log.error("revealDocument. No URL revealed. inputURL \(inputURL)")
+                return
+            }
+
 			// Present the Document View Controller for the revealed URL.
 			browserViewController.presentDocument(
-				at: revealedDocumentURL!,
+				at: url,
 				animated: true,
 				displayNameBehavior: .extractFromURL
 			)

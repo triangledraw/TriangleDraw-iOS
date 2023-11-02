@@ -31,10 +31,12 @@ public class Document: UIDocument {
 
 	override public func contents(forType typeName: String) throws -> Any {
 		guard let canvas: E2Canvas = self.canvas else {
+            log.error("Document.contents(forType:) canvas is nil")
 			throw DocumentError.archivingFailure
 		}
 		let data: Data = TDCanvasWriter.pbmRepresentation(from: canvas)
 		guard !data.isEmpty else {
+            log.error("Document.contents(forType:) data is nil")
 			throw DocumentError.archivingFailure
 		}
 		return data
